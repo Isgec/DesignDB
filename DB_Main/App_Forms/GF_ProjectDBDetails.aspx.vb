@@ -1142,50 +1142,51 @@ Partial Class GF_ProjectDBDetails
   Private Sub GF_ProjectDBDetails_Load(sender As Object, e As EventArgs) Handles Me.Load
     Dim Det As String = Request.QueryString("detail")
     Dim PrjID As String = Request.QueryString("PrjID")
+
     If (Det = "Process_Total") Then
-      PPSheading.Text = "PROCESS : TOTAL DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "PROCESS : TOTAL DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Mechanical_Total") Then
-      PPSheading.Text = "MECHANICAL : TOTAL DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "MECHANICAL : TOTAL DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Structure_Total") Then
-      PPSheading.Text = "STRUCTURE : TOTAL DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "STRUCTURE : TOTAL DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Piping_Total") Then
-      PPSheading.Text = "PIPING : TOTAL DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "PIPING : TOTAL DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Electrical_Total") Then
-      PPSheading.Text = "ELECTRICAL : TOTAL DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "ELECTRICAL : TOTAL DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "CI_Total") Then
-      PPSheading.Text = "MECHANICAL : TOTAL DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "MECHANICAL : TOTAL DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Total_Total") Then
-      PPSheading.Text = "All DIVISION : TOTAL DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "All DIVISION : TOTAL DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
@@ -1194,49 +1195,49 @@ Partial Class GF_ProjectDBDetails
     '---------
 
     If (Det = "Process_Released") Then
-      PPSheading.Text = "PROCESS : TOTAL RELEASED DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "PROCESS : TOTAL RELEASED DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Mechanical_Released") Then
-      PPSheading.Text = "MECHANICAL : TOTAL RELEASED DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "MECHANICAL : TOTAL RELEASED DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Structure_Released") Then
-      PPSheading.Text = "STRUCTURE : TOTAL RELEASED DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "STRUCTURE : TOTAL RELEASED DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Piping_Released") Then
-      PPSheading.Text = "PIPING : TOTAL RELEASED DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "PIPING : TOTAL RELEASED DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Electrical_Released") Then
-      PPSheading.Text = "ELECTRICAL : TOTAL RELEASED DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "ELECTRICAL : TOTAL RELEASED DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "CI_Released") Then
-      PPSheading.Text = "MECHANICAL : TOTAL RELEASED DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "MECHANICAL : TOTAL RELEASED DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Total_Released") Then
-      PPSheading.Text = "All DIVISION : TOTAL RELEASED DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "All DIVISION : TOTAL RELEASED DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
@@ -1245,49 +1246,49 @@ Partial Class GF_ProjectDBDetails
     '---
 
     If (Det = "Process_Pending") Then
-      PPSheading.Text = "PROCESS : TOTAL PENDING DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "PROCESS : TOTAL PENDING DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Mechanical_Pending") Then
-      PPSheading.Text = "MECHANICAL : TOTAL PENDING DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "MECHANICAL : TOTAL PENDING DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Structure_Pending") Then
-      PPSheading.Text = "STRUCTURE : TOTAL PENDING DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "STRUCTURE : TOTAL PENDING DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Piping_Pending") Then
-      PPSheading.Text = "PIPING : TOTAL PENDING DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "PIPING : TOTAL PENDING DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Electrical_Pending") Then
-      PPSheading.Text = "ELECTRICAL : TOTAL PENDING DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "ELECTRICAL : TOTAL PENDING DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "CI_Pending") Then
-      PPSheading.Text = "MECHANICAL : TOTAL PENDING DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "MECHANICAL : TOTAL PENDING DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Total_Pending") Then
-      PPSheading.Text = "All DIVISION : TOTAL PENDING DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "All DIVISION : TOTAL PENDING DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
@@ -1295,158 +1296,304 @@ Partial Class GF_ProjectDBDetails
 
 
     If (Det = "Process_Ontime") Then
-      PPSheading.Text = "PROCESS : TOTAL Ontime DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "PROCESS : TOTAL Ontime DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Mechanical_Ontime") Then
-      PPSheading.Text = "MECHANICAL : TOTAL Ontime DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "MECHANICAL : TOTAL Ontime DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Structure_Ontime") Then
-      PPSheading.Text = "STRUCTURE : TOTAL Ontime DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "STRUCTURE : TOTAL Ontime DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Piping_Ontime") Then
-      PPSheading.Text = "PIPING : TOTAL Ontime DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "PIPING : TOTAL Ontime DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Electrical_Ontime") Then
-      PPSheading.Text = "ELECTRICAL : TOTAL Ontime DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "ELECTRICAL : TOTAL Ontime DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "CI_Ontime") Then
-      PPSheading.Text = "MECHANICAL : TOTAL Ontime DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "MECHANICAL : TOTAL Ontime DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Total_Ontime") Then
-      PPSheading.Text = "All DIVISION : TOTAL Ontime DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "All DIVISION : TOTAL Ontime DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Process_Delayed") Then
-      PPSheading.Text = "PROCESS : TOTAL Delayed DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "PROCESS : TOTAL Delayed DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Mechanical_Delayed") Then
-      PPSheading.Text = "MECHANICAL : TOTAL Delayed DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "MECHANICAL : TOTAL Delayed DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Structure_Delayed") Then
-      PPSheading.Text = "STRUCTURE : TOTAL Delayed DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "STRUCTURE : TOTAL Delayed DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Piping_Delayed") Then
-      PPSheading.Text = "PIPING : TOTAL Delayed DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "PIPING : TOTAL Delayed DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Electrical_Delayed") Then
-      PPSheading.Text = "ELECTRICAL : TOTAL Delayed DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "ELECTRICAL : TOTAL Delayed DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "CI_Delayed") Then
-      PPSheading.Text = "MECHANICAL : TOTAL Delayed DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "MECHANICAL : TOTAL Delayed DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Total_Delayed") Then
-      PPSheading.Text = "All DIVISION : TOTAL Delayed DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "All DIVISION : TOTAL Delayed DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Process_Due") Then
-      PPSheading.Text = "PROCESS : TOTAL DUE ON TODAY FOR RELEASE DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "PROCESS : TOTAL DUE ON TODAY FOR RELEASE DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Mechanical_Due") Then
-      PPSheading.Text = "MECHANICAL : TOTAL DUE ON TODAY FOR RELEASE DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "MECHANICAL : TOTAL DUE ON TODAY FOR RELEASE DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Structure_Due") Then
-      PPSheading.Text = "STRUCTURE : TOTAL DUE ON TODAY FOR RELEASE DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "STRUCTURE : TOTAL DUE ON TODAY FOR RELEASE DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Piping_Due") Then
-      PPSheading.Text = "PIPING : TOTAL DUE ON TODAY FOR RELEASE DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "PIPING : TOTAL DUE ON TODAY FOR RELEASE DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
 
 
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Electrical_Due") Then
-      PPSheading.Text = "ELECTRICAL : TOTAL DUE ON TODAY FOR RELEASE DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "ELECTRICAL : TOTAL DUE ON TODAY FOR RELEASE DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "CI_Due") Then
-      PPSheading.Text = "MECHANICAL : TOTAL DUE ON TODAY FOR RELEASE DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "MECHANICAL : TOTAL DUE ON TODAY FOR RELEASE DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
       ShowPPLMData(Det, PrjID)
     End If
 
     If (Det = "Total_Due") Then
-      PPSheading.Text = "All DIVISION : TOTAL DUE ON TODAY FOR RELEASE DWGS/DOCS LIST FROM PMDL"
+      PPSheading.Text = "All DIVISION : TOTAL DUE ON TODAY FOR RELEASE DWGS/DOCS LIST FROM PMDL FOR PROJECT - " & PrjID
       ShowPPLMData(Det, PrjID)
     End If
+
+    If (Det = "Process_DCR_Total_Count") Then
+      PPSheading.Text = "PROCESS : TOTAL DCR COUNT FOR -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_DCR_Total_Count") Then
+      PPSheading.Text = "MECHANICAL : TOTAL DCR COUNT FOR -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "Piping_DCR_Total_Count") Then
+      PPSheading.Text = "PIPING : TOTAL DCR COUNT FOR -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "Structure_DCR_Total_Count") Then
+      PPSheading.Text = "STRUCTURE : TOTAL DCR COUNT FOR -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "Electrical_DCR_Total_Count") Then
+      PPSheading.Text = "ELECTRICAL : TOTAL DCR COUNT FOR -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "CI_DCR_Total_Count") Then
+      PPSheading.Text = "C & I : TOTAL DCR COUNT FOR -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "Others_DCR_Total_Count") Then
+      PPSheading.Text = "OTHERS : TOTAL DCR COUNT FOR -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+
+    If (Det = "Total_DCR_Total_Count") Then
+      PPSheading.Text = "TOTAL : TOTAL DCR COUNT FOR -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+
+
+
+
+
+    If (Det = "Process_DCR_Under_Creation") Then
+      PPSheading.Text = "PROCESS : DCR - UNDER CREATION FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_DCR_Under_Creation") Then
+      PPSheading.Text = "MECHANICAL : DCR - UNDER CREATION FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "Piping_DCR_Under_Creation") Then
+      PPSheading.Text = "PIPING : DCR - UNDER CREATION FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "Structure_DCR_Under_Creation") Then
+      PPSheading.Text = "STRUCTURE : DCR - UNDER CREATION " & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "Electrical_DCR_Under_Creation") Then
+      PPSheading.Text = "ELECTRICAL : DCR - UNDER CREATION FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "CI_DCR_Under_Creation") Then
+      PPSheading.Text = "C & I : DCR - UNDER CREATION FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "Others_DCR_Under_Creation") Then
+      PPSheading.Text = "OTHERS : DCR - UNDER CREATION FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+
+    If (Det = "Total_DCR_Under_Creation") Then
+      PPSheading.Text = "TOTAL : DCR - UNDER CREATION FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+
+
+    If (Det = "Process_DCR_Under_Approval") Then
+      PPSheading.Text = "PROCESS : DCR - UNDER APPROVAL FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+
+
+    If (Det = "Mechanical_DCR_Under_Approval") Then
+      PPSheading.Text = "MECHANICAL : DCR - UNDER APPROVAL FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "Piping_DCR_Under_Approval") Then
+      PPSheading.Text = "PIPING : DCR - UNDER APPROVAL FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "Structure_DCR_Under_Approval") Then
+      PPSheading.Text = "STRUCTURE : DCR - UNDER APPROVAL FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "Electrical_DCR_Under_Approval") Then
+      PPSheading.Text = "ELECTRICAL : DCR - UNDER APPROVAL FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "CI_DCR_Under_Approval") Then
+      PPSheading.Text = "C & I : DCR - UNDER APPROVAL FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "Others_DCR_Under_Approval") Then
+      PPSheading.Text = "OTHERS : DCR - UNDER APPROVAL FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+
+    If (Det = "Total_DCR_Under_Approval") Then
+      PPSheading.Text = "TOTAL : DCR - UNDER APPROVAL FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+
+    If (Det = "Process_DCR_Approved") Then
+      PPSheading.Text = "PROCESS : DCR - APPROVED FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_DCR_Approved") Then
+      PPSheading.Text = "MECHANICAL : DCR - APPROVED FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "Piping_DCR_Approved") Then
+      PPSheading.Text = "PIPING : DCR - APPROVED FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "Structure_DCR_Approved") Then
+      PPSheading.Text = "STRUCTURE : DCR - APPROVED FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "Electrical_DCR_Approved") Then
+      PPSheading.Text = "ELECTRICAL : DCR - APPROVED FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "CI_DCR_Approved") Then
+      PPSheading.Text = "C & I : DCR - APPROVED FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+    If (Det = "Others_DCR_Approved") Then
+      PPSheading.Text = "OTHERS : DCR - APPROVED FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+
+    If (Det = "Total_DCR_Approved") Then
+      PPSheading.Text = "TOTAL : DCR - APPROVED FOR PROJECT -" & PrjID
+      ShowDCRData(Det, PrjID)
+    End If
+
+
+
 
     If (Det = "PLM_CHART") Then
       PPSheading.Text = "Drawing Document Release Status -Details"
       ShowPLMData(Det, PrjID)
     End If
 
-
-
     If (Det = "DCR_CHART") Then
       PPSheading.Text = "DCR Status -Details"
       ShowDCRData(Det, PrjID)
     End If
-
 
     If (Det = "IDMS_CHART") Then
       PPSheading.Text = "IDMS Status -Details"

@@ -116,7 +116,7 @@ Namespace SIS.CT
     Public Property CI_Delayed_Count As Integer = 0
     Public Property Total_Delayed_Count As Integer = 0
 
-
+    '
 
     Public Property Process_DCR_Total_Count As Integer = 0
     Public Property Process_DCR_Under_Creation As Integer = 0

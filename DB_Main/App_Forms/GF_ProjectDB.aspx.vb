@@ -983,6 +983,142 @@ Partial Class GF_ProjectDB
     IDMSIICHART.HRef = "GF_ProjectDBDetails.aspx?detail=IDMSII_CHART&PrjID=" & F_t_cprj.Text
   End Sub
 
+  Private Sub btn_Process_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Process_DCR_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Mechanical_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_DCR_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Structure_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Structure_DCR_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Piping_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Piping_DCR_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_CI_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_CI_DCR_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Others_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Others_DCR_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Total_DCR_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_DCR_Under_Creation_Click(sender As Object, e As EventArgs) Handles btn_Process_DCR_Under_Creation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_DCR_Under_Creation&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Mechanical_DCR_Under_Creation_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_DCR_Under_Creation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_DCR_Under_Creation&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Structure_DCR_Under_Creation_Click(sender As Object, e As EventArgs) Handles btn_Structure_DCR_Under_Creation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_DCR_Under_Creation&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Piping_DCR_Under_Creation_Click(sender As Object, e As EventArgs) Handles btn_Piping_DCR_Under_Creation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_DCR_Under_Creation&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_CI_DCR_Under_Creation_Click(sender As Object, e As EventArgs) Handles btn_CI_DCR_Under_Creation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_DCR_Under_Creation&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Others_DCR_Under_Creation_Click(sender As Object, e As EventArgs) Handles btn_Others_DCR_Under_Creation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_DCR_Under_Creation&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_DCR_Under_Creation_Click(sender As Object, e As EventArgs) Handles btn_Total_DCR_Under_Creation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_DCR_Under_Creation&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_DCR_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Process_DCR_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_DCR_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Mechanical_DCR_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_DCR_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_DCR_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Structure_DCR_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Structure_DCR_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_DCR_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Piping_DCR_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Piping_DCR_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_DCR_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_CI_DCR_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_CI_DCR_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_DCR_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Others_DCR_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Others_DCR_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_DCR_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_DCR_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Total_DCR_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_DCR_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+
+  Private Sub btn_Process_DCR_Approved_Click(sender As Object, e As EventArgs) Handles btn_Process_DCR_Approved.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_DCR_Approved&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Mechanical_DCR_Approved_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_DCR_Approved.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_DCR_Approved&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Structure_DCR_Approved_Click(sender As Object, e As EventArgs) Handles btn_Structure_DCR_Approved.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_DCR_Approved&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Piping_DCR_Approved_Click(sender As Object, e As EventArgs) Handles btn_Piping_DCR_Approved.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_DCR_Approved&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_CI_DCR_Approved_Click(sender As Object, e As EventArgs) Handles btn_CI_DCR_Approved.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_DCR_Approved&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Others_DCR_Approved_Click(sender As Object, e As EventArgs) Handles btn_Others_DCR_Approved.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_DCR_Approved&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_DCR_Approved_Click(sender As Object, e As EventArgs) Handles btn_Total_DCR_Approved.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_DCR_Approved&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+
+  'Private Sub btn_Process_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Process_DCR_Total_Count.Click
+  '  Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
+  'End Sub
+
+  'Private Sub btn_Mechanical_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_DCR_Total_Count.Click
+  '  Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
+  'End Sub
+
+  'Private Sub btn_Structure_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Structure_DCR_Total_Count.Click
+  '  Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
+  'End Sub
+
+  'Private Sub btn_Piping_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Piping_DCR_Total_Count.Click
+  '  Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
+  'End Sub
+
+  'Private Sub btn_CI_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_CI_DCR_Total_Count.Click
+  '  Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
+  'End Sub
+
+  'Private Sub btn_Others_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Others_DCR_Total_Count.Click
+  '  Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
+  'End Sub
+  'Private Sub btn_Total_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Total_DCR_Total_Count.Click
+  '  Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
+  'End Sub
 
 #End Region
 
