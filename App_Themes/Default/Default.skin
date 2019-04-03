@@ -1,0 +1,135 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<asp:ImageButton runat="server" SkinId="add" ImageUrl="Images/add.png" />
+<asp:ImageButton runat="server" SkinId="download" ImageUrl="Images/download.png" />
+<asp:ImageButton runat="server" SkinId="details" ImageUrl="Images/details.png" />
+<asp:ImageButton runat="server" SkinId="insert" ImageUrl="Images/insert.png" />
+<asp:ImageButton runat="server" SkinId="photos" ImageUrl="Images/photos.png" />
+<asp:ImageButton runat="server" SkinId="login" ImageUrl="Images/go.png" />
+<asp:ImageButton runat="server" SkinId="login1" ImageUrl="Images/logon.gif" />
+<asp:ImageButton runat="server" SkinId="login2" ImageUrl="Images/login.png" />
+<asp:ImageButton runat="server" SkinId="print" ImageUrl="Images/print0.png" />
+<asp:ImageButton runat="server" SkinId="history" ImageUrl="Images/history.png" />
+<asp:ImageButton runat="server" SkinId="hold1" ImageUrl="Images/hold1.png" />
+<asp:ImageButton runat="server" SkinId="unhold" ImageUrl="Images/unhold.png" />
+<asp:ImageButton runat="server" SkinId="revert" ImageUrl="Images/revert.png" />
+<asp:ImageButton runat="server" SkinId="lock" ImageUrl="Images/lock.png" />
+<asp:ImageButton runat="server" SkinId="copy" ImageUrl="Images/copy.png" />
+<asp:ImageButton runat="server" SkinId="link" ImageUrl="Images/Link.png" />
+<asp:ImageButton runat="server" SkinId="forapproval" ImageUrl="Images/forapproval.png" />
+
+
+<asp:ImageButton runat="server" SkinId="update" ImageUrl="Images/post0.png" />
+
+<asp:ImageButton runat="server" SkinId="go" ImageUrl="Images/go.png" />
+<asp:Image runat="server" SkinId="goimg" ImageUrl="Images/go.png" />
+
+<asp:ImageButton runat="server" SkinId="delete" ImageUrl="Images/del0.png" />
+<asp:Image runat="server" SkinId="left" ImageUrl="Images/left.png" />
+<asp:Image runat="server" SkinId="divider" ImageUrl="Images/divider.png" />
+<asp:ImageButton runat="server" SkinId="cl" ImageUrl="Images/cl.png" />
+<asp:Image runat="server" SkinId="right" ImageUrl="Images/right.png" />
+<asp:ImageButton runat="server" SkinId="edit" ImageUrl="Images/edit.png" />
+<asp:ImageButton runat="server" SkinId="fastedit" ImageUrl="Images/fastedit.png" />
+<asp:ImageButton runat="server" SkinId="info" ImageUrl="Images/Info.png" />
+<asp:ImageButton runat="server" SkinId="save" ImageUrl="Images/save.png" />
+<asp:ImageButton runat="server" SkinId="cancel" ImageUrl="Images/cancel.png" />
+<asp:ImageButton runat="server" SkinId="select" ImageUrl="Images/ok.png" />
+<asp:ImageButton runat="server" SkinId="approve" ImageUrl="Images/docok.png" />
+<asp:ImageButton runat="server" SkinId="reject" ImageUrl="Images/docreject.png" />
+<asp:ImageButton runat="server" SkinId="forward" ImageUrl="Images/forward.png" />
+<asp:ImageButton runat="server" SkinId="email" ImageUrl="Images/email.png" />
+<asp:ImageButton runat="server" SkinId="complete" ImageUrl="Images/ok.png" />
+<asp:ImageButton runat="server" SkinId="hold" ImageUrl="Images/hold.png" />
+<asp:ImageButton runat="server" SkinId="unlock" ImageUrl="Images/unlock.png" />
+<asp:ImageButton runat="server" SkinId="post" ImageUrl="Images/Flag-Green.png" />
+<asp:ImageButton runat="server" SkinId="notes" ImageUrl="Images/notes.png" />
+<asp:ImageButton runat="server" SkinId="revise" ImageUrl="Images/posted.png" />
+<asp:ImageButton runat="server" SkinId="attach" ImageUrl="Images/attach.png" />
+<asp:ImageButton runat="server" SkinId="Vehicle" ImageUrl="Images/vh1.png" />
+<asp:DropDownList runat="server" SkinId="DropDownSkin" ImageUrl="Images/ddl.jpg" />
+<AJX:CollapsiblePanelExtender runat="server"
+    ExpandDirection="Vertical"
+    ExpandedImage="~/images/collapse.jpg"
+    ExpandedText="Collapse"
+    CollapsedImage="~/images/expand.jpg"
+    CollapsedText="Expand"
+    SuppressPostBack="true" />
+<%-- Empty skin to avoid default collapsible panel skin just for the collapsible panel demo--%>
+<AJX:CollapsiblePanelExtender runat="server"
+    SkinID="CollapsiblePanelDemo" />
+
+  <%--<AlternatingRowStyle CssClass="bsa_silver" />--%>
+<asp:GridView runat="server" SkinId="gv_bs1" CssClass="table" AllowSorting="True" AutoGenerateColumns="False">
+  <HeaderStyle CssClass="thead-dark" />
+  <RowStyle CssClass="bsr_silver" />
+  <SelectedRowStyle CssClass="bss_silver" />
+  <FooterStyle CssClass="bsf_silver" />
+  <PagerStyle CssClass="bsp_silver" />
+  <EmptyDataRowStyle CssClass="bse_silver" />
+</asp:GridView>
+
+<asp:GridView runat="server" SkinId="gv_bs" CssClass="gv_silver" GridLines="None" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False">
+  <HeaderStyle CssClass="gvh_silver" />
+  <RowStyle CssClass="gvr_silver" />
+  <AlternatingRowStyle CssClass="gva_silver" />
+  <SelectedRowStyle CssClass="gvs_silver" />
+  <FooterStyle CssClass="gvf_silver" />
+  <PagerStyle CssClass="gvp_silver" />
+  <EmptyDataRowStyle CssClass="gve_silver" />
+</asp:GridView>
+
+
+<asp:GridView runat="server" SkinId="gv_silver" CssClass="gv_silver" GridLines="None" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False">
+  <HeaderStyle CssClass="gvh_silver" />
+  <RowStyle CssClass="gvr_silver" />
+  <AlternatingRowStyle CssClass="gva_silver" />
+  <SelectedRowStyle CssClass="gvs_silver" />
+  <FooterStyle CssClass="gvf_silver" />
+  <PagerStyle CssClass="gvp_silver" />
+  <EmptyDataRowStyle CssClass="gve_silver" />
+</asp:GridView>
+
+<asp:GridView runat="server" SkinId="gv_lsilver" CssClass="gv_silver" GridLines="None" AllowPaging="False" AllowSorting="True" AutoGenerateColumns="False">
+  <HeaderStyle CssClass="gvh_silver" />
+  <RowStyle CssClass="gvr_silver" />
+  <AlternatingRowStyle CssClass="gva_silver" />
+  <SelectedRowStyle CssClass="gvs_silver" />
+  <FooterStyle CssClass="gvf_silver" />
+  <PagerStyle CssClass="gvp_silver" />
+  <EmptyDataRowStyle CssClass="gve_silver" />
+</asp:GridView>
+
+
+<asp:GridView runat="server" SkinId="gv_silverHeader" CssClass="gv_silverHeader" GridLines="None" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False">
+  <HeaderStyle CssClass="hgvh_silver" />
+  <RowStyle CssClass="hgvr_silver" />
+  <AlternatingRowStyle CssClass="hgva_silver" />
+  <SelectedRowStyle CssClass="hgvs_silver" />
+  <FooterStyle CssClass="hgvf_silver" />
+  <PagerStyle CssClass="hgvp_silver" />
+  <EmptyDataRowStyle CssClass="hgve_silver" />
+</asp:GridView>
+
+
+<asp:GridView runat="server" SkinId="gv_silverChild" CssClass="gv_silverChild" GridLines="None" AutoGenerateColumns="False">
+  <HeaderStyle CssClass="cgvh_silver" />
+  <RowStyle CssClass="cgvr_silver" />
+  <AlternatingRowStyle CssClass="cgva_silver" />
+  <FooterStyle CssClass="cgvf_silver" />
+  <EmptyDataRowStyle CssClass="cgve_silver" />
+</asp:GridView>

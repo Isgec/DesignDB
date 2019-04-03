@@ -1,0 +1,139 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="lgMasterPage" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  <title>ISGEC-Design Dashboard</title>
+  <link rel="SHORTCUT ICON" type="image/x-icon" runat="server" href="~/isgec.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <!--JQuery 3.3-->
+  <script type="text/javascript" src="/../UserRights/jq3.3/jquery-3.3.1.min.js"></script>
+  <!-- Font 4.7-->
+  <link href="/../UserRights/fa4.7/css/font-awesome.min.css" rel="stylesheet" />
+  <!--Bootstrap 4.0 uses Jquery 3 or above, Popper & Tooltip-->
+  <link rel="stylesheet" href="/../UserRights/bs4.0/css/bootstrap.min.css" />
+  <script type="text/javascript" src="/../UserRights/Popper1.0/Popper.min.js"></script>
+  <script type="text/javascript" src="/../UserRights/bs4.0/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" runat="server" href="~/App_Themes/Default/Menu.css" />
+  
+  
+ 
+
+
+
+  <asp:ContentPlaceHolder ID="cphMain" runat="server" EnableViewState="true">
+  </asp:ContentPlaceHolder>
+</head>
+<body>
+  
+  <form id="form1" runat="server">
+  <ASP:ScriptManager ID="ToolkitScriptManager1" EnableScriptGlobalization="true" runat="server" EnablePageMethods="true" AsyncPostBackTimeout="3600" EnableScriptLocalization="True" ScriptMode="Auto">
+    <Scripts>
+        <asp:ScriptReference Path="/../UserRights/jquery/webkit.js" />
+    </Scripts>
+  </ASP:ScriptManager>
+  <LGM:LGLoading ID="LGLoadingM" runat="server" />
+    <script type="text/javascript">
+      Sys.WebForms.PageRequestManager.getInstance().add_endRequest(hideProcessingMPV);
+      Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(showProcessingMPV);
+      function groupClicked(p) {
+        var tbl = p.parentElement.parentElement;
+        var o = p.parentElement.rowIndex;
+        for (ii = 0; ii <= tbl.rows.length - 1; ii++) {
+          if (ii > o) {
+            if (tbl.rows[ii].id != '')
+              return;
+            if (tbl.rows[ii].style.display == 'none')
+              tbl.rows[ii].style.display = '';
+            else
+              tbl.rows[ii].style.display = 'none';
+          }
+        }
+      }
+      function dc(o, p) {
+        var dec = /^-?\d+(?:\.\d{0,6})?$/;
+        var v = o.value;
+        if (v.match(dec)) {
+          o.value = parseFloat(v).toFixed(p);
+        } else {
+          o.value = parseFloat('0').toFixed(p);
+        }
+      }
+    </script>
+    <div id="divmain" class="master_table">
+    <table style="width: 100%">
+      <tr>
+         <%-- <td>
+          <asp:Image ID="Image1" runat="server" AlternateText="logo"   ImageAlign="Right" width="550" height="72" ImageUrl="~/logo.jpg" />
+          
+        </td>--%>
+
+        <td class="sis_header">
+          <asp:Image ID="any" runat="server" AlternateText="logo"   ImageAlign="Left" width="700" height="72" ImageUrl="~/DB.jpg" />
+          
+        </td>
+        <td class="loginTd">
+          <LGM:LoginLine ID="LoginLine1" runat="server" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" id="algmnu" runat="server" align="center" style="margin: auto">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="wp_body" runat="server" id="mainBody">
+          <asp:ContentPlaceHolder ID="cph1" runat="server" EnableViewState="true">
+
+          </asp:ContentPlaceHolder>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="sis_footer">
+          <table style="width: 100%">
+           
+            <tr>
+              <td>
+                <font size="1"><span style="color: #ffffff">  </span></font>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color: #99ccff">Designed &amp; Developed by:</span> <span style="color: #99ffcc">ISGEC Engineering-IT Team</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color: #99ccff">Version : </span> <span style="color: #99ffcc"> DB 1.0.1</span>
+              </td>
+            </tr>
+
+             <tr>
+              <td>
+                <span style="color: #ffffff"><font size="1">© ISGEC Heavy Engineering Limited. All rights reserved.</font></span>
+              </td>
+            </tr>
+           
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span onclick="document.getElementById('myModal').style.display = 'none';" class="close">&times;</span>
+    <div id="myModalMsg" style="padding-top:20px;"></div>
+  </div>
+</div>
+<script type="text/javascript">
+  function show_message(s) {
+    document.getElementById('myModalMsg').innerHTML = s;
+    document.getElementById('myModal').style.display = 'block';
+  }
+</script>
+  </form>
+
+</body>
+
+</html>
