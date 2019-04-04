@@ -1093,32 +1093,59 @@ Partial Class GF_ProjectDB
   End Sub
 
 
-  'Private Sub btn_Process_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Process_DCR_Total_Count.Click
-  '  Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
-  'End Sub
 
-  'Private Sub btn_Mechanical_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_DCR_Total_Count.Click
-  '  Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
-  'End Sub
+  Private Sub btn_Process_Transmittal_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Process_Transmittal_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Transmittal_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_Transmittal_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_Transmittal_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_Transmittal_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_Transmittal_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Structure_Transmittal_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_Transmittal_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_Transmittal_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Piping_Transmittal_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_Transmittal_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_Transmittal_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Electrical_Transmittal_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_Transmittal_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_Transmittal_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_CI_Transmittal_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_Transmittal_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_Transmittal_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Others_Transmittal_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_Transmittal_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_Transmittal_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Total_Transmittal_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Transmittal_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
 
-  'Private Sub btn_Structure_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Structure_DCR_Total_Count.Click
-  '  Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
-  'End Sub
+  Private Sub btn_Process_Transmittal_Free_Click(sender As Object, e As EventArgs) Handles btn_Process_Transmittal_Free.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Transmittal_Free&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_Transmittal_Free_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_Transmittal_Free.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_Transmittal_Free&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_Transmittal_Free_Click(sender As Object, e As EventArgs) Handles btn_Structure_Transmittal_Free.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_Transmittal_Free&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_Transmittal_Free_Click(sender As Object, e As EventArgs) Handles btn_Piping_Transmittal_Free.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_Transmittal_Free&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_Transmittal_Free_Click(sender As Object, e As EventArgs) Handles btn_Electrical_Transmittal_Free.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_Transmittal_Free&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_Transmittal_Free_Click(sender As Object, e As EventArgs) Handles btn_CI_Transmittal_Free.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_Transmittal_Free&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_Transmittal_Free_Click(sender As Object, e As EventArgs) Handles btn_Others_Transmittal_Free.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_Transmittal_Free&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_Transmittal_Free_Click(sender As Object, e As EventArgs) Handles btn_Total_Transmittal_Free.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Transmittal_Free&PrjID=" & F_t_cprj.Text)
+  End Sub
 
-  'Private Sub btn_Piping_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Piping_DCR_Total_Count.Click
-  '  Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
-  'End Sub
 
-  'Private Sub btn_CI_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_CI_DCR_Total_Count.Click
-  '  Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
-  'End Sub
 
-  'Private Sub btn_Others_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Others_DCR_Total_Count.Click
-  '  Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
-  'End Sub
-  'Private Sub btn_Total_DCR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Total_DCR_Total_Count.Click
-  '  Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_DCR_Total_Count&PrjID=" & F_t_cprj.Text)
-  'End Sub
 
 #End Region
 
