@@ -160,7 +160,7 @@ Partial Class GF_ProjectDB
     btn_Process_Transmittal_Under_Issue.Text = x2.Process_Transmittal_Under_Issue
     btn_Process_Transmittal_Issued.Text = x2.Process_Transmittal_Issued
     btn_Process_Transmittal_Partial_Received.Text = x2.Process_Transmittal_Partial_Received
-    btn_Process_Transmittal_Recieved.Text = x2.Process_Transmittal_Received
+    btn_Process_Transmittal_Received.Text = x2.Process_Transmittal_Received
     btn_Process_Transmittal_Closed.Text = x2.Process_Transmittal_Closed
     btn_Process_Transmittal_Returned.Text = x2.Process_Transmittal_Returned
 
@@ -1143,6 +1143,384 @@ Partial Class GF_ProjectDB
   Private Sub btn_Total_Transmittal_Free_Click(sender As Object, e As EventArgs) Handles btn_Total_Transmittal_Free.Click
     Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Transmittal_Free&PrjID=" & F_t_cprj.Text)
   End Sub
+
+  Private Sub btn_Process_Transmittal_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Process_Transmittal_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Transmittal_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_Transmittal_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_Transmittal_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_Transmittal_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_Transmittal_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Structure_Transmittal_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_Transmittal_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_Transmittal_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Piping_Transmittal_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_Transmittal_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_Transmittal_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Electrical_Transmittal_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_Transmittal_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_Transmittal_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_CI_Transmittal_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_Transmittal_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_Transmittal_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Others_Transmittal_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_Transmittal_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_Transmittal_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Total_Transmittal_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Transmittal_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_Transmittal_Under_Issue_Click(sender As Object, e As EventArgs) Handles btn_Process_Transmittal_Under_Issue.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Transmittal_Under_Issue&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_Transmittal_Under_Issue_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_Transmittal_Under_Issue.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_Transmittal_Under_Issue&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_Transmittal_Under_Issue_Click(sender As Object, e As EventArgs) Handles btn_Structure_Transmittal_Under_Issue.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_Transmittal_Under_Issue&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_Transmittal_Under_Issue_Click(sender As Object, e As EventArgs) Handles btn_Piping_Transmittal_Under_Issue.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_Transmittal_Under_Issue&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_Transmittal_Under_Issue_Click(sender As Object, e As EventArgs) Handles btn_Electrical_Transmittal_Under_Issue.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_Transmittal_Under_Issue&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_Transmittal_Under_Issue_Click(sender As Object, e As EventArgs) Handles btn_CI_Transmittal_Under_Issue.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_Transmittal_Under_Issue&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_Transmittal_Under_Issue_Click(sender As Object, e As EventArgs) Handles btn_Others_Transmittal_Under_Issue.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_Transmittal_Under_Issue&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_Transmittal_Under_Issue_Click(sender As Object, e As EventArgs) Handles btn_Total_Transmittal_Under_Issue.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Transmittal_Under_Issue&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Process_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Structure_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Piping_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Electrical_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_CI_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Others_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Total_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_Transmittal_Partial_Received_Click(sender As Object, e As EventArgs) Handles btn_Process_Transmittal_Partial_Received.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Transmittal_Partial_Received&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_Transmittal_Partial_Received_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_Transmittal_Partial_Received.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_Transmittal_Partial_Received&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_Transmittal_Partial_Received_Click(sender As Object, e As EventArgs) Handles btn_Structure_Transmittal_Partial_Received.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_Transmittal_Partial_Received&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_Transmittal_Partial_Received_Click(sender As Object, e As EventArgs) Handles btn_Piping_Transmittal_Partial_Received.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_Transmittal_Partial_Received&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_Transmittal_Partial_Received_Click(sender As Object, e As EventArgs) Handles btn_Electrical_Transmittal_Partial_Received.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_Transmittal_Partial_Received&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_Transmittal_Partial_Received_Click(sender As Object, e As EventArgs) Handles btn_CI_Transmittal_Partial_Received.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_Transmittal_Partial_Received&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_Transmittal_Partial_Received_Click(sender As Object, e As EventArgs) Handles btn_Others_Transmittal_Partial_Received.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_Transmittal_Partial_Received&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_Transmittal_Partial_Received_Click(sender As Object, e As EventArgs) Handles btn_Total_Transmittal_Partial_Received.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Transmittal_Partial_Received&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_Transmittal_Received_Click(sender As Object, e As EventArgs) Handles btn_Process_Transmittal_Received.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Transmittal_Received&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_Transmittal_Received_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_Transmittal_Received.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_Transmittal_Received&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_Transmittal_Received_Click(sender As Object, e As EventArgs) Handles btn_Structure_Transmittal_Recieved.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_Transmittal_Received&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_Transmittal_Received_Click(sender As Object, e As EventArgs) Handles btn_Piping_Transmittal_Received.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_Transmittal_Received&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_Transmittal_Received_Click(sender As Object, e As EventArgs) Handles btn_Electrical_Transmittal_Received.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_Transmittal_Received&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_Transmittal_Received_Click(sender As Object, e As EventArgs) Handles btn_CI_Transmittal_Received.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_Transmittal_Received&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_Transmittal_Received_Click(sender As Object, e As EventArgs) Handles btn_Others_Transmittal_Received.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_Transmittal_Received&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_Transmittal_Received_Click(sender As Object, e As EventArgs) Handles btn_Total_Transmittal_Received.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Transmittal_Received&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_Transmittal_Close_Click(sender As Object, e As EventArgs) Handles btn_Process_Transmittal_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Transmittal_Close&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_Transmittal_Close_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_Transmittal_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_Transmittal_Close&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_Transmittal_Close_Click(sender As Object, e As EventArgs) Handles btn_Structure_Transmittal_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_Transmittal_Close&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_Transmittal_Close_Click(sender As Object, e As EventArgs) Handles btn_Piping_Transmittal_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_Transmittal_Close&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_Transmittal_Close_Click(sender As Object, e As EventArgs) Handles btn_Electrical_Transmittal_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_Transmittal_Close&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_Transmittal_Close_Click(sender As Object, e As EventArgs) Handles btn_CI_Transmittal_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_Transmittal_Close&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_Transmittal_Close_Click(sender As Object, e As EventArgs) Handles btn_Others_Transmittal_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_Transmittal_Close&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_Transmittal_Close_Click(sender As Object, e As EventArgs) Handles btn_Total_Transmittal_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Transmittal_Close&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+
+
+
+
+  Private Sub btn_Process_Transmittal_Returned_Click(sender As Object, e As EventArgs) Handles btn_Process_Transmittal_Returned.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Transmittal_Returned&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_Transmittal_Returned_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_Transmittal_Returned.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_Transmittal_Returned&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_Transmittal_Returned_Click(sender As Object, e As EventArgs) Handles btn_Structure_Transmittal_Returned.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_Transmittal_Returned&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_Transmittal_Returned_Click(sender As Object, e As EventArgs) Handles btn_Piping_Transmittal_Returned.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_Transmittal_Returned&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_Transmittal_Returned_Click(sender As Object, e As EventArgs) Handles btn_Electrical_Transmittal_Returned.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_Transmittal_Returned&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_Transmittal_Returned_Click(sender As Object, e As EventArgs) Handles btn_CI_Transmittal_Returned.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_Transmittal_Returned&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_Transmittal_Returned_Click(sender As Object, e As EventArgs) Handles btn_Others_Transmittal_Returned.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_Transmittal_Returned&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_Transmittal_Returned_Click(sender As Object, e As EventArgs) Handles btn_Total_Transmittal_Returned.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Transmittal_Returned&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_SAR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Process_SAR_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_SAR_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_SAR_Under_Creation_Click(sender As Object, e As EventArgs) Handles btn_Process_SAR_Under_Creation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_SAR_Under_Creation&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_SAR_Under_Review_Click(sender As Object, e As EventArgs) Handles btn_Process_SAR_Under_Review.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_SAR_Under_Review&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_SAR_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Process_SAR_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_SAR_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_SAR_Approved_Click(sender As Object, e As EventArgs) Handles btn_Process_SAR_Approved.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_SAR_Approved&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_SAR_Not_Applicable_Click(sender As Object, e As EventArgs) Handles btn_Process_SAR_Not_Applicable.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_SAR_Not_Applicable&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Mechanical_SAR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_SAR_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_SAR_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Mechanical_SAR_Under_Creation_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_SAR_Under_Creation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_SAR_Under_Creation&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Mechanical_SAR_Under_Review_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_SAR_Under_Review.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_SAR_Under_Review&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Mechanical_SAR_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_SAR_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_SAR_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Mechanical_SAR_Approved_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_SAR_Approved.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_SAR_Approved&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Mechanical_SAR_Not_Applicable_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_SAR_Not_Applicable.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_SAR_Not_Applicable&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+
+  Private Sub btn_Structure_SAR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Structure_SAR_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_SAR_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Structure_SAR_Under_Creation_Click(sender As Object, e As EventArgs) Handles btn_Structure_SAR_Under_Creation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_SAR_Under_Creation&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Structure_SAR_Under_Review_Click(sender As Object, e As EventArgs) Handles btn_Structure_SAR_Under_Review.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_SAR_Under_Review&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Structure_SAR_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Structure_SAR_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_SAR_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Structure_SAR_Approved_Click(sender As Object, e As EventArgs) Handles btn_Structure_SAR_Approved.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_SAR_Approved&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Structure_SAR_Not_Applicable_Click(sender As Object, e As EventArgs) Handles btn_Structure_SAR_Not_Applicable.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_SAR_Not_Applicable&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Piping_SAR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Piping_SAR_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_SAR_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Piping_SAR_Under_Creation_Click(sender As Object, e As EventArgs) Handles btn_Piping_SAR_Under_Creation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_SAR_Under_Creation&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Piping_SAR_Under_Review_Click(sender As Object, e As EventArgs) Handles btn_Piping_SAR_Under_Review.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_SAR_Under_Review&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Piping_SAR_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Piping_SAR_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_SAR_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Piping_SAR_Approved_Click(sender As Object, e As EventArgs) Handles btn_Piping_SAR_Approved.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_SAR_Approved&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Piping_SAR_Not_Applicable_Click(sender As Object, e As EventArgs) Handles btn_Piping_SAR_Not_Applicable.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_SAR_Not_Applicable&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Electrical_SAR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Electrical_SAR_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_SAR_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Electrical_SAR_Under_Creation_Click(sender As Object, e As EventArgs) Handles btn_Electrical_SAR_Under_Creation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_SAR_Under_Creation&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Electrical_SAR_Under_Review_Click(sender As Object, e As EventArgs) Handles btn_Electrical_SAR_Under_Review.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_SAR_Under_Review&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Electrical_SAR_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Electrical_SAR_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_SAR_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Electrical_SAR_Approved_Click(sender As Object, e As EventArgs) Handles btn_Electrical_SAR_Approved.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_SAR_Approved&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Electrical_SAR_Not_Applicable_Click(sender As Object, e As EventArgs) Handles btn_Electrical_SAR_Not_Applicable.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_SAR_Not_Applicable&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_CI_SAR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_CI_SAR_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_SAR_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_CI_SAR_Under_Creation_Click(sender As Object, e As EventArgs) Handles btn_CI_SAR_Under_Creation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_SAR_Under_Creation&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_CI_SAR_Under_Review_Click(sender As Object, e As EventArgs) Handles btn_CI_SAR_Under_Review.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_SAR_Under_Review&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_CI_SAR_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_CI_SAR_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_SAR_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_CI_SAR_Approved_Click(sender As Object, e As EventArgs) Handles btn_CI_SAR_Approved.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_SAR_Approved&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_CI_SAR_Not_Applicable_Click(sender As Object, e As EventArgs) Handles btn_CI_SAR_Not_Applicable.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_SAR_Not_Applicable&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+
+  Private Sub btn_Others_SAR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Others_SAR_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_SAR_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Others_SAR_Under_Creation_Click(sender As Object, e As EventArgs) Handles btn_Others_SAR_Under_Creation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_SAR_Under_Creation&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Others_SAR_Under_Review_Click(sender As Object, e As EventArgs) Handles btn_Others_SAR_Under_Review.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_SAR_Under_Review&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Others_SAR_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Others_SAR_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_SAR_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Others_SAR_Approved_Click(sender As Object, e As EventArgs) Handles btn_Others_SAR_Approved.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_SAR_Approved&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Others_SAR_Not_Applicable_Click(sender As Object, e As EventArgs) Handles btn_Others_SAR_Not_Applicable.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_SAR_Not_Applicable&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+
+  Private Sub btn_Total_SAR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Total_SAR_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_SAR_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Total_SAR_Under_Creation_Click(sender As Object, e As EventArgs) Handles btn_Total_SAR_Under_Creation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_SAR_Under_Creation&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Total_SAR_Under_Review_Click(sender As Object, e As EventArgs) Handles btn_Total_SAR_Under_Review.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_SAR_Under_Review&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Total_SAR_Under_Approval_Click(sender As Object, e As EventArgs) Handles btn_Total_SAR_Under_Approval.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_SAR_Under_Approval&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Total_SAR_Approved_Click(sender As Object, e As EventArgs) Handles btn_Total_SAR_Approved.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_SAR_Approved&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Total_SAR_Not_Applicable_Click(sender As Object, e As EventArgs) Handles btn_Total_SAR_Not_Applicable.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_SAR_Not_Applicable&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+
+
+
 
 
 

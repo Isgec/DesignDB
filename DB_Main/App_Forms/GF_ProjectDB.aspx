@@ -799,7 +799,7 @@
                       <asp:Button ID="btn_Process_Transmittal_Partial_Received" runat="server" CssClass="btn btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="Process - Transmittal - Partial Recieved" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col-1">
-                      <asp:Button ID="btn_Process_Transmittal_Recieved" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Process - Transmittal - Recieved" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_Process_Transmittal_Received" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Process - Transmittal - Recieved" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col-1">
                       <asp:Button ID="btn_Process_Transmittal_Closed" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Process - Transmittal - Closed" Text="" Font-Bold="true"></asp:Button>

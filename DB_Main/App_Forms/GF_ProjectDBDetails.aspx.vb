@@ -1583,6 +1583,527 @@ Partial Class GF_ProjectDBDetails
     End If
 
 
+    If (Det = "Process_Transmittal_Total_Count") Then
+      PPSheading.Text = "PROCESS : TRANSMITTAL - TOTAL COUNT FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Process_Transmittal_Free") Then
+      PPSheading.Text = "PROCESS : TRANSMITTAL -IN FREE STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Process_Transmittal_Under_Approval") Then
+      PPSheading.Text = "PROCESS : TRANSMITTAL - IN UNDER APPROVAL STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Process_Transmittal_Under_Issue") Then
+        PPSheading.Text = "PROCESS : TRANSMITTAL - IN UNDER ISSUE STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+      If (Det = "Process_Transmittal_Issued") Then
+        PPSheading.Text = "PROCESS : TRANSMITTAL - ISSUED FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+      If (Det = "Process_Transmittal_Partial_Received") Then
+        PPSheading.Text = "PROCESS : TRANSMITTAL - IN PARTIAL RECEIVED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+      If (Det = "Process_Transmittal_Received") Then
+        PPSheading.Text = "PROCESS : TRANSMITTAL - IN RECEIVED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+      If (Det = "Process_Transmittal_Closed") Then
+        PPSheading.Text = "PROCESS : TRANSMITTAL - IN CLOSED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+      If (Det = "Process_Transmittal_Returned") Then
+        PPSheading.Text = "PROCESS : TRANSMITTAL - RETURNED FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+
+
+    If (Det = "Mechanical_Transmittal_Total_Count") Then
+      PPSheading.Text = "MECHANICAL : TRANSMITTAL - TOTAL COUNT FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Mechanical_Transmittal_Free") Then
+      PPSheading.Text = "MECHANICAL : TRANSMITTAL -IN FREE STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Mechanical_Transmittal_Under_Approval") Then
+      PPSheading.Text = "MECHANICAL : TRANSMITTAL - IN UNDER APPROVAL STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Mechanical_Transmittal_Under_Issue") Then
+      PPSheading.Text = "MECHANICAL : TRANSMITTAL - IN UNDER ISSUE STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Mechanical_Transmittal_Issued") Then
+      PPSheading.Text = "MECHANICAL : TRANSMITTAL - ISSUED FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Mechanical_Transmittal_Partial_Received") Then
+      PPSheading.Text = "MECHANICAL : TRANSMITTAL - IN PARTIAL RECEIVED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Mechanical_Transmittal_Received") Then
+      PPSheading.Text = "MECHANICAL : TRANSMITTAL - IN RECEIVED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Mechanical_Transmittal_Closed") Then
+      PPSheading.Text = "MECHANICAL : TRANSMITTAL - IN CLOSED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Mechanical_Transmittal_Returned") Then
+      PPSheading.Text = "MECHANICAL : TRANSMITTAL - RETURNED FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_Transmittal_Total_Count") Then
+      PPSheading.Text = "STRUCTURE : TRANSMITTAL - TOTAL COUNT FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Structure_Transmittal_Free") Then
+      PPSheading.Text = "STRUCTURE : TRANSMITTAL -IN FREE STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Structure_Transmittal_Under_Approval") Then
+      PPSheading.Text = "STRUCTURE : TRANSMITTAL - IN UNDER APPROVAL STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Structure_Transmittal_Under_Issue") Then
+      PPSheading.Text = "STRUCTURE : TRANSMITTAL - IN UNDER ISSUE STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Structure_Transmittal_Issued") Then
+      PPSheading.Text = "STRUCTURE : TRANSMITTAL - ISSUED FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Structure_Transmittal_Partial_Received") Then
+      PPSheading.Text = "STRUCTURE : TRANSMITTAL - IN PARTIAL RECEIVED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Structure_Transmittal_Received") Then
+      PPSheading.Text = "STRUCTURE : TRANSMITTAL - IN RECEIVED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Structure_Transmittal_Closed") Then
+      PPSheading.Text = "STRUCTURE : TRANSMITTAL - IN CLOSED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Structure_Transmittal_Returned") Then
+      PPSheading.Text = "STRUCTURE : TRANSMITTAL - RETURNED FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_Transmittal_Total_Count") Then
+      PPSheading.Text = "PIPING : TRANSMITTAL - TOTAL COUNT FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Piping_Transmittal_Free") Then
+      PPSheading.Text = "PIPING : TRANSMITTAL -IN FREE STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Piping_Transmittal_Under_Approval") Then
+      PPSheading.Text = "PIPING : TRANSMITTAL - IN UNDER APPROVAL STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Piping_Transmittal_Under_Issue") Then
+      PPSheading.Text = "PIPING : TRANSMITTAL - IN UNDER ISSUE STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Piping_Transmittal_Issued") Then
+      PPSheading.Text = "PIPING : TRANSMITTAL - ISSUED FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Piping_Transmittal_Partial_Received") Then
+      PPSheading.Text = "PIPING : TRANSMITTAL - IN PARTIAL RECEIVED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Piping_Transmittal_Received") Then
+      PPSheading.Text = "PIPING : TRANSMITTAL - IN RECEIVED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Piping_Transmittal_Closed") Then
+      PPSheading.Text = "PIPING : TRANSMITTAL - IN CLOSED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Piping_Transmittal_Returned") Then
+      PPSheading.Text = "PIPING : TRANSMITTAL - RETURNED FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+
+    If (Det = "Others_Transmittal_Total_Count") Then
+      PPSheading.Text = "OTHERS : TRANSMITTAL - TOTAL COUNT FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Others_Transmittal_Free") Then
+      PPSheading.Text = "OTHERS : TRANSMITTAL -IN FREE STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Others_Transmittal_Under_Approval") Then
+      PPSheading.Text = "OTHERS : TRANSMITTAL - IN UNDER APPROVAL STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Others_Transmittal_Under_Issue") Then
+      PPSheading.Text = "OTHERS : TRANSMITTAL - IN UNDER ISSUE STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Others_Transmittal_Issued") Then
+      PPSheading.Text = "OTHERS : TRANSMITTAL - ISSUED FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Others_Transmittal_Partial_Received") Then
+      PPSheading.Text = "OTHERS : TRANSMITTAL - IN PARTIAL RECEIVED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Others_Transmittal_Received") Then
+      PPSheading.Text = "OTHERS : TRANSMITTAL - IN RECEIVED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Others_Transmittal_Closed") Then
+      PPSheading.Text = "OTHERS : TRANSMITTAL - IN CLOSED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Others_Transmittal_Returned") Then
+      PPSheading.Text = "OTHERS : TRANSMITTAL - RETURNED FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+
+    If (Det = "Total_Transmittal_Total_Count") Then
+      PPSheading.Text = "TOTAL : TRANSMITTAL - TOTAL COUNT FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Total_Transmittal_Free") Then
+      PPSheading.Text = "TOTAL : TRANSMITTAL -IN FREE STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Total_Transmittal_Under_Approval") Then
+      PPSheading.Text = "TOTAL : TRANSMITTAL - IN UNDER APPROVAL STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Total_Transmittal_Under_Issue") Then
+      PPSheading.Text = "TOTAL : TRANSMITTAL - IN UNDER ISSUE STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Total_Transmittal_Issued") Then
+      PPSheading.Text = "TOTAL : TRANSMITTAL - ISSUED FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Total_Transmittal_Partial_Received") Then
+      PPSheading.Text = "TOTAL : TRANSMITTAL - IN PARTIAL RECEIVED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Total_Transmittal_Received") Then
+      PPSheading.Text = "TOTAL : TRANSMITTAL - IN RECEIVED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Total_Transmittal_Closed") Then
+      PPSheading.Text = "TOTAL : TRANSMITTAL - IN CLOSED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "Total_Transmittal_Returned") Then
+      PPSheading.Text = "TOTAL : TRANSMITTAL - RETURNED FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+
+    If (Det = "CI_Transmittal_Total_Count") Then
+      PPSheading.Text = "CI : TRANSMITTAL - TOTAL COUNT FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "CI_Transmittal_Free") Then
+      PPSheading.Text = "CI : TRANSMITTAL -IN FREE STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "CI_Transmittal_Under_Approval") Then
+      PPSheading.Text = "CI : TRANSMITTAL - IN UNDER APPROVAL STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "CI_Transmittal_Under_Issue") Then
+      PPSheading.Text = "CI : TRANSMITTAL - IN UNDER ISSUE STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "CI_Transmittal_Issued") Then
+      PPSheading.Text = "CI : TRANSMITTAL - ISSUED FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "CI_Transmittal_Partial_Received") Then
+      PPSheading.Text = "CI : TRANSMITTAL - IN PARTIAL RECEIVED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "CI_Transmittal_Received") Then
+      PPSheading.Text = "CI : TRANSMITTAL - IN RECEIVED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "CI_Transmittal_Closed") Then
+      PPSheading.Text = "CI : TRANSMITTAL - IN CLOSED STATE FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+    If (Det = "CI_Transmittal_Returned") Then
+      PPSheading.Text = "CI : TRANSMITTAL - RETURNED FOR PROJECT -" & PrjID
+      ShowIDMSData(Det, PrjID)
+    End If
+
+    If (Det = "Process_SAR_Total_Count") Then
+      PPSheading.Text = "Process : SAR - Total Count For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Process_SAR_Under_Creation") Then
+      PPSheading.Text = "Process : SAR  - In Under Creation State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+
+    If (Det = "Process_SAR_Under_Review") Then
+      PPSheading.Text = "Process : SAR  - In Under Review State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+
+    If (Det = "Process_SAR_Under_Approval") Then
+      PPSheading.Text = "Process : SAR  - In Under Approval State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Process_SAR_Approved") Then
+      PPSheading.Text = "Process : SAR  - In Approved State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+    If (Det = "Process_SAR_Not_Applicable") Then
+      PPSheading.Text = "Process : SAR NOT Applicable For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_SAR_Total_Count") Then
+      PPSheading.Text = "Mechanical : SAR - Total Count For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_SAR_Under_Creation") Then
+      PPSheading.Text = "Mechanical : SAR  - In Under Creation State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+
+    If (Det = "Mechanical_SAR_Under_Review") Then
+      PPSheading.Text = "Mechanical : SAR  - In Under Review State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+
+    If (Det = "Mechanical_SAR_Under_Approval") Then
+      PPSheading.Text = "Mechanical : SAR  - In Under Approval State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_SAR_Approved") Then
+      PPSheading.Text = "Mechanical : SAR  - In Approved State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+    If (Det = "Mechanical_SAR_Not_Applicable") Then
+      PPSheading.Text = "Mechanical : SAR NOT Applicable For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_SAR_Total_Count") Then
+      PPSheading.Text = "Structure : SAR - Total Count For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_SAR_Under_Creation") Then
+      PPSheading.Text = "Structure : SAR  - In Under Creation State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+
+    If (Det = "Structure_SAR_Under_Review") Then
+      PPSheading.Text = "Structure : SAR  - In Under Review State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+
+    If (Det = "Structure_SAR_Under_Approval") Then
+      PPSheading.Text = "Structure : SAR  - In Under Approval State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_SAR_Approved") Then
+      PPSheading.Text = "Structure : SAR  - In Approved State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+    If (Det = "Structure_SAR_Not_Applicable") Then
+      PPSheading.Text = "Structure : SAR NOT Applicable For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_SAR_Total_Count") Then
+      PPSheading.Text = "Electrical : SAR - Total Count For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_SAR_Under_Creation") Then
+      PPSheading.Text = "Electrical : SAR  - In Under Creation State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+
+    If (Det = "Electrical_SAR_Under_Review") Then
+      PPSheading.Text = "Electrical : SAR  - In Under Review State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+
+    If (Det = "Electrical_SAR_Under_Approval") Then
+      PPSheading.Text = "Electrical : SAR  - In Under Approval State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_SAR_Approved") Then
+      PPSheading.Text = "Electrical : SAR  - In Approved State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+    If (Det = "Electrical_SAR_Not_Applicable") Then
+      PPSheading.Text = "Electrical : SAR NOT Applicable For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_SAR_Total_Count") Then
+      PPSheading.Text = "Piping : SAR - Total Count For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_SAR_Under_Creation") Then
+      PPSheading.Text = "Piping : SAR  - In Under Creation State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+
+    If (Det = "Piping_SAR_Under_Review") Then
+      PPSheading.Text = "Piping : SAR  - In Under Review State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+
+    If (Det = "Piping_SAR_Under_Approval") Then
+      PPSheading.Text = "Piping : SAR  - In Under Approval State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_SAR_Approved") Then
+      PPSheading.Text = "Piping : SAR  - In Approved State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+    If (Det = "Piping_SAR_Not_Applicable") Then
+      PPSheading.Text = "Piping : SAR NOT Applicable For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "CI_SAR_Total_Count") Then
+      PPSheading.Text = "CI : SAR - Total Count For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "CI_SAR_Under_Creation") Then
+      PPSheading.Text = "CI : SAR  - In Under Creation State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+
+    If (Det = "CI_SAR_Under_Review") Then
+      PPSheading.Text = "CI : SAR  - In Under Review State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+
+    If (Det = "CI_SAR_Under_Approval") Then
+      PPSheading.Text = "CI : SAR  - In Under Approval State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "CI_SAR_Approved") Then
+      PPSheading.Text = "CI : SAR  - In Approved State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+    If (Det = "CI_SAR_Not_Applicable") Then
+      PPSheading.Text = "CI : SAR NOT Applicable For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Others_SAR_Total_Count") Then
+      PPSheading.Text = "Others : SAR - Total Count For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Others_SAR_Under_Creation") Then
+      PPSheading.Text = "Others : SAR  - In Under Creation State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+
+    If (Det = "Others_SAR_Under_Review") Then
+      PPSheading.Text = "Others : SAR  - In Under Review State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+
+    If (Det = "Others_SAR_Under_Approval") Then
+      PPSheading.Text = "Others : SAR  - In Under Approval State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Others_SAR_Approved") Then
+      PPSheading.Text = "Others : SAR  - In Approved State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+    If (Det = "Others_SAR_Not_Applicable") Then
+      PPSheading.Text = "Others : SAR NOT Applicable For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Total_SAR_Total_Count") Then
+      PPSheading.Text = "Total : SAR - Total Count For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Total_SAR_Under_Creation") Then
+      PPSheading.Text = "Total : SAR  - In Under Creation State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+
+    If (Det = "Total_SAR_Under_Review") Then
+      PPSheading.Text = "Total : SAR  - In Under Review State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+
+    If (Det = "Total_SAR_Under_Approval") Then
+      PPSheading.Text = "Total : SAR  - In Under Approval State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+    If (Det = "Total_SAR_Approved") Then
+      PPSheading.Text = "Total : SAR  - In Approved State For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+    If (Det = "Total_SAR_Not_Applicable") Then
+      PPSheading.Text = "Total : SAR NOT Applicable For PROJECT -" & PrjID
+      ShowSARData(Det, PrjID)
+    End If
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     If (Det = "PLM_CHART") Then
