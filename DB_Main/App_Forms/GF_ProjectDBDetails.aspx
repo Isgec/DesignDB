@@ -3,7 +3,7 @@
 <div class="container-fluid">
 <asp:UpdatePanel ID="UPNLtaApprovalWFTypes" runat="server">
   <ContentTemplate>
-    <asp:UpdateProgress ID="UPGStaApprovalWFTypes" runat="server" AssociatedUpdatePanelID="UPNLtaApprovalWFTypes" DisplayAfter="100" >
+    <asp:UpdateProgress ID="UPGStaApprovalWFTypes" runat="server" AssociatedUpdatePanelID="UPNLtaApprovalWFTypes" DisplayAfter="10" >
       <ProgressTemplate>
         <span style="color: #ff0031">Loading...</span>
       </ProgressTemplate>
@@ -27,7 +27,7 @@
 
 
 
-    <div class="container text-center">
+    <div class="container text-center ml-0">
       <div class="row">
        <div class="col-12 align-items-center">
           <div class="alert alert-dark btn-light" role="alert" id="PPSC">

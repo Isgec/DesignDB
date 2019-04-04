@@ -1518,13 +1518,622 @@ Partial Class GF_ProjectDB
     Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_SAR_Not_Applicable&PrjID=" & F_t_cprj.Text)
   End Sub
 
+  Private Sub btn_Process_IDMSP_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSP_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSP_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Process_IDMSP_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSP_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSP_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Process_IDMSP_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSP_Document_linked.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSP_Document_linked&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Process_IDMSP_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSP_Under_Evaluation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSP_Under_Evaluation&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Process_IDMSP_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSP_Comments_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSP_Comments_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Process_IDMSP_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSP_Technically_Cleared.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSP_Technically_Cleared&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Process_IDMSP_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSP_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSP_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Process_IDMSP_Superceded_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSP_Superceded.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSP_Superceded&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Process_IDMSP_Closed_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSP_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSP_Closed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Mechanical_IDMSP_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSP_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSP_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_IDMSP_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSP_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSP_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_IDMSP_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSP_Document_linked.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSP_Document_linked&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_IDMSP_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSP_Under_Evaluation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSP_Under_Evaluation&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_IDMSP_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSP_Comments_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSP_Comments_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_IDMSP_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSP_Technically_Cleared.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSP_Technically_Cleared&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_IDMSP_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSP_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSP_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_IDMSP_Superceded_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSP_Superceded.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSP_Superceded&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_IDMSP_Closed_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSP_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSP_Closed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Structure_IDMSP_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSP_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSP_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_IDMSP_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSP_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSP_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_IDMSP_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSP_Document_linked.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSP_Document_linked&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_IDMSP_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSP_Under_Evaluation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSP_Under_Evaluation&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_IDMSP_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSP_Comments_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSP_Comments_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_IDMSP_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSP_Technically_Cleared.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSP_Technically_Cleared&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_IDMSP_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSP_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSP_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_IDMSP_Superceded_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSP_Superceded.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSP_Superceded&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_IDMSP_Closed_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSP_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSP_Closed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Piping_IDMSP_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSP_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSP_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_IDMSP_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSP_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSP_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_IDMSP_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSP_Document_linked.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSP_Document_linked&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_IDMSP_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSP_Under_Evaluation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSP_Under_Evaluation&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_IDMSP_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSP_Comments_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSP_Comments_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_IDMSP_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSP_Technically_Cleared.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSP_Technically_Cleared&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_IDMSP_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSP_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSP_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_IDMSP_Superceded_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSP_Superceded.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSP_Superceded&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_IDMSP_Closed_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSP_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSP_Closed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Electrical_IDMSP_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSP_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSP_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_IDMSP_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSP_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSP_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_IDMSP_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSP_Document_linked.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSP_Document_linked&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_IDMSP_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSP_Under_Evaluation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSP_Under_Evaluation&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_IDMSP_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSP_Comments_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSP_Comments_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_IDMSP_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSP_Technically_Cleared.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSP_Technically_Cleared&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_IDMSP_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSP_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSP_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_IDMSP_Superceded_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSP_Superceded.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSP_Superceded&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_IDMSP_Closed_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSP_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSP_Closed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_CI_IDMSP_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSP_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSP_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_IDMSP_Submitted_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSP_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSP_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_IDMSP_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSP_Document_linked.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSP_Document_linked&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_IDMSP_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSP_Under_Evaluation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSP_Under_Evaluation&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_IDMSP_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSP_Comments_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSP_Comments_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_IDMSP_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSP_Technically_Cleared.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSP_Technically_Cleared&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_IDMSP_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSP_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSP_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_IDMSP_Superceded_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSP_Superceded.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSP_Superceded&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_IDMSP_Closed_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSP_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSP_Closed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Others_IDMSP_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSP_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSP_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_IDMSP_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSP_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSP_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_IDMSP_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSP_Document_linked.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSP_Document_linked&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_IDMSP_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSP_Under_Evaluation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSP_Under_Evaluation&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_IDMSP_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSP_Comments_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSP_Comments_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_IDMSP_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSP_Technically_Cleared.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSP_Technically_Cleared&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_IDMSP_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSP_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSP_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_IDMSP_Superceded_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSP_Superceded.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSP_Superceded&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_IDMSP_Closed_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSP_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSP_Closed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Total_IDMSP_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSP_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSP_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_IDMSP_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSP_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSP_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_IDMSP_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSP_Document_linked.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSP_Document_linked&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_IDMSP_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSP_Under_Evaluation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSP_Under_Evaluation&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_IDMSP_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSP_Comments_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSP_Comments_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_IDMSP_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSP_Technically_Cleared.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSP_Technically_Cleared&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_IDMSP_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSP_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSP_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_IDMSP_Superceded_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSP_Superceded.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSP_Superceded&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_IDMSP_Closed_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSP_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSP_Closed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_IDMSO_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSO_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSO_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Process_IDMSO_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSO_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSO_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Process_IDMSO_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSO_Document_linked.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSO_Document_linked&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Process_IDMSO_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSO_Under_Evaluation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSO_Under_Evaluation&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Process_IDMSO_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSO_Comments_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSO_Comments_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Process_IDMSO_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSO_Technically_Cleared.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSO_Technically_Cleared&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Process_IDMSO_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSO_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSO_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Process_IDMSO_Superceded_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSO_Superceded.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSO_Superceded&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Process_IDMSO_Closed_Click(sender As Object, e As EventArgs) Handles btn_Process_IDMSO_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_IDMSO_Closed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Mechanical_IDMSO_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSO_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSO_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_IDMSO_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSO_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSO_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_IDMSO_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSO_Document_linked.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSO_Document_linked&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_IDMSO_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSO_Under_Evaluation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSO_Under_Evaluation&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_IDMSO_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSO_Comments_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSO_Comments_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_IDMSO_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSO_Technically_Cleared.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSO_Technically_Cleared&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_IDMSO_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSO_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSO_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_IDMSO_Superceded_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSO_Superceded.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSO_Superceded&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Mechanical_IDMSO_Closed_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_IDMSO_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_IDMSO_Closed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Structure_IDMSO_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSO_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSO_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_IDMSO_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSO_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSO_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_IDMSO_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSO_Document_linked.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSO_Document_linked&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_IDMSO_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSO_Under_Evaluation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSO_Under_Evaluation&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_IDMSO_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSO_Comments_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSO_Comments_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_IDMSO_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSO_Technically_Cleared.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSO_Technically_Cleared&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_IDMSO_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSO_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSO_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_IDMSO_Superceded_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSO_Superceded.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSO_Superceded&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Structure_IDMSO_Closed_Click(sender As Object, e As EventArgs) Handles btn_Structure_IDMSO_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_IDMSO_Closed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Piping_IDMSO_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSO_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSO_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_IDMSO_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSO_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSO_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_IDMSO_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSO_Document_linked.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSO_Document_linked&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_IDMSO_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSO_Under_Evaluation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSO_Under_Evaluation&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_IDMSO_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSO_Comments_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSO_Comments_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_IDMSO_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSO_Technically_Cleared.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSO_Technically_Cleared&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_IDMSO_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSO_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSO_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_IDMSO_Superceded_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSO_Superceded.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSO_Superceded&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_IDMSO_Closed_Click(sender As Object, e As EventArgs) Handles btn_Piping_IDMSO_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_IDMSO_Closed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Electrical_IDMSO_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSO_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSO_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_IDMSO_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSO_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSO_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_IDMSO_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSO_Document_linked.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSO_Document_linked&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_IDMSO_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSO_Under_Evaluation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSO_Under_Evaluation&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_IDMSO_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSO_Comments_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSO_Comments_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_IDMSO_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSO_Technically_Cleared.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSO_Technically_Cleared&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_IDMSO_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSO_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSO_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_IDMSO_Superceded_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSO_Superceded.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSO_Superceded&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Electrical_IDMSO_Closed_Click(sender As Object, e As EventArgs) Handles btn_Electrical_IDMSO_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_IDMSO_Closed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_CI_IDMSO_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSO_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSO_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_IDMSO_Submitted_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSO_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSO_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_IDMSO_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSO_Document_linked.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSO_Document_linked&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_IDMSO_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSO_Under_Evaluation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSO_Under_Evaluation&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_IDMSO_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSO_Comments_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSO_Comments_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_IDMSO_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSO_Technically_Cleared.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSO_Technically_Cleared&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_IDMSO_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSO_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSO_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_IDMSO_Superceded_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSO_Superceded.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSO_Superceded&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_CI_IDMSO_Closed_Click(sender As Object, e As EventArgs) Handles btn_CI_IDMSO_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_IDMSO_Closed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Others_IDMSO_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSO_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSO_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_IDMSO_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSO_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSO_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_IDMSO_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSO_Document_linked.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSO_Document_linked&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_IDMSO_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSO_Under_Evaluation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSO_Under_Evaluation&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_IDMSO_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSO_Comments_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSO_Comments_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_IDMSO_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSO_Technically_Cleared.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSO_Technically_Cleared&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_IDMSO_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSO_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSO_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_IDMSO_Superceded_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSO_Superceded.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSO_Superceded&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Others_IDMSO_Closed_Click(sender As Object, e As EventArgs) Handles btn_Others_IDMSO_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_IDMSO_Closed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Total_IDMSO_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSO_Total_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSO_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_IDMSO_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSO_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSO_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_IDMSO_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSO_Document_linked.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSO_Document_linked&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_IDMSO_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSO_Under_Evaluation.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSO_Under_Evaluation&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_IDMSO_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSO_Comments_Submitted.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSO_Comments_Submitted&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_IDMSO_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSO_Technically_Cleared.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSO_Technically_Cleared&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_IDMSO_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSO_Transmittal_Issued.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSO_Transmittal_Issued&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_IDMSO_Superceded_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSO_Superceded.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSO_Superceded&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Total_IDMSO_Closed_Click(sender As Object, e As EventArgs) Handles btn_Total_IDMSO_Closed.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_IDMSO_Closed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_Element_Total_Active_Element_Count_Click(sender As Object, e As EventArgs) Handles btn_Process_Element_Total_Active_Element_Count.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Element_Total_Active_Element_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_Element_Free_Click(sender As Object, e As EventArgs) Handles btn_Process_Element_Free.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Element_Free&PrjID=" & F_t_cprj.Text)
+  End Sub
 
 
+  Private Sub btn_Process_Element_Partial_Click(sender As Object, e As EventArgs) Handles btn_Process_Element_Partial.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Element_Partial&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_Element_Completed_Click(sender As Object, e As EventArgs) Handles btn_Process_Element_Completed.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Element_Completed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Mechanical_Element_Total_Active_Element_Count_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_Element_Total_Active_Element_Count.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_Element_Total_Active_Element_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Mechanical_Element_Free_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_Element_Free.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_Element_Free&PrjID=" & F_t_cprj.Text)
+  End Sub
 
 
+  Private Sub btn_Mechanical_Element_Partial_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_Element_Partial.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_Element_Partial&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Mechanical_Element_Completed_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_Element_Completed.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_Element_Completed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Structure_Element_Total_Active_Element_Count_Click(sender As Object, e As EventArgs) Handles btn_Structure_Element_Total_Active_Element_Count.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_Element_Total_Active_Element_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Structure_Element_Free_Click(sender As Object, e As EventArgs) Handles btn_Structure_Element_Free.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_Element_Free&PrjID=" & F_t_cprj.Text)
+  End Sub
 
 
+  Private Sub btn_Structure_Element_Partial_Click(sender As Object, e As EventArgs) Handles btn_Structure_Element_Partial.Click
 
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_Element_Partial&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Structure_Element_Completed_Click(sender As Object, e As EventArgs) Handles btn_Structure_Element_Completed.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_Element_Completed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Piping_Element_Total_Active_Element_Count_Click(sender As Object, e As EventArgs) Handles btn_Piping_Element_Total_Active_Element_Count.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_Element_Total_Active_Element_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Piping_Element_Free_Click(sender As Object, e As EventArgs) Handles btn_Piping_Element_Free.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_Element_Free&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+
+  Private Sub btn_Piping_Element_Partial_Click(sender As Object, e As EventArgs) Handles btn_Piping_Element_Partial.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_Element_Partial&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Piping_Element_Completed_Click(sender As Object, e As EventArgs) Handles btn_Piping_Element_Completed.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_Element_Completed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Electrical_Element_Total_Active_Element_Count_Click(sender As Object, e As EventArgs) Handles btn_Electrical_Element_Total_Active_Element_Count.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_Element_Total_Active_Element_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Electrical_Element_Free_Click(sender As Object, e As EventArgs) Handles btn_Electrical_Element_Free.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_Element_Free&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+
+  Private Sub btn_Electrical_Element_Partial_Click(sender As Object, e As EventArgs) Handles btn_Electrical_Element_Partial.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_Element_Partial&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Electrical_Element_Completed_Click(sender As Object, e As EventArgs) Handles btn_Electrical_Element_Completed.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_Element_Completed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_CI_Element_Total_Active_Element_Count_Click(sender As Object, e As EventArgs) Handles btn_CI_Element_Total_Active_Element_Count.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_Element_Total_Active_Element_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_CI_Element_Free_Click(sender As Object, e As EventArgs) Handles btn_CI_Element_Free.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_Element_Free&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+
+  Private Sub btn_CI_Element_Partial_Click(sender As Object, e As EventArgs) Handles btn_CI_Element_Partial.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_Element_Partial&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_CI_Element_Completed_Click(sender As Object, e As EventArgs) Handles btn_CI_Element_Completed.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_Element_Completed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Others_Element_Total_Active_Element_Count_Click(sender As Object, e As EventArgs) Handles btn_Others_Element_Total_Active_Element_Count.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_Element_Total_Active_Element_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Others_Element_Free_Click(sender As Object, e As EventArgs) Handles btn_Others_Element_Free.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_Element_Free&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+
+  Private Sub btn_Others_Element_Partial_Click(sender As Object, e As EventArgs) Handles btn_Others_Element_Partial.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_Element_Partial&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Others_Element_Completed_Click(sender As Object, e As EventArgs) Handles btn_Others_Element_Completed.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_Element_Completed&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+
+  Private Sub btn_Total_Element_Total_Active_Element_Count_Click(sender As Object, e As EventArgs) Handles btn_Total_Element_Total_Active_Element_Count.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Element_Total_Active_Element_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Total_Element_Free_Click(sender As Object, e As EventArgs) Handles btn_Total_Element_Free.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Element_Free&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+
+  Private Sub btn_Total_Element_Partial_Click(sender As Object, e As EventArgs) Handles btn_Total_Element_Partial.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Element_Partial&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Total_Element_Completed_Click(sender As Object, e As EventArgs) Handles btn_Total_Element_Completed.Click
+
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Element_Completed&PrjID=" & F_t_cprj.Text)
+  End Sub
 #End Region
 
 

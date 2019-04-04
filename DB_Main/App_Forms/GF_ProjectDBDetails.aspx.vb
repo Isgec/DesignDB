@@ -560,7 +560,7 @@ Partial Class GF_ProjectDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(8)
     End With
-    td.Text = "TRANSMITTAL ID"
+    td.Text = "ID"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -568,7 +568,7 @@ Partial Class GF_ProjectDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(8)
     End With
-    td.Text = "TRANSMITTAL TYPE"
+    td.Text = "TYPE"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -592,7 +592,7 @@ Partial Class GF_ProjectDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(8)
     End With
-    td.Text = "CREATED BY"
+    td.Text = "CREATED"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -600,7 +600,7 @@ Partial Class GF_ProjectDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(8)
     End With
-    td.Text = "APPROVED BY"
+    td.Text = "APPROVED"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -616,7 +616,7 @@ Partial Class GF_ProjectDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(8)
     End With
-    td.Text = "ISSUED BY"
+    td.Text = "ISSUED"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -2091,20 +2091,885 @@ Partial Class GF_ProjectDBDetails
       ShowSARData(Det, PrjID)
     End If
 
+    If (Det = "Process_IDMSP_Total_Count") Then
+      PPSheading.Text = "Process : Pre Order Receipt Count For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
 
+    If (Det = "Process_IDMSP_Submitted") Then
+      PPSheading.Text = "Process : Pre Order Receipt - In Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
 
+    If (Det = "Process_IDMSP_Document_linked") Then
+      PPSheading.Text = "Process : Pre Order Receipt - In Document linked State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
 
+    If (Det = "Process_IDMSP_Under_Evaluation") Then
+      PPSheading.Text = "Process : Pre Order Receipt - In Under Evaluation State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
 
+    If (Det = "Process_IDMSP_Comments_Submitted") Then
+      PPSheading.Text = "Process : Pre Order Receipt - In Comments_Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
 
+    If (Det = "Process_IDMSP_Technically_Cleared") Then
+      PPSheading.Text = "Process : Pre Order Receipt - In Technically_Cleared State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
 
+    If (Det = "Process_IDMSP_Transmittal_Issued") Then
+      PPSheading.Text = "Process : Pre Order Receipt - In Transmittal_Issued State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
 
+    If (Det = "Process_IDMSP_Superceded") Then
+      PPSheading.Text = "Process : Pre Order Receipt - In Superceded State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
 
+    If (Det = "Process_IDMSP_Closed") Then
+      PPSheading.Text = "Process : Pre Order Receipt - In Closed State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
 
+    If (Det = "Mechanical_IDMSP_Total_Count") Then
+      PPSheading.Text = "Mechanical : Pre Order Receipt Count For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
 
+    If (Det = "Mechanical_IDMSP_Submitted") Then
+      PPSheading.Text = "Mechanical : Pre Order Receipt - In Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
 
+    If (Det = "Mechanical_IDMSP_Document_linked") Then
+      PPSheading.Text = "Mechanical : Pre Order Receipt - In Document linked State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
 
+    If (Det = "Mechanical_IDMSP_Under_Evaluation") Then
+      PPSheading.Text = "Mechanical : Pre Order Receipt - In Under Evaluation State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
 
+    If (Det = "Mechanical_IDMSP_Comments_Submitted") Then
+      PPSheading.Text = "Mechanical : Pre Order Receipt - In Comments_Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
 
+    If (Det = "Mechanical_IDMSP_Technically_Cleared") Then
+      PPSheading.Text = "Mechanical : Pre Order Receipt - In Technically_Cleared State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_IDMSP_Transmittal_Issued") Then
+      PPSheading.Text = "Mechanical : Pre Order Receipt - In Transmittal_Issued State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_IDMSP_Superceded") Then
+      PPSheading.Text = "Mechanical : Pre Order Receipt - In Superceded State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_IDMSP_Closed") Then
+      PPSheading.Text = "Mechanical : Pre Order Receipt - In Closed State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSP_Total_Count") Then
+      PPSheading.Text = "Electrical : Pre Order Receipt Count For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSP_Submitted") Then
+      PPSheading.Text = "Electrical : Pre Order Receipt - In Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSP_Document_linked") Then
+      PPSheading.Text = "Electrical : Pre Order Receipt - In Document linked State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSP_Under_Evaluation") Then
+      PPSheading.Text = "Electrical : Pre Order Receipt - In Under Evaluation State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSP_Comments_Submitted") Then
+      PPSheading.Text = "Electrical : Pre Order Receipt - In Comments_Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSP_Technically_Cleared") Then
+      PPSheading.Text = "Electrical : Pre Order Receipt - In Technically_Cleared State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSP_Transmittal_Issued") Then
+      PPSheading.Text = "Electrical : Pre Order Receipt - In Transmittal_Issued State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSP_Superceded") Then
+      PPSheading.Text = "Electrical : Pre Order Receipt - In Superceded State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSP_Closed") Then
+      PPSheading.Text = "Electrical : Pre Order Receipt - In Closed State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSP_Total_Count") Then
+      PPSheading.Text = "Structure : Pre Order Receipt Count For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSP_Submitted") Then
+      PPSheading.Text = "Structure : Pre Order Receipt - In Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSP_Document_linked") Then
+      PPSheading.Text = "Structure : Pre Order Receipt - In Document linked State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSP_Under_Evaluation") Then
+      PPSheading.Text = "Structure : Pre Order Receipt - In Under Evaluation State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSP_Comments_Submitted") Then
+      PPSheading.Text = "Structure : Pre Order Receipt - In Comments_Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSP_Technically_Cleared") Then
+      PPSheading.Text = "Structure : Pre Order Receipt - In Technically_Cleared State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSP_Transmittal_Issued") Then
+      PPSheading.Text = "Structure : Pre Order Receipt - In Transmittal_Issued State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSP_Superceded") Then
+      PPSheading.Text = "Structure : Pre Order Receipt - In Superceded State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSP_Closed") Then
+      PPSheading.Text = "Structure : Pre Order Receipt - In Closed State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSP_Total_Count") Then
+      PPSheading.Text = "Piping : Pre Order Receipt Count For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSP_Submitted") Then
+      PPSheading.Text = "Piping : Pre Order Receipt - In Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSP_Document_linked") Then
+      PPSheading.Text = "Piping : Pre Order Receipt - In Document linked State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSP_Under_Evaluation") Then
+      PPSheading.Text = "Piping : Pre Order Receipt - In Under Evaluation State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSP_Comments_Submitted") Then
+      PPSheading.Text = "Piping : Pre Order Receipt - In Comments_Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSP_Technically_Cleared") Then
+      PPSheading.Text = "Piping : Pre Order Receipt - In Technically_Cleared State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSP_Transmittal_Issued") Then
+      PPSheading.Text = "Piping : Pre Order Receipt - In Transmittal_Issued State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSP_Superceded") Then
+      PPSheading.Text = "Piping : Pre Order Receipt - In Superceded State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSP_Closed") Then
+      PPSheading.Text = "Piping : Pre Order Receipt - In Closed State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSP_Total_Count") Then
+      PPSheading.Text = "CI : Pre Order Receipt Count For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSP_Submitted") Then
+      PPSheading.Text = "CI : Pre Order Receipt - In Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSP_Document_linked") Then
+      PPSheading.Text = "CI : Pre Order Receipt - In Document linked State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSP_Under_Evaluation") Then
+      PPSheading.Text = "CI : Pre Order Receipt - In Under Evaluation State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSP_Comments_Submitted") Then
+      PPSheading.Text = "CI : Pre Order Receipt - In Comments_Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSP_Technically_Cleared") Then
+      PPSheading.Text = "CI : Pre Order Receipt - In Technically_Cleared State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSP_Transmittal_Issued") Then
+      PPSheading.Text = "CI : Pre Order Receipt - In Transmittal_Issued State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSP_Superceded") Then
+      PPSheading.Text = "CI : Pre Order Receipt - In Superceded State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSP_Closed") Then
+      PPSheading.Text = "CI : Pre Order Receipt - In Closed State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSP_Total_Count") Then
+      PPSheading.Text = "Others : Pre Order Receipt Count For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSP_Submitted") Then
+      PPSheading.Text = "Others : Pre Order Receipt - In Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSP_Document_linked") Then
+      PPSheading.Text = "Others : Pre Order Receipt - In Document linked State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSP_Under_Evaluation") Then
+      PPSheading.Text = "Others : Pre Order Receipt - In Under Evaluation State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSP_Comments_Submitted") Then
+      PPSheading.Text = "Others : Pre Order Receipt - In Comments_Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSP_Technically_Cleared") Then
+      PPSheading.Text = "Others : Pre Order Receipt - In Technically_Cleared State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSP_Transmittal_Issued") Then
+      PPSheading.Text = "Others : Pre Order Receipt - In Transmittal_Issued State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSP_Superceded") Then
+      PPSheading.Text = "Others : Pre Order Receipt - In Superceded State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSP_Closed") Then
+      PPSheading.Text = "Others : Pre Order Receipt - In Closed State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSP_Total_Count") Then
+      PPSheading.Text = "Total : Pre Order Receipt Count For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSP_Submitted") Then
+      PPSheading.Text = "Total : Pre Order Receipt - In Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSP_Document_linked") Then
+      PPSheading.Text = "Total : Pre Order Receipt - In Document linked State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSP_Under_Evaluation") Then
+      PPSheading.Text = "Total : Pre Order Receipt - In Under Evaluation State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSP_Comments_Submitted") Then
+      PPSheading.Text = "Total : Pre Order Receipt - In Comments_Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSP_Technically_Cleared") Then
+      PPSheading.Text = "Total : Pre Order Receipt - In Technically_Cleared State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSP_Transmittal_Issued") Then
+      PPSheading.Text = "Total : Pre Order Receipt - In Transmittal_Issued State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSP_Superceded") Then
+      PPSheading.Text = "Total : Pre Order Receipt - In Superceded State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSP_Closed") Then
+      PPSheading.Text = "Total : Pre Order Receipt - In Closed State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Process_IDMSO_Total_Count") Then
+      PPSheading.Text = "Process : Post Order Receipt Count For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Process_IDMSO_Submitted") Then
+      PPSheading.Text = "Process : Post Order Receipt - In Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Process_IDMSO_Document_linked") Then
+      PPSheading.Text = "Process : Post Order Receipt - In Document linked State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Process_IDMSO_Under_Evaluation") Then
+      PPSheading.Text = "Process : Post Order Receipt - In Under Evaluation State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Process_IDMSO_Comments_Submitted") Then
+      PPSheading.Text = "Process : Post Order Receipt - In Comments_Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Process_IDMSO_Technically_Cleared") Then
+      PPSheading.Text = "Process : Post Order Receipt - In Technically_Cleared State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Process_IDMSO_Transmittal_Issued") Then
+      PPSheading.Text = "Process : Post Order Receipt - In Transmittal_Issued State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Process_IDMSO_Superceded") Then
+      PPSheading.Text = "Process : Post Order Receipt - In Superceded State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Process_IDMSO_Closed") Then
+      PPSheading.Text = "Process : Post Order Receipt - In Closed State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_IDMSO_Total_Count") Then
+      PPSheading.Text = "Mechanical : Post Order Receipt Count For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_IDMSO_Submitted") Then
+      PPSheading.Text = "Mechanical : Post Order Receipt - In Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_IDMSO_Document_linked") Then
+      PPSheading.Text = "Mechanical : Post Order Receipt - In Document linked State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_IDMSO_Under_Evaluation") Then
+      PPSheading.Text = "Mechanical : Post Order Receipt - In Under Evaluation State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_IDMSO_Comments_Submitted") Then
+      PPSheading.Text = "Mechanical : Post Order Receipt - In Comments_Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_IDMSO_Technically_Cleared") Then
+      PPSheading.Text = "Mechanical : Post Order Receipt - In Technically_Cleared State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_IDMSO_Transmittal_Issued") Then
+      PPSheading.Text = "Mechanical : Post Order Receipt - In Transmittal_Issued State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_IDMSO_Superceded") Then
+      PPSheading.Text = "Mechanical : Post Order Receipt - In Superceded State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_IDMSO_Closed") Then
+      PPSheading.Text = "Mechanical : Post Order Receipt - In Closed State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSO_Total_Count") Then
+      PPSheading.Text = "Electrical : Post Order Receipt Count For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSO_Submitted") Then
+      PPSheading.Text = "Electrical : Post Order Receipt - In Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSO_Document_linked") Then
+      PPSheading.Text = "Electrical : Post Order Receipt - In Document linked State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSO_Under_Evaluation") Then
+      PPSheading.Text = "Electrical : Post Order Receipt - In Under Evaluation State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSO_Comments_Submitted") Then
+      PPSheading.Text = "Electrical : Post Order Receipt - In Comments_Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSO_Technically_Cleared") Then
+      PPSheading.Text = "Electrical : Post Order Receipt - In Technically_Cleared State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSO_Transmittal_Issued") Then
+      PPSheading.Text = "Electrical : Post Order Receipt - In Transmittal_Issued State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSO_Superceded") Then
+      PPSheading.Text = "Electrical : Post Order Receipt - In Superceded State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_IDMSO_Closed") Then
+      PPSheading.Text = "Electrical : Post Order Receipt - In Closed State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSO_Total_Count") Then
+      PPSheading.Text = "Structure : Post Order Receipt Count For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSO_Submitted") Then
+      PPSheading.Text = "Structure : Post Order Receipt - In Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSO_Document_linked") Then
+      PPSheading.Text = "Structure : Post Order Receipt - In Document linked State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSO_Under_Evaluation") Then
+      PPSheading.Text = "Structure : Post Order Receipt - In Under Evaluation State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSO_Comments_Submitted") Then
+      PPSheading.Text = "Structure : Post Order Receipt - In Comments_Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSO_Technically_Cleared") Then
+      PPSheading.Text = "Structure : Post Order Receipt - In Technically_Cleared State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSO_Transmittal_Issued") Then
+      PPSheading.Text = "Structure : Post Order Receipt - In Transmittal_Issued State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSO_Superceded") Then
+      PPSheading.Text = "Structure : Post Order Receipt - In Superceded State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_IDMSO_Closed") Then
+      PPSheading.Text = "Structure : Post Order Receipt - In Closed State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSO_Total_Count") Then
+      PPSheading.Text = "Piping : Post Order Receipt Count For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSO_Submitted") Then
+      PPSheading.Text = "Piping : Post Order Receipt - In Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSO_Document_linked") Then
+      PPSheading.Text = "Piping : Post Order Receipt - In Document linked State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSO_Under_Evaluation") Then
+      PPSheading.Text = "Piping : Post Order Receipt - In Under Evaluation State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSO_Comments_Submitted") Then
+      PPSheading.Text = "Piping : Post Order Receipt - In Comments_Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSO_Technically_Cleared") Then
+      PPSheading.Text = "Piping : Post Order Receipt - In Technically_Cleared State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSO_Transmittal_Issued") Then
+      PPSheading.Text = "Piping : Post Order Receipt - In Transmittal_Issued State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSO_Superceded") Then
+      PPSheading.Text = "Piping : Post Order Receipt - In Superceded State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_IDMSO_Closed") Then
+      PPSheading.Text = "Piping : Post Order Receipt - In Closed State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSO_Total_Count") Then
+      PPSheading.Text = "CI : Post Order Receipt Count For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSO_Submitted") Then
+      PPSheading.Text = "CI : Post Order Receipt - In Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSO_Document_linked") Then
+      PPSheading.Text = "CI : Post Order Receipt - In Document linked State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSO_Under_Evaluation") Then
+      PPSheading.Text = "CI : Post Order Receipt - In Under Evaluation State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSO_Comments_Submitted") Then
+      PPSheading.Text = "CI : Post Order Receipt - In Comments_Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSO_Technically_Cleared") Then
+      PPSheading.Text = "CI : Post Order Receipt - In Technically_Cleared State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSO_Transmittal_Issued") Then
+      PPSheading.Text = "CI : Post Order Receipt - In Transmittal_Issued State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSO_Superceded") Then
+      PPSheading.Text = "CI : Post Order Receipt - In Superceded State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "CI_IDMSO_Closed") Then
+      PPSheading.Text = "CI : Post Order Receipt - In Closed State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSO_Total_Count") Then
+      PPSheading.Text = "Others : Post Order Receipt Count For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSO_Submitted") Then
+      PPSheading.Text = "Others : Post Order Receipt - In Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSO_Document_linked") Then
+      PPSheading.Text = "Others : Post Order Receipt - In Document linked State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSO_Under_Evaluation") Then
+      PPSheading.Text = "Others : Post Order Receipt - In Under Evaluation State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSO_Comments_Submitted") Then
+      PPSheading.Text = "Others : Post Order Receipt - In Comments_Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSO_Technically_Cleared") Then
+      PPSheading.Text = "Others : Post Order Receipt - In Technically_Cleared State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSO_Transmittal_Issued") Then
+      PPSheading.Text = "Others : Post Order Receipt - In Transmittal_Issued State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSO_Superceded") Then
+      PPSheading.Text = "Others : Post Order Receipt - In Superceded State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Others_IDMSO_Closed") Then
+      PPSheading.Text = "Others : Post Order Receipt - In Closed State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSO_Total_Count") Then
+      PPSheading.Text = "Total : Post Order Receipt Count For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSO_Submitted") Then
+      PPSheading.Text = "Total : Post Order Receipt - In Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSO_Document_linked") Then
+      PPSheading.Text = "Total : Post Order Receipt - In Document linked State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSO_Under_Evaluation") Then
+      PPSheading.Text = "Total : Post Order Receipt - In Under Evaluation State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSO_Comments_Submitted") Then
+      PPSheading.Text = "Total : Post Order Receipt - In Comments_Submitted State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSO_Technically_Cleared") Then
+      PPSheading.Text = "Total : Post Order Receipt - In Technically_Cleared State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSO_Transmittal_Issued") Then
+      PPSheading.Text = "Total : Post Order Receipt - In Transmittal_Issued State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSO_Superceded") Then
+      PPSheading.Text = "Total : Post Order Receipt - In Superceded State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Total_IDMSO_Closed") Then
+      PPSheading.Text = "Total : Post Order Receipt - In Closed State For PROJECT -" & PrjID
+      ShowPOData(Det, PrjID)
+    End If
+
+    If (Det = "Process_Element_Total_Active_Element_Count") Then
+      PPSheading.Text = "Process : Total Active Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Process_Element_Free") Then
+      PPSheading.Text = "Process : Free Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Process_Element_Partial") Then
+      PPSheading.Text = "Process : Partial Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Process_Element_Completed") Then
+      PPSheading.Text = "Process : Completed Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_Element_Total_Active_Element_Count") Then
+      PPSheading.Text = "Mechanical : Total Active Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_Element_Free") Then
+      PPSheading.Text = "Mechanical : Free Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_Element_Partial") Then
+      PPSheading.Text = "Mechanical : Partial Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Mechanical_Element_Completed") Then
+      PPSheading.Text = "Mechanical : Completed Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_Element_Total_Active_Element_Count") Then
+      PPSheading.Text = "Structure : Total Active Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_Element_Free") Then
+      PPSheading.Text = "Structure : Free Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_Element_Partial") Then
+      PPSheading.Text = "Structure : Partial Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_Element_Completed") Then
+      PPSheading.Text = "Structure : Completed Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_Element_Total_Active_Element_Count") Then
+      PPSheading.Text = "Piping : Total Active Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_Element_Free") Then
+      PPSheading.Text = "Piping : Free Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_Element_Partial") Then
+      PPSheading.Text = "Piping : Partial Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_Element_Completed") Then
+      PPSheading.Text = "Piping : Completed Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_Element_Total_Active_Element_Count") Then
+      PPSheading.Text = "Electrical : Total Active Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_Element_Free") Then
+      PPSheading.Text = "Electrical : Free Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_Element_Partial") Then
+      PPSheading.Text = "Electrical : Partial Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_Element_Completed") Then
+      PPSheading.Text = "Electrical : Completed Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "CI_Element_Total_Active_Element_Count") Then
+      PPSheading.Text = "CI : Total Active Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "CI_Element_Free") Then
+      PPSheading.Text = "CI : Free Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "CI_Element_Partial") Then
+      PPSheading.Text = "CI : Partial Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "CI_Element_Completed") Then
+      PPSheading.Text = "CI : Completed Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Others_Element_Total_Active_Element_Count") Then
+      PPSheading.Text = "Others : Total Active Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Others_Element_Free") Then
+      PPSheading.Text = "Others : Free Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Others_Element_Partial") Then
+      PPSheading.Text = "Others : Partial Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Others_Element_Completed") Then
+      PPSheading.Text = "Others : Completed Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Total_Element_Total_Active_Element_Count") Then
+      PPSheading.Text = "Total : Total Active Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Total_Element_Free") Then
+      PPSheading.Text = "Total : Free Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Total_Element_Partial") Then
+      PPSheading.Text = "Total : Partial Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
+
+    If (Det = "Total_Element_Completed") Then
+      PPSheading.Text = "Total : Completed Elements In PROJECT -" & PrjID
+      ShowelementData(Det, PrjID)
+    End If
 
     If (Det = "PLM_CHART") Then
       PPSheading.Text = "Drawing Document Release Status -Details"

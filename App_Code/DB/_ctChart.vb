@@ -3490,7 +3490,6 @@ Namespace SIS.CT
       Dim Sql As String = ""
       Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetBaaNConnectionString())
         Con.Open()
-
         Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%') and ttppdm090200.t_sort='PROCESS' and t_cprj in ('" & ProjectID & "') "
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
@@ -3516,7 +3515,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          mRet.Process_IDMSO_Under_Evaluation = Cmd.ExecuteScalar
+          mRet.Process_IDMSP_Under_Evaluation = Cmd.ExecuteScalar
         End Using
 
         Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%') and ttppdm090200.t_sort='PROCESS' and t_cprj in ('" & ProjectID & "')  and rec.t_stat=4 "
@@ -3579,7 +3578,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          mRet.Mechanical_IDMSO_Under_Evaluation = Cmd.ExecuteScalar
+          mRet.Mechanical_IDMSP_Under_Evaluation = Cmd.ExecuteScalar
         End Using
 
         Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%') and ttppdm090200.t_sort IN ('MECHANICAL','MECH-SUGAR','PROCESS-STOKER') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=4 "
@@ -3642,7 +3641,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          mRet.Structure_IDMSO_Under_Evaluation = Cmd.ExecuteScalar
+          mRet.Structure_IDMSP_Under_Evaluation = Cmd.ExecuteScalar
         End Using
 
         Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%') and ttppdm090200.t_sort IN ('STRUCTURE') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=4 "
@@ -3705,7 +3704,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          mRet.Electrical_IDMSO_Under_Evaluation = Cmd.ExecuteScalar
+          mRet.Electrical_IDMSP_Under_Evaluation = Cmd.ExecuteScalar
         End Using
 
         Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%') and ttppdm090200.t_sort IN ('ELECTRICAL','ELE') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=4 "
@@ -3768,7 +3767,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          mRet.Piping_IDMSO_Under_Evaluation = Cmd.ExecuteScalar
+          mRet.Piping_IDMSP_Under_Evaluation = Cmd.ExecuteScalar
         End Using
 
         Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%') and ttppdm090200.t_sort IN ('PIPING') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=4 "
@@ -3806,6 +3805,69 @@ Namespace SIS.CT
           mRet.Piping_IDMSP_Closed = Cmd.ExecuteScalar
         End Using
 
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "') "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.CI_IDMSP_Total_Count = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=1 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.CI_IDMSP_Submitted = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=2 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.CI_IDMSP_Document_linked = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=3 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Electrical_IDMSP_Under_Evaluation = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=4 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.CI_IDMSP_Comments_Submitted = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=5 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.CI_IDMSP_Technically_Cleared = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=6 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.CI_IDMSP_Transmittal_Issued = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=7 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.CI_IDMSP_Superceded = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=8 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.CI_IDMSP_Closed = Cmd.ExecuteScalar
+        End Using
+
         Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%') and ttppdm090200.t_sort NOT IN ('MECH-SUGAR','MECHANICAL','ELECTRICAL','PROCESS-STOKER','PROCESS','STRUCTURE','PIPING' ,'C & I','INSTRUMENTATION','EPC','C&I','ELE','SERVICE') and t_cprj in ('" & ProjectID & "') "
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
@@ -3831,7 +3893,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          mRet.Others_IDMSO_Under_Evaluation = Cmd.ExecuteScalar
+          mRet.Others_IDMSP_Under_Evaluation = Cmd.ExecuteScalar
         End Using
 
         Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%') and ttppdm090200.t_sort NOT IN ('MECH-SUGAR','MECHANICAL','ELECTRICAL','PROCESS-STOKER','PROCESS','STRUCTURE','PIPING' ,'C & I','INSTRUMENTATION','EPC','C&I','ELE','SERVICE') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=4 "
@@ -3894,7 +3956,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          mRet.Total_IDMSO_Under_Evaluation = Cmd.ExecuteScalar
+          mRet.Total_IDMSP_Under_Evaluation = Cmd.ExecuteScalar
         End Using
 
         Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REC%')  and t_cprj in ('" & ProjectID & "')  and rec.t_stat=4 "
@@ -3931,6 +3993,7 @@ Namespace SIS.CT
           Cmd.CommandText = Sql
           mRet.Total_IDMSP_Closed = Cmd.ExecuteScalar
         End Using
+
 
 
       End Using
@@ -4265,6 +4328,69 @@ Namespace SIS.CT
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
           mRet.Piping_IDMSO_Closed = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REP%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "') "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.CI_IDMSO_Total_Count = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REP%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=1 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.CI_IDMSO_Submitted = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REP%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=2 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.CI_IDMSO_Document_linked = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REP%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=3 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Electrical_IDMSO_Under_Evaluation = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REP%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=4 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.CI_IDMSO_Comments_Submitted = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REP%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=5 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.CI_IDMSO_Technically_Cleared = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REP%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=6 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.CI_IDMSO_Transmittal_Issued = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REP%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=7 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.CI_IDMSO_Superceded = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REP%') and ttppdm090200.t_sort in ('CI','INSTRUMENTATION') and t_cprj in ('" & ProjectID & "')  and rec.t_stat=8 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.CI_IDMSO_Closed = Cmd.ExecuteScalar
         End Using
 
         Sql = "Select count(*) From tdmisg134200 As rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8) Where rec.t_rcno Like ('REP%') and ttppdm090200.t_sort NOT IN ('MECH-SUGAR','MECHANICAL','ELECTRICAL','PROCESS-STOKER','PROCESS','STRUCTURE','PIPING' ,'C & I','INSTRUMENTATION','EPC','C&I','ELE','SERVICE') and t_cprj in ('" & ProjectID & "') "
