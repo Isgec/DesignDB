@@ -332,7 +332,7 @@ Namespace SIS.DB
           Case "cmh"
 
             Sql &= " Select ttiisg910200.t_emno As MH_EmployeeCode,ttiisg910200.t_tdat As MH_Date, ttiisg908200.t_desc As MH_activity, ttiisg910200.t_cprj As MH_Project, "
-            Sql &= "            ttiisg910200.t_srno As MH_serialnumber, (case ttiisg910200.t_comp "
+            Sql &= " ttiisg910200.t_srno As MH_serialnumber, (case ttiisg910200.t_comp "
             Sql &= " when '200' then 'BOILER' "
             Sql &= " when '210' then 'EPC' "
             Sql &= " when '220' then 'PC' "
@@ -368,7 +368,7 @@ Namespace SIS.DB
             Sql &= " LEFT JOIN ttiisg908200"
             Sql &= " on ttiisg910200.t_acid =ttiisg908200.t_acid"
             Sql &= " Where DATEDIFF(day, ttiisg910200.t_tdat, getdate()) between 0 And 30 And ttiisg910200.t_emno In ('" & UserID & "','" & UserIDT & "')"
-
+            Sql &= "order by ttiisg910200.t_tdat"
         End Select
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
