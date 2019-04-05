@@ -531,6 +531,8 @@ Partial Class GF_ProjectDB
       Chart2.Visible = False
       DCRDATA.Text = "No Data Available for -" & ProjectID
       DCRDATA.Visible = True
+      DCRTABLE.Visible = False
+      DCRTABLE1.Visible = False
     End If
     Try
       'OverallDataTable.InnerHtml = Dt.GetDataTable
@@ -552,6 +554,9 @@ Partial Class GF_ProjectDB
       Chart3.Visible = False
       DTRANMITTALDATA.Text = "No Data Available for -" & ProjectID
       DTRANMITTALDATA.Visible = True
+      TRANSMITTALTABLE.Visible = False
+
+      TRANSMITTALTABLE1.Visible = False
     End If
     Try
       'OverallDataTable.InnerHtml = Dt.GetDataTable
@@ -661,6 +666,9 @@ Partial Class GF_ProjectDB
       Chart5.Visible = False
       IDMSP.Text = "No Data Available for -" & ProjectID
       IDMSP.Visible = True
+      IDMSPTABLE.Visible = False
+
+      IDMSPTABLE1.Visible = False
     End If
 
 
@@ -686,6 +694,8 @@ Partial Class GF_ProjectDB
       Chart6.Visible = False
       IDMSO.Text = "No Data Available for -" & ProjectID
       IDMSO.Visible = True
+      IDMSOTABLE.Visible = False
+      IDMSOTABLE1.Visible = False
     End If
     Try
       'OverallDataTable.InnerHtml = Dt.GetDataTable
@@ -708,6 +718,8 @@ Partial Class GF_ProjectDB
       Chart7.Visible = False
       ELEMENTDATA.Text = "No Data Available for -" & ProjectID
       ELEMENTDATA.Visible = True
+      ELEMENTTABLE.Visible = False
+      ELEMENTTABLE1.Visible = False
     End If
     Try
       'OverallDataTable.InnerHtml = Dt.GetDataTable

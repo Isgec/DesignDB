@@ -1050,7 +1050,7 @@ Partial Class GF_UserDBDetails
 
 
     If (Det = "cda") Then
-      PSheading.Text = "DCR - Pending For Approval)"
+      PSheading.Text = "DCR - Pending For Approval"
       ShowDData(Det, empID)
     End If
 
@@ -1061,13 +1061,13 @@ Partial Class GF_UserDBDetails
     End If
 
     If (Det = "csr") Then
-        PSheading.Text = "SAR - Pending For Review)"
-        ShowSData(Det, empID)
+      PSheading.Text = "SAR - Pending For Review"
+      ShowSData(Det, empID)
       End If
 
 
     If (Det = "csa") Then
-      PSheading.Text = "DCR - Pending For Approval"
+      PSheading.Text = "SAR - Pending For Approval"
       ShowSData(Det, empID)
 
     End If

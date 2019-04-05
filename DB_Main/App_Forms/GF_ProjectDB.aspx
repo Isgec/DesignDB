@@ -5,23 +5,33 @@
       <asp:Label ID="LabeltaApprovalWFTypes" runat="server" Text="&nbsp;PROJECT DASHBOARD"></asp:Label>
     </div>
 
-  <div class="container" style="margin-top: 10px">
+  <div class="container" style="margin-top: 5px">
     <%--Project Selection Drop Down--%>
-    <div class="col-sm-2 mb-2">
-      <a class="btn btn-success" href="GF_UserDB.aspx" role="button"><i class="fa fa-dashboard" style="font-size: 20px">My DashBoard </i><i class="fa fa-spinner fa-spin text-secondary"></i></a>
+    <div class="col-sm-2 mb-2 ">
+      <a class="btn btn-secondary btn-outline-dark" href="GF_UserDB.aspx" role="button"><i class="fa fa-dashboard text-warning" style="font-size: 20px">My DashBoard </i><i class="fa fa-spinner fa-spin text-success"></i></a>
 
     </div>
-    <hr />
+    
     <div class="row">
 
       
-      <div class="col-3  mb-2 ml-3">
+      <div class="col-4  mb-2 ml-3">
         <asp:UpdatePanel ID="UPNLctPActivity" runat="server">
           <ContentTemplate>
             <div class="form-group">
 
               <div class="input-group mb-3">
-                <span class=" btn btn-sm btn-dark" style="width: 78px; text-align: center; cursor: pointer" title="Enter Project ID:" onclick="openNav()"><b>Project:</b></span>
+               <%-- <span class=" btn btn-sm btn-dark" style="width: 78px; text-align: center; cursor: pointer" title="Enter Project ID:" onclick="openNav()"><b>Project:</b></span>--%>
+
+                <a href="#demo" class="btn btn-light btn-outline-dark" style="width: 110px; text-align: center; cursor: pointer" data-toggle="collapse"><b>Project ID</b></a>
+  <div id="demo" class="collapse">
+    Enter Project ID & Click to 'SHOW' button. This will allow system to Generate Project DashBoard Based upon current progress in BAAN ERPLN.
+    Click again to Hide this Information
+  </div>
+
+
+
+
                 <asp:TextBox
                   ID="F_t_cprj"
                   CssClass="form-control"
@@ -39,7 +49,7 @@
           </Triggers>
         </asp:UpdatePanel>
       </div>
-      <div class="col-8 mt-1">
+      <div class="col-7 mt-1">
         <div class="container mt-0" id="PDetails" runat="server" visible="false">
           <div class="container  text-center my-0">
             <asp:Button ID="btn_projectname" Text="" runat="server" CssClass="btn-warning btn-sm" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip=""></asp:Button>
