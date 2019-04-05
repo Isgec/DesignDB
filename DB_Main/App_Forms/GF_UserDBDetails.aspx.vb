@@ -20,7 +20,7 @@ Partial Class GF_UserDBDetails
     tr = New TableRow
 
     td = New TableCell
-    td.Text = "S.N"
+    td.Text = "S.NO."
     With td
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
@@ -187,7 +187,7 @@ Partial Class GF_UserDBDetails
     tr = New TableRow
 
     td = New TableCell
-    td.Text = "S.N"
+    td.Text = "S.NO."
     With td
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
@@ -199,7 +199,7 @@ Partial Class GF_UserDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
     End With
-    td.Text = "RECEIPT NUMBER"
+    td.Text = "RECEIPT"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -207,7 +207,7 @@ Partial Class GF_UserDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
     End With
-    td.Text = "Revision"
+    td.Text = "REV"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -215,7 +215,7 @@ Partial Class GF_UserDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
     End With
-    td.Text = "Project"
+    td.Text = "PROJECT"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -223,7 +223,7 @@ Partial Class GF_UserDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
     End With
-    td.Text = "Item Description"
+    td.Text = "ITEM DESCRIPTION"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -231,7 +231,7 @@ Partial Class GF_UserDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
     End With
-    td.Text = "Status"
+    td.Text = "STATUS"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -239,7 +239,7 @@ Partial Class GF_UserDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
     End With
-    td.Text = "Mechanical"
+    td.Text = "MECHANICAL"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -247,7 +247,7 @@ Partial Class GF_UserDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
     End With
-    td.Text = "Structure"
+    td.Text = "STRUCTURE"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -255,7 +255,7 @@ Partial Class GF_UserDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
     End With
-    td.Text = "Piping"
+    td.Text = "PIPING"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -263,7 +263,7 @@ Partial Class GF_UserDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
     End With
-    td.Text = "Process"
+    td.Text = "PROCESS"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -279,7 +279,7 @@ Partial Class GF_UserDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
     End With
-    td.Text = "Electrical"
+    td.Text = "ELECTRICAL"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -287,7 +287,7 @@ Partial Class GF_UserDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
     End With
-    td.Text = "Quality"
+    td.Text = "QUALITY"
     tr.Cells.Add(td)
 
 
@@ -398,7 +398,7 @@ Partial Class GF_UserDBDetails
     tr = New TableRow
 
     td = New TableCell
-    td.Text = "S.N"
+    td.Text = "S.NO."
     With td
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
@@ -514,7 +514,7 @@ Partial Class GF_UserDBDetails
     tr = New TableRow
 
     td = New TableCell
-    td.Text = "S.N"
+    td.Text = "S.NO"
     With td
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
@@ -671,7 +671,7 @@ Partial Class GF_UserDBDetails
     tr = New TableRow
 
     td = New TableCell
-    td.Text = "S.N"
+    td.Text = "S.NO"
     With td
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
@@ -684,7 +684,7 @@ Partial Class GF_UserDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
     End With
-    td.Text = "Project"
+    td.Text = "PROJECT"
     tr.Cells.Add(td)
 
 
@@ -693,7 +693,7 @@ Partial Class GF_UserDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
     End With
-    td.Text = "SAR Number"
+    td.Text = "SAR NUMBER"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -701,7 +701,7 @@ Partial Class GF_UserDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
     End With
-    td.Text = "Element"
+    td.Text = "ELEMENT"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -843,7 +843,7 @@ Partial Class GF_UserDBDetails
     tr = New TableRow
 
     td = New TableCell
-    td.Text = "S.N"
+    td.Text = "S.NO"
     With td
       .Font.Bold = True
       .Font.Size = FontUnit.Point(10)
@@ -1016,64 +1016,62 @@ Partial Class GF_UserDBDetails
     Dim Det As String = Request.QueryString("detail")
     Dim empID As String = Request.QueryString("empid")
     If (Det = "cpd") Then
-      PSheading.Text = "PENDING DWGS/DOCS IN RELEASE WORKFLOW: -Drafting"
-
-
+      PSheading.Text = "PENDING DWGS/DOCS IN RELEASE WORKFLOW :-DRAFTING"
       ShowPData(Det, empID)
     End If
     If (Det = "cpr") Then
-      PSheading.Text = "PENDING DWGS/DOCS IN RELEASE WORKFLOW: -Under Review"
+      PSheading.Text = "PENDING DWGS/DOCS IN RELEASE WORKFLOW :-UNDER REVIEW"
       ShowPData(Det, empID)
     End If
     If (Det = "cpa") Then
-      PSheading.Text = "PENDING DWGS/DOCS IN RELEASE WORKFLOW: -Under Approval"
+      PSheading.Text = "PENDING DWGS/DOCS IN RELEASE WORKFLOW :-UNDER APPROVAL"
       ShowPData(Det, empID)
     End If
     If (Det = "cipre") Then
-      PSheading.Text = "Pre Order Receipt Pending for Evaluation"
+      PSheading.Text = "PRE ORDER RECEIPT PENDING FOR EVALUATION"
       ShowRData(Det, empID)
     End If
     If (Det = "cipoe") Then
-      PSheading.Text = "Post Order Receipt Pending for Evaluation"
+      PSheading.Text = "POST ORDER RECEIPT PENDING FOR EVALUATION"
       ShowRData(Det, empID)
     End If
 
     If (Det = "cta") Then
-      PSheading.Text = "Transmittal List - Pending for Approval (Created By Me)"
+      PSheading.Text = "TRANSMITTAL LIST - PENDING FOR APPROVAL (CREATED BY ME)"
       ShowTData(Det, empID)
     End If
 
     If (Det = "cti") Then
-      PSheading.Text = "Transmittal List - Pending for Issue (Created By Me/Approved By Me)"
+      PSheading.Text = "TRANSMITTAL LIST - PENDING FOR ISSUE (CREATED BY ME/APPROVED BY ME)"
       ShowTData(Det, empID)
     End If
 
 
     If (Det = "cda") Then
-      PSheading.Text = "DCR - Pending For Approval"
+      PSheading.Text = "DCR - PENDING FOR APPROVAL"
       ShowDData(Det, empID)
     End If
 
 
     If (Det = "cdac") Then
-      PSheading.Text = "DCR - Pending For Approval- Created by Me"
+      PSheading.Text = "DCR - PENDING FOR APPROVAL - CREATED BY ME"
       ShowDData(Det, empID)
     End If
 
     If (Det = "csr") Then
-      PSheading.Text = "SAR - Pending For Review"
+      PSheading.Text = "SAR - PENDING FOR REVIEW"
       ShowSData(Det, empID)
       End If
 
 
     If (Det = "csa") Then
-      PSheading.Text = "SAR - Pending For Approval"
+      PSheading.Text = "SAR - PENDING FOR APPROVAL"
       ShowSData(Det, empID)
 
     End If
 
     If (Det = "cmh") Then
-      PSheading.Text = "ManHour Entry Data For Last 30 Calender Days"
+      PSheading.Text = "MANHOUR ENTRY DATA FOR LAST 30 CALENDER DAYS"
       ShowMData(Det, empID)
 
     End If

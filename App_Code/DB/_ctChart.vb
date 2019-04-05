@@ -709,7 +709,7 @@ Namespace SIS.CT
         Chart1.Series(0)("PieLabelStyle") = "Outside"
         Chart1.ChartAreas(0).Area3DStyle.Enable3D = True
 
-        Chart1.Series(0).Font = New Font("Comic Sans MS", 10)
+        Chart1.Series(0).Font = New Font("Comic Sans MS", 15)
         Chart1.Legends(0).Font = New Font("Comic Sans MS", 10)
         Chart1.ChartAreas(0).Area3DStyle.Inclination = 10
 
@@ -759,7 +759,7 @@ Namespace SIS.CT
         Chart2.Series(0)("PieLabelStyle") = "Outside"
         Chart2.ChartAreas(0).Area3DStyle.Enable3D = True
 
-        Chart2.Series(0).Font = New Font("Comic Sans MS", 10)
+        Chart2.Series(0).Font = New Font("Comic Sans MS", 15)
         Chart2.Legends(0).Font = New Font("Comic Sans MS", 10)
         Chart2.ChartAreas(0).Area3DStyle.Inclination = 10
 
@@ -807,7 +807,7 @@ Namespace SIS.CT
         Chart3.Series(0)("PieLabelStyle") = "Outside"
         Chart3.ChartAreas(0).Area3DStyle.Enable3D = True
 
-        Chart3.Series(0).Font = New Font("Comic Sans MS", 10)
+        Chart3.Series(0).Font = New Font("Comic Sans MS", 15)
         Chart3.Legends(0).Font = New Font("Comic Sans MS", 10)
         Chart3.ChartAreas(0).Area3DStyle.Inclination = 10
 
@@ -857,7 +857,7 @@ Namespace SIS.CT
         Chart4.Series(0)("PieLabelStyle") = "Outside"
         Chart4.ChartAreas(0).Area3DStyle.Enable3D = True
 
-        Chart4.Series(0).Font = New Font("Comic Sans MS", 10)
+        Chart4.Series(0).Font = New Font("Comic Sans MS", 15)
         Chart4.Legends(0).Font = New Font("Comic Sans MS", 10)
         Chart4.ChartAreas(0).Area3DStyle.Inclination = 10
 
@@ -905,7 +905,7 @@ Namespace SIS.CT
         Chart5.Series(0)("PieLabelStyle") = "Outside"
         Chart5.ChartAreas(0).Area3DStyle.Enable3D = True
 
-        Chart5.Series(0).Font = New Font("Comic Sans MS", 10)
+        Chart5.Series(0).Font = New Font("Comic Sans MS", 15)
         Chart5.Legends(0).Font = New Font("Comic Sans MS", 10)
         Chart5.ChartAreas(0).Area3DStyle.Inclination = 10
 
@@ -952,7 +952,7 @@ Namespace SIS.CT
         Chart6.Series(0)("PieLabelStyle") = "Outside"
         Chart6.ChartAreas(0).Area3DStyle.Enable3D = True
 
-        Chart6.Series(0).Font = New Font("Comic Sans MS", 10)
+        Chart6.Series(0).Font = New Font("Comic Sans MS", 15)
         Chart6.Legends(0).Font = New Font("Comic Sans MS", 10)
         Chart6.ChartAreas(0).Area3DStyle.Inclination = 10
 
@@ -1009,7 +1009,7 @@ Namespace SIS.CT
         Chart7.Series(0)("PieLabelStyle") = "Outside"
         Chart7.ChartAreas(0).Area3DStyle.Enable3D = True
 
-        Chart7.Series(0).Font = New Font("Comic Sans MS", 10)
+        Chart7.Series(0).Font = New Font("Comic Sans MS", 15)
         Chart7.Legends(0).Font = New Font("Comic Sans MS", 10)
         Chart7.ChartAreas(0).Area3DStyle.Inclination = 10
 
@@ -1058,7 +1058,7 @@ Namespace SIS.CT
         Chart8.Series(0)("PieLabelStyle") = "inside"
         Chart8.ChartAreas(0).Area3DStyle.Enable3D = True
 
-        Chart8.Series(0).Font = New Font("Comic Sans MS", 10)
+        Chart8.Series(0).Font = New Font("Comic Sans MS", 15)
         Chart8.Legends(0).Font = New Font("Comic Sans MS", 10)
 
         Chart8.ChartAreas(0).Area3DStyle.Inclination = 10
@@ -1156,7 +1156,7 @@ Namespace SIS.CT
         Chart32.Series(0)("PieLabelStyle") = "inside"
         Chart32.ChartAreas(0).Area3DStyle.Enable3D = True
 
-        Chart32.Series(0).Font = New Font("Comic Sans MS", 10)
+        Chart32.Series(0).Font = New Font("Comic Sans MS", 15)
         Chart32.Legends(0).Font = New Font("Comic Sans MS", 10)
 
         Chart32.ChartAreas(0).Area3DStyle.Inclination = 10
@@ -1205,7 +1205,7 @@ Namespace SIS.CT
         Chart33.Series(0)("PieLabelStyle") = "inside"
         Chart33.ChartAreas(0).Area3DStyle.Enable3D = True
 
-        Chart33.Series(0).Font = New Font("Comic Sans MS", 10)
+        Chart33.Series(0).Font = New Font("Comic Sans MS", 15)
         Chart33.Legends(0).Font = New Font("Comic Sans MS", 10)
 
         Chart33.ChartAreas(0).Area3DStyle.Inclination = 10
@@ -1254,7 +1254,7 @@ Namespace SIS.CT
         Chart34.Series(0)("PieLabelStyle") = "inside"
         Chart34.ChartAreas(0).Area3DStyle.Enable3D = True
 
-        Chart34.Series(0).Font = New Font("Comic Sans MS", 10)
+        Chart34.Series(0).Font = New Font("Comic Sans MS", 15)
         Chart34.Legends(0).Font = New Font("Comic Sans MS", 10)
 
         Chart34.ChartAreas(0).Area3DStyle.Inclination = 10

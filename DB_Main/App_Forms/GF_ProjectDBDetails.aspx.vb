@@ -903,6 +903,14 @@ Partial Class GF_ProjectDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(8)
     End With
+    td.Text = "DESCRIPTION"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
     td.Text = "MECH"
     tr.Cells.Add(td)
 
@@ -994,6 +1002,10 @@ Partial Class GF_ProjectDBDetails
 
       td = New TableCell
       td.Text = tmp.t_item
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.t_dsca
       tr.Cells.Add(td)
 
       td = New TableCell

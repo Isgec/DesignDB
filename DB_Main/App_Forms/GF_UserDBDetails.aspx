@@ -36,7 +36,7 @@
         </div>
 
 
-    <div class="container text-center">
+    <div class="container text-center ml-0">
       <div class="row">
         <div class="col-sm-auto my-0 table-hover">
           <div id="pnlDetails" runat="server">
