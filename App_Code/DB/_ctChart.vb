@@ -711,7 +711,7 @@ Namespace SIS.CT
 
         Chart1.Series(0).Font = New Font("Comic Sans MS", 15)
         Chart1.Legends(0).Font = New Font("Comic Sans MS", 10)
-        Chart1.ChartAreas(0).Area3DStyle.Inclination = 10
+        Chart1.ChartAreas(0).Area3DStyle.Inclination = 0
 
         Chart1.Series(0).IsValueShownAsLabel = True
         Chart1.Series(0).IsVisibleInLegend = True
