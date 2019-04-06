@@ -711,7 +711,7 @@ Namespace SIS.CT
 
         Chart1.Series(0).Font = New Font("Comic Sans MS", 15)
         Chart1.Legends(0).Font = New Font("Comic Sans MS", 10)
-        Chart1.ChartAreas(0).Area3DStyle.Inclination = 0
+        Chart1.ChartAreas(0).Area3DStyle.Inclination = 10
 
         Chart1.Series(0).IsValueShownAsLabel = True
         Chart1.Series(0).IsVisibleInLegend = True
@@ -1973,10 +1973,6 @@ Namespace SIS.CT
           mRet.Total_Pending_Count = Cmd.ExecuteScalar
         End Using
 
-
-
-
-
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
         Sql = " Select count(t_docn) From tdmisg140200 Where t_resp ='PRC' and t_cprj In ('" & ProjectID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,t_rsfd) = convert(date,getdate())"
         Using Cmd As SqlCommand = Con.CreateCommand()
@@ -2043,8 +2039,8 @@ Namespace SIS.CT
         Sql &= "		where		 "
         Sql &= "		t_cprj in ('" & ProjectID & "')  "
         Sql &= "    And t_resp ='PRC'	and t_acdt <> convert(datetime,'01/01/1970',103)	 "
-        Sql &= "		and 1 =   case when t_acdt <= t_rsfd 		 "
-        Sql &= "		Then 1 Else 0 End "
+        Sql &= "  And 1 =   case when t_acdt <  dateadd(d,1,t_rsfd) "
+        Sql &= "	then 1 else 0 end "
 
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
@@ -2058,8 +2054,8 @@ Namespace SIS.CT
         Sql &= "		where		 "
         Sql &= "		t_cprj in ('" & ProjectID & "')  "
         Sql &= "    And t_resp ='MEC'	and t_acdt <> convert(datetime,'01/01/1970',103)	 "
-        Sql &= "		and 1 =   case when t_acdt <= t_rsfd 		 "
-        Sql &= "		Then 1 Else 0 End "
+        Sql &= "  And 1 =   case when t_acdt <  dateadd(d,1,t_rsfd) "
+        Sql &= "	then 1 else 0 end "
 
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
@@ -2073,8 +2069,8 @@ Namespace SIS.CT
         Sql &= "		where		 "
         Sql &= "		t_cprj in ('" & ProjectID & "')  "
         Sql &= "    And t_resp ='STR'	and t_acdt <> convert(datetime,'01/01/1970',103)	 "
-        Sql &= "		and 1 =   case when t_acdt <= t_rsfd 		 "
-        Sql &= "		Then 1 Else 0 End "
+        Sql &= "  And 1 =   case when t_acdt <  dateadd(d,1,t_rsfd) "
+        Sql &= "	then 1 else 0 end "
 
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
@@ -2090,8 +2086,8 @@ Namespace SIS.CT
         Sql &= "		where		 "
         Sql &= "		t_cprj in ('" & ProjectID & "')  "
         Sql &= "    And t_resp ='PIP'	and t_acdt <> convert(datetime,'01/01/1970',103)	 "
-        Sql &= "		and 1 =   case when t_acdt <= t_rsfd 		 "
-        Sql &= "		Then 1 Else 0 End "
+        Sql &= "  And 1 =   case when t_acdt <  dateadd(d,1,t_rsfd) "
+        Sql &= "	then 1 else 0 end "
 
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
@@ -2105,8 +2101,8 @@ Namespace SIS.CT
         Sql &= "		where		 "
         Sql &= "		t_cprj in ('" & ProjectID & "')  "
         Sql &= "    And t_resp ='ELE'	and t_acdt <> convert(datetime,'01/01/1970',103)	 "
-        Sql &= "		and 1 =   case when t_acdt <= t_rsfd 		 "
-        Sql &= "		Then 1 Else 0 End "
+        Sql &= "  And 1 =   case when t_acdt <  dateadd(d,1,t_rsfd) "
+        Sql &= "	then 1 else 0 end "
 
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
@@ -2120,8 +2116,8 @@ Namespace SIS.CT
         Sql &= "		where		 "
         Sql &= "		t_cprj in ('" & ProjectID & "')  "
         Sql &= "    And t_resp ='C&I'	and t_acdt <> convert(datetime,'01/01/1970',103)	 "
-        Sql &= "		and 1 =   case when t_acdt <= t_rsfd 		 "
-        Sql &= "		Then 1 Else 0 End "
+        Sql &= "  And 1 =   case when t_acdt <  dateadd(d,1,t_rsfd) "
+        Sql &= "	then 1 else 0 end "
 
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
@@ -2136,8 +2132,8 @@ Namespace SIS.CT
         Sql &= "		where "
         Sql &= "		t_cprj in ('" & ProjectID & "')  "
         Sql &= "    and t_acdt <> convert(datetime,'01/01/1970',103)	 "
-        Sql &= "		and 1 =   case when t_acdt <= t_rsfd 		 "
-        Sql &= "		Then 1 Else 0 End "
+        Sql &= "  And 1 =   case when t_acdt <  dateadd(d,1,t_rsfd) "
+        Sql &= "	then 1 else 0 end "
 
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
@@ -2153,8 +2149,8 @@ Namespace SIS.CT
         Sql &= "	where		 "
         Sql &= "	t_cprj in ('" & ProjectID & "')  "
         Sql &= "  And t_resp ='PRC'	and t_acdt <> convert(datetime,'01/01/1970',103)	"
-        Sql &= "  And 1 =   case when t_acdt > t_rsfd 		 "
-        Sql &= "  then 1 else 0 end"
+        Sql &= "  And 1 =   case when t_acdt < dateadd(d,1,t_rsfd)  "
+        Sql &= "	then 0 else 1 end  "
 
 
         Using Cmd As SqlCommand = Con.CreateCommand()
@@ -2169,8 +2165,8 @@ Namespace SIS.CT
         Sql &= "	where		 "
         Sql &= "	t_cprj in ('" & ProjectID & "')  "
         Sql &= "  And t_resp ='MEC'	and t_acdt <> convert(datetime,'01/01/1970',103)	"
-        Sql &= "  And 1 =   case when t_acdt > t_rsfd 		 "
-        Sql &= "  then 1 else 0 end"
+        Sql &= "  And 1 =   case when t_acdt < dateadd(d,1,t_rsfd)  "
+        Sql &= "	then 0 else 1 end  "
 
 
         Using Cmd As SqlCommand = Con.CreateCommand()
@@ -2185,9 +2181,8 @@ Namespace SIS.CT
         Sql &= "	where		 "
         Sql &= "	t_cprj in ('" & ProjectID & "')  "
         Sql &= "  And t_resp ='PIP'	and t_acdt <> convert(datetime,'01/01/1970',103)	"
-        Sql &= "  And 1 =   case when t_acdt > t_rsfd 		 "
-        Sql &= "  then 1 else 0 end"
-
+        Sql &= "  And 1 =   case when t_acdt < dateadd(d,1,t_rsfd)  "
+        Sql &= "	then 0 else 1 end  "
 
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
@@ -2201,8 +2196,8 @@ Namespace SIS.CT
         Sql &= "	where		 "
         Sql &= "	t_cprj in ('" & ProjectID & "')  "
         Sql &= "  And t_resp ='STR'	and t_acdt <> convert(datetime,'01/01/1970',103)	"
-        Sql &= "  And 1 =   case when t_acdt > t_rsfd 		 "
-        Sql &= "  then 1 else 0 end"
+        Sql &= "  And 1 =   case when t_acdt < dateadd(d,1,t_rsfd)  "
+        Sql &= "	then 0 else 1 end  "
 
 
         Using Cmd As SqlCommand = Con.CreateCommand()
@@ -2217,8 +2212,8 @@ Namespace SIS.CT
         Sql &= "	where		 "
         Sql &= "	t_cprj in ('" & ProjectID & "')  "
         Sql &= "  And t_resp ='ELE'	and t_acdt <> convert(datetime,'01/01/1970',103)	"
-        Sql &= "  And 1 =   case when t_acdt > t_rsfd 		 "
-        Sql &= "  then 1 else 0 end"
+        Sql &= "  And 1 =   case when t_acdt < dateadd(d,1,t_rsfd)  "
+        Sql &= "	then 0 else 1 end  "
 
 
         Using Cmd As SqlCommand = Con.CreateCommand()
@@ -2234,8 +2229,8 @@ Namespace SIS.CT
         Sql &= "	where		 "
         Sql &= "	t_cprj in ('" & ProjectID & "')  "
         Sql &= "  And t_resp ='C&I'	and t_acdt <> convert(datetime,'01/01/1970',103)	"
-        Sql &= "  And 1 =   case when t_acdt > t_rsfd 		 "
-        Sql &= "  then 1 else 0 end"
+        Sql &= "  And 1 =   case when t_acdt < dateadd(d,1,t_rsfd)  "
+        Sql &= "	then 0 else 1 end  "
 
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
@@ -2249,8 +2244,8 @@ Namespace SIS.CT
         Sql &= "	where		 "
         Sql &= "	t_cprj in ('" & ProjectID & "')  "
         Sql &= "  and t_acdt <> convert(datetime,'01/01/1970',103)	"
-        Sql &= "  And 1 =   case when t_acdt > t_rsfd 		 "
-        Sql &= "  then 1 else 0 end"
+        Sql &= "  And 1 =   case when t_acdt < dateadd(d,1,t_rsfd)  "
+        Sql &= "	then 0 else 1 end  "
 
 
         Using Cmd As SqlCommand = Con.CreateCommand()

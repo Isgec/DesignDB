@@ -176,10 +176,10 @@
                     <asp:Button ID="btn_Mechanical_Due_Count" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Mechanical - Due for Today DWG/Doc to Release" Text="" Font-Bold="true"></asp:Button>
                   </div>
                   <div class="col-sm-2">
-                    <asp:Button ID="btn_Mechanical_Ontime_Count" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="Mechanical - Delayed Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
+                    <asp:Button ID="btn_Mechanical_Ontime_Count" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="Mechanical - Ontime Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
                   </div>
                   <div class="col-sm-2">
-                    <asp:Button ID="btn_Mechanical_Delayed_Count" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Mechanical - Ontime Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
+                    <asp:Button ID="btn_Mechanical_Delayed_Count" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Mechanical - Delayed Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
                   </div>
                 </div>
               </div>
@@ -207,10 +207,10 @@
                     <asp:Button ID="btn_Structure_Due_Count" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Structure - Due for Today DWG/Doc to Release" Text="" Font-Bold="true"></asp:Button>
                   </div>
                   <div class="col-sm-2">
-                    <asp:Button ID="btn_Structure_Ontime_Count" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="Structure - Delayed Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
+                    <asp:Button ID="btn_Structure_Ontime_Count" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="Structure - Ontime Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
                   </div>
                   <div class="col-sm-2">
-                    <asp:Button ID="btn_Structure_Delayed_Count" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Structure - Ontime Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
+                    <asp:Button ID="btn_Structure_Delayed_Count" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Structure - Delayed Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
                   </div>
                 </div>
               </div>
@@ -238,10 +238,10 @@
                     <asp:Button ID="btn_Piping_Due_Count" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Piping - Due for Today DWG/Doc to Release" Text="" Font-Bold="true"></asp:Button>
                   </div>
                   <div class="col-sm-2">
-                    <asp:Button ID="btn_Piping_Ontime_Count" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="Piping - Delayed Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
+                    <asp:Button ID="btn_Piping_Ontime_Count" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="Piping - Ontime Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
                   </div>
                   <div class="col-sm-2">
-                    <asp:Button ID="btn_piping_Delayed_Count" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Piping - Ontime Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
+                    <asp:Button ID="btn_piping_Delayed_Count" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Piping - Delayed Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
                   </div>
                 </div>
               </div>
@@ -269,10 +269,10 @@
                     <asp:Button ID="btn_Electrical_Due_Count" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Electrical - Due for Today DWG/Doc to Release" Text="" Font-Bold="true"></asp:Button>
                   </div>
                   <div class="col-sm-2">
-                    <asp:Button ID="btn_Electrical_Ontime_Count" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="Electrical - Delayed Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
+                    <asp:Button ID="btn_Electrical_Ontime_Count" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="Electrical - Ontime Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
                   </div>
                   <div class="col-sm-2">
-                    <asp:Button ID="btn_Electrical_Delayed_Count" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Electrical - Ontime Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
+                    <asp:Button ID="btn_Electrical_Delayed_Count" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Electrical - Delayed Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
                   </div>
                 </div>
               </div>
@@ -301,10 +301,10 @@
                     <asp:Button ID="btn_CI_Due_Count" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="C & I - Due for Today DWG/Doc to Release" Text="" Font-Bold="true"></asp:Button>
                   </div>
                   <div class="col-sm-2">
-                    <asp:Button ID="btn_CI_Ontime_Count" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="C & I - Delayed Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
+                    <asp:Button ID="btn_CI_Ontime_Count" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="C & I - Ontime Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
                   </div>
                   <div class="col-sm-2">
-                    <asp:Button ID="btn_CI_Delayed_Count" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="C & I - Ontime Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
+                    <asp:Button ID="btn_CI_Delayed_Count" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="C & I - Delayed Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
                   </div>
                 </div>
               </div>
@@ -332,10 +332,10 @@
                     <asp:Button ID="btn_Total_Due_Count" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Total Due for Today DWG/Doc to Release" Text="" Font-Bold="true"></asp:Button>
                   </div>
                   <div class="col-sm-2">
-                    <asp:Button ID="btn_Total_Ontime_Count" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="Total Delayed Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
+                    <asp:Button ID="btn_Total_Ontime_Count" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="Total Ontime Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
                   </div>
                   <div class="col-sm-2">
-                    <asp:Button ID="btn_Total_Delayed_Count" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Total Ontime Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
+                    <asp:Button ID="btn_Total_Delayed_Count" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Total Delayed Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
                   </div>
                 </div>
               </div>
