@@ -98,13 +98,21 @@
             </tr>
             <tr>
               <td>
-                <span style="color: #99ccff">Designed &amp; Developed by:</span> <span style="color: #99ffcc">ISGEC Engineering-IT Team</span>
+                 <span style="color: #99ccff"><asp:Label ID="Label1" runat="server" Text="Visit Counter:" Visible="false" ></asp:Label></span>
+                <span style="color: #99ffcc"><asp:Label ID="Visitorcount" runat="server" Text=""></asp:Label></span>
+                
               </td>
             </tr>
             <tr>
               <td>
+                <span style="color: #99ccff">Designed &amp; Developed by:</span> <span style="color: #99ffcc">ISGEC Engineering-IT Team</span>
+                 </td>
+            </tr>
+
+            <tr>
+              <td>
                 <span style="color: #99ccff">Version : </span> <span style="color: #99ffcc"> DB 1.0.1</span>
-                <a href="#demo" class="btn btn-light btn-outline-primary" style="width: 280px;height: 30px; text-align: center; cursor: pointer" data-toggle="collapse"><b>Click for Further Informations</b></a>
+                <a href="#demo" class="btn btn-light btn-outline-primary" style="width: 280px;height: 28px; text-align: center; text-justify:auto; cursor: pointer" data-toggle="collapse"><b>Click for Further Informations</b></a>
   <div id="demo" class="collapse">
     <hr/>
     
@@ -120,6 +128,7 @@
               <td>
                 <span style="color: #ffffff"><font size="1">© ISGEC Heavy Engineering Limited. All rights reserved.</font></span>
               </td>
+               
             </tr>
            
           </table>

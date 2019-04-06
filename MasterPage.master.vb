@@ -13,6 +13,8 @@ Partial Class lgMasterPage
     End If
     If HttpContext.Current.User.Identity.IsAuthenticated Then
       Dim mFile As String = HttpContext.Current.Server.MapPath("~/../UserRights/") & HttpContext.Current.Session("ApplicationID") & "/" & HttpContext.Current.User.Identity.Name & "_nMenu.xml"
+      Label1.Visible = True
+      Visitorcount.Text = Application("cnt")
       If IO.File.Exists(mFile) Then
         Dim tmp As IO.StreamReader = New IO.StreamReader(mFile)
         algmnu.InnerHtml = tmp.ReadToEnd().Replace("~", HttpContext.Current.Request.Url.Scheme & Uri.SchemeDelimiter & HttpContext.Current.Request.Url.Authority & HttpContext.Current.Request.ApplicationPath)
