@@ -104,6 +104,15 @@
             <tr>
               <td>
                 <span style="color: #99ccff">Version : </span> <span style="color: #99ffcc"> DB 1.0.1</span>
+                <a href="#demo" class="btn btn-light btn-outline-primary" style="width: 280px;height: 30px; text-align: center; cursor: pointer" data-toggle="collapse"><b>Click for Further Informations</b></a>
+  <div id="demo" class="collapse">
+    <hr/>
+    
+  
+  </div>
+
+
+
               </td>
             </tr>
 

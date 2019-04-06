@@ -38,36 +38,36 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-sm-3">
          <%--' '<h6><span class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"><font face="Comic Sans MS">Under Drafting: </font></span></h6>--%>
            <h6><a href="#demo" class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"  data-toggle="collapse"><b><font face="Comic Sans MS">Under Drafting: </font></b></a></h6>
   <div id="demo" class="collapse">
     <b>Count of Documents and Drawings which are in Under Design  State with My Login ie. <%= HttpContext.Current.Session("LoginID") %> </b>
   </div>
         </div>
-        <div class="col-xs-1">
+        <div class="col-sm-1">
           <asp:Button ID="cpd" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Under Design" Text="cpd" Font-Bold="true"></asp:Button>
         </div>
 
-        <div class="col-md-3 ">
+        <div class="col-sm-3 ">
         <%--  <h6><span class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"><font face="Comic Sans MS">Under Review: </font></span></h6>--%>
           <h6><a href="#demo1" class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"  data-toggle="collapse"><b><font face="Comic Sans MS">Under Review: </font></b></a></h6>
   <div id="demo1" class="collapse">
     <b>Count of Documents and Drawings which are in Under Review  State with My Login ie. <%= HttpContext.Current.Session("LoginID") %> </b>
   </div>
         </div>
-        <div class="col-xs-1">
+        <div class="col-sm-1">
           <asp:Button ID="cpr" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Under Review" Text="cpr" Font-Bold="true"></asp:Button>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-sm-3">
          <%-- <h6><span class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"><font face="Comic Sans MS">Under Approval: </font></span></h6>--%>
           <h6><a href="#demo2" class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"  data-toggle="collapse"><b><font face="Comic Sans MS">Under Approval: </font></b></a></h6>
   <div id="demo2" class="collapse">
     <b>Count of Documents and Drawings which are in Under Review  State with My Login ie. <%= HttpContext.Current.Session("LoginID") %> </b>
   </div>
         </div>
-        <div class="col-xs-1">
+        <div class="col-sm-1">
           <asp:Button ID="cpa" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Under Approval" Text="cpa" Font-Bold="true"></asp:Button>
 
         </div>

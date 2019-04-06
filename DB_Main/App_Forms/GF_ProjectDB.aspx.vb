@@ -641,7 +641,9 @@ Partial Class GF_ProjectDB
     Else
       Chart4.Visible = False
       sardata.Text = "No Data Available for -" & ProjectID
-      sardata.Visible = True
+      SARDATA.Visible = True
+      SARTABLE.Visible = False
+      SARTABLE1.Visible = False
     End If
 
     Try
