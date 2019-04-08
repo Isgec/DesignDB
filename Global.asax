@@ -3,7 +3,7 @@
 <script runat="server">
 
   Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
-    Application("cnt") = 7
+    Application("cnt") = 150
   End Sub
 
   Sub Application_End(ByVal sender As Object, ByVal e As EventArgs)
