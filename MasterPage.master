@@ -112,13 +112,19 @@
             <tr>
               <td>
                 <span style="color: #99ccff">Version : </span> <span style="color: #99ffcc"> DB 1.0.1</span>
-                <a href="#demo" class="btn btn-light btn-outline-primary" style="width: 280px;height: 28px; text-align: center; text-justify:auto; cursor: pointer" data-toggle="collapse"><b>Click for Further Informations</b></a>
+                <a href="#demo1" class="btn btn-light btn-outline-primary" style="width: 28px;height: 28px; text-align: center; text-justify:auto; cursor: pointer" data-toggle="collapse"><b>i</b></a>
+  
+                <a href="#demo" class="btn btn-light btn-outline-primary" style="width: 280px;height: 28px; text-align: center; text-justify:auto; cursor: pointer" data-toggle="collapse"><b>User Manual</b></a>
   <div id="demo" class="collapse">
-   
     
+   <embed src="Design_DashBoard-1.0.1-%20User_Manual.pdf" width="1500px" height="2100px" />
+   <%-- <a href="Design_DashBoard-1.0.1-%20User_Manual.pdf">Design_DashBoard-1.0.1- User_Manual.pdf</a>--%>
   
   </div>
-
+<div id="demo1" class="collapse">
+  <span style="color: #99ccff">First Release : </span><span style="color: #99ffcc">06/04/2019 </span>
+  
+  </div>
 
 
               </td>

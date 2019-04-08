@@ -39,7 +39,9 @@
   End Sub
 
   Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)
+    Application.Lock()
     Application("cnt") += 1
+    Application.UnLock()
 
 
     Try
