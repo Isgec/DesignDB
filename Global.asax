@@ -3,7 +3,7 @@
 <script runat="server">
 
   Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
-    Application("cnt") = 150
+    Application("cnt") = 165
   End Sub
 
   Sub Application_End(ByVal sender As Object, ByVal e As EventArgs)
@@ -39,9 +39,9 @@
   End Sub
 
   Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)
-    Application.Lock()
+    'Application.Lock()
     Application("cnt") += 1
-    Application.UnLock()
+    'Application.UnLock()
 
 
     Try
