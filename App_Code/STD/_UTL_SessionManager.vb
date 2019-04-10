@@ -65,22 +65,50 @@ Namespace SIS.SYS.Utilities
         Else
           .Session("PageSizeProvider") = True
         End If
+
+
+
+        Dim Vdate As DateTime = Now
+
+        Dim Vlogin As String = .Session("LoginID")
+
+
+        'Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetConnectionString())
+        '  Con.Open()
+        '  Using Cmd As SqlCommand = Con.CreateCommand()
+        '    Cmd.CommandType = CommandType.Text
+        '    Cmd.CommandText = "update db_counter set vcount= vcount+1"
+        '    Cmd.ExecuteNonQuery()
+        '  End Using
+        'End Using
+
+
         Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetConnectionString())
           Con.Open()
           Using Cmd As SqlCommand = Con.CreateCommand()
             Cmd.CommandType = CommandType.Text
-            Cmd.CommandText = "update db_counter set vcount= vcount+1"
-            Cmd.ExecuteNonQuery()
-          End Using
-        End Using
-        Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetConnectionString())
-          Con.Open()
-          Using Cmd As SqlCommand = Con.CreateCommand()
-            Cmd.CommandType = CommandType.Text
-            Cmd.CommandText = "Select VCount FROM DB_Counter"
+            Cmd.CommandText = "Select Max(VCount) FROM DB_Counter"
             .Session("Visitors") = Cmd.ExecuteScalar
+
           End Using
         End Using
+
+
+        Dim vcount As Integer = .Session("Visitors") + 1
+        Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetConnectionString())
+          Con.Open()
+          Using Cmd As SqlCommand = Con.CreateCommand()
+            Cmd.CommandType = CommandType.Text
+            'Cmd.CommandText = "update db_counter set vcount= vcount+1"
+            Cmd.CommandText = "INSERT INTO db_counter (Vcount,Vdate, Vlogin) VALUES (" & vcount & ",'" & Vdate & "'," & Vlogin & ") "
+            Cmd.ExecuteNonQuery()
+            .Session("Visitors") = vcount
+          End Using
+        End Using
+
+
+
+
       End With
       '===========
       InitNavBar()
@@ -145,7 +173,7 @@ Namespace SIS.SYS.Utilities
       Dim _Result As Integer = 0
       Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetConnectionString)
         Using Cmd As SqlCommand = Con.CreateCommand()
-          Dim mSql As String = "SELECT TOP 1 [SYS_LGPageSize].[PageNo] FROM [SYS_LGPageSize] WHERE [SYS_LGPageSize].[PageName] = '" & PageName & "' AND [SYS_LGPageSize].[LoginID] = '" & LoginID & "' AND [SYS_LGPageSize].[ApplicationID] = '" & HttpContext.Current.Session("ApplicationID") & "'"
+          Dim mSql As String = "Select TOP 1 [SYS_LGPageSize].[PageNo] FROM [SYS_LGPageSize] WHERE [SYS_LGPageSize].[PageName] = '" & PageName & "' AND [SYS_LGPageSize].[LoginID] = '" & LoginID & "' AND [SYS_LGPageSize].[ApplicationID] = '" & HttpContext.Current.Session("ApplicationID") & "'"
           Cmd.CommandType = System.Data.CommandType.Text
           Cmd.CommandText = mSql
           Con.Open()
