@@ -40,6 +40,7 @@ Namespace SIS.SYS.Utilities
         .Session("LoginID") = Nothing
         .Session("PageSizeProvider") = False
         .Session("PageNoProvider") = False
+        .Session("Visitors") = 0
       End With
     End Sub
     Public Shared Sub InitializeEnvironment()
@@ -64,6 +65,22 @@ Namespace SIS.SYS.Utilities
         Else
           .Session("PageSizeProvider") = True
         End If
+        Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetConnectionString())
+          Con.Open()
+          Using Cmd As SqlCommand = Con.CreateCommand()
+            Cmd.CommandType = CommandType.Text
+            Cmd.CommandText = "update db_counter set vcount= vcount+1"
+            Cmd.ExecuteNonQuery()
+          End Using
+        End Using
+        Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetConnectionString())
+          Con.Open()
+          Using Cmd As SqlCommand = Con.CreateCommand()
+            Cmd.CommandType = CommandType.Text
+            Cmd.CommandText = "Select VCount FROM DB_Counter"
+            .Session("Visitors") = Cmd.ExecuteScalar
+          End Using
+        End Using
       End With
       '===========
       InitNavBar()

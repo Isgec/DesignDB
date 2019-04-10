@@ -21,6 +21,7 @@ Namespace SIS.DB
     Public Property M_EntryForToday As Decimal = 0
     Public Property L_UserGroup As String = ""
     Public Property L_Usercode As String = ""
+    Public Property visitorcount As Integer = 0
 
     Public Shared Function GetUserDB() As SIS.DB.dbUserDB
 
