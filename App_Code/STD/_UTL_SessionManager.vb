@@ -41,6 +41,7 @@ Namespace SIS.SYS.Utilities
         .Session("PageSizeProvider") = False
         .Session("PageNoProvider") = False
         .Session("Visitors") = 0
+        .Session("LastLogon") = ""
       End With
     End Sub
     Public Shared Sub InitializeEnvironment()
@@ -66,9 +67,9 @@ Namespace SIS.SYS.Utilities
           .Session("PageSizeProvider") = True
         End If
 
+        ' Dim Vdate As DateTime = Now
 
-
-        Dim Vdate As DateTime = Now
+        Dim Vdate As String = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
 
         Dim Vlogin As String = .Session("LoginID")
 
@@ -83,6 +84,7 @@ Namespace SIS.SYS.Utilities
         'End Using
 
 
+
         Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetConnectionString())
           Con.Open()
           Using Cmd As SqlCommand = Con.CreateCommand()
@@ -92,6 +94,7 @@ Namespace SIS.SYS.Utilities
 
           End Using
         End Using
+
 
 
         Dim vcount As Integer = .Session("Visitors") + 1
@@ -105,6 +108,8 @@ Namespace SIS.SYS.Utilities
             .Session("Visitors") = vcount
           End Using
         End Using
+
+        Dim vlastlogon As String = ""
 
 
 
