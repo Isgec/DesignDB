@@ -42,6 +42,15 @@ Namespace SIS.DB
       Dim Sql As String = ""
       Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetBaaNConnectionString())
         Con.Open()
+
+        'Sql = "select * from tdmisg001200 where t_stat =1 and t_wfst =4 and t_ausr='" & UserID & "'"
+        Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst in(1,2) and t_user in ('" & UserID & "','" & UserIDT & "') "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.P_Designer = Cmd.ExecuteScalar
+        End Using
+
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
         Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr in ('" & UserID & "','" & UserIDT & "') "
         Using Cmd As SqlCommand = Con.CreateCommand()
@@ -57,13 +66,7 @@ Namespace SIS.DB
           Cmd.CommandText = Sql
           mRet.P_Approve = Cmd.ExecuteScalar
         End Using
-        'Sql = "select * from tdmisg001200 where t_stat =1 and t_wfst =4 and t_ausr='" & UserID & "'"
-        Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst in(1,2) and t_user in ('" & UserID & "','" & UserIDT & "') "
-        Using Cmd As SqlCommand = Con.CreateCommand()
-          Cmd.CommandType = CommandType.Text
-          Cmd.CommandText = Sql
-          mRet.P_Designer = Cmd.ExecuteScalar
-        End Using
+
 
         'Sql = "select count(*) from tdmisg131200 where t_type =2 and t_stat =3 and t_user='" & UserID & "'"
         Sql = "select count(*) from tdmisg131200 where t_type =2 and t_stat =3 and t_user in ('" & UserID & "','" & UserIDT & "') "
