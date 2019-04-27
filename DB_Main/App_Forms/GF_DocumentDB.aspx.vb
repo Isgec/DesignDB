@@ -1,4 +1,4 @@
-Partial Class GF_UserDB
+Partial Class GF_DocumentDB
   Inherits System.Web.UI.Page
 
 
@@ -17,8 +17,8 @@ Partial Class GF_UserDB
   '  Response.Redirect("GF_UserDBDetails.aspx?detail=cipre&EmpID=" & HttpContext.Current.Session("LoginID"))
   'End Sub
 
-  Private Sub GF_UserDB_Load(sender As Object, e As EventArgs) Handles Me.Load
-    Dim x As SIS.DB.dbUserDB = SIS.DB.dbUserDB.GetUserDB
+  Private Sub GF_DocumentDB_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Dim x As SIS.DB.dbDocumentDB = SIS.DB.dbDocumentDB.GetDocumentDB
     cpr.Text = x.P_Review
     'If x.P_Review = 0 Then
     '  cpr.Text = "Nothing Pending with Your Login"
