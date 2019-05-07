@@ -8,10 +8,32 @@ Namespace SIS.DB
   Partial Public Class dbDocumentDB
     Public Property DocumentID As String = ""
     Public Property Document_Rev As String = ""
-
-    Public Property Tittle As String = ""
-    Public Property Drawing_File_Name As String = ""
-
+    Public Property Tittle_001 As String = ""
+    Public Property Drawing_File_Name_001 As String = ""
+    Public Property Drawing_State_001 As String = ""
+    Public Property Workflow_Status_001 As String = ""
+    Public Property Responsible_001 As String = ""
+    Public Property Document_Date_001 As String = ""
+    Public Property Drawing_Weight_001 As String = ""
+    Public Property Drawing_Scale_001 As String = ""
+    Public Property Sheet_Size_001 As String = ""
+    Public Property Element_001 As String = ""
+    Public Property Drawn_By_001 As String = ""
+    Public Property Checked_By_001 As String = ""
+    Public Property Approved_By_001 As String = ""
+    Public Property Document_Type As String = ""
+    Public Property Division As String = ""
+    Public Property Submitted_Time As String = ""
+    Public Property User_Name As String = ""
+    Public Property Review_By As String = ""
+    Public Property EApproved_BY As String = ""
+    Public Property ISGEC_DATA_Source As String = ""
+    Public Property For_Erection As String = ""
+    Public Property For_Information As String = ""
+    Public Property For_Production As String = ""
+    Public Property For_Approval As String = ""
+    Public Property SoftwareUsed As String = ""
+    Public Property MachineName As String = ""
 
     Public Shared Function GetDocumentDB(ByVal DocumentID As String) As dbDocumentDB
       If DocumentID = "" Then Return Nothing
@@ -30,7 +52,7 @@ Namespace SIS.DB
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          mRet.Tittle = Cmd.ExecuteScalar
+          mRet.Tittle_001 = Cmd.ExecuteScalar
         End Using
 
 
@@ -49,10 +71,232 @@ Namespace SIS.DB
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          mRet.Drawing_File_Name = Cmd.ExecuteScalar
+          mRet.Drawing_File_Name_001 = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select (case t_stat when 1 then 'Submitted' when 2 then 'Item Released' when 3 then 'Drawing Released' when 4 then 'Expired' end)		as 	Drawing_State"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Drawing_State_001 = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select (case t_wfst when 1 then 'Under Design' when 2 then 'Submitted' when 3 then 'Under Review' when 4 then 'Under Approval' when 5 then 'Released'"
+        Sql &= " when 6 then 'Withdrawn' when 7 then 'Under Revision' when 8 then 'Superceded' when 9 then 'under DCR'  end)"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Workflow_Status_001 = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_resp"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Responsible_001 = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_date"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Document_Date_001 = Cmd.ExecuteScalar
         End Using
 
 
+        Sql = " select t_wght"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Drawing_Weight_001 = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_scal"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Drawing_Scale_001 = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_size"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Sheet_Size_001 = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_cspa"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Element_001 = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_drwb"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Drawn_By_001 = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_chkb"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Checked_By_001 = Cmd.ExecuteScalar
+        End Using
+
+
+
+        Sql = " select t_appb"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Approved_By_001 = Cmd.ExecuteScalar
+        End Using
+
+
+        Sql = " select t_cspa"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Element_001 = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_sdat"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Submitted_Time = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_user"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.User_Name = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_rusr"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Review_By = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_ausr"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.EApproved_BY = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_sorc"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.ISGEC_DATA_Source = Cmd.ExecuteScalar
+        End Using
+
+
+        Sql = " select t_grup"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Division = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select (case t_erec when 1 then 'Yes' when 2 then 'No' end)"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.For_Erection = Cmd.ExecuteScalar
+        End Using
+
+
+        Sql = " select (case t_info when 1 then 'Yes' when 2 then 'No' end)"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.For_Information = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select (case t_prod when 1 then 'Yes' when 2 then 'No' end)"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.For_Production = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select (case t_appr when 1 then 'Yes' when 2 then 'No' end)"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.For_Approval = Cmd.ExecuteScalar
+        End Using
+
+
+        Sql = " select t_soft"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.SoftwareUsed = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_mach"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.MachineName = Cmd.ExecuteScalar
+        End Using
 
 
       End Using
