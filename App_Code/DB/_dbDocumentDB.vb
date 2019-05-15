@@ -34,11 +34,36 @@ Namespace SIS.DB
     Public Property For_Approval As String = ""
     Public Property SoftwareUsed As String = ""
     Public Property MachineName As String = ""
+    Public Property ProjectID As String = ""
+    Public Property Client As String = ""
+    Public Property Consultant As String = ""
+    Public Property Year As String = ""
+    Public Property IWT As String = ""
+    Public Property Project_Service As String = ""
+    Public Property IndentNumber As String = ""
+    Public Property IndentDate As String = ""
+    Public Property IndentRequester As String = ""
+    Public Property PONumber As String = ""
+    Public Property PODate As String = ""
+    Public Property POsupplier As String = ""
+    Public Property POBuyer As String = ""
+
+
+
+
+
+
+
+
+
+
 
     Public Shared Function GetDocumentDB(ByVal DocumentID As String) As dbDocumentDB
       If DocumentID = "" Then Return Nothing
       Dim mRet As New dbDocumentDB
+
       mRet.DocumentID = DocumentID
+
 
 
 
@@ -296,6 +321,128 @@ Namespace SIS.DB
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
           mRet.MachineName = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_cprj"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.ProjectID = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_clnt"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Client = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_cnsl"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Consultant = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_year"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Year = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select t_iwtn"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.IWT = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select (t_ser1 + ' ' + t_ser2)	as 	Project_Service"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Project_Service = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "  Select distinct t_rqno from ttdisg003200 "
+        Sql &= " where t_docn in ('" & DocumentID & "') "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.IndentNumber = Cmd.ExecuteScalar
+        End Using
+
+
+
+        Sql = "  Select t_rdat from ttdpur200200  "
+        Sql &= " where t_rqno in ('" & mRet.IndentNumber & "')"
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.IndentDate = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "  Select t_remn from ttdpur200200  "
+        Sql &= " where t_rqno in ('" & mRet.IndentNumber & "')"
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.IndentRequester = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "  Select distinct t_orno from ttdisg002200 "
+        Sql &= " where t_docn in ('" & DocumentID & "') "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.PONumber = Cmd.ExecuteScalar
+        End Using
+
+
+
+        Sql = "  Select t_odat from ttdpur400200  "
+        Sql &= " where t_orno in ('" & mRet.PONumber & "')"
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.PODate = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "  Select t_sfbp from ttdpur400200  "
+        Sql &= " where t_orno in ('" & mRet.PONumber & "')"
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.POsupplier = Cmd.ExecuteScalar
+        End Using
+
+
+        Sql = "  Select t_ccon from ttdpur400200  "
+        Sql &= " where t_orno in ('" & mRet.PONumber & "')"
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.POBuyer = Cmd.ExecuteScalar
         End Using
 
 

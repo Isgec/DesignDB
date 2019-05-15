@@ -57,6 +57,19 @@ Partial Class GF_DocumentDB
     DivApproval.Visible = True
     DivSoftwareused.Visible = True
     DivMachineName.Visible = True
+    DivProjectID.Visible = True
+    DivProjectClient.Visible = True
+    DivProjectConsultant.Visible = True
+    DivProjectYear.Visible = True
+    DivProjectIWT.Visible = True
+    DivProject_Service.Visible = True
+    DivIndentNumber.Visible = True
+    DivindentDate.Visible = True
+    DivIndentRequester.Visible = True
+    DivPONumber.Visible = True
+    DivPODate.Visible = True
+    DivPOSupplier.Visible = True
+    DivPOBuyer.Visible = True
 
 
 
@@ -90,6 +103,19 @@ Partial Class GF_DocumentDB
     Btn_Approval.Text = x.For_Approval
     Btn_Softwareused.Text = x.SoftwareUsed
     Btn_MachineName.Text = x.MachineName
+    btn_ProjectID.Text = x.ProjectID
+    btn_ProjectClient.Text = x.Client
+    btn_ProjectConsultant.Text = x.Consultant
+    btn_ProjectYear.Text = x.Year
+    btn_ProjectIWT.Text = x.IWT
+    Btn_Project_Service.Text = x.Project_Service
+    btn_IndentNumber.Text = x.IndentNumber
+    btn_IndentDate.Text = x.IndentDate
+    btn_IndentRequester.Text = x.IndentRequester
+    btn_PONumber.Text = x.PONumber
+    btn_PODate.Text = x.PODate
+    btn_POSupplier.Text = x.POsupplier
+    btn_POBuyer.Text = x.POBuyer
 
 
 

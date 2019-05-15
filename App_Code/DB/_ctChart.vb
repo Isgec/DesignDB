@@ -1974,7 +1974,7 @@ Namespace SIS.CT
         End Using
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = " Select count(t_docn) From tdmisg140200 Where t_resp ='PRC' and t_cprj In ('" & ProjectID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,t_rsfd) = convert(date,getdate())"
+        Sql = " Select count(t_docn) From tdmisg140200 Where t_resp ='PRC' and t_cprj In ('" & ProjectID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,dateadd(n,330,t_rsfd)) = convert(date,getdate())"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -1982,7 +1982,7 @@ Namespace SIS.CT
         End Using
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = "Select count(t_docn) From tdmisg140200 Where t_resp ='MEC' and t_cprj In ('" & ProjectID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,t_rsfd) = convert(date,getdate())"
+        Sql = "Select count(t_docn) From tdmisg140200 Where t_resp ='MEC' and t_cprj In ('" & ProjectID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,dateadd(n,330,t_rsfd)) = convert(date,getdate())"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -1990,7 +1990,7 @@ Namespace SIS.CT
         End Using
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = "Select count(t_docn) From tdmisg140200 Where t_resp ='STR' and t_cprj In ('" & ProjectID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,t_rsfd) = convert(date,getdate())"
+        Sql = "Select count(t_docn) From tdmisg140200 Where t_resp ='STR' and t_cprj In ('" & ProjectID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,dateadd(n,330,t_rsfd)) = convert(date,getdate())"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -1998,7 +1998,7 @@ Namespace SIS.CT
         End Using
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = "Select count(t_docn) From tdmisg140200 Where t_resp ='PIP' and t_cprj In ('" & ProjectID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,t_rsfd) = convert(date,getdate())"
+        Sql = "Select count(t_docn) From tdmisg140200 Where t_resp ='PIP' and t_cprj In ('" & ProjectID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,dateadd(n,330,t_rsfd)) = convert(date,getdate())"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -2006,7 +2006,7 @@ Namespace SIS.CT
         End Using
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = "Select count(t_docn) From tdmisg140200 Where t_resp ='ELE' and t_cprj In ('" & ProjectID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,t_rsfd) = convert(date,getdate())"
+        Sql = "Select count(t_docn) From tdmisg140200 Where t_resp ='ELE' and t_cprj In ('" & ProjectID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,dateadd(n,330,t_rsfd)) = convert(date,getdate())"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -2014,7 +2014,7 @@ Namespace SIS.CT
         End Using
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = "Select count(t_docn) From tdmisg140200 Where t_resp ='C&I' and t_cprj In ('" & ProjectID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,t_rsfd) = convert(date,getdate())"
+        Sql = "Select count(t_docn) From tdmisg140200 Where t_resp ='C&I' and t_cprj In ('" & ProjectID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,dateadd(n,330,t_rsfd)) = convert(date,getdate())"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -2022,7 +2022,7 @@ Namespace SIS.CT
         End Using
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = "Select count(t_docn) From tdmisg140200 Where t_cprj In ('" & ProjectID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,t_rsfd) = convert(date,getdate())"
+        Sql = "Select count(t_docn) From tdmisg140200 Where t_cprj In ('" & ProjectID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,dateadd(n,330,t_rsfd)) = convert(date,getdate())"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
