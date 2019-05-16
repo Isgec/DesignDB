@@ -68,10 +68,17 @@ Partial Class GF_DocumentDB
     DivIndentRequester.Visible = True
     DivPONumber.Visible = True
     DivPODate.Visible = True
+    DivTransmittalid.Visible = True
+
     DivPOSupplier.Visible = True
+    DivPOSuppliername.Visible = True
     DivPOBuyer.Visible = True
-
-
+    di.Visible = True
+    pi.Visible = True
+    poi.Visible = True
+    pmdli.Visible = False
+    ii.Visible = True
+    ti.Visible = True
 
     Dim x As SIS.DB.dbDocumentDB = SIS.DB.dbDocumentDB.GetDocumentDB(DocumentID)
 
@@ -115,7 +122,9 @@ Partial Class GF_DocumentDB
     btn_PONumber.Text = x.PONumber
     btn_PODate.Text = x.PODate
     btn_POSupplier.Text = x.POsupplier
+    btn_POSuppliername.Text = x.POsuppliername
     btn_POBuyer.Text = x.POBuyer
+    btn_transmittalid.Text = x.Transmittalid
 
 
 

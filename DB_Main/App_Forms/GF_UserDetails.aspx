@@ -49,7 +49,8 @@
             </div>
           </div>
         </div>
-        <div class="col-auto">
+       
+         <div class="col-auto">
           <div class="col-auto">
             <h6>
               <div class="badge badge-info">
@@ -60,6 +61,7 @@
           </div>
 
         </div>
+
       </div>
       <hr />
       

@@ -46,7 +46,9 @@ Namespace SIS.DB
     Public Property PONumber As String = ""
     Public Property PODate As String = ""
     Public Property POsupplier As String = ""
+    Public Property POsuppliername As String = ""
     Public Property POBuyer As String = ""
+    Public Property Transmittalid As String = ""
 
 
 
@@ -117,6 +119,19 @@ Namespace SIS.DB
           Cmd.CommandText = Sql
           mRet.Workflow_Status_001 = Cmd.ExecuteScalar
         End Using
+
+
+
+        Sql = " select t_type"
+        Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Document_Type = Cmd.ExecuteScalar
+        End Using
+
+
 
         Sql = " select t_resp"
         Sql &= " From tdmisg001200 where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg001200 where t_docn in ('" & DocumentID & "')) "
@@ -435,6 +450,15 @@ Namespace SIS.DB
           mRet.POsupplier = Cmd.ExecuteScalar
         End Using
 
+        Sql = "  Select t_nama from ttccom100200  "
+        Sql &= " where t_bpid in ('" & mRet.POsupplier & "')"
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.POsuppliername = Cmd.ExecuteScalar
+        End Using
+
 
         Sql = "  Select t_ccon from ttdpur400200  "
         Sql &= " where t_orno in ('" & mRet.PONumber & "')"
@@ -443,6 +467,15 @@ Namespace SIS.DB
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
           mRet.POBuyer = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "  select t_tran from tdmisg132200  "
+        Sql &= " where t_docn in ('" & DocumentID & "') And t_revn = (select max(t_revn) from tdmisg132200 where t_docn in ('" & DocumentID & "')) "
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Transmittalid = Cmd.ExecuteScalar
         End Using
 
 

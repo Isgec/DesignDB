@@ -19,7 +19,7 @@
       <div class="row  mt-1">
 
       
-      <div class="col-5">
+      <div class="col-6">
         <asp:UpdatePanel ID="UPNLctPActivity" runat="server">
           <ContentTemplate>
             <div class="form-group">
@@ -61,7 +61,7 @@
         
        <%-- DESCRIPTION--%>
         
-         <div class="col-6">
+         <div class="col-5">
       
       </div>
     </div>
@@ -220,89 +220,8 @@
       </div>
 
      <hr/>
-  
-      <a href="#Projectinformation" text-align: center; cursor: pointer" data-toggle="collapse">Project -Informations</a>
-  <div id="Projectinformation" class="collapse">
-
-      <div class="row mt-1">
-
-      
-      <div class="col-2">
-     <div class="container" id="DivProjectID" runat="server" visible="false">
-        
-           Project ID: <asp:Button ID="btn_ProjectID" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Project ID"></asp:Button>
-         
-       
-        </div>
-          </div>
-      
-            <div class="col-2">
-
-         <div class="container" id="DivProjectYear" runat="server" visible="false">
-         
-            Year: <asp:Button ID="btn_ProjectYear" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Year"></asp:Button>
-  
-         
-        </div>
-             </div>
-           
-
-
-
-            <div class="col-2">
-
-         <div class="container" id="DivProjectIWT" runat="server" visible="false">
-         
-            IWT: <asp:Button ID="btn_ProjectIWT" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="IWT"></asp:Button>
-  
-         
-        </div>
-             </div>
-
-        
-           
-           </div>
-
-      <hr/>
-  
-
-            <div class="row">
-
-      
-       <div class="col-auto">
-
-         <div class="container" id="DivProject_Service" runat="server" visible="false">
-         
-            Service: <asp:Button ID="Btn_Project_Service" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Service"></asp:Button>
-  
-         
-        </div>
-             </div>
-
-                <div class="col-auto">
-     <div class="container" id="DivProjectClient" runat="server" visible="false">
-          
-           Client: <asp:Button ID="btn_ProjectClient" Text="" runat="server"  Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Client"></asp:Button>
-         
-     
-        </div>   
-           </div>
-        <div class="col-auto">
-
-         <div class="container" id="DivProjectConsultant" runat="server" visible="false">
-         
-            Consultant: <asp:Button ID="btn_ProjectConsultant" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Consultant"></asp:Button>
-  
-         
-        </div>
-             </div>
-
- </div>
-   
-    </div>
-     <hr/>
-
-     <a href="#Documentinformation" text-align: center; cursor: pointer" data-toggle="collapse">Document -Informations</a>
+  <div id="di" runat="server" visible="false">
+      <a href="#Documentinformation" text-align: center; cursor: pointer" data-toggle="collapse">Document -Informations</a>
   <div id="Documentinformation" class="collapse">
   
     
@@ -479,9 +398,9 @@
            </div>
     <hr/>
     
-              <div class="row">
+              <div class="row" id="DivFilename" runat="server" visible="false" >
                  <div class="col-3">
-         <div class="container" id="DivFilename" runat="server" visible="false">
+         <div class="container">
           File Name: 
             </div>
                     </div>
@@ -494,7 +413,116 @@
          
     </div>
     <hr/>
+    <div id="ti" runat="server" visible="false">
+      <a href="#Transmittalinformation" text-align: center; cursor: pointer" data-toggle="collapse">Transmittal -Informations</a>
+  <div id="Transmittalinformation" class="collapse">
+  
+    
+      <div class="row mt-1">
+
+      
    
+        <div class="col-3">
+
+         <div class="container" id="DivTransmittalid" runat="server" visible="false">
+         
+            Transmittal Number: </b><asp:Button ID="btn_transmittalid" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Transmittal ID"></asp:Button>
+  
+         
+        </div>
+             </div>
+            
+  
+         
+    </div>
+ 
+      </div>
+      </div>
+       <hr/>
+    <div id="pi" runat="server" visible="false">
+      <a href="#Projectinformation" text-align: center; cursor: pointer" data-toggle="collapse">Project -Informations</a>
+  <div id="Projectinformation" class="collapse">
+
+      <div class="row mt-1">
+
+      
+      <div class="col-2">
+     <div class="container" id="DivProjectID" runat="server" visible="false">
+        
+           Project ID: <asp:Button ID="btn_ProjectID" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Project ID"></asp:Button>
+         
+       
+        </div>
+          </div>
+      
+            <div class="col-2">
+
+         <div class="container" id="DivProjectYear" runat="server" visible="false">
+         
+            Year: <asp:Button ID="btn_ProjectYear" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Year"></asp:Button>
+  
+         
+        </div>
+             </div>
+           
+
+
+
+            <div class="col-2">
+
+         <div class="container" id="DivProjectIWT" runat="server" visible="false">
+         
+            IWT: <asp:Button ID="btn_ProjectIWT" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="IWT"></asp:Button>
+  
+         
+        </div>
+             </div>
+
+        
+           
+           </div>
+
+      <hr/>
+  
+
+            <div class="row">
+
+      
+       <div class="col-auto">
+
+         <div class="container" id="DivProject_Service" runat="server" visible="false">
+         
+            Service: <asp:Button ID="Btn_Project_Service" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Service"></asp:Button>
+  
+         
+        </div>
+             </div>
+
+                <div class="col-auto">
+     <div class="container" id="DivProjectClient" runat="server" visible="false">
+          
+           Client: <asp:Button ID="btn_ProjectClient" Text="" runat="server"  Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Client"></asp:Button>
+         
+     
+        </div>   
+           </div>
+        <div class="col-auto">
+
+         <div class="container" id="DivProjectConsultant" runat="server" visible="false">
+         
+            Consultant: <asp:Button ID="btn_ProjectConsultant" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Consultant"></asp:Button>
+  
+         
+        </div>
+             </div>
+
+ </div>
+   
+    </div>
+     <hr/>
+       </div>
+   
+   <div id="ii" runat="server" visible="false">
         <a href="#Indentinformation" text-align: center; cursor: pointer" data-toggle="collapse">Indent -Informations</a>
   <div id="Indentinformation" class="collapse">
   
@@ -537,7 +565,8 @@
            </div>
     </div>
      <hr/>
-
+      </div>
+    <div id="poi" runat="server" visible="false">
      <a href="#POinformation" text-align: center; cursor: pointer" data-toggle="collapse">PO -Informations</a>
   <div id="POinformation" class="collapse">
   
@@ -546,7 +575,7 @@
 
       
    
-        <div class="col-3">
+        <div class="col-2">
 
          <div class="container" id="DivPONumber" runat="server" visible="false">
          
@@ -555,27 +584,43 @@
          
         </div>
              </div>
-            <div class="col-3">
+          
+           
+            <div class="col-8">
+ <div class="row">
+     <div class="col-4">
 
          <div class="container" id="DivPODate" runat="server" visible="false">
          
-            PO Date: <asp:Button ID="btn_PODate" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="PO Date"></asp:Button>
+            Date: <asp:Button ID="btn_PODate" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="PO Date"></asp:Button>
   
          
         </div>
              </div>
-           
+
+
             <div class="col-3">
-           
 
         <div class="container" id="DivPOSupplier" runat="server" visible="false">
          
           Supplier: <asp:Button ID="btn_POSupplier" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Supplier"></asp:Button>
-  
+   </div>
          </div>
        
+            
+
+         <div class="col-5">
+           
+
+        <div class="container" id="DivPOSuppliername" runat="server" visible="false">
+         
+          Name: <asp:Button ID="btn_POSuppliername" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Supplier"></asp:Button>
+  
+         </div>
+       </div>
              </div>
-         <div class="col-3">
+        </div>
+         <div class="col-2">
            
 
         <div class="container" id="DivPOBuyer" runat="server" visible="false">
@@ -589,8 +634,27 @@
              
            </div>
     </div>
-     <hr/>
-  
+    
+      <%--<div id="potable" runat="server" visible="true">
+        <div class="col-auto">
+          <div class="col-auto">
+            <h6>
+              <div class="badge badge-info">
+              PO Item Details</h6>
+          </div>
+
+          <div class="col-sm-auto" id="POT" runat="server" clientidmode="static">
+          </div>
+
+        </div>
+        </div>--%>
+
+
+       <hr/>
+   </div>
+
+
+      <div id="pmdli" runat="server" visible="false">
     <a href="#PMDLinformation" text-align: center; cursor: pointer" data-toggle="collapse">PMDL -Informations</a>
   <div id="PMDLinformation" class="collapse">
   
@@ -690,7 +754,7 @@
            </div>
     </div>
      <hr/>
-
+</div>
     </div>
    
              </ContentTemplate>
