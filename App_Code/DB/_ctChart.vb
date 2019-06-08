@@ -4729,7 +4729,7 @@ Namespace SIS.CT
 
 
         ' Sql = "-"
-        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort IN ('C & I','INSTRUMENTATION') and rec.t_cprj in ('" & PrjID & "') and rec.t_appl=1 "
+        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort IN ('C & I','INSTRUMENTATION','C&I') and rec.t_cprj in ('" & PrjID & "') and rec.t_appl=1 "
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -4738,7 +4738,7 @@ Namespace SIS.CT
 
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort IN ('C & I','INSTRUMENTATION') and rec.t_cprj in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=1 "
+        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort IN ('C & I','INSTRUMENTATION','C&I') and rec.t_cprj in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=1 "
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -4749,7 +4749,7 @@ Namespace SIS.CT
 
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort IN ('C & I','INSTRUMENTATION') and rec.t_cprj in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=2 "
+        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort IN ('C & I','INSTRUMENTATION','C&I') and rec.t_cprj in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=2 "
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -4758,7 +4758,7 @@ Namespace SIS.CT
 
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort IN ('C & I','INSTRUMENTATION') and rec.t_cprj in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=3 "
+        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort IN ('C & I','INSTRUMENTATION','C&I') and rec.t_cprj in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=3 "
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -4770,7 +4770,7 @@ Namespace SIS.CT
 
 
         ' Sql = "-"
-        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort NOT IN ('MECH-SUGAR','MECHANICAL','ELECTRICAL','PROCESS-STOKER','PROCESS','STRUCTURE','PIPING' ,'C & I','INSTRUMENTATION','EPC','C&I','ELE','SERVICE') and rec.t_cprj in ('" & PrjID & "') and rec.t_appl=1 "
+        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort NOT IN ('MECH-SUGAR','MECHANICAL','ELECTRICAL','PROCESS-STOKER','PROCESS','STRUCTURE','PIPING' ,'C & I','INSTRUMENTATION','EPC','C&I','ELE') and rec.t_cprj in ('" & PrjID & "') and rec.t_appl=1 "
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -4779,7 +4779,7 @@ Namespace SIS.CT
 
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort NOT IN ('MECH-SUGAR','MECHANICAL','ELECTRICAL','PROCESS-STOKER','PROCESS','STRUCTURE','PIPING' ,'C & I','INSTRUMENTATION','EPC','C&I','ELE','SERVICE') and rec.t_cprj in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=1 "
+        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort NOT IN ('MECH-SUGAR','MECHANICAL','ELECTRICAL','PROCESS-STOKER','PROCESS','STRUCTURE','PIPING' ,'C & I','INSTRUMENTATION','EPC','C&I','ELE') and rec.t_cprj in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=1 "
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -4790,7 +4790,7 @@ Namespace SIS.CT
 
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort NOT IN ('MECH-SUGAR','MECHANICAL','ELECTRICAL','PROCESS-STOKER','PROCESS','STRUCTURE','PIPING' ,'C & I','INSTRUMENTATION','EPC','C&I','ELE','SERVICE') and rec.t_cprj in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=2 "
+        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort NOT IN ('MECH-SUGAR','MECHANICAL','ELECTRICAL','PROCESS-STOKER','PROCESS','STRUCTURE','PIPING' ,'C & I','INSTRUMENTATION','EPC','C&I','ELE') and rec.t_cprj in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=2 "
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -4799,14 +4799,12 @@ Namespace SIS.CT
 
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort NOT IN ('MECH-SUGAR','MECHANICAL','ELECTRICAL','PROCESS-STOKER','PROCESS','STRUCTURE','PIPING' ,'C & I','INSTRUMENTATION','EPC','C&I','ELE','SERVICE') and rec.t_cprj in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=3 "
+        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort NOT IN ('MECH-SUGAR','MECHANICAL','ELECTRICAL','PROCESS-STOKER','PROCESS','STRUCTURE','PIPING' ,'C & I','INSTRUMENTATION','EPC','C&I','ELE') and rec.t_cprj in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=3 "
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
           mRet.Others_Element_Completed = Cmd.ExecuteScalar
         End Using
-
-
 
 
         ' Sql = "-"
@@ -4825,7 +4823,6 @@ Namespace SIS.CT
           Cmd.CommandText = Sql
           mRet.Total_Element_Free = Cmd.ExecuteScalar
         End Using
-
 
 
 

@@ -190,14 +190,14 @@ Partial Class GF_UserDBDetails
     td.Text = "S.NO."
     With td
       .Font.Bold = True
-      .Font.Size = FontUnit.Point(10)
+      .Font.Size = FontUnit.Point(9)
     End With
     tr.Cells.Add(td)
 
     td = New TableCell
     With td
       .Font.Bold = True
-      .Font.Size = FontUnit.Point(10)
+      .Font.Size = FontUnit.Point(9)
     End With
     td.Text = "RECEIPT"
     tr.Cells.Add(td)
@@ -205,7 +205,7 @@ Partial Class GF_UserDBDetails
     td = New TableCell
     With td
       .Font.Bold = True
-      .Font.Size = FontUnit.Point(10)
+      .Font.Size = FontUnit.Point(9)
     End With
     td.Text = "REV"
     tr.Cells.Add(td)
@@ -213,7 +213,33 @@ Partial Class GF_UserDBDetails
     td = New TableCell
     With td
       .Font.Bold = True
-      .Font.Size = FontUnit.Point(10)
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "CREATED ON"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "RECEIVED ON"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PENDING (DAYS)"
+    tr.Cells.Add(td)
+
+
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
     End With
     td.Text = "PROJECT"
     tr.Cells.Add(td)
@@ -221,7 +247,7 @@ Partial Class GF_UserDBDetails
     td = New TableCell
     With td
       .Font.Bold = True
-      .Font.Size = FontUnit.Point(10)
+      .Font.Size = FontUnit.Point(9)
     End With
     td.Text = "ITEM DESCRIPTION"
     tr.Cells.Add(td)
@@ -229,7 +255,7 @@ Partial Class GF_UserDBDetails
     td = New TableCell
     With td
       .Font.Bold = True
-      .Font.Size = FontUnit.Point(10)
+      .Font.Size = FontUnit.Point(9)
     End With
     td.Text = "STATUS"
     tr.Cells.Add(td)
@@ -237,39 +263,39 @@ Partial Class GF_UserDBDetails
     td = New TableCell
     With td
       .Font.Bold = True
-      .Font.Size = FontUnit.Point(10)
+      .Font.Size = FontUnit.Point(9)
     End With
-    td.Text = "MECHANICAL"
+    td.Text = "MECH."
     tr.Cells.Add(td)
 
     td = New TableCell
     With td
       .Font.Bold = True
-      .Font.Size = FontUnit.Point(10)
+      .Font.Size = FontUnit.Point(9)
     End With
-    td.Text = "STRUCTURE"
+    td.Text = "STR."
     tr.Cells.Add(td)
 
     td = New TableCell
     With td
       .Font.Bold = True
-      .Font.Size = FontUnit.Point(10)
+      .Font.Size = FontUnit.Point(9)
     End With
-    td.Text = "PIPING"
+    td.Text = "PIP."
     tr.Cells.Add(td)
 
     td = New TableCell
     With td
       .Font.Bold = True
-      .Font.Size = FontUnit.Point(10)
+      .Font.Size = FontUnit.Point(9)
     End With
-    td.Text = "PROCESS"
+    td.Text = "PRC."
     tr.Cells.Add(td)
 
     td = New TableCell
     With td
       .Font.Bold = True
-      .Font.Size = FontUnit.Point(10)
+      .Font.Size = FontUnit.Point(9)
     End With
     td.Text = "C&I"
     tr.Cells.Add(td)
@@ -277,18 +303,26 @@ Partial Class GF_UserDBDetails
     td = New TableCell
     With td
       .Font.Bold = True
-      .Font.Size = FontUnit.Point(10)
+      .Font.Size = FontUnit.Point(9)
     End With
-    td.Text = "ELECTRICAL"
+    td.Text = "ELE."
     tr.Cells.Add(td)
 
     td = New TableCell
     With td
       .Font.Bold = True
-      .Font.Size = FontUnit.Point(10)
+      .Font.Size = FontUnit.Point(9)
     End With
-    td.Text = "QUALITY"
+    td.Text = "QLTY."
     tr.Cells.Add(td)
+
+    'td = New TableCell
+    'With td
+    '  .Font.Bold = True
+    '  .Font.Size = FontUnit.Point(9)
+    'End With
+    'td.Text = "OWNER_DEPT."
+    'tr.Cells.Add(td)
 
 
     'td = New TableCell
@@ -320,6 +354,18 @@ Partial Class GF_UserDBDetails
       tr.Cells.Add(td)
 
       td = New TableCell
+      td.Text = tmp.ReceiptDate
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.SentDate
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.Rageindays
+      tr.Cells.Add(td)
+
+      td = New TableCell
       td.Text = tmp.RProject
       tr.Cells.Add(td)
 
@@ -333,32 +379,80 @@ Partial Class GF_UserDBDetails
 
       td = New TableCell
       td.Text = tmp.Mechanical
+      If td.Text = "Pending" Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+
+        End With
+      End If
       tr.Cells.Add(td)
 
       td = New TableCell
       td.Text = tmp.Structure_
+      If td.Text = "Pending" Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+        End With
+      End If
       tr.Cells.Add(td)
 
       td = New TableCell
       td.Text = tmp.Piping
+      If td.Text = "Pending" Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+        End With
+
+      End If
       tr.Cells.Add(td)
 
       td = New TableCell
       td.Text = tmp.Process
+      If td.Text = "Pending" Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+        End With
+      End If
+
       tr.Cells.Add(td)
 
       td = New TableCell
       td.Text = tmp.CandI
+      If td.Text = "Pending" Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+        End With
+      End If
       tr.Cells.Add(td)
 
       td = New TableCell
       td.Text = tmp.Electrical
+      If td.Text = "Pending" Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+        End With
+      End If
       tr.Cells.Add(td)
 
       td = New TableCell
       td.Text = tmp.Quality
+      If td.Text = "Pending" Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+        End With
+      End If
       tr.Cells.Add(td)
 
+      'td = New TableCell
+      'td.Text = tmp.Owner_Dept
+      'tr.Cells.Add(td)
 
 
 
@@ -377,6 +471,7 @@ Partial Class GF_UserDBDetails
     pnlDetails.Controls.Add(tbl)
 
   End Sub
+
 
 
   Private Sub ShowTData(ByVal x As String, ByVal y As String)

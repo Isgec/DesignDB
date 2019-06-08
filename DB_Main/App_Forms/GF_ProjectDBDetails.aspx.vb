@@ -879,7 +879,7 @@ Partial Class GF_ProjectDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(8)
     End With
-    td.Text = "RECEIPT NUMBER"
+    td.Text = "RECEIPT"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -888,6 +888,14 @@ Partial Class GF_ProjectDBDetails
       .Font.Size = FontUnit.Point(8)
     End With
     td.Text = "REVISION"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "PROJECT"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -1001,6 +1009,10 @@ Partial Class GF_ProjectDBDetails
       tr.Cells.Add(td)
 
       td = New TableCell
+      td.Text = tmp.t_cprj
+      tr.Cells.Add(td)
+
+      td = New TableCell
       td.Text = tmp.t_item
       tr.Cells.Add(td)
 
@@ -1010,30 +1022,80 @@ Partial Class GF_ProjectDBDetails
 
       td = New TableCell
       td.Text = tmp.IMechanical
+      If (td.Text = "Pending" And tmp.t_stat = "Under Evaluation") Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+
+        End With
+      End If
       tr.Cells.Add(td)
 
       td = New TableCell
       td.Text = tmp.IStructure
+      If (td.Text = "Pending" And tmp.t_stat = "Under Evaluation") Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+
+        End With
+      End If
+
       tr.Cells.Add(td)
 
       td = New TableCell
       td.Text = tmp.IPiping
+      If (td.Text = "Pending" And tmp.t_stat = "Under Evaluation") Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+
+        End With
+      End If
       tr.Cells.Add(td)
 
       td = New TableCell
       td.Text = tmp.IProcess
+      If (td.Text = "Pending" And tmp.t_stat = "Under Evaluation") Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+
+        End With
+      End If
       tr.Cells.Add(td)
 
       td = New TableCell
       td.Text = tmp.IC_I
+      If (td.Text = "Pending" And tmp.t_stat = "Under Evaluation") Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+
+        End With
+      End If
       tr.Cells.Add(td)
 
       td = New TableCell
       td.Text = tmp.IElectrical
+      If (td.Text = "Pending" And tmp.t_stat = "Under Evaluation") Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+
+        End With
+      End If
       tr.Cells.Add(td)
 
       td = New TableCell
       td.Text = tmp.IQuality
+      If (td.Text = "Pending" And tmp.t_stat = "Under Evaluation") Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+
+        End With
+      End If
       tr.Cells.Add(td)
 
       td = New TableCell

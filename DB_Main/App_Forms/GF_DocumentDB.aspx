@@ -226,11 +226,9 @@
   
     
       <div class="row mt-1">
-
       
    
         <div class="col-3">
-
          <div class="container" id="DivResponsible" runat="server" visible="false">
          
             Responsible Department: </b><asp:Button ID="btn_documentResponsible" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Document's Responsible Department"></asp:Button>
@@ -239,7 +237,6 @@
         </div>
              </div>
             <div class="col-3">
-
          <div class="container" id="DivDate" runat="server" visible="false">
          
             Date: <asp:Button ID="btn_documentDate" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Document's Date"></asp:Button>
@@ -250,9 +247,7 @@
            
             <div class="col-6">
            <div class="row">
-
              <div class="col-4">
-
         <div class="container" id="Divweight" runat="server" visible="false">
          
            Weight: <asp:Button ID="btn_documentWeight" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Document's Weight"></asp:Button>
@@ -261,7 +256,6 @@
        
              </div>
              <div class="col-4">
-
          <div class="container" id="Divscale" runat="server" visible="false">
          
             Scale: <asp:Button ID="btn_documentScale" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Document's Scale"></asp:Button>
@@ -269,10 +263,7 @@
            </div>
        
              </div>
-
-
             <div class="col-4">
-
           <div class="container" id="Divsize" runat="server" visible="false">
          
             Size: <asp:Button ID="btn_documentSize" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Document's Size"></asp:Button>
@@ -283,12 +274,9 @@
               </div>
               </div>
            </div>
-
      <hr/>
   
-
             <div class="row mt-1">
-
       
       <div class="col-2">
      <div class="container" id="DivElement" runat="server" visible="false">
@@ -307,7 +295,6 @@
         </div>   
            </div>
         <div class="col-2">
-
          <div class="container" id="DivCheckedBy" runat="server" visible="false">
          
             Checked: <asp:Button ID="btn_documentCheckedBy" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Checked By"></asp:Button>
@@ -316,7 +303,6 @@
         </div>
              </div>
             <div class="col-4">
-
          <div class="container" id="DivApprovedBy" runat="server" visible="false">
          
             Approved: <asp:Button ID="btn_documentApprovedBy" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Approved By"></asp:Button>
@@ -325,7 +311,6 @@
         </div>
              </div>
                <div class="col-2">
-
          <div class="container" id="DivSoftwareused" runat="server" visible="false">
          
             Software Used: <asp:Button ID="Btn_Softwareused" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Software Used"></asp:Button>
@@ -334,16 +319,11 @@
         </div>
              </div>
           
-
            
            </div>
-
      <hr/>
              
-
-
                 <div class="row mt-1">
-
       
       <div class="col-2">
      <div class="container" id="DivErection" runat="server" visible="false">
@@ -362,7 +342,6 @@
         </div>   
            </div>
         <div class="col-2">
-
          <div class="container" id="DivProduction" runat="server" visible="false">
          
             For Production: <asp:Button ID="Btn_Production" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="For Production"></asp:Button>
@@ -371,7 +350,6 @@
         </div>
              </div>
             <div class="col-2">
-
          <div class="container" id="DivApproval" runat="server" visible="false">
          
             For Approval: <asp:Button ID="Btn_Approval" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="For Approval"></asp:Button>
@@ -380,11 +358,7 @@
         </div>
              </div>
            
-
-
-
             <div class="col-4">
-
          <div class="container" id="DivMachineName" runat="server" visible="false">
          
             Machine Name: <asp:Button ID="Btn_MachineName" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Machine Name"></asp:Button>
@@ -392,8 +366,6 @@
          
         </div>
              </div>
-
-
            
            </div>
     <hr/>
@@ -404,7 +376,6 @@
           File Name: 
             </div>
                     </div>
-
                  <div class="col-9">
         <asp:Button ID="btn_documentfilename" CssClass="btn-success" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Document's File Name"></asp:Button>
   
@@ -419,11 +390,9 @@
   
     
       <div class="row mt-1">
-
       
    
         <div class="col-3">
-
          <div class="container" id="DivTransmittalid" runat="server" visible="false">
          
             Transmittal Number: </b><asp:Button ID="btn_transmittalid" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Transmittal ID"></asp:Button>
@@ -442,9 +411,7 @@
     <div id="pi" runat="server" visible="false">
       <a href="#Projectinformation" text-align: center; cursor: pointer" data-toggle="collapse">Project -Informations</a>
   <div id="Projectinformation" class="collapse">
-
       <div class="row mt-1">
-
       
       <div class="col-2">
      <div class="container" id="DivProjectID" runat="server" visible="false">
@@ -456,7 +423,6 @@
           </div>
       
             <div class="col-2">
-
          <div class="container" id="DivProjectYear" runat="server" visible="false">
          
             Year: <asp:Button ID="btn_ProjectYear" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Year"></asp:Button>
@@ -465,11 +431,7 @@
         </div>
              </div>
            
-
-
-
             <div class="col-2">
-
          <div class="container" id="DivProjectIWT" runat="server" visible="false">
          
             IWT: <asp:Button ID="btn_ProjectIWT" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="IWT"></asp:Button>
@@ -477,19 +439,14 @@
          
         </div>
              </div>
-
         
            
            </div>
-
       <hr/>
   
-
             <div class="row">
-
       
        <div class="col-auto">
-
          <div class="container" id="DivProject_Service" runat="server" visible="false">
          
             Service: <asp:Button ID="Btn_Project_Service" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Service"></asp:Button>
@@ -497,7 +454,6 @@
          
         </div>
              </div>
-
                 <div class="col-auto">
      <div class="container" id="DivProjectClient" runat="server" visible="false">
           
@@ -507,7 +463,6 @@
         </div>   
            </div>
         <div class="col-auto">
-
          <div class="container" id="DivProjectConsultant" runat="server" visible="false">
          
             Consultant: <asp:Button ID="btn_ProjectConsultant" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Consultant"></asp:Button>
@@ -515,7 +470,6 @@
          
         </div>
              </div>
-
  </div>
    
     </div>
@@ -528,11 +482,9 @@
   
     
       <div class="row mt-1">
-
       
    
         <div class="col-3">
-
          <div class="container" id="DivIndentNumber" runat="server" visible="false">
          
             Indent Number: </b><asp:Button ID="btn_IndentNumber" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Document's indent Number"></asp:Button>
@@ -541,7 +493,6 @@
         </div>
              </div>
             <div class="col-4">
-
          <div class="container" id="DivindentDate" runat="server" visible="false">
          
             Indent Date: <asp:Button ID="btn_IndentDate" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Indent's Date"></asp:Button>
@@ -552,7 +503,6 @@
            
             <div class="col-5">
            
-
         <div class="container" id="DivIndentRequester" runat="server" visible="false">
          
           Indent Requsted By: <asp:Button ID="btn_IndentRequester" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Indenter"></asp:Button>
@@ -572,11 +522,9 @@
   
     
       <div class="row mt-1">
-
       
    
         <div class="col-2">
-
          <div class="container" id="DivPONumber" runat="server" visible="false">
          
             PO Number: </b><asp:Button ID="btn_PONumber" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="PONumber"></asp:Button>
@@ -589,7 +537,6 @@
             <div class="col-8">
  <div class="row">
      <div class="col-4">
-
          <div class="container" id="DivPODate" runat="server" visible="false">
          
             Date: <asp:Button ID="btn_PODate" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="PO Date"></asp:Button>
@@ -597,10 +544,7 @@
          
         </div>
              </div>
-
-
             <div class="col-3">
-
         <div class="container" id="DivPOSupplier" runat="server" visible="false">
          
           Supplier: <asp:Button ID="btn_POSupplier" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Supplier"></asp:Button>
@@ -608,10 +552,8 @@
          </div>
        
             
-
          <div class="col-5">
            
-
         <div class="container" id="DivPOSuppliername" runat="server" visible="false">
          
           Name: <asp:Button ID="btn_POSuppliername" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Supplier"></asp:Button>
@@ -622,7 +564,6 @@
         </div>
          <div class="col-2">
            
-
         <div class="container" id="DivPOBuyer" runat="server" visible="false">
          
           Buyer: <asp:Button ID="btn_POBuyer" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Buyer"></asp:Button>
@@ -642,29 +583,21 @@
               <div class="badge badge-info">
               PO Item Details</h6>
           </div>
-
           <div class="col-sm-auto" id="POT" runat="server" clientidmode="static">
           </div>
-
         </div>
         </div>--%>
-
-
        <hr/>
    </div>
-
-
       <div id="pmdli" runat="server" visible="false">
     <a href="#PMDLinformation" text-align: center; cursor: pointer" data-toggle="collapse">PMDL -Informations</a>
   <div id="PMDLinformation" class="collapse">
   
     
       <div class="row mt-1">
-
       
    
         <div class="col-3">
-
          <div class="container" id="DivPMDLProjectType" runat="server" visible="false">
          
             Project Type: </b><asp:Button ID="btn_PMDLProjectType" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Project Type"></asp:Button>
@@ -673,7 +606,6 @@
         </div>
              </div>
             <div class="col-3">
-
          <div class="container" id="DivPMDLProjectId" runat="server" visible="false">
          
             ProjectId: <asp:Button ID="btn_PMDLProjectId" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Project Id"></asp:Button>
@@ -684,7 +616,6 @@
            
             <div class="col-3">
            
-
         <div class="container" id="DivPMDLUID" runat="server" visible="false">
          
           UID: <asp:Button ID="btn_PMDLUID" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="UID"></asp:Button>
@@ -694,7 +625,6 @@
              </div>
          <div class="col-3">
            
-
         <div class="container" id="DivPMDLDocumentRevision" runat="server" visible="false">
          
           Revision Number: <asp:Button ID="btnPMDLDocumentRevision" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Revision Number"></asp:Button>
@@ -705,13 +635,10 @@
             
              
            </div>
-
      <div class="row mt-1">
-
       
    
         <div class="col-3">
-
          <div class="container" id="DivPMDLBSFD" runat="server" visible="false">
          
             Project Type: </b><asp:Button ID="btn_" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Project Type"></asp:Button>
@@ -720,7 +647,6 @@
         </div>
              </div>
             <div class="col-3">
-
          <div class="container" id="Div2" runat="server" visible="false">
          
             ProjectId: <asp:Button ID="Button2" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Project Id"></asp:Button>
@@ -731,7 +657,6 @@
            
             <div class="col-3">
            
-
         <div class="container" id="Div3" runat="server" visible="false">
          
           UID: <asp:Button ID="Button3" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="UID"></asp:Button>
@@ -741,7 +666,6 @@
              </div>
          <div class="col-3">
            
-
         <div class="container" id="Div4" runat="server" visible="false">
          
           Revision Number: <asp:Button ID="Button4" Text="" runat="server" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip="Revision Number"></asp:Button>
@@ -761,7 +685,6 @@
            <Triggers>
            </Triggers>
     </asp:UpdatePanel>
-
 </div>
 </div>
 </asp:Content>
