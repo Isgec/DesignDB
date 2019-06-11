@@ -111,7 +111,7 @@
 
             <tr>
               <td>
-                <span style="color: #99ccff">Version : </span> <span style="color: #99ffcc"> DB 1.0.1</span>
+                <span style="color: #99ccff">Version : </span> <span style="color: #99ffcc"> DB 1.0.2</span>
                 <a href="#vinformation" class="btn btn-light btn-outline-light" style="width: 28px;height: 28px; text-align: center; text-justify:auto; cursor: pointer" data-toggle="collapse"><b>i</b></a>
   
                 <a href="#UserGuide" class="btn btn-light btn-outline-primary" style="width: 190px;height: 28px; text-align: center; text-rendering:auto;  text-justify:auto; cursor: pointer" data-toggle="collapse"><b>User Manual</b></a>
@@ -122,8 +122,18 @@
   
   </div>
 <div id="vinformation" class="collapse">
+  <div class ="row"> 
+    <div class="col-3">
+      <hr/>
   <span style="color: #99ccff">First Release : </span><span style="color: #99ffcc">06/04/2019 </span>
-  
+ <hr/>
+   <p><span style="color: #99ccff">DB1.0 Update 2 : </span><span style="color: #99ffcc">11/06/2019 </span></p>
+  <p> <span style="color: #99ffcc">1. User DashBoard - Pre/Post Order receipt information updated  </span> </p>
+   <p> <span style="color: #99ffcc">2. Project DashBoard - Pre/Post Order receipt information updated  </span> </p>
+   <p> <span style="color: #99ffcc">3. Project DashBoard - HOLD Chart/Report Added  </span> </p>
+
+   <hr/>
+  </div> </div>
   </div>
 
 

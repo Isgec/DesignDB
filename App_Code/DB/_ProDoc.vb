@@ -72,6 +72,17 @@ Namespace SIS.DB
     Public Property Owner_Dept As String = ""
     Public Property t_dprj As String = ""
 
+    Public Property DocumentID As String = ""
+    Public Property SerialNo As String = ""
+    Public Property Description As String = ""
+    Public Property ResponsibleDept As String = ""
+    Public Property PartUnderHold As String = ""
+    Public Property RevisionAtHold As String = ""
+    Public Property RevisionAtUnhold As String = ""
+    Public Property reasonforHold As String = ""
+    Public Property CreatedBy As String = ""
+    Public Property CreatedOn As String = ""
+
 
 
 
@@ -778,10 +789,11 @@ Namespace SIS.DB
             Sql &= "         where ttpisg063200.t_cprj =('" & PrjID & "') and ttpisg063200.t_appl=1 "
 
 
+
           Case "Process_DCR_Total_Count"
 
-            Sql = " select t_dcrn,t_dsca,rec.t_cspa as element,(case t_stat "
-            Sql &= " when 1 then 'Under Creation' "
+            Sql = " Select t_dcrn,t_dsca,rec.t_cspa As element,(Case t_stat "
+            Sql &= " When 1 Then 'Under Creation' "
             Sql &= "  when 2 then 'Under Approve' "
             Sql &= " when 3 then 'Approved' "
             Sql &= " end) as t_stat, (case t_reqs "
@@ -17030,6 +17042,57 @@ Namespace SIS.DB
             Sql &= " LEFT JOIN ttppdm090200 "
             Sql &= " on ttppdm090200.t_cspa= ttpisg063200.t_cspa "
             Sql &= "         where ttpisg063200.t_cprj =('" & PrjID & "') and ttpisg063200.t_appl=1 and ttpisg063200.t_engs=3"
+
+
+        End Select
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          Dim rd As SqlDataReader = Cmd.ExecuteReader
+          While (rd.Read)
+            mRet.Add(New ProDoc(rd))
+          End While
+        End Using
+      End Using
+      Return mRet
+    End Function
+
+    Public Shared Function GetProHOLDData(ByVal det As String, ByVal PrjID As String) As List(Of ProDoc)
+      Dim userG As String = ""
+
+      Dim UserID As String = HttpContext.Current.Session("LoginID")
+      Dim UserIDT As Integer = 0
+      Try
+        UserIDT = Convert.ToInt32(UserID)
+      Catch ex As Exception
+
+      End Try
+
+      If PrjID = "" Then Return Nothing
+
+      Dim mRet As New List(Of SIS.DB.ProDoc)
+
+      Dim Sql As String = ""
+      Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetConnectionString())
+        Con.Open()
+        Select Case det
+
+          Case "HOLD_CHART"
+
+            Sql = "  "
+            Sql &= "    SELECT       DocumentID,SerialNo,Description,ResponsibleDept,PartUnderHold,reasonforHold,RevisionAtHold,RevisionAtUnhold,CreatedBy,CreatedOn "
+            Sql &= " FROM            [IJTPerks].[dbo].[DWG_HoldList] as aa"
+            Sql &= " WHERE        (ProjectID = '" & PrjID & "') AND (HoldStatus = 1) and aa.SerialNo =(SELECT MAX(SerialNo) FROM [IJTPerks].[dbo].[DWG_HoldList] AS bb WHERE (bb.DocumentID = aa.DocumentID) )"
+
+          Case "HOLD_CHART1"
+
+            Sql = "  "
+            Sql &= "    SELECT       DocumentID,SerialNo,Description,ResponsibleDept,PartUnderHold,reasonforHold,RevisionAtHold,RevisionAtUnhold,CreatedBy,CreatedOn  "
+            Sql &= " FROM            [IJTPerks].[dbo].[DWG_HoldList] AS aa "
+            Sql &= " WHERE        (ProjectID = '" & PrjID & "') AND aa.SerialNo =(SELECT MAX(SerialNo) FROM [IJTPerks].[dbo].[DWG_HoldList] AS bb WHERE (bb.DocumentID = aa.DocumentID) )"
+
+
 
 
         End Select

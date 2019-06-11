@@ -752,9 +752,49 @@ Partial Class GF_ProjectDB
   End Sub
 
 
+  Private Sub Chart10_PreRender(sender As Object, e As EventArgs) Handles Chart10.PreRender
+    If ProjectID = "" Then Exit Sub
+    Dim Dt As SIS.CT.CTChart = SIS.CT.CTChart.GetHCTChart(ProjectID)
+    If Dt.PlannedX.Length >= 1 Then
+      Chart10 = SIS.CT.CTChart.RenderChart10(Chart10, Dt)
+      HOLDDATA.Visible = False
+      'HOLDTABLE.Visible = True
+      'HOLDDATAI.Visible = False
+      ' ELEMENTTABLE1.Visible = True
+    Else
+      Chart10.Visible = False
+      HOLDDATA.Text = "No Data Available for -" & ProjectID
+      HOLDDATA.Visible = True
+      ' HOLDTABLE.Visible = False
+      ' HOLDTABLE1.Visible = False
+    End If
+    Try
+      'OverallDataTable.InnerHtml = Dt.GetDataTable
+    Catch ex As Exception
+    End Try
+  End Sub
 
-
-
+  Private Sub Chart11_PreRender(sender As Object, e As EventArgs) Handles Chart11.PreRender
+    If ProjectID = "" Then Exit Sub
+    Dim Dt As SIS.CT.CTChart = SIS.CT.CTChart.GetHCTChart1(ProjectID)
+    If Dt.PlannedX.Length >= 1 Then
+      Chart11 = SIS.CT.CTChart.RenderChart11(Chart11, Dt)
+      HOLD1DATA.Visible = False
+      'HOLDTABLE.Visible = True
+      'HOLDDATAI.Visible = False
+      ' ELEMENTTABLE1.Visible = True
+    Else
+      Chart11.Visible = False
+      HOLD1DATA.Text = "No Data Available for -" & ProjectID
+      HOLD1DATA.Visible = True
+      ' HOLDTABLE.Visible = False
+      ' HOLDTABLE1.Visible = False
+    End If
+    Try
+      'OverallDataTable.InnerHtml = Dt.GetDataTable
+    Catch ex As Exception
+    End Try
+  End Sub
   Private Sub cmdSubmit_Click(sender As Object, e As EventArgs) Handles cmdSubmit.Click
 
     PDetails.Visible = True
@@ -770,6 +810,8 @@ Partial Class GF_ProjectDB
     C7.Visible = True
     C8.Visible = True
     C9.Visible = True
+    C10.Visible = True
+    C11.Visible = True
 
 
 
@@ -992,6 +1034,16 @@ Partial Class GF_ProjectDB
   Private Sub ELEMENTCHART_Load(sender As Object, e As EventArgs) Handles ELEMENTCHART.Load
     ELEMENTCHART.HRef = "GF_ProjectDBDetails.aspx?detail=ELEMENT_CHART&PrjID=" & F_t_cprj.Text
   End Sub
+
+  Private Sub HOLDCHART_Load(sender As Object, e As EventArgs) Handles HOLDCHART.Load
+    HOLDCHART.HRef = "GF_ProjectDBDetails.aspx?detail=HOLD_CHART&PrjID=" & F_t_cprj.Text
+  End Sub
+
+  Private Sub HOLDCHART1_Load(sender As Object, e As EventArgs) Handles HOLDCHART1.Load
+    HOLDCHART1.HRef = "GF_ProjectDBDetails.aspx?detail=HOLD_CHART1&PrjID=" & F_t_cprj.Text
+  End Sub
+
+
 
   Private Sub IDMSIICHART_Load(sender As Object, e As EventArgs) Handles IDMSIICHART.Load
     IDMSIICHART.HRef = "GF_ProjectDBDetails.aspx?detail=IDMSII_CHART&PrjID=" & F_t_cprj.Text

@@ -1213,6 +1213,182 @@ Partial Class GF_ProjectDBDetails
 
   End Sub
 
+  Private Sub ShowHoldData(ByVal x As String, ByVal y As String)
+    Dim Data As List(Of SIS.DB.ProDoc) = SIS.DB.ProDoc.GetProHOLDData(x, y)
+    Dim tbl As New Table
+
+    With tbl
+
+      .GridLines = GridLines.Both
+      .BorderWidth = 2
+      .CellSpacing = 2
+      .Width = Unit.Percentage(100)
+
+    End With
+
+    Dim tr As TableRow = Nothing
+    Dim td As TableCell = Nothing
+
+    'Header
+    tr = New TableRow
+
+    td = New TableCell
+    td.Text = "S.NO."
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "DOCUMENT ID"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "SERIAL NO"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "DESCRIPTION"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "DEPT."
+    tr.Cells.Add(td)
+
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "PartUnderHold"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "ReasonforHold"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "Rev.@Hold"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "Rev.@Unhold"
+    tr.Cells.Add(td)
+
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "CreatedBy"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "CreatedOn"
+    tr.Cells.Add(td)
+
+
+
+
+    tbl.Rows.Add(tr)
+
+    Dim I As Integer = 0
+    '================
+    For Each tmp As SIS.DB.ProDoc In Data
+      I += 1
+      tr = New TableRow
+
+      td = New TableCell
+      td.Text = I
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.DocumentID
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.SerialNo
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.Description
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.ResponsibleDept
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.PartUnderHold
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.reasonforHold
+      tr.Cells.Add(td)
+
+
+      td = New TableCell
+      td.Text = tmp.RevisionAtHold
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.RevisionAtUnhold
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.CreatedBy
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.CreatedOn
+      tr.Cells.Add(td)
+
+
+
+      tbl.Rows.Add(tr)
+
+    Next
+    '================
+    ppnlDetails.Controls.Add(tbl)
+
+  End Sub
+
+
   Private Sub GF_ProjectDBDetails_Load(sender As Object, e As EventArgs) Handles Me.Load
     Dim Det As String = Request.QueryString("detail")
     Dim PrjID As String = Request.QueryString("PrjID")
@@ -3102,6 +3278,22 @@ Partial Class GF_ProjectDBDetails
       PPSheading.Text = "Element Completion Status -Details"
       ShowelementData(Det, PrjID)
     End If
+
+    If (Det = "HOLD_CHART") Then
+      PPSheading.Text = "hold Status -Details"
+      ShowHoldData(Det, PrjID)
+    End If
+
+
+    If (Det = "HOLD_CHART1") Then
+      PPSheading.Text = "hold-DEPARTMENT Status -Details"
+      ShowHoldData(Det, PrjID)
+    End If
+
+
+
+
+
 
 
 

@@ -1021,6 +1021,101 @@ Namespace SIS.CT
       Return Chart7
     End Function
 
+    Public Shared Function RenderChart10(ByVal Chart10 As Chart, ByVal dt As CTChart, Optional ByVal IntervalY As Integer = 10, Optional ByVal Border As Integer = 3) As Chart
+      Dim ca As ChartArea = Chart10.ChartAreas(0)
+      With ca
+        With .AxisX
+          '.Interval = dt.IntervalX
+          '.Minimum = dt.MinimumX.ToOADate
+          '.Maximum = dt.MaximumX.ToOADate
+          '.LabelStyle.Format = "dd-MMM"
+          .MajorGrid.LineColor = Drawing.Color.LightGray
+          .MajorGrid.LineWidth = 1
+        End With
+        With .AxisY
+          .Interval = 10
+          .Minimum = 0
+          .Maximum = 100
+          .MajorGrid.LineColor = Drawing.Color.LightGray
+          .MajorGrid.LineWidth = 1
+        End With
+
+      End With
+
+
+      'Add Series to the Chart.
+      Dim s As New Series("Planned")
+      Chart10.Series.Add(s)
+      With s
+        .ChartType = SeriesChartType.Pie
+        .Points.DataBindXY(dt.PlannedX, dt.PlannedY)
+        .ChartArea = "ChartArea10"
+        .BorderWidth = Border
+        .Color = Drawing.Color.OrangeRed
+        .ToolTip = "#VALY"
+
+        Chart10.Series(0)("PieLabelStyle") = "Outside"
+        Chart10.ChartAreas(0).Area3DStyle.Enable3D = True
+
+        Chart10.Series(0).Font = New Font("Comic Sans MS", 15)
+        Chart10.Legends(0).Font = New Font("Comic Sans MS", 10)
+        Chart10.ChartAreas(0).Area3DStyle.Inclination = 10
+
+        Chart10.Series(0).IsValueShownAsLabel = True
+        Chart10.Series(0).IsVisibleInLegend = True
+        Chart10.Series(0).BorderWidth = 3
+        Chart10.Font.Bold = True
+      End With
+      Return Chart10
+    End Function
+
+    Public Shared Function RenderChart11(ByVal Chart11 As Chart, ByVal dt As CTChart, Optional ByVal IntervalY As Integer = 10, Optional ByVal Border As Integer = 3) As Chart
+      Dim ca As ChartArea = Chart11.ChartAreas(0)
+      With ca
+        With .AxisX
+          '.Interval = dt.IntervalX
+          '.Minimum = dt.MinimumX.ToOADate
+          '.Maximum = dt.MaximumX.ToOADate
+          '.LabelStyle.Format = "dd-MMM"
+          .MajorGrid.LineColor = Drawing.Color.LightGray
+          .MajorGrid.LineWidth = 1
+        End With
+        With .AxisY
+          .Interval = 10
+          .Minimum = 0
+          .Maximum = 100
+          .MajorGrid.LineColor = Drawing.Color.LightGray
+          .MajorGrid.LineWidth = 1
+        End With
+
+      End With
+
+
+      'Add Series to the Chart.
+      Dim s As New Series("Planned")
+      Chart11.Series.Add(s)
+      With s
+        .ChartType = SeriesChartType.Pie
+        .Points.DataBindXY(dt.PlannedX, dt.PlannedY)
+        .ChartArea = "ChartArea11"
+        .BorderWidth = Border
+        .Color = Drawing.Color.OrangeRed
+        .ToolTip = "#VALY"
+
+        Chart11.Series(0)("PieLabelStyle") = "Outside"
+        Chart11.ChartAreas(0).Area3DStyle.Enable3D = True
+
+        Chart11.Series(0).Font = New Font("Comic Sans MS", 15)
+        Chart11.Legends(0).Font = New Font("Comic Sans MS", 10)
+        Chart11.ChartAreas(0).Area3DStyle.Inclination = 10
+
+        Chart11.Series(0).IsValueShownAsLabel = True
+        Chart11.Series(0).IsVisibleInLegend = True
+        Chart11.Series(0).BorderWidth = 3
+        Chart11.Font.Bold = True
+      End With
+      Return Chart11
+    End Function
 
 
     Public Shared Function RenderChart8(ByVal Chart8 As Chart, ByVal dt As CTChart, Optional ByVal IntervalY As Integer = 10, Optional ByVal Border As Integer = 3) As Chart
@@ -1724,6 +1819,72 @@ Namespace SIS.CT
       End Using
       Return mRet
     End Function
+
+
+    Public Shared Function GetHCTChart(ByVal ProjectID As String) As CTChart
+      If ProjectID = "" Then Return Nothing
+      Dim mRet As New CTChart
+      mRet.ProjectID = ProjectID
+
+      Dim Sql As String = ""
+      Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetConnectionString)
+        Con.Open()
+        '2. Get Planned
+        Sql = ""
+        Sql &= " SELECT        ResponsibleDept AS ValX, ValY"
+        Sql &= " FROM            (SELECT        ResponsibleDept, COUNT(*) AS ValY "
+        Sql &= " FROM            [IJTPerks].[dbo].[DWG_HoldList] as aa"
+        Sql &= " WHERE        (ProjectID = '" & ProjectID & "') AND (HoldStatus = 1) AND aa.SerialNo =(SELECT MAX(SerialNo) FROM [IJTPerks].[dbo].[DWG_HoldList] AS bb WHERE (bb.DocumentID = aa.DocumentID) ) "
+
+        Sql &= " GROUP BY ResponsibleDept) AS tmp "
+        Dim aData As New List(Of ctData)
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          Dim Reader As SqlDataReader = Cmd.ExecuteReader()
+          While (Reader.Read())
+            aData.Add(New ctData(Reader))
+          End While
+          Reader.Close()
+        End Using
+        mRet.PlannedX = aData.Select(Function(x) x.ValX).ToArray
+        mRet.PlannedY = aData.Select(Function(x) x.ValY).ToArray
+      End Using
+      Return mRet
+    End Function
+
+    Public Shared Function GetHCTChart1(ByVal ProjectID As String) As CTChart
+      If ProjectID = "" Then Return Nothing
+      Dim mRet As New CTChart
+      mRet.ProjectID = ProjectID
+
+      Dim Sql As String = ""
+      Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetConnectionString)
+        Con.Open()
+        '2. Get Planned
+        Sql = ""
+        Sql &= " SELECT        (CASE HoldStatus WHEN 1 THEN 'HOLD ACTIVE' WHEN 0 THEN 'HOLD LIFTED' END) AS ValX, ValY "
+        Sql &= " FROM            (SELECT        HoldStatus, COUNT(*) AS ValY "
+        Sql &= " FROM            [IJTPerks].[dbo].[DWG_HoldList] as aa"
+        Sql &= " WHERE        (ProjectID = '" & ProjectID & "') AND aa.SerialNo =(SELECT MAX(SerialNo) FROM [IJTPerks].[dbo].[DWG_HoldList] AS bb WHERE (bb.DocumentID = aa.DocumentID) ) "
+
+        Sql &= " GROUP BY HoldStatus) AS tmp  "
+        Dim aData As New List(Of ctData)
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          Dim Reader As SqlDataReader = Cmd.ExecuteReader()
+          While (Reader.Read())
+            aData.Add(New ctData(Reader))
+          End While
+          Reader.Close()
+        End Using
+        mRet.PlannedX = aData.Select(Function(x) x.ValX).ToArray
+        mRet.PlannedY = aData.Select(Function(x) x.ValY).ToArray
+      End Using
+      Return mRet
+    End Function
+
 
     Public Shared Function GetTTTChart(ByVal ProjectID As String) As CTChart
       If ProjectID = "" Then Return Nothing
