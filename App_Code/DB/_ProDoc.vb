@@ -82,6 +82,7 @@ Namespace SIS.DB
     Public Property reasonforHold As String = ""
     Public Property CreatedBy As String = ""
     Public Property CreatedOn As String = ""
+    Public Property HoldStatus As String = ""
 
 
 
@@ -17081,14 +17082,14 @@ Namespace SIS.DB
           Case "HOLD_CHART"
 
             Sql = "  "
-            Sql &= "    SELECT       DocumentID,SerialNo,Description,ResponsibleDept,PartUnderHold,reasonforHold,RevisionAtHold,RevisionAtUnhold,CreatedBy,CreatedOn "
+            Sql &= "    SELECT       DocumentID,SerialNo,Description,ResponsibleDept,(case HoldStatus  when 0 then 'HOLD LIFTED' when 1 then 'HOLD ACTIVE' end) as HoldStatus,PartUnderHold,reasonforHold,RevisionAtHold,RevisionAtUnhold,CreatedBy,CreatedOn "
             Sql &= " FROM            [IJTPerks].[dbo].[DWG_HoldList] as aa"
             Sql &= " WHERE        (ProjectID = '" & PrjID & "') AND (HoldStatus = 1) and aa.SerialNo =(SELECT MAX(SerialNo) FROM [IJTPerks].[dbo].[DWG_HoldList] AS bb WHERE (bb.DocumentID = aa.DocumentID) )"
 
           Case "HOLD_CHART1"
 
             Sql = "  "
-            Sql &= "    SELECT       DocumentID,SerialNo,Description,ResponsibleDept,PartUnderHold,reasonforHold,RevisionAtHold,RevisionAtUnhold,CreatedBy,CreatedOn  "
+            Sql &= "    SELECT       DocumentID,SerialNo,Description,ResponsibleDept,(case HoldStatus  when 0 then 'HOLD LIFTED' when 1 then 'HOLD ACTIVE' end) as HoldStatus,PartUnderHold,reasonforHold,RevisionAtHold,RevisionAtUnhold,CreatedBy,CreatedOn  "
             Sql &= " FROM            [IJTPerks].[dbo].[DWG_HoldList] AS aa "
             Sql &= " WHERE        (ProjectID = '" & PrjID & "') AND aa.SerialNo =(SELECT MAX(SerialNo) FROM [IJTPerks].[dbo].[DWG_HoldList] AS bb WHERE (bb.DocumentID = aa.DocumentID) )"
 

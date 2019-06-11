@@ -2758,34 +2758,7 @@
 </div>
 
     <hr />
-      <div class="row" id="C10" runat="server" visible="false">
-      <div class="col-sm-12 text-center ">
-        <a class="chartDiv btn btn-outline-warning" id="HOLDCHART" runat="server">
-          <h5>UNDER HOLD STATUS </h5>
-          <asp:Button ID="HOLDDATA" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Sorry !!! No Data in ERPLN" Text="" Font-Bold="true" Visible="false"></asp:Button>
-
-          <asp:Chart
-            ID="Chart10"
-            Height="600px"
-            Width="1050px"
-            ClientIDMode="Predictable"
-            runat="server">
-            <Legends>
-              <asp:Legend Name="Legend10" Docking="Bottom" IsDockedInsideChartArea="true">
-                <Position Auto="True" />
-              </asp:Legend>
-            </Legends>
-            <ChartAreas>
-              <asp:ChartArea Name="ChartArea10" Area3DStyle-Enable3D="true" BackImageTransparentColor="WhiteSmoke" AlignmentOrientation="All" ShadowOffset="30">
-              </asp:ChartArea>
-            </ChartAreas>
-          </asp:Chart>
-          <div id="Div10" runat="server" class="container-fluid text-center"></div>
-        </a>
-      </div>
-    </div>
-    <hr />
-        <div class="row" id="C11" runat="server" visible="false">
+    <div class="row" id="C11" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-warning" id="HOLDCHART1" runat="server">
           <h5>HOLD STATUS </h5>
@@ -2808,6 +2781,35 @@
             </ChartAreas>
           </asp:Chart>
           <div id="Div11" runat="server" class="container-fluid text-center"></div>
+        </a>
+      </div>
+    </div>
+   
+    <hr />
+    
+           <div class="row" id="C10" runat="server" visible="false">
+      <div class="col-sm-12 text-center ">
+        <a class="chartDiv btn btn-outline-warning" id="HOLDCHART" runat="server">
+          <h5>UNDER HOLD STATUS </h5>
+          <asp:Button ID="HOLDDATA" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Sorry !!! No Data in ERPLN" Text="" Font-Bold="true" Visible="false"></asp:Button>
+
+          <asp:Chart
+            ID="Chart10"
+            Height="600px"
+            Width="1050px"
+            ClientIDMode="Predictable"
+            runat="server">
+            <Legends>
+              <asp:Legend Name="Legend10" Docking="Bottom" IsDockedInsideChartArea="true">
+                <Position Auto="True" />
+              </asp:Legend>
+            </Legends>
+            <ChartAreas>
+              <asp:ChartArea Name="ChartArea10" Area3DStyle-Enable3D="true" BackImageTransparentColor="WhiteSmoke" AlignmentOrientation="All" ShadowOffset="30">
+              </asp:ChartArea>
+            </ChartAreas>
+          </asp:Chart>
+          <div id="Div10" runat="server" class="container-fluid text-center"></div>
         </a>
       </div>
     </div>

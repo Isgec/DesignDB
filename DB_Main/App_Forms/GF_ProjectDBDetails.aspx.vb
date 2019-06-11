@@ -1272,6 +1272,14 @@ Partial Class GF_ProjectDBDetails
     td.Text = "DEPT."
     tr.Cells.Add(td)
 
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "HOLD STATUS"
+    tr.Cells.Add(td)
+
 
     td = New TableCell
     With td
@@ -1351,6 +1359,10 @@ Partial Class GF_ProjectDBDetails
 
       td = New TableCell
       td.Text = tmp.ResponsibleDept
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.HoldStatus
       tr.Cells.Add(td)
 
       td = New TableCell
@@ -3280,13 +3292,13 @@ Partial Class GF_ProjectDBDetails
     End If
 
     If (Det = "HOLD_CHART") Then
-      PPSheading.Text = "hold Status -Details"
+      PPSheading.Text = "Hold Status -Details"
       ShowHoldData(Det, PrjID)
     End If
 
 
     If (Det = "HOLD_CHART1") Then
-      PPSheading.Text = "hold-DEPARTMENT Status -Details"
+      PPSheading.Text = "Document Under Hold -Details"
       ShowHoldData(Det, PrjID)
     End If
 
