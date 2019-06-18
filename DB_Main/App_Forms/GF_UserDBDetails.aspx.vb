@@ -316,13 +316,13 @@ Partial Class GF_UserDBDetails
     td.Text = "QLTY."
     tr.Cells.Add(td)
 
-    'td = New TableCell
-    'With td
-    '  .Font.Bold = True
-    '  .Font.Size = FontUnit.Point(9)
-    'End With
-    'td.Text = "OWNER_DEPT."
-    'tr.Cells.Add(td)
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "OWNER_DEPT."
+    tr.Cells.Add(td)
 
 
     'td = New TableCell
@@ -450,9 +450,9 @@ Partial Class GF_UserDBDetails
       End If
       tr.Cells.Add(td)
 
-      'td = New TableCell
-      'td.Text = tmp.Owner_Dept
-      'tr.Cells.Add(td)
+      td = New TableCell
+      td.Text = tmp.Owner_Dept
+      tr.Cells.Add(td)
 
 
 
