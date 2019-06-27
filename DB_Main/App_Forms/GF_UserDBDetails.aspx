@@ -16,13 +16,13 @@
     
     
         
-    <div class="container-fluid text-center">
-      <div class="row">
-        <div class="col-sm-2 mb-2">
-           <a class="btn btn-success" href="GF_UserDB.aspx"  role="button"><i class="fa fa-dashboard" style="font-size:20px"> DashBoard </i><i class="fa fa-spinner fa-pulse"></i></a>
+    <div class="col-2">
+      
+        <div class="mb-1 mt-1">
+           <a class="btn btn-success" href="GF_UserDB.aspx"  role="button"><i class="fa fa-dashboard" style="font-size:20px"> </i><%--<i class="fa fa-spinner fa-pulse"></i>--%></a>
         </div>
        
-      </div>
+     
       <%-- <div class="container text-center">
             <img src="DB.jpg" class="img-rounded" alt="Design DashBoard - Beta Version 1.0.0" width="414" height="98"/> 
              </div>--%>
@@ -35,16 +35,14 @@
           </div>
         </div>
 
-
-    <div class="container text-center ml-0">
-      <div class="row">
+    <hr style="color:brown;background-color:darkslategrey;width:100%;height:3px">
+    
         <div class="col-sm-auto my-0 table-hover">
           <div id="pnlDetails" runat="server">
           </div>
         </div>
-      </div>
-    </div>
-
+     
+  <hr style="color:brown;background-color:darkslategrey;width:100%;height:3px">
 
       </ContentTemplate>
 

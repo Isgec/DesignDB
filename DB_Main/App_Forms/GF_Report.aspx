@@ -518,7 +518,8 @@
          <div class="col-4"></div>
     
           </div>
-  
+ 
+
   <%--  <table style="width:50%" border="2">
   <tr>
     <th><asp:label ID="Button1" runat="server" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:label></th>

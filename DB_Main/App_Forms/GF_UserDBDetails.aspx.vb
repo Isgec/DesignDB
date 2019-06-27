@@ -10,7 +10,7 @@ Partial Class GF_UserDBDetails
       .BorderWidth = 2
       .CellSpacing = 2
       .Width = Unit.Percentage(100)
-      .CssClass = "table-danger"
+      .CssClass = "table-light table-bordered"
       '  .CssClass = "table-danger table-bordered thead-primary table-hover"
     End With
     Dim tr As TableRow = Nothing
@@ -177,8 +177,8 @@ Partial Class GF_UserDBDetails
       .BorderWidth = 2
       .CellSpacing = 2
       .Width = Unit.Percentage(100)
-      .CssClass = "table-warning"
-      '  .CssClass = "table-danger table-bordered thead-primary table-hover"
+      .CssClass = "table-light table-bordered"
+      '  .CssClass = "table-danger table-bordered thead-primary"
     End With
     Dim tr As TableRow = Nothing
     Dim td As TableCell = Nothing
@@ -336,125 +336,171 @@ Partial Class GF_UserDBDetails
     tbl.Rows.Add(tr)
 
     Dim I As Integer = 0
+    Dim j As Integer = 0
+
     '================
     For Each tmp As SIS.DB.engDoc In Data
-      I += 1
-      tr = New TableRow
 
-      td = New TableCell
-      td.Text = I
-      tr.Cells.Add(td)
 
-      td = New TableCell
-      td.Text = tmp.ReceiptID
-      tr.Cells.Add(td)
 
-      td = New TableCell
-      td.Text = tmp.Rrev
-      tr.Cells.Add(td)
 
-      td = New TableCell
-      td.Text = tmp.ReceiptDate
-      tr.Cells.Add(td)
+      Dim utmp As List(Of SIS.DB.UserRoleIDMS) = SIS.DB.UserRoleIDMS.GetUserRoleIDMS(y)
+      For Each uptm As SIS.DB.UserRoleIDMS In utmp
 
-      td = New TableCell
-      td.Text = tmp.SentDate
-      tr.Cells.Add(td)
 
-      td = New TableCell
-      td.Text = tmp.Rageindays
-      tr.Cells.Add(td)
 
-      td = New TableCell
-      td.Text = tmp.RProject
-      tr.Cells.Add(td)
 
-      td = New TableCell
-      td.Text = tmp.ItemDescription
-      tr.Cells.Add(td)
 
-      td = New TableCell
-      td.Text = tmp.RStatus
-      tr.Cells.Add(td)
 
-      td = New TableCell
-      td.Text = tmp.Mechanical
-      If td.Text = "Pending" Then
-        td.ForeColor = Drawing.Color.Red
+        I += 1
+
+        tr = New TableRow
+
+        td = New TableCell
+        td.Text = I
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.ReceiptID
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.Rrev
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.ReceiptDate
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.SentDate
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.Rageindays
         With td
           .Font.Bold = True
 
+
         End With
-      End If
-      tr.Cells.Add(td)
+        If tmp.Rageindays >= 30 Then
+          td.ForeColor = Drawing.Color.Red
 
-      td = New TableCell
-      td.Text = tmp.Structure_
-      If td.Text = "Pending" Then
-        td.ForeColor = Drawing.Color.Red
-        With td
-          .Font.Bold = True
-        End With
-      End If
-      tr.Cells.Add(td)
-
-      td = New TableCell
-      td.Text = tmp.Piping
-      If td.Text = "Pending" Then
-        td.ForeColor = Drawing.Color.Red
-        With td
-          .Font.Bold = True
-        End With
-
-      End If
-      tr.Cells.Add(td)
-
-      td = New TableCell
-      td.Text = tmp.Process
-      If td.Text = "Pending" Then
-        td.ForeColor = Drawing.Color.Red
-        With td
-          .Font.Bold = True
-        End With
-      End If
-
-      tr.Cells.Add(td)
-
-      td = New TableCell
-      td.Text = tmp.CandI
-      If td.Text = "Pending" Then
-        td.ForeColor = Drawing.Color.Red
-        With td
-          .Font.Bold = True
-        End With
-      End If
-      tr.Cells.Add(td)
-
-      td = New TableCell
-      td.Text = tmp.Electrical
-      If td.Text = "Pending" Then
-        td.ForeColor = Drawing.Color.Red
-        With td
-          .Font.Bold = True
-        End With
-      End If
-      tr.Cells.Add(td)
-
-      td = New TableCell
-      td.Text = tmp.Quality
-      If td.Text = "Pending" Then
-        td.ForeColor = Drawing.Color.Red
-        With td
-          .Font.Bold = True
-        End With
-      End If
-      tr.Cells.Add(td)
-
-      td = New TableCell
-      td.Text = tmp.Owner_Dept
-      tr.Cells.Add(td)
+        End If
 
 
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.RProject
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.ItemDescription
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.RStatus
+        tr.Cells.Add(td)
+
+
+
+        td = New TableCell
+        td.Text = tmp.Mechanical
+
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+
+
+          End With
+
+
+        End If
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.Structure_
+
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
+        End If
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.Piping
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
+
+        End If
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.Process
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
+        End If
+
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.CandI
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
+        End If
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.Electrical
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
+        End If
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.Quality
+
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
+        End If
+        tr.Cells.Add(td)
+
+
+
+
+
+
+        td = New TableCell
+        td.Text = tmp.Owner_Dept
+        If tmp.Owner_Dept.ToUpper = uptm.EDepartment.ToUpper Then
+          td.ForeColor = Drawing.Color.DarkGreen
+          tr.BackColor = Drawing.Color.Yellow
+          With td
+            .Font.Bold = True
+          End With
+        End If
+
+        tr.Cells.Add(td)
+      Next
 
       'td = New TableCell
       'Dim cmd As New Button
@@ -467,6 +513,7 @@ Partial Class GF_UserDBDetails
 
 
     Next
+
     '================
     pnlDetails.Controls.Add(tbl)
 
@@ -483,7 +530,7 @@ Partial Class GF_UserDBDetails
       .BorderWidth = 2
       .CellSpacing = 2
       .Width = Unit.Percentage(100)
-      .CssClass = "table-primary"
+      .CssClass = "table-light table-bordered"
       '  .CssClass = "table-danger table-bordered thead-primary table-hover"
     End With
     Dim tr As TableRow = Nothing
@@ -597,7 +644,7 @@ Partial Class GF_UserDBDetails
       .BorderWidth = 2
       .CellSpacing = 2
       .Width = Unit.Percentage(100)
-      .CssClass = "table-success"
+      .CssClass = "table-light table-bordered"
       '  .CssClass = "table-danger table-bordered thead-primary table-hover"
     End With
     Dim tr As TableRow = Nothing
@@ -754,7 +801,7 @@ Partial Class GF_UserDBDetails
       .BorderWidth = 2
       .CellSpacing = 2
       .Width = Unit.Percentage(100)
-      .CssClass = "table-secondery"
+      .CssClass = "table-light table-bordered"
       '  .CssClass = "table-danger table-bordered thead-primary table-hover"
     End With
     Dim tr As TableRow = Nothing
