@@ -182,6 +182,7 @@ Namespace SIS.DB
         Sql &= "                when 'C&I' then case when rec.t_sent_5=1 then 1 else 0 end  "
         Sql &= "                when 'ELE' then case when rec.t_sent_6=1 then 1 else 0 end  "
         Sql &= "                when 'QLY' then case when rec.t_sent_7=1 then 1 else 0 end  "
+
         Sql &= "                end "
         Sql &= "                And rec.t_eunt= (select top 1 t_eunt from tdmisg130200 where t_logn in ('" & UserID & "'))  "
         Sql &= "  ) as tmp  "
