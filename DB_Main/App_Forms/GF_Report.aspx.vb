@@ -55,38 +55,38 @@ Partial Class GF_Report
     Dim lyear As Integer = Now.Year()
 
 
-    If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth
-    label101.Text = lmonth & "-" & lyear
+    'If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth
+    'label101.Text = lmonth & "-" & lyear
 
-    If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
-    label102.Text = lmonth & "-" & lyear
+    'If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
+    'label102.Text = lmonth & "-" & lyear
 
-    If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
-    label103.Text = lmonth & "-" & lyear
+    'If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
+    'label103.Text = lmonth & "-" & lyear
 
-    If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
-    label104.Text = lmonth & "-" & lyear
+    'If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
+    'label104.Text = lmonth & "-" & lyear
 
-    If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
-    label105.Text = lmonth & "-" & lyear
+    'If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
+    'label105.Text = lmonth & "-" & lyear
 
-    If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
-    label106.Text = lmonth & "-" & lyear
+    'If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
+    'label106.Text = lmonth & "-" & lyear
 
-    If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
-    label107.Text = lmonth & "-" & lyear
+    'If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
+    'label107.Text = lmonth & "-" & lyear
 
-    If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
-    label108.Text = lmonth & "-" & lyear
+    'If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
+    'label108.Text = lmonth & "-" & lyear
 
-    If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
-    label109.Text = lmonth & "-" & lyear
+    'If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
+    'label109.Text = lmonth & "-" & lyear
 
-    If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
-    label110.Text = lmonth & "-" & lyear
+    'If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
+    'label110.Text = lmonth & "-" & lyear
 
-    If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
-    label111.Text = lmonth & "-" & lyear
+    'If lmonth = "12" Then lyear = lyear + 1 And lmonth = 1 Else lmonth = lmonth + 1
+    'label111.Text = lmonth & "-" & lyear
 
 
 

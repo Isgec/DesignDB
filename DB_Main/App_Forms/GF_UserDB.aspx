@@ -105,9 +105,9 @@
         </div>
         <div class="col-md-3">
        <%-- <h6>  <span class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"><font face="Comic Sans MS">Post-Order__For Evaluation :</font></span></h6>--%>
-          <h6><a href="#demo4" class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"  data-toggle="collapse"><b><font face="Comic Sans MS">Post-Order__For Evaluation :</font></b></a></h6>
+          <h6><a href="#demo4" class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"  data-toggle="collapse"><b><font face="Comic Sans MS">Post-Order__Pending :</font></b></a></h6>
   <div id="demo4" class="collapse">
-    <b>Count of Post Order Receipts which are in Under Evaluation State with My Department </b>
+    <b>Count of Post Order Receipts which are in Under Evaluation, Comments Submitted & technically Cleared State with My Department </b>
   </div>
         </div>
         <div class="col-xs-1">

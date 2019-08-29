@@ -41,7 +41,7 @@
         </td>
         <td  valign="top" align="right" >
             <asp:LinkButton ID="LinkButton1"  runat="server" Height="26px"  PostBackUrl="~/ChangePassword.aspx" Text="Change Password" /><br />
-            <b><asp:LoginStatus ID="LoginStatus1" CssClass="signin" runat="server" Height="18px" Width="86px" style="padding:3px 10px 3px 10px" OnLoggedOut="LoggedOut" LoginText="Sign In" LogoutAction="Redirect" LogoutPageUrl="~/Default.aspx" LogoutText="  Sign Out  " ToolTip="Sign Out" /></b>
+            <b><asp:LoginStatus ID="LoginStatus1" CssClass="signin" runat="server" Height="18px" Width="86px" style="padding:3px 10px 3px 10px" LoginText="Sign In" LogoutAction="Redirect" LogoutPageUrl="~/Default.aspx" LogoutText="  Sign Out  " ToolTip="Sign Out" /></b>
         </td>
           </tr>
       </table>

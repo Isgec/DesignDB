@@ -168,7 +168,7 @@ Partial Class GF_UserDBDetails
   End Sub
 
 
-  Private Sub ShowRData(ByVal x As String, ByVal y As String)
+  Private Sub ShowPREData(ByVal x As String, ByVal y As String)
     Dim Data As List(Of SIS.DB.engDoc) = SIS.DB.engDoc.GetData(x, y)
 
     Dim tbl As New Table
@@ -210,13 +210,6 @@ Partial Class GF_UserDBDetails
     td.Text = "REV"
     tr.Cells.Add(td)
 
-    td = New TableCell
-    With td
-      .Font.Bold = True
-      .Font.Size = FontUnit.Point(9)
-    End With
-    td.Text = "CREATED ON"
-    tr.Cells.Add(td)
 
     td = New TableCell
     With td
@@ -234,14 +227,28 @@ Partial Class GF_UserDBDetails
     td.Text = "PENDING (DAYS)"
     tr.Cells.Add(td)
 
-
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PROJECT TYPE"
+    tr.Cells.Add(td)
 
     td = New TableCell
     With td
       .Font.Bold = True
       .Font.Size = FontUnit.Point(9)
     End With
-    td.Text = "PROJECT"
+    td.Text = "PROJECT ID"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PROJECT NAME"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -251,6 +258,7 @@ Partial Class GF_UserDBDetails
     End With
     td.Text = "ITEM DESCRIPTION"
     tr.Cells.Add(td)
+
 
     td = New TableCell
     With td
@@ -321,7 +329,7 @@ Partial Class GF_UserDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(9)
     End With
-    td.Text = "OWNER_DEPT."
+    td.Text = "OWNER DEPT."
     tr.Cells.Add(td)
 
 
@@ -368,9 +376,6 @@ Partial Class GF_UserDBDetails
         td.Text = tmp.Rrev
         tr.Cells.Add(td)
 
-        td = New TableCell
-        td.Text = tmp.ReceiptDate
-        tr.Cells.Add(td)
 
         td = New TableCell
         td.Text = tmp.SentDate
@@ -387,8 +392,10 @@ Partial Class GF_UserDBDetails
           td.ForeColor = Drawing.Color.Red
 
         End If
+        tr.Cells.Add(td)
 
-
+        td = New TableCell
+        td.Text = tmp.PType
         tr.Cells.Add(td)
 
         td = New TableCell
@@ -396,8 +403,13 @@ Partial Class GF_UserDBDetails
         tr.Cells.Add(td)
 
         td = New TableCell
+        td.Text = tmp.Project_Name
+        tr.Cells.Add(td)
+
+        td = New TableCell
         td.Text = tmp.ItemDescription
         tr.Cells.Add(td)
+
 
         td = New TableCell
         td.Text = tmp.RStatus
@@ -519,6 +531,380 @@ Partial Class GF_UserDBDetails
 
   End Sub
 
+  Private Sub ShowPOSTData(ByVal x As String, ByVal y As String)
+    Dim Data As List(Of SIS.DB.engDoc) = SIS.DB.engDoc.GetData(x, y)
+
+    Dim tbl As New Table
+    With tbl
+      .GridLines = GridLines.Both
+      .BorderWidth = 2
+      .CellSpacing = 2
+      .Width = Unit.Percentage(100)
+      .CssClass = "table-light table-bordered"
+      '  .CssClass = "table-danger table-bordered thead-primary"
+    End With
+    Dim tr As TableRow = Nothing
+    Dim td As TableCell = Nothing
+
+    'Header
+    tr = New TableRow
+
+    td = New TableCell
+    td.Text = "S.NO."
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "RECEIPT"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "REV"
+    tr.Cells.Add(td)
+
+
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "RECEIVED ON"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PENDING (DAYS)"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PROJECT TYPE"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PROJECT ID"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PROJECT NAME"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "ITEM DESCRIPTION"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PO NUMBER"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "STATUS"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "MECH."
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "STR."
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PIP."
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PRC."
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "C&I"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "ELE."
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "QLTY."
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "OWNER DEPT."
+    tr.Cells.Add(td)
+
+
+    'td = New TableCell
+    'With td
+    '  .Font.Bold = True
+    '  .Font.Size = FontUnit.Point(14)
+    'End With
+    'td.Text = "Option"
+    'tr.Cells.Add(td)
+
+    tbl.Rows.Add(tr)
+
+    Dim I As Integer = 0
+    Dim j As Integer = 0
+
+    '================
+    For Each tmp As SIS.DB.engDoc In Data
+
+
+
+
+      Dim utmp As List(Of SIS.DB.UserRoleIDMS) = SIS.DB.UserRoleIDMS.GetUserRoleIDMS(y)
+      For Each uptm As SIS.DB.UserRoleIDMS In utmp
+
+
+
+
+
+
+        I += 1
+
+        tr = New TableRow
+
+        td = New TableCell
+        td.Text = I
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.ReceiptID
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.Rrev
+        tr.Cells.Add(td)
+
+
+        td = New TableCell
+        td.Text = tmp.SentDate
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.Rageindays
+        With td
+          .Font.Bold = True
+
+
+        End With
+        If tmp.Rageindays >= 30 Then
+          td.ForeColor = Drawing.Color.Red
+
+        End If
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.PType
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.RProject
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.Project_Name
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.ItemDescription
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.PO_Number
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.RStatus
+        td.Font.Bold = True
+        tr.Cells.Add(td)
+
+
+
+        td = New TableCell
+        td.Text = tmp.Mechanical
+
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+
+
+          End With
+
+
+        End If
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.Structure_
+
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
+        End If
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.Piping
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
+
+        End If
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.Process
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
+        End If
+
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.CandI
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
+        End If
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.Electrical
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
+        End If
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.Quality
+
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
+        End If
+        tr.Cells.Add(td)
+
+
+
+
+
+
+        td = New TableCell
+        td.Text = tmp.Owner_Dept
+        If tmp.Owner_Dept.ToUpper = uptm.EDepartment.ToUpper Then
+          td.ForeColor = Drawing.Color.DarkGreen
+          tr.BackColor = Drawing.Color.Yellow
+          With td
+            .Font.Bold = True
+          End With
+        End If
+
+        tr.Cells.Add(td)
+      Next
+
+      'td = New TableCell
+      'Dim cmd As New Button
+      'cmd.Text = "Click Me"
+      'td.Controls.Add(cmd)
+      'tr.Cells.Add(td)
+
+
+      tbl.Rows.Add(tr)
+
+
+    Next
+
+    '================
+    pnlDetails.Controls.Add(tbl)
+
+  End Sub
 
 
   Private Sub ShowTData(ByVal x As String, ByVal y As String)
@@ -1171,11 +1557,11 @@ Partial Class GF_UserDBDetails
     End If
     If (Det = "cipre") Then
       PSheading.Text = "PRE ORDER RECEIPT PENDING FOR EVALUATION"
-      ShowRData(Det, empID)
+      ShowPREData(Det, empID)
     End If
     If (Det = "cipoe") Then
-      PSheading.Text = "POST ORDER RECEIPT PENDING FOR EVALUATION"
-      ShowRData(Det, empID)
+      PSheading.Text = "POST ORDER RECEIPT PENDING - FOR EVALUATION , COMMENTS SUBMITTED & TECHNICALLY CLEARED"
+      ShowPOSTData(Det, empID)
     End If
 
     If (Det = "cta") Then

@@ -4,7 +4,7 @@
 
 <div class="container-fluid">
 <div class="caption">
-    <asp:Label ID="LabeltaApprovalWFTypes" runat="server" Text="&nbsp;REPORT DASHBOARD"></asp:Label>
+    <asp:Label ID="LabeltaApprovalWFTypes" runat="server" Text="&nbsp;REPORT GENERATOR"></asp:Label>
 </div>
 <div class="pagedata">
 <asp:UpdatePanel ID="UPNLtaApprovalWFTypes" runat="server">
@@ -14,12 +14,15 @@
         <span style="color: #ff0031">Loading...</span>
       </ProgressTemplate>
     </asp:UpdateProgress>
+
+
      <%-- <div class="container text-center">
             <img src="DB.jpg" class="img-rounded" alt="Design DashBoard - Beta Version 1.0.0" width="414" height="98"/> 
              </div>--%>
      
      
   <%--  <input class="form-control" type ="date"  required="required"/>--%>
+
 <%--        <div class="row">
 
     <div class="col-5">
@@ -61,6 +64,8 @@
       </div>
 
          </div>     --%>
+
+
      <hr style="color:brown;background-color:darkslategrey;width:100%;height:3px">
 
      <div class="row  mt-3">
@@ -114,6 +119,7 @@
                  </div>
             </div>
              </div>  
+     <%-- 
         <div class="col-6">
        
             <div class="form-group">
@@ -139,9 +145,61 @@
                  </div>
             </div>
              </div> 
-       
+       --%>  
          
+      
+
+   
+
+     
+    <div class="col-3">
+      <div class="form-group">
+
+              <div class="input-group">
+
+                <a href="#Fdate" class="btn btn-warning btn-outline-dark" style="width: 110px; text-align: center; cursor: pointer" data-toggle="collapse"><b>From Date</b></a>
+  <div id="Fdate" class="collapse">
+    Select Date <b>From</b> which Information need to be fetched from ERPLN and displayed on DashBoard.
+    Click again 'From Date' button To Hide this Information.
+  </div>
+
+                  <input class="form-control" type ="date"  required="required"/>
+ </div>
+            
+       </div>   
       </div> 
+
+
+
+     
+   
+    
+    
+        <div class="col-3">
+      <div class="form-group">
+
+              <div class="input-group">
+
+                <a href="#Tdate" class="btn btn-warning btn-outline-dark" style="width: 110px; text-align: center; cursor: pointer" data-toggle="collapse"><b>To Date</b></a>
+  <div id="Tdate" class="collapse">
+   Select Date <b>UpTo</b> which Information need to be fetched from ERPLN and displayed on DashBoard.
+    Click again 'From Date' button To Hide this Information.
+  </div>
+
+                  <input class="form-control" type ="date"  required="required"/>
+ </div>
+            
+       </div>  
+         
+     </div>
+            
+         </div>   
+     
+    
+    
+    
+    
+    
        
      <div class="row mt-3">
 
@@ -177,43 +235,44 @@
         
      
           <div class="col-2">
-          <asp:Button ID="cmdSubmit" runat="server" CssClass="btn btn-warning ml-1" Text="SHOW" ToolTip="Click to Search Document " Font-Bold="true" Font-Names="Comic Sans MS" />
+           
+          <asp:Button ID="cmdSubmit" runat="server" CssClass="btn  btn-block btn-outline-danger"  Font-Bold="true" Text="Generate Report" ToolTip="Click to Search Document " style="width: 190px; text-align: center; cursor:pointer"/>
           </div>
          
          </div>
 
     <hr style="color:brown;background-color:darkslategrey;width:100%;height:3px">
   
-      
-          <div class="row">
-          <div class="col-4"></div>
-    <div class="col-4">
+      <%--
+        <div Class="row">
+          <div Class="col-4"></div>
+    <div Class="col-4">
      
      
   
    
 
-      <div class="row">
+      <div Class="row">
               
-                <div class="col-4">
+                <div Class="col-4">
 
                 </div> 
 
-        <div class="col-8">
+        <div Class="col-8">
 
-                    <div class="row">
-            <div class="col-4">
-                                   <asp:label ID="label3" runat="server" ToolTip="" Font-Size="Large" Text="Planned" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
-
-                </div>
-
-              <div class="col-4">
-                                   <asp:label ID="label4" runat="server"  Font-Size="Large" ToolTip="" Text="Released" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
+                    <div Class="row">
+            <div Class="col-4">
+                                   <ASP:label ID = "label3" runat="server" ToolTip="" Font-Size="Large" Text="Planned" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
 
                 </div>
 
-              <div class="col-4">
-                                   <asp:label ID="label5" runat="server"  Font-Size="Large" ToolTip="" Text="Balance" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
+              <div Class="col-4">
+                                   <ASP:label ID = "label4" runat="server"  Font-Size="Large" ToolTip="" Text="Released" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
+
+                </div>
+
+              <div Class="col-4">
+                                   <ASP:label ID = "label5" runat="server"  Font-Size="Large" ToolTip="" Text="Balance" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
 
                 </div>
                        </div>
@@ -227,285 +286,285 @@
               
    
 
-         <div class="row">
+         <div Class="row">
                    
-                <div class="col-4">
-                  <asp:label ID="label101" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
+                <div Class="col-4">
+                  <ASP:label ID = "label101" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
                 </div>
 
 
-                <div class="col-8">
-                    <div class="row">
-                      <div class="col-4">
-                      <asp:Button ID="Button1" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
+                <div Class="col-8">
+                    <div Class="row">
+                      <div Class="col-4">
+                      <ASP:Button ID = "Button1" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
                     </div>
-                    <div class="col-4">
-                      <asp:Button ID="Button2" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
+                    <div Class="col-4">
+                      <ASP:Button ID = "Button2" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                    
-                     <div class="col-4">
+                     <div Class="col-4">
                   
-                      <asp:Button ID="Button3" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
+                      <ASP:Button ID = "Button3" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      </div>
                   </div>
                        </div>
 
-          <div class="row">
+          <div Class="row">
                    
-                <div class="col-4">
-                  <asp:label ID="label102" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
+                <div Class="col-4">
+                  <ASP:label ID = "label102" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
                 </div>
-             <div class="col-8">
-                    <div class="row">
+             <div Class="col-8">
+                    <div Class="row">
 
-                <div class="col-4">
+                <div Class="col-4">
                    
-                      <asp:Button ID="Button61" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
+                      <ASP:Button ID = "Button61" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
                     </div>
-                    <div class="col-4">
-                      <asp:Button ID="Button62" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
+                    <div Class="col-4">
+                      <ASP:Button ID = "Button62" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                    
-                     <div class="col-4">
+                     <div Class="col-4">
                   
-                      <asp:Button ID="Button63" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
+                      <ASP:Button ID = "Button63" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                        </div>
                    </div>
 
                 </div>
-      <div class="row">
+      <div Class="row">
                    
-                <div class="col-4">
-                  <asp:label ID="label103" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
+                <div Class="col-4">
+                  <ASP:label ID = "label103" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
                 </div>
-             <div class="col-8">
-                    <div class="row">
+             <div Class="col-8">
+                    <div Class="row">
 
-                <div class="col-4">
+                <div Class="col-4">
                    
-                      <asp:Button ID="Button4" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
+                      <ASP:Button ID = "Button4" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
                     </div>
-                    <div class="col-4">
-                      <asp:Button ID="Button5" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
+                    <div Class="col-4">
+                      <ASP:Button ID = "Button5" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                    
-                     <div class="col-4">
+                     <div Class="col-4">
                   
-                      <asp:Button ID="Button6" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
+                      <ASP:Button ID = "Button6" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                        </div>
                    </div>
 
                 </div>
-      <div class="row">
+      <div Class="row">
                    
-                <div class="col-4">
-                  <asp:label ID="label104" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
+                <div Class="col-4">
+                  <ASP:label ID = "label104" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
                 </div>
-             <div class="col-8">
-                    <div class="row">
+             <div Class="col-8">
+                    <div Class="row">
 
-                <div class="col-4">
+                <div Class="col-4">
                    
-                      <asp:Button ID="Button7" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
+                      <ASP:Button ID = "Button7" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
                     </div>
-                    <div class="col-4">
-                      <asp:Button ID="Button8" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
+                    <div Class="col-4">
+                      <ASP:Button ID = "Button8" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                    
-                     <div class="col-4">
+                     <div Class="col-4">
                   
-                      <asp:Button ID="Button9" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
+                      <ASP:Button ID = "Button9" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                        </div>
                    </div>
 
                 </div>
-      <div class="row">
+      <div Class="row">
                    
-                <div class="col-4">
-                  <asp:label ID="label105" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
+                <div Class="col-4">
+                  <ASP:label ID = "label105" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
                 </div>
-             <div class="col-8">
-                    <div class="row">
+             <div Class="col-8">
+                    <div Class="row">
 
-                <div class="col-4">
+                <div Class="col-4">
                    
-                      <asp:Button ID="Button10" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
+                      <ASP:Button ID = "Button10" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
                     </div>
-                    <div class="col-4">
-                      <asp:Button ID="Button11" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
+                    <div Class="col-4">
+                      <ASP:Button ID = "Button11" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                    
-                     <div class="col-4">
+                     <div Class="col-4">
                   
-                      <asp:Button ID="Button12" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
+                      <ASP:Button ID = "Button12" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                        </div>
                    </div>
 
                 </div>
-      <div class="row">
+      <div Class="row">
                    
-                <div class="col-4">
-                  <asp:label ID="label106" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
+                <div Class="col-4">
+                  <ASP:label ID = "label106" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
                 </div>
-             <div class="col-8">
-                    <div class="row">
+             <div Class="col-8">
+                    <div Class="row">
 
-                <div class="col-4">
+                <div Class="col-4">
                    
-                      <asp:Button ID="Button13" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
+                      <ASP:Button ID = "Button13" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
                     </div>
-                    <div class="col-4">
-                      <asp:Button ID="Button14" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
+                    <div Class="col-4">
+                      <ASP:Button ID = "Button14" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                    
-                     <div class="col-4">
+                     <div Class="col-4">
                   
-                      <asp:Button ID="Button15" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
+                      <ASP:Button ID = "Button15" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                        </div>
                    </div>
 
                 </div>
-      <div class="row">
+      <div Class="row">
                    
-                <div class="col-4">
-                  <asp:label ID="label107" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
+                <div Class="col-4">
+                  <ASP:label ID = "label107" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
                 </div>
-             <div class="col-8">
-                    <div class="row">
+             <div Class="col-8">
+                    <div Class="row">
 
-                <div class="col-4">
+                <div Class="col-4">
                    
-                      <asp:Button ID="Button16" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
+                      <ASP:Button ID = "Button16" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
                     </div>
-                    <div class="col-4">
-                      <asp:Button ID="Button17" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
+                    <div Class="col-4">
+                      <ASP:Button ID = "Button17" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                    
-                     <div class="col-4">
+                     <div Class="col-4">
                   
-                      <asp:Button ID="Button18" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
+                      <ASP:Button ID = "Button18" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                        </div>
                    </div>
 
                 </div>
-      <div class="row">
+      <div Class="row">
                    
-                <div class="col-4">
-                  <asp:label ID="label108" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
+                <div Class="col-4">
+                  <ASP:label ID = "label108" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
                 </div>
-             <div class="col-8">
-                    <div class="row">
+             <div Class="col-8">
+                    <div Class="row">
 
-                <div class="col-4">
+                <div Class="col-4">
                    
-                      <asp:Button ID="Button19" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
+                      <ASP:Button ID = "Button19" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
                     </div>
-                    <div class="col-4">
-                      <asp:Button ID="Button20" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
+                    <div Class="col-4">
+                      <ASP:Button ID = "Button20" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                    
-                     <div class="col-4">
+                     <div Class="col-4">
                   
-                      <asp:Button ID="Button21" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
+                      <ASP:Button ID = "Button21" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                        </div>
                    </div>
 
                 </div>
-          <div class="row">
+          <div Class="row">
                    
-                <div class="col-4">
-                  <asp:label ID="label109" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
+                <div Class="col-4">
+                  <ASP:label ID = "label109" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
                 </div>
-             <div class="col-8">
-                    <div class="row">
+             <div Class="col-8">
+                    <div Class="row">
 
-                <div class="col-4">
+                <div Class="col-4">
                    
-                      <asp:Button ID="Button22" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
+                      <ASP:Button ID = "Button22" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
                     </div>
-                    <div class="col-4">
-                      <asp:Button ID="Button23" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
+                    <div Class="col-4">
+                      <ASP:Button ID = "Button23" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                    
-                     <div class="col-4">
+                     <div Class="col-4">
                   
-                      <asp:Button ID="Button24" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
+                      <ASP:Button ID = "Button24" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                        </div>
                    </div>
 
                 </div>
-       <div class="row">
+       <div Class="row">
                    
-                <div class="col-4">
-                  <asp:label ID="label110" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
+                <div Class="col-4">
+                  <ASP:label ID = "label110" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
                 </div>
-             <div class="col-8">
-                    <div class="row">
+             <div Class="col-8">
+                    <div Class="row">
 
-                <div class="col-4">
+                <div Class="col-4">
                    
-                      <asp:Button ID="Button25" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
+                      <ASP:Button ID = "Button25" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
                     </div>
-                    <div class="col-4">
-                      <asp:Button ID="Button26" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
+                    <div Class="col-4">
+                      <ASP:Button ID = "Button26" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                    
-                     <div class="col-4">
+                     <div Class="col-4">
                   
-                      <asp:Button ID="Button27" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
+                      <ASP:Button ID = "Button27" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                        </div>
                    </div>
 
                 </div>
-       <div class="row">
+       <div Class="row">
                    
-                <div class="col-4">
-                  <asp:label ID="label111" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
+                <div Class="col-4">
+                  <ASP:label ID = "label111" runat="server" CssClass="btn btn-light btn-block" ToolTip="" Text="" Font-Bold="true" Font-Names="Comic Sans MS" ></asp:label>
                 </div>
-             <div class="col-8">
-                    <div class="row">
+             <div Class="col-8">
+                    <div Class="row">
 
-                <div class="col-4">
+                <div Class="col-4">
                    
-                      <asp:Button ID="Button28" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
+                      <ASP:Button ID = "Button28" runat="server" CssClass="btn btn-outline-primary btn-block" ToolTip="" Text=""  Font-Names="Comic Sans MS"></asp:Button>
                     </div>
-                    <div class="col-4">
-                      <asp:Button ID="Button29" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
+                    <div Class="col-4">
+                      <ASP:Button ID = "Button29" runat="server" CssClass="btn btn-outline-success btn-block" ToolTip="Process - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                    
-                     <div class="col-4">
+                     <div Class="col-4">
                   
-                      <asp:Button ID="Button30" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
+                      <ASP:Button ID = "Button30" runat="server" CssClass="btn btn-outline-danger btn-block" ToolTip="Process - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
                     </div>
                      
                        </div>
@@ -515,10 +574,12 @@
         
       
      </div>
-         <div class="col-4"></div>
+         <div Class="col-4"></div>
     
           </div>
  
+    --%>
+
 
   <%--  <table style="width:50%" border="2">
   <tr>

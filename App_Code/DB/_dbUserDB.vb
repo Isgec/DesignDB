@@ -278,7 +278,7 @@ Namespace SIS.DB
         Sql &= "                LEFT JOIN ttppdm090200 "
         Sql &= "              on ttppdm090200.t_cspa= LEFT(Ltrim(rec.t_item),8)  "
         Sql &= "               where rec.t_rcno like ('REP%')  "
-        Sql &= "               and rec.t_stat =3 "
+        Sql &= "               and rec.t_stat in (3,4,5)  "
         Sql &= "               and 1 = case (select top 1 t_dept from tdmisg130200 where t_logn in ('" & UserID & "'))  "
         Sql &= "                when 'MEC' then case when rec.t_sent_1=1 then 1 else 0 end   "
         Sql &= "                when 'STR' then case when rec.t_sent_2=1 then 1 else 0 end   "

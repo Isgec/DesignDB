@@ -14,9 +14,9 @@
     </asp:UpdateProgress>
    
     
-    
+ 
         
-    <div class="col-2">
+    <div class="col-1">
       
         <div class="mb-1 mt-1">
            <a class="btn btn-success" href="GF_UserDB.aspx"  role="button"><i class="fa fa-dashboard" style="font-size:20px"> </i><%--<i class="fa fa-spinner fa-pulse"></i>--%></a>
@@ -28,12 +28,15 @@
              </div>--%>
     </div>
     
-     <div class="col-12">
-          <div class="alert alert-dark btn-light" role="alert" id="PSC">
+     <div class="col-12 text-center">
+          <div class="btn btn-warning btn-outline-dark" role="alert" id="PSC">
             <b>
               <asp:Label ID="PSheading" runat="server"></asp:Label></b>
           </div>
         </div>
+
+   
+
 
     <hr style="color:brown;background-color:darkslategrey;width:100%;height:3px">
     
