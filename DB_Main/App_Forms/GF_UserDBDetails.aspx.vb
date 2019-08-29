@@ -659,6 +659,7 @@ Partial Class GF_UserDBDetails
     With td
       .Font.Bold = True
       .Font.Size = FontUnit.Point(9)
+
     End With
     td.Text = "PIP."
     tr.Cells.Add(td)
