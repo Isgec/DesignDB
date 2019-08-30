@@ -265,7 +265,7 @@ Partial Class GF_UserDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(9)
     End With
-    td.Text = "STATUS"
+    td.Text = "RECEIPT STATUS"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -636,7 +636,23 @@ Partial Class GF_UserDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(9)
     End With
-    td.Text = "STATUS"
+    td.Text = "PO STATUS"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PR STATUS"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "RECEIPT STATUS"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -785,6 +801,15 @@ Partial Class GF_UserDBDetails
         td = New TableCell
         td.Text = tmp.PO_Number
         tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.PO_Status
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.PR_Status
+        tr.Cells.Add(td)
+
 
         td = New TableCell
         td.Text = tmp.RStatus
