@@ -53,7 +53,6 @@ Partial Class GF_UserDB
 
   End Sub
 
-
   Private Sub cipre_Click(sender As Object, e As EventArgs) Handles cipre.Click
     Response.Redirect("GF_UserDBDetails.aspx?detail=cipre&EmpID=" & HttpContext.Current.Session("LoginID"))
   End Sub
@@ -65,8 +64,6 @@ Partial Class GF_UserDB
   Private Sub cta_Click(sender As Object, e As EventArgs) Handles cta.Click
     Response.Redirect("GF_UserDBDetails.aspx?detail=cta&EmpID=" & HttpContext.Current.Session("LoginID"))
   End Sub
-
-
 
   Private Sub Luser_Click(sender As Object, e As EventArgs) Handles Luser.Click
     Response.Redirect("GF_UserDetails.aspx?detail=cta&EmpID=" & HttpContext.Current.Session("LoginID"))

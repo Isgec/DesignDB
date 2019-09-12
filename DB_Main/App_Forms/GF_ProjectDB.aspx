@@ -1,4 +1,4 @@
-<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="GF_ProjectDB.aspx.vb" Inherits="GF_ProjectDB" title="Project Dashboard" %>
+﻿<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="GF_ProjectDB.aspx.vb" Inherits="GF_ProjectDB" title="Project Dashboard" %>
 <asp:Content ID="CPHtaApprovalWFTypes" ContentPlaceHolderID="cph1" runat="Server">
  
     <div class="caption">
@@ -38,7 +38,13 @@
                   ClientIDMode="static"
                   runat="Server">
                 </asp:TextBox>
-                <asp:Button ID="cmdSubmit" runat="server" CssClass="btn btn-warning btn-sm" Text="SHOW" ToolTip="Click to Generate Project DashBoard " Font-Bold="true" Font-Names="Comic Sans MS" />
+                <script>
+                  function changeImage() {
+                    $get('image1').style.display = 'block';
+                    $get('image2').style.display = 'none';
+                  }
+                </script>
+                <asp:Button ID="cmdSubmit" runat="server" CssClass="btn btn-warning btn-sm" Text="SHOW" OnClientClick="return changeImage();" ToolTip="Click to Generate Project DashBoard " Font-Bold="true" Font-Names="Comic Sans MS" />
               </div>
             </div>
             <%-- <br />
@@ -53,14 +59,37 @@
         <div class="container mt-0" id="PDetails" runat="server" visible="false">
           <div class="container  text-center my-0">
             <asp:Button ID="btn_projectname" Text="" runat="server" CssClass="btn-warning btn-sm" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip=""></asp:Button>
-            <hr />
+            <hr style="color:yellowgreen;background-color:orange;width:100%;height:1px" id="line1" runat="server" visible="false" />
           </div>
         </div>
       </div>
     </div>
     <%--Project & Period Detaila--%>
     
-    
+   <div class="row">
+
+        <div class="col-5"> 
+    <img src="gifproject.gif" id="image1" style="display:none;" clientidmode="Static" runat="server" width="440" height="330"/>
+        <img src="gifpreproject.bmp" id="image2" style="display:block;" width="440" height="330" runat="server" clientidmode="Static"/>
+    </div>
+       <div class="col-7" id="imagetext" runat="server" visible="true"> 
+         <div class="row">
+           </div>
+                  <br>  
+          <br>  
+          <br>
+          <br>
+    <hr style="color:yellowgreen;background-color:aquamarine;width:100%;height:4px" id="imageline1" runat="server" visible="true"/>
+        
+         <h5><font face="Comic Sans MS"> Kindly keep Patience, After Clicking  <asp:LABEL ID="Button1" Text="SHOW" runat="server" CssClass="btn-warning btn-sm" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip=""></asp:LABEL> Button,</font></h5>
+         
+         <h5> <font face="Comic Sans MS"> As Project Dashboard may take 2 to 3 minutes time for generating chart and tables.</font></h5>
+          <br> 
+         <h5><font face="Comic Sans MS"><asp:LABEL ID="LABEL2" Text="SHOW" runat="server" CssClass="btn-warning btn-sm" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip=""></asp:LABEL> बटन पर क्लिक करने के बाद, कृपया धैर्य बनाए रखें। </font></h5>
+         <h5><font face="Comic Sans MS">क्योंकि चार्ट और टेबल बनाने में 2 से 3 मिनट का समय लग सकता है।</font></h5>
+       <hr style="color:yellowgreen;background-color:aquamarine;width:100%;height:4px" id="imageline2" runat="server" visible="true"/>  
+       </div>
+     </div>
 
     <div class="container text-center" id="PMDLTABLE" runat="server" visible="false">
       <h5>Drawing and Document Progress Status As per PMDL - As Of Now</h5>
@@ -346,9 +375,10 @@
       </div>
 
     </div>
-    <hr />
+     
     
     <%--Main Graph Row--%>
+    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:3px" id="line2" runat="server" visible="false"/>
     <div class="row" id="C1" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-danger" id="PLMCHART" runat="server">
@@ -374,7 +404,8 @@
         </a>
       </div>
     </div>
-    <hr />
+    
+     <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:3px" id="line3" runat="server" visible="false"/>
     <div class="row" id="C2" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-success" id="DCRCHART" runat="server">
@@ -400,7 +431,7 @@
         </a>
       </div>
     </div>
-    <hr />
+
     
     <div class="container text-center" id="DCRTABLE" runat="server" visible="false">
       <h5>DCR Progress Status Discipline Wise</h5>
@@ -669,7 +700,7 @@
        </div>
      
     
-    <hr />
+    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:3px"  id="line4" runat="server" visible="false"/>
     <div class="row" id="C3" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-primary" id="IDMSCHART" runat="server">
@@ -697,8 +728,8 @@
       </div>
 
     </div>
-    <hr />
-
+    
+   <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:1px" id="line5"  runat="server" visible="false"/>
         <div class="container text-center" id="TRANSMITTALTABLE" runat="server" visible="false">
       <h5>Transmittal Progress Status Discipline Wise</h5>
       <div class="row">
@@ -1086,7 +1117,7 @@
           </div>
        
 </div>
-    <hr />
+   <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:1px" id="line6"  runat="server" visible="false"/>
     <div class="row" id="C4" runat="server" visible="false">
       <div class="col-sm-3 text-center ">
         <a class="chartDiv btn btn-outline-warning" id="IDMSCCHART" runat="server">
@@ -1187,7 +1218,7 @@
         </a>
       </div>
     </div>
-    <hr />
+    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:1px" id="line7"  runat="server" visible="false"/>
     <div class="row" id="C5" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-success" id="IDMSIICHART" runat="server">
@@ -1214,7 +1245,228 @@
         </a>
       </div>
     </div>
-    <hr />
+
+    
+    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:3px"  id="line15"  runat="server" visible="false"/>
+    
+      <div class="row" id="C12" runat="server" visible="false">
+      <div class="col-sm-12 text-center ">
+        <a class="chartDiv btn btn-outline-primary" id="PSTRANMITTALCHART" runat="server">
+          <h5>Pending Site Transmittal Status </h5>
+          <asp:Button ID="PSTRANMITTALDATA" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Sorry !!! No Data in ERPLN" Text="" Font-Bold="true" Visible="false"></asp:Button>
+
+          <asp:Chart
+            ID="Chart9"
+            Height="600px"
+            Width="1050px"
+            ClientIDMode="Predictable"
+            runat="server">
+            <Legends>
+              <asp:Legend Name="Legend12" Docking="Bottom" IsDockedInsideChartArea="true">
+                <Position Auto="True" />
+              </asp:Legend>
+            </Legends>
+            <ChartAreas>
+              <asp:ChartArea Name="ChartArea12" Area3DStyle-Enable3D="true" BackImageTransparentColor="WhiteSmoke" AlignmentOrientation="All" ShadowOffset="30">
+              </asp:ChartArea>
+            </ChartAreas>
+          </asp:Chart>
+          <div id="Div9" runat="server" class="container-fluid text-center"></div>
+        </a>
+      </div>
+
+    </div>
+   
+      <div class="container text-center" id="PSTRANSMITTALTABLE" runat="server" visible="false">
+      <h5>Pending Site Transmittal Status Discipline Wise</h5>
+      <div class="row">
+
+        <div class="col-12">
+          <asp:Button ID="PSTRANSMITTALDATAI" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Sorry !!! No Data in ERPLN" Text="" Font-Bold="true" Visible="false"></asp:Button>
+          </div>
+         </div>
+        
+        <div class="container text-center" id="PSTRANSMITTALTABLE1" runat="server" visible="false">
+          <div class="border border-dark btn-outline-light">
+            <div class="container-fluid">
+
+              <div class="row">
+                 
+                <div class="col-2">
+                  <div class="text-dark">
+                    <h6><b>Discipline</b></h6>
+                  </div>
+                </div>
+
+
+
+                <div class="col-2">
+                  <div class="text-dark">
+                    <b>Total Drawing Count</b>
+                  </div>
+                </div>
+
+             
+                   
+                    <div class="col-2">
+                      <div class="text-info">
+                        <b>Pending Drawing Count</b>
+                      </div>
+                    </div>
+                   
+
+
+              </div>
+             
+
+            <div class="container-fluid text-center">
+              <div class="row">
+                <div class="col-2">
+                  <h6><span class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"><font face="Comic Sans MS">Process </font></span></h6>
+                </div>
+                
+
+                    <div class="col-2">
+                      <asp:Button ID="btn_Process_PSTransmittal_Total_Drawing_Count" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Process - Total Site Drawing Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-2">
+                      <asp:Button ID="btn_Process_PSTransmittal_Pending_Drawing_Count" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="Process - Site Transmittal Pending - Drawing Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                   
+                    
+                   
+
+                
+              </div>
+            </div>
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-2">
+                  <h6><span class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"><font face="Comic Sans MS">Mechanical </font></span></h6>
+                </div>
+               
+
+                   <div class="col-2">
+                      <asp:Button ID="btn_Mechanical_PSTransmittal_Total_Drawing_Count" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Process - Total Site Drawing Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-2">
+                      <asp:Button ID="btn_Mechanical_PSTransmittal_Pending_Drawing_Count" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="Process - Site Transmittal Pending - Drawing Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                   
+                
+                   
+                   
+                  </div>
+               
+            </div>
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2">
+                  <h6><span class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"><font face="Comic Sans MS">Structure </font></span></h6>
+                </div>
+               
+
+                    <div class="col-2">
+                      <asp:Button ID="btn_Structure_PSTransmittal_Total_Drawing_Count" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Structure - Total Site Drawing Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-2">
+                      <asp:Button ID="btn_Structure_PSTransmittal_Pending_Drawing_Count" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="Structure - Site Transmittal Pending - Drawing Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                   
+               
+              </div>
+            </div>
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2">
+                  <h6><span class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"><font face="Comic Sans MS">Piping </font></span></h6>
+                </div>
+                  <div class="col-2">
+                      <asp:Button ID="btn_Piping_PSTransmittal_Total_Drawing_Count" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Piping - Total Site Drawing Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-2">
+                      <asp:Button ID="btn_Piping_PSTransmittal_Pending_Drawing_Count" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="Piping - Site Transmittal Pending - Drawing Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                   
+              </div>
+            </div>
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2">
+                  <h6><span class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"><font face="Comic Sans MS">Electrical </font></span></h6>
+                </div>
+               <div class="col-2">
+                      <asp:Button ID="btn_Electrical_PSTransmittal_Total_Drawing_Count" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Electrical - Total Site Drawing Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-2">
+                      <asp:Button ID="btn_Electrical_PSTransmittal_Pending_Drawing_Count" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="Electrical - Site Transmittal Pending - Drawing Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                   
+                </div>
+              </div>
+           
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2">
+                  <h6><span class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"><font face="Comic Sans MS">C & I </font></span></h6>
+                </div>
+               <div class="col-2">
+                      <asp:Button ID="btn_CI_PSTransmittal_Total_Drawing_Count" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="C&I - Total Site Drawing Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-2">
+                      <asp:Button ID="btn_CI_PSTransmittal_Pending_Drawing_Count" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="C&I - Site Transmittal Pending - Drawing Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    
+              </div>
+            </div>
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2">
+                  <h6><span class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"><font face="Comic Sans MS">Others </font></span></h6>
+                </div>
+                <div class="col-2">
+                      <asp:Button ID="btn_Others_PSTransmittal_Total_Drawing_Count" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Others - Total Site Drawing Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-2">
+                      <asp:Button ID="btn_Others_PSTransmittal_Pending_Drawing_Count" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="Others - Site Transmittal Pending - Drawing Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    
+              </div>
+            </div>
+
+           <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2">
+                  <h6><span class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"><font face="Comic Sans MS">Total </font></span></h6>
+                </div>
+                <div class="col-2">
+                      <asp:Button ID="btn_Total_PSTransmittal_Total_Drawing_Count" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Total Site Drawing Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-2">
+                      <asp:Button ID="btn_Total_PSTransmittal_Pending_Drawing_Count" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="Site Transmittal Pending - Drawing Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+          </div>
+       
+</div>
+   
+
+    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:3px"  id="line8"  runat="server" visible="false"/>
+
+    
+   
     <div class="row" id="C6" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-primary" id="SARCHART" runat="server">
@@ -1241,7 +1493,8 @@
         </a>
       </div>
     </div>
-    <hr />
+
+   
             <div class="container text-center" id="SARTABLE" runat="server" visible="false">
       <h5>SAR Progress Status Discipline Wise</h5>
       <div class="row">
@@ -1577,7 +1830,7 @@
        
 </div>
 
-    <hr />
+    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:1px" id="line9"  runat="server" visible="false"/>
     <div class="row" id="C7" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-primary" id="IDMSPCHART" runat="server">
@@ -1604,7 +1857,7 @@
         </a>
       </div>
     </div>
-    <hr />
+   
             <div class="container text-center" id="IDMSPTABLE" runat="server" visible="false">
       <h5>Pre Order Receipt Progress Status Discipline Wise</h5>
       <div class="row">
@@ -1993,7 +2246,7 @@
        
 </div>
 
-    <hr />
+    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:3px" id="line10" runat="server" visible="false"/>
     <div class="row" id="C8" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-dark" id="IDMSOCHART" runat="server">
@@ -2020,7 +2273,7 @@
         </a>
       </div>
     </div>
-    <hr />
+    
                 <div class="container text-center" id="IDMSOTABLE" runat="server" visible="false">
       <h5>Post Order Receipt Progress Status Discipline Wise</h5>
       <div class="row">
@@ -2410,7 +2663,7 @@
        
 </div>
 
-    <hr />
+    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:3px" id="line11" runat="server" visible="false"/>
     <div class="row" id="C9" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-warning" id="ELEMENTCHART" runat="server">
@@ -2437,7 +2690,7 @@
         </a>
       </div>
     </div>
-    <hr />
+   
                 <div class="container text-center" id="ELEMENTTABLE" runat="server" visible="false">
       <h5>Active Element Progress Status Department Wise</h5>
       <div class="row">
@@ -2757,7 +3010,7 @@
        
 </div>
 
-    <hr />
+     <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:3px" id="line12" runat="server" visible="false"/>
     <div class="row" id="C11" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-warning" id="HOLDCHART1" runat="server">
@@ -2785,7 +3038,7 @@
       </div>
     </div>
    
-    <hr />
+   <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:1px" id="line13"  runat="server" visible="false"/>
     
            <div class="row" id="C10" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
@@ -2813,7 +3066,7 @@
         </a>
       </div>
     </div>
-    <hr />
+    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:1px" id="line14"  runat="server" visible="false"/>
 
   </div>
 </asp:Content>

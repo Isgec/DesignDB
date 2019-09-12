@@ -22,6 +22,7 @@ Partial Class GF_ProjectDB
     F_t_cprj.Text = ProjectID
 
 
+
     '  pd.Text = y.ProjectDesc
 
 
@@ -30,6 +31,7 @@ Partial Class GF_ProjectDB
   End Sub
 #Region "  Chart Render "
   Private Sub Chart1_PreRender(sender As Object, e As EventArgs) Handles Chart1.PreRender
+
     If ProjectID = "" Then Exit Sub
 
 
@@ -499,6 +501,25 @@ Partial Class GF_ProjectDB
     btn_Electrical_Element_Partial.Text = x6.Electrical_Element_Partial
     btn_Electrical_Element_Completed.Text = x6.Electrical_Element_Completed
 
+    Dim x7 As SIS.CT.CTChart = SIS.CT.CTChart.GetPSTRANSMITTALDB(ProjectID)
+
+    btn_Process_PSTransmittal_Total_Drawing_Count.Text = x7.Process_PSTransmittal_Total_Count
+    btn_Mechanical_PSTransmittal_Total_Drawing_Count.Text = x7.Mechanical_PSTransmittal_Total_Count
+    btn_Piping_PSTransmittal_Total_Drawing_Count.Text = x7.Piping_PSTransmittal_Total_Count
+    btn_Structure_PSTransmittal_Total_Drawing_Count.Text = x7.Structure_PSTransmittal_Total_Count
+    btn_Electrical_PSTransmittal_Total_Drawing_Count.Text = x7.Electrical_PSTransmittal_Total_Count
+    btn_CI_PSTransmittal_Total_Drawing_Count.Text = x7.CI_PSTransmittal_Total_Count
+    btn_Others_PSTransmittal_Total_Drawing_Count.Text = x7.Others_PSTransmittal_Total_Count
+    btn_Total_PSTransmittal_Total_Drawing_Count.Text = x7.Total_PSTransmittal_Total_Count
+
+    btn_Process_PSTransmittal_Pending_Drawing_Count.Text = x7.Process_PSTransmittal_Pending_Count
+    btn_Mechanical_PSTransmittal_Pending_Drawing_Count.Text = x7.Mechanical_PSTransmittal_Pending_Count
+    btn_Piping_PSTransmittal_Pending_Drawing_Count.Text = x7.Piping_PSTransmittal_Pending_Count
+    btn_Structure_PSTransmittal_Pending_Drawing_Count.Text = x7.Structure_PSTransmittal_Pending_Count
+    btn_Electrical_PSTransmittal_Pending_Drawing_Count.Text = x7.Electrical_PSTransmittal_Pending_Count
+    btn_CI_PSTransmittal_Pending_Drawing_Count.Text = x7.CI_PSTransmittal_Pending_Count
+    btn_Others_PSTransmittal_Pending_Drawing_Count.Text = x7.Others_PSTransmittal_Pending_Count
+    btn_Total_PSTransmittal_Pending_Drawing_Count.Text = x7.Total_PSTransmittal_Pending_Count
 
     If (x.Total_Total_Count > 0) Then
       PMDLTABLE.Visible = True
@@ -549,6 +570,10 @@ Partial Class GF_ProjectDB
       TRANSMITTALTABLE.Visible = True
       TRANSMITTALDATAI.Visible = False
       TRANSMITTALTABLE1.Visible = True
+      PSTRANSMITTALTABLE.Visible = True
+      PSTRANSMITTALDATAI.Visible = False
+      PSTRANSMITTALTABLE1.Visible = True
+
 
     Else
       Chart3.Visible = False
@@ -796,14 +821,16 @@ Partial Class GF_ProjectDB
     End Try
   End Sub
   Private Sub cmdSubmit_Click(sender As Object, e As EventArgs) Handles cmdSubmit.Click
-
+    image1.Visible = False
+    image2.Visible = False
+    imagetext.Visible = False
+    imageline1.Visible = False
+    imageline2.Visible = False
     PDetails.Visible = True
     ' PMDLTABLE.Visible = True
     C1.Visible = True
     C2.Visible = True
     C3.Visible = True
-
-
     C4.Visible = True
     C5.Visible = True
     C6.Visible = True
@@ -812,7 +839,22 @@ Partial Class GF_ProjectDB
     C9.Visible = True
     C10.Visible = True
     C11.Visible = True
-
+    ' C12.Visible = True
+    line1.Visible = True
+    line2.Visible = True
+    line3.Visible = True
+    line4.Visible = True
+    line5.Visible = True
+    line6.Visible = True
+    line7.Visible = True
+    line8.Visible = True
+    line9.Visible = True
+    line10.Visible = True
+    line11.Visible = True
+    line12.Visible = True
+    line13.Visible = True
+    line14.Visible = True
+    line15.Visible = True
 
 
 
@@ -1388,6 +1430,70 @@ Partial Class GF_ProjectDB
   Private Sub btn_Total_Transmittal_Returned_Click(sender As Object, e As EventArgs) Handles btn_Total_Transmittal_Returned.Click
     Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Transmittal_Returned&PrjID=" & F_t_cprj.Text)
   End Sub
+
+
+
+  Private Sub btn_Process_PSTransmittal_Total_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_Process_PSTransmittal_Total_Drawing_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_PSTransmittal_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Mechanical_PSTransmittal_Total_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_PSTransmittal_Total_Drawing_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_PSTransmittal_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Structure_PSTransmittal_Total_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_Structure_PSTransmittal_Total_Drawing_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_PSTransmittal_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Electrical_PSTransmittal_Total_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_Electrical_PSTransmittal_Total_Drawing_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_PSTransmittal_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_CI_PSTransmittal_Total_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_CI_PSTransmittal_Total_Drawing_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_PSTransmittal_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Others_PSTransmittal_Total_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_Others_PSTransmittal_Total_Drawing_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_PSTransmittal_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Total_PSTransmittal_Total_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_Total_PSTransmittal_Total_Drawing_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_PSTransmittal_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Process_PSTransmittal_Pending_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_Process_PSTransmittal_Pending_Drawing_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_PSTransmittal_Pending_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Mechanical_PSTransmittal_Pending_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_Mechanical_PSTransmittal_Pending_Drawing_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Mechanical_PSTransmittal_Pending_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Structure_PSTransmittal_Pending_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_Structure_PSTransmittal_Pending_Drawing_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_PSTransmittal_Pending_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Electrical_PSTransmittal_Pending_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_Electrical_PSTransmittal_Pending_Drawing_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Electrical_PSTransmittal_Pending_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_CI_PSTransmittal_Pending_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_CI_PSTransmittal_Pending_Drawing_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=CI_PSTransmittal_Pending_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Others_PSTransmittal_Pending_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_Others_PSTransmittal_Pending_Drawing_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Others_PSTransmittal_Pending_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+  Private Sub btn_Total_PSTransmittal_Pending_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_Total_PSTransmittal_Pending_Drawing_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_PSTransmittal_Pending_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+
+
+
+
+
+
 
   Private Sub btn_Process_SAR_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Process_SAR_Total_Count.Click
     Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_SAR_Total_Count&PrjID=" & F_t_cprj.Text)
