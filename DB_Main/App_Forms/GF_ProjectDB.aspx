@@ -1249,11 +1249,11 @@
     
     <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:3px"  id="line15"  runat="server" visible="false"/>
     
-      <div class="row" id="C12" runat="server" visible="false">
+      <div class="row" id="C12" runat="server"  style="display:none;" clientidmode="Static">
       <div class="col-sm-12 text-center ">
-        <a class="chartDiv btn btn-outline-primary" id="PSTRANMITTALCHART" runat="server">
+        <a class="chartDiv btn btn-outline-primary" id="PSTRANMITTALCHART" runat="server"  style="display:none;" clientidmode="Static">
           <h5>Pending Site Transmittal Status </h5>
-          <asp:Button ID="PSTRANMITTALDATA" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Sorry !!! No Data in ERPLN" Text="" Font-Bold="true" Visible="false"></asp:Button>
+          <asp:Button ID="PSTRANMITTALDATA" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Sorry !!! No Data in ERPLN" Text="" Font-Bold="true"  style="display:none;" clientidmode="Static"></asp:Button>
 
           <asp:Chart
             ID="Chart9"
@@ -1282,7 +1282,7 @@
       <div class="row">
 
         <div class="col-12">
-          <asp:Button ID="PSTRANSMITTALDATAI" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Sorry !!! No Data in ERPLN" Text="" Font-Bold="true" Visible="false"></asp:Button>
+          <asp:Button ID="PSTRANSMITTALDATAI" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Sorry !!! No Data in ERPLN" Text="" Font-Bold="true"   visible="false"></asp:Button>
           </div>
          </div>
         

@@ -84,6 +84,19 @@ Namespace SIS.DB
     Public Property CreatedOn As String = ""
     Public Property HoldStatus As String = ""
 
+    Public Property Project As String = ""
+    Public Property UID As String = ""
+    Public Property Revision As String = ""
+
+    Public Property Document_ID As String = ""
+
+    Public Property Tittle As String = ""
+
+
+    Public Property Owner_department As String = ""
+    Public Property Actual_Release_Date As String = ""
+
+
 
 
 
@@ -105,12 +118,132 @@ Namespace SIS.DB
       Dim mRet As New List(Of SIS.DB.ProDoc)
 
       Dim Sql As String = ""
-      Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetBaaNConnectionString())
+      Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetBaaNConnectionString() & ";Connection Timeout=50000")
         Con.Open()
         Select Case det
 
+          Case "Process_PSTransmittal_Total_Count"
+            Sql = "select t_cprj as Project,t_uidn as UID,t_revn as Revision,t_docn as Document_ID, aa.t_dsca as Tittle,aa.t_cspa as Element,ttppdm090200.t_sort as Owner_department,aa.t_acdt  as Actual_Release_Date from tdmisg140200 as aa"
+            Sql &= " LEFT JOIN ttppdm090200 "
+            Sql &= " On ttppdm090200.t_cspa= aa.t_cspa "
+            Sql &= " where aa.t_cprj='" & PrjID & "' and aa.t_erec=1 "
+            Sql &= " and aa.t_resp='PRC'"
+
+          Case "Mechanical_PSTransmittal_Total_Count"
+            Sql = "select t_cprj as Project,t_uidn as UID,t_revn as Revision,t_docn as Document_ID, aa.t_dsca as Tittle,aa.t_cspa as Element,ttppdm090200.t_sort as Owner_department,aa.t_acdt  as Actual_Release_Date from tdmisg140200 as aa"
+            Sql &= " LEFT JOIN ttppdm090200 "
+            Sql &= " On ttppdm090200.t_cspa= aa.t_cspa "
+            Sql &= " where aa.t_cprj='" & PrjID & "' and aa.t_erec=1 "
+            Sql &= " and aa.t_resp='MEC'"
+          Case "Piping_PSTransmittal_Total_Count"
+            Sql = "select t_cprj as Project,t_uidn as UID,t_revn as Revision,t_docn as Document_ID, aa.t_dsca as Tittle,aa.t_cspa as Element,ttppdm090200.t_sort as Owner_department,aa.t_acdt  as Actual_Release_Date from tdmisg140200 as aa"
+            Sql &= " LEFT JOIN ttppdm090200 "
+            Sql &= " On ttppdm090200.t_cspa= aa.t_cspa "
+            Sql &= " where aa.t_cprj='" & PrjID & "' and aa.t_erec=1 "
+            Sql &= " and aa.t_resp='PIP'"
+
+
+          Case "Structure_PSTransmittal_Total_Count"
+            Sql = "select t_cprj as Project,t_uidn as UID,t_revn as Revision,t_docn as Document_ID, aa.t_dsca as Tittle,aa.t_cspa as Element,ttppdm090200.t_sort as Owner_department,aa.t_acdt  as Actual_Release_Date from tdmisg140200 as aa"
+            Sql &= " LEFT JOIN ttppdm090200 "
+            Sql &= " On ttppdm090200.t_cspa= aa.t_cspa "
+            Sql &= " where aa.t_cprj='" & PrjID & "' and aa.t_erec=1 "
+            Sql &= " and aa.t_resp='STR'"
+
+
+          Case "Electrical_PSTransmittal_Total_Count"
+            Sql = "select t_cprj as Project,t_uidn as UID,t_revn as Revision,t_docn as Document_ID, aa.t_dsca as Tittle,aa.t_cspa as Element,ttppdm090200.t_sort as Owner_department,aa.t_acdt  as Actual_Release_Date from tdmisg140200 as aa"
+            Sql &= " LEFT JOIN ttppdm090200 "
+            Sql &= " On ttppdm090200.t_cspa= aa.t_cspa "
+            Sql &= " where aa.t_cprj='" & PrjID & "' and aa.t_erec=1 "
+            Sql &= " and aa.t_resp='ELE'"
+          Case "CI_PSTransmittal_Total_Count"
+            Sql = "select t_cprj as Project,t_uidn as UID,t_revn as Revision,t_docn as Document_ID, aa.t_dsca as Tittle,aa.t_cspa as Element,ttppdm090200.t_sort as Owner_department,aa.t_acdt  as Actual_Release_Date from tdmisg140200 as aa"
+            Sql &= " LEFT JOIN ttppdm090200 "
+            Sql &= " On ttppdm090200.t_cspa= aa.t_cspa "
+            Sql &= " where aa.t_cprj='" & PrjID & "' and aa.t_erec=1 "
+            Sql &= " and aa.t_resp='C&I'"
+          Case "Others_PSTransmittal_Total_Count"
+            Sql = "select t_cprj as Project,t_uidn as UID,t_revn as Revision,t_docn as Document_ID, aa.t_dsca as Tittle,aa.t_cspa as Element,ttppdm090200.t_sort as Owner_department,aa.t_acdt  as Actual_Release_Date from tdmisg140200 as aa"
+            Sql &= " LEFT JOIN ttppdm090200 "
+            Sql &= " On ttppdm090200.t_cspa= aa.t_cspa "
+            Sql &= " where aa.t_cprj='" & PrjID & "' and aa.t_erec=1 "
+            Sql &= " And aa.t_resp not in ('C&I','ELE','PIP','STR','MEC','PRC')"
+          Case "Total_PSTransmittal_Total_Count"
+            Sql = "select t_cprj as Project,t_uidn as UID,t_revn as Revision,t_docn as Document_ID, aa.t_dsca as Tittle,aa.t_cspa as Element,ttppdm090200.t_sort as Owner_department,aa.t_acdt  as Actual_Release_Date from tdmisg140200 as aa"
+            Sql &= " LEFT JOIN ttppdm090200 "
+            Sql &= " On ttppdm090200.t_cspa= aa.t_cspa "
+            Sql &= " where aa.t_cprj='" & PrjID & "' and aa.t_erec=1 "
+
+
+          Case "Process_PSTransmittal_Pending_Count"
+            Sql = "select t_cprj as Project,t_uidn as UID,t_revn as Revision,t_docn as Document_ID, aa.t_dsca as Tittle,aa.t_cspa as Element,ttppdm090200.t_sort as Owner_department,aa.t_acdt  as Actual_Release_Date from tdmisg140200 as aa"
+            Sql &= " LEFT JOIN ttppdm090200 "
+            Sql &= " On ttppdm090200.t_cspa= aa.t_cspa "
+            Sql &= " where aa.t_cprj='" & PrjID & "' and aa.t_erec=1 "
+            Sql &= " And aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & PrjID & "')"
+            Sql &= " and aa.t_resp='PRC"
+
+          Case "Mechanical_PSTransmittal_Pending_Count"
+            Sql = "select t_cprj as Project,t_uidn as UID,t_revn as Revision,t_docn as Document_ID, aa.t_dsca as Tittle,aa.t_cspa as Element,ttppdm090200.t_sort as Owner_department,aa.t_acdt  as Actual_Release_Date from tdmisg140200 as aa"
+            Sql &= " LEFT JOIN ttppdm090200 "
+            Sql &= " On ttppdm090200.t_cspa= aa.t_cspa "
+            Sql &= " where aa.t_cprj='" & PrjID & "' and aa.t_erec=1 "
+            Sql &= " And aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & PrjID & "')"
+            Sql &= " and aa.t_resp='MEC'"
+
+          Case "Piping_PSTransmittal_Pending_Count"
+            Sql = "select t_cprj as Project,t_uidn as UID,t_revn as Revision,t_docn as Document_ID, aa.t_dsca as Tittle,aa.t_cspa as Element,ttppdm090200.t_sort as Owner_department,aa.t_acdt  as Actual_Release_Date from tdmisg140200 as aa"
+            Sql &= " LEFT JOIN ttppdm090200 "
+            Sql &= " On ttppdm090200.t_cspa= aa.t_cspa "
+            Sql &= " where aa.t_cprj='" & PrjID & "' and aa.t_erec=1 "
+            Sql &= " And aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & PrjID & "')"
+            Sql &= " and aa.t_resp='PIP'"
+
+          Case "Structure_PSTransmittal_Pending_Count"
+            Sql = "select t_cprj as Project,t_uidn as UID,t_revn as Revision,t_docn as Document_ID, aa.t_dsca as Tittle,aa.t_cspa as Element,ttppdm090200.t_sort as Owner_department,aa.t_acdt  as Actual_Release_Date from tdmisg140200 as aa"
+            Sql &= " LEFT JOIN ttppdm090200 "
+            Sql &= " On ttppdm090200.t_cspa= aa.t_cspa "
+            Sql &= " where aa.t_cprj='" & PrjID & "' and aa.t_erec=1 "
+            Sql &= " And aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & PrjID & "')"
+            Sql &= " and aa.t_resp='STR'"
+
+          Case "Electrical_PSTransmittal_Pending_Count"
+            Sql = "select t_cprj as Project,t_uidn as UID,t_revn as Revision,t_docn as Document_ID, aa.t_dsca as Tittle,aa.t_cspa as Element,ttppdm090200.t_sort as Owner_department,aa.t_acdt  as Actual_Release_Date from tdmisg140200 as aa"
+            Sql &= " LEFT JOIN ttppdm090200 "
+            Sql &= " On ttppdm090200.t_cspa= aa.t_cspa "
+            Sql &= " where aa.t_cprj='" & PrjID & "' and aa.t_erec=1 "
+            Sql &= " And aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & PrjID & "')"
+            Sql &= " and aa.t_resp='ELE'"
+          Case "CI_PSTransmittal_Pending_Count"
+            Sql = "select t_cprj as Project,t_uidn as UID,t_revn as Revision,t_docn as Document_ID, aa.t_dsca as Tittle,aa.t_cspa as Element,ttppdm090200.t_sort as Owner_department,aa.t_acdt  as Actual_Release_Date from tdmisg140200 as aa"
+            Sql &= " LEFT JOIN ttppdm090200 "
+            Sql &= " On ttppdm090200.t_cspa= aa.t_cspa "
+            Sql &= " where aa.t_cprj='" & PrjID & "' and aa.t_erec=1 "
+            Sql &= " And aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & PrjID & "')"
+            Sql &= " And aa.t_resp='C&I'"
+          Case "Others_PSTransmittal_Pending_Count"
+            Sql = "select t_cprj as Project,t_uidn as UID,t_revn as Revision,t_docn as Document_ID, aa.t_dsca as Tittle,aa.t_cspa as Element,ttppdm090200.t_sort as Owner_department,aa.t_acdt  as Actual_Release_Date from tdmisg140200 as aa"
+            Sql &= " LEFT JOIN ttppdm090200 "
+            Sql &= " On ttppdm090200.t_cspa= aa.t_cspa "
+            Sql &= " where aa.t_cprj='" & PrjID & "' and aa.t_erec=1 "
+            Sql &= " And aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & PrjID & "')"
+            Sql &= " And aa.t_respt not in ('C&I','ELE','PIP','STR','MEC','PRC')"
+          Case "Total_PSTransmittal_Pending_Count"
+            Sql = "select t_cprj as Project,t_uidn as UID,t_revn as Revision,t_docn as Document_ID, aa.t_dsca as Tittle,aa.t_cspa as Element,ttppdm090200.t_sort as Owner_department,aa.t_acdt  as Actual_Release_Date from tdmisg140200 as aa"
+            Sql &= " LEFT JOIN ttppdm090200 "
+            Sql &= " On ttppdm090200.t_cspa= aa.t_cspa "
+            Sql &= " where aa.t_cprj='" & PrjID & "' and aa.t_erec=1 "
+            Sql &= " And aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & PrjID & "')"
+
+
+
+
+
+
+
           Case "Process_Total"
-            Sql = "select t_docn,t_revn,t_dsca,dateadd(n,330,t_bsfd) as t_bsfd, dateadd(n,330,t_rsfd) As t_rsfd,dateadd(n,330,t_acdt) as t_acdt,t_lrrd from tdmisg140200 where  t_resp ='PRC' and t_cprj in ('" & PrjID & "') "
+            Sql = "Select t_docn,t_revn,t_dsca,dateadd(n,330,t_bsfd) As t_bsfd, dateadd(n,330,t_rsfd) As t_rsfd,dateadd(n,330,t_acdt) As t_acdt,t_lrrd from tdmisg140200 where  t_resp ='PRC' and t_cprj in ('" & PrjID & "') "
           Case "Mechanical_Total"
             Sql = "select t_docn,t_revn,t_dsca,dateadd(n,330,t_bsfd) as t_bsfd, dateadd(n,330,t_rsfd) As t_rsfd,dateadd(n,330,t_acdt) as t_acdt,t_lrrd from tdmisg140200 where  t_resp ='MEC' and t_cprj in ('" & PrjID & "') "
           Case "Structure_Total"
@@ -17050,6 +17183,7 @@ Namespace SIS.DB
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
+          Cmd.CommandTimeout = 3000
           Dim rd As SqlDataReader = Cmd.ExecuteReader
           While (rd.Read)
             mRet.Add(New ProDoc(rd))

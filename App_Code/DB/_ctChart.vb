@@ -2785,6 +2785,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
+          Cmd.CommandTimeout = 3000
           mRet.Process_Transmittal_Total_Count = Cmd.ExecuteScalar
         End Using
 
@@ -2792,6 +2793,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
+          Cmd.CommandTimeout = 3000
           mRet.Process_Transmittal_Free = Cmd.ExecuteScalar
         End Using
 
@@ -2799,6 +2801,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
+          Cmd.CommandTimeout = 3000
           mRet.Process_Transmittal_Under_Approval = Cmd.ExecuteScalar
         End Using
 
@@ -2806,6 +2809,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
+          Cmd.CommandTimeout = 3000
           mRet.Process_Transmittal_Under_Issue = Cmd.ExecuteScalar
         End Using
 
@@ -2813,6 +2817,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
+          Cmd.CommandTimeout = 3000
           mRet.Process_Transmittal_Issued = Cmd.ExecuteScalar
         End Using
 
@@ -2820,6 +2825,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
+          Cmd.CommandTimeout = 3000
           mRet.Process_Transmittal_Partial_Received = Cmd.ExecuteScalar
         End Using
 
@@ -2827,6 +2833,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
+          Cmd.CommandTimeout = 3000
           mRet.Process_Transmittal_Received = Cmd.ExecuteScalar
         End Using
 
@@ -2834,6 +2841,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
+          Cmd.CommandTimeout = 3000
           mRet.Process_Transmittal_Closed = Cmd.ExecuteScalar
         End Using
 
@@ -2841,6 +2849,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
+          Cmd.CommandTimeout = 3000
           mRet.Process_Transmittal_Returned = Cmd.ExecuteScalar
         End Using
 
@@ -2849,6 +2858,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
+          Cmd.CommandTimeout = 3000
           mRet.Mechanical_Transmittal_Total_Count = Cmd.ExecuteScalar
         End Using
 
@@ -2856,6 +2866,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
+          Cmd.CommandTimeout = 3000
           mRet.Mechanical_Transmittal_Free = Cmd.ExecuteScalar
         End Using
 
@@ -3301,7 +3312,7 @@ Namespace SIS.CT
       Dim sdate As String = tdate
       sdate = sdate.Substring(6, 4) & "-" & sdate.Substring(3, 2) & "-" & sdate.Substring(0, 2)
       Dim Sql As String = ""
-      Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetBaaNConnectionString() & ";Connection Timeout=5000")
+      Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetBaaNConnectionString() & ";Connection Timeout=50000")
         Con.Open()
 
         'Public Property Process_PSTransmittal_Total_Count As Integer = 0
@@ -3326,59 +3337,59 @@ Namespace SIS.CT
 
 
 
-        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND ttppdm090200.t_sort ='PROCESS'"
+        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 and aa.t_resp='PRC'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          Cmd.CommandTimeout = 3000
+          Cmd.CommandTimeout = 30000
           mRet.Process_PSTransmittal_Total_Count = Cmd.ExecuteScalar
         End Using
 
-        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND ttppdm090200.t_sort ='MECHANICAL'"
+        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 and aa.t_resp='MEC'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          Cmd.CommandTimeout = 3000
+          Cmd.CommandTimeout = 30000
           mRet.Mechanical_PSTransmittal_Total_Count = Cmd.ExecuteScalar
         End Using
 
-        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND ttppdm090200.t_sort ='STRUCTURE'"
+        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 and aa.t_resp='STR'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          Cmd.CommandTimeout = 3000
+          Cmd.CommandTimeout = 30000
           mRet.Structure_PSTransmittal_Total_Count = Cmd.ExecuteScalar
         End Using
 
-        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND ttppdm090200.t_sort ='PIPING'"
+        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 and aa.t_resp='PIP'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          Cmd.CommandTimeout = 3000
+          Cmd.CommandTimeout = 30000
           mRet.Piping_PSTransmittal_Total_Count = Cmd.ExecuteScalar
         End Using
 
-        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND ttppdm090200.t_sort ='ELECTRICAL'"
+        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 and aa.t_resp='ELE'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          Cmd.CommandTimeout = 3000
+          Cmd.CommandTimeout = 30000
           mRet.Electrical_PSTransmittal_Total_Count = Cmd.ExecuteScalar
         End Using
 
-        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND ttppdm090200.t_sort ='C&I'"
+        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 and aa.t_resp='C&I'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          Cmd.CommandTimeout = 3000
+          Cmd.CommandTimeout = 30000
           mRet.CI_PSTransmittal_Total_Count = Cmd.ExecuteScalar
         End Using
 
-        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND ttppdm090200.t_sort not in ('C&I','ELECTRICAL','PIPING','STRUCTURE','MECHANICAL','PROCESS')"
+        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 and aa.t_resp not in ('C&I','ELE','PIP','STR','MEC','PRC')"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          Cmd.CommandTimeout = 3000
+          Cmd.CommandTimeout = 30000
           mRet.Others_PSTransmittal_Total_Count = Cmd.ExecuteScalar
         End Using
 
@@ -3386,63 +3397,63 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          Cmd.CommandTimeout = 3000
+          Cmd.CommandTimeout = 30000
           mRet.Total_PSTransmittal_Total_Count = Cmd.ExecuteScalar
         End Using
 
-        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & ProjectID & "') AND ttppdm090200.t_sort ='PROCESS'"
+        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & ProjectID & "') and aa.t_resp='PRC'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          Cmd.CommandTimeout = 3000
+          Cmd.CommandTimeout = 30000
           mRet.Process_PSTransmittal_Pending_Count = Cmd.ExecuteScalar
         End Using
 
-        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & ProjectID & "') AND ttppdm090200.t_sort ='MECHANICAL'"
+        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & ProjectID & "') and aa.t_resp='MEC'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          Cmd.CommandTimeout = 3000
+          Cmd.CommandTimeout = 30000
           mRet.Mechanical_PSTransmittal_Pending_Count = Cmd.ExecuteScalar
         End Using
 
-        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & ProjectID & "') AND ttppdm090200.t_sort ='STRUCTURE'"
+        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & ProjectID & "') and aa.t_resp='STR'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          Cmd.CommandTimeout = 3000
+          Cmd.CommandTimeout = 30000
           mRet.Structure_PSTransmittal_Pending_Count = Cmd.ExecuteScalar
         End Using
 
-        Sql = "Select  Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & ProjectID & "') AND ttppdm090200.t_sort ='PIPING'"
+        Sql = "Select  Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & ProjectID & "') and aa.t_resp='PIP'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          Cmd.CommandTimeout = 3000
+          Cmd.CommandTimeout = 30000
           mRet.Piping_PSTransmittal_Pending_Count = Cmd.ExecuteScalar
         End Using
 
-        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & ProjectID & "') AND ttppdm090200.t_sort ='ELECTRICAL'"
+        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & ProjectID & "') AND  aa.t_resp='ELE'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          Cmd.CommandTimeout = 3000
+          Cmd.CommandTimeout = 30000
           mRet.Electrical_PSTransmittal_Pending_Count = Cmd.ExecuteScalar
         End Using
 
-        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & ProjectID & "') AND ttppdm090200.t_sort ='C&I'"
+        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & ProjectID & "') AND aa.t_resp='C&I'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          Cmd.CommandTimeout = 3000
+          Cmd.CommandTimeout = 30000
           mRet.CI_PSTransmittal_Pending_Count = Cmd.ExecuteScalar
         End Using
 
-        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & ProjectID & "') AND ttppdm090200.t_sort not in ('C&I','ELECTRICAL','PIPING','STRUCTURE','MECHANICAL','PROCESS')"
+        Sql = "Select Count(*) from tdmisg140200 As aa LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa= aa.t_cspa where aa.t_cprj='" & ProjectID & "' and aa.t_erec=1 AND aa.t_docn+'_'+aa.t_revn not in (select bb.t_docn+'_'+bb.t_revn from tdmisg132200 as bb inner join tdmisg131200 as cc on bb.t_tran=cc.t_tran WHERE cc.t_type=3 and left(bb.t_docn,6)='" & ProjectID & "') AND aa.t_resp not in ('C&I','ELE','PIP','STR','MEC','PRC')"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          Cmd.CommandTimeout = 3000
+          Cmd.CommandTimeout = 30000
           mRet.Others_PSTransmittal_Pending_Count = Cmd.ExecuteScalar
         End Using
 
@@ -3451,7 +3462,7 @@ Namespace SIS.CT
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
-          Cmd.CommandTimeout = 3000
+          Cmd.CommandTimeout = 30000
           mRet.Total_PSTransmittal_Pending_Count = Cmd.ExecuteScalar
         End Using
 

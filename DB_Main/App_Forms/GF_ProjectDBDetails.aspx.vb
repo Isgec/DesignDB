@@ -698,6 +698,153 @@ Partial Class GF_ProjectDBDetails
 
   End Sub
 
+  Private Sub ShowPSTRANSMITTALData(ByVal x As String, ByVal y As String)
+    Dim Data As List(Of SIS.DB.ProDoc) = SIS.DB.ProDoc.GetProData(x, y)
+    Dim tbl As New Table
+
+    With tbl
+
+      .GridLines = GridLines.Both
+      .BorderWidth = 2
+      .CellSpacing = 2
+      .Width = Unit.Percentage(100)
+
+    End With
+
+    Dim tr As TableRow = Nothing
+    Dim td As TableCell = Nothing
+
+    'Header
+    tr = New TableRow
+
+    td = New TableCell
+    td.Text = "S.NO."
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "PROJECT"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "UID"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "REV"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "DOCUMENT ID"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "TITLE"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "ELEMENT"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "OWNER's DEPT."
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "ACTUAL RELEASE DATE"
+    tr.Cells.Add(td)
+
+
+    tbl.Rows.Add(tr)
+
+    Dim I As Integer = 0
+    '================
+    For Each tmp As SIS.DB.ProDoc In Data
+      I += 1
+      tr = New TableRow
+
+      td = New TableCell
+      td.Text = I
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.Project
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.UID
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.Revision
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.Document_ID
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.Tittle
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.element
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.Owner_department
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.Actual_Release_Date
+      tr.Cells.Add(td)
+
+
+
+      tbl.Rows.Add(tr)
+
+    Next
+    '================
+    ppnlDetails.Controls.Add(tbl)
+
+  End Sub
+
+
   Private Sub ShowSARData(ByVal x As String, ByVal y As String)
     Dim Data As List(Of SIS.DB.ProDoc) = SIS.DB.ProDoc.GetProData(x, y)
     Dim tbl As New Table
@@ -3303,7 +3450,75 @@ Partial Class GF_ProjectDBDetails
     End If
 
 
+    If (Det = "CI_PSTransmittal_Pending_Count") Then
+      PPSheading.Text = "C&I - Pending Erection Drawings/Document for Site Transmittal"
+      ShowPSTRANSMITTALData(Det, PrjID)
+    End If
 
+    If (Det = "CI_PSTransmittal_Total_Count") Then
+      PPSheading.Text = "C&I - Total Erection Drawings/Document as Per PMDL"
+      ShowPSTRANSMITTALData(Det, PrjID)
+    End If
+
+    If (Det = "Electrical_PSTransmittal_Pending_Count") Then
+      PPSheading.Text = "Electrical - Pending Erection Drawings/Document for Site Transmittal"
+      ShowPSTRANSMITTALData(Det, PrjID)
+    End If
+    If (Det = "Electrical_PSTransmittal_Total_Count") Then
+      PPSheading.Text = "Electrical - Total Erection Drawings/Document as Per PMDL"
+      ShowPSTRANSMITTALData(Det, PrjID)
+    End If
+    If (Det = "Mechanical_PSTransmittal_Pending_Count") Then
+      PPSheading.Text = "Mechanical - Pending Erection Drawings/Document for Site Transmittal"
+      ShowPSTRANSMITTALData(Det, PrjID)
+    End If
+    If (Det = "Mechanical_PSTransmittal_Total_Count") Then
+      PPSheading.Text = "Mechanical - Total Erection Drawings/Document as Per PMDL"
+      ShowPSTRANSMITTALData(Det, PrjID)
+    End If
+    If (Det = "Others_PSTransmittal_Pending_Count") Then
+      PPSheading.Text = "Others - Pending Erection Drawings/Document for Site Transmittal"
+      ShowPSTRANSMITTALData(Det, PrjID)
+    End If
+    If (Det = "Others_PSTransmittal_Total_Count") Then
+      PPSheading.Text = "Others - Total Erection Drawings/Document as Per PMDL"
+      ShowPSTRANSMITTALData(Det, PrjID)
+    End If
+
+    If (Det = "Structure_PSTransmittal_Pending_Count") Then
+      PPSheading.Text = "Structure - Pending Erection Drawings/Document for Site Transmittal"
+      ShowPSTRANSMITTALData(Det, PrjID)
+    End If
+    If (Det = "Structure_PSTransmittal_Total_Count") Then
+      PPSheading.Text = "Structure - Total Erection Drawings/Document as Per PMDL"
+      ShowPSTRANSMITTALData(Det, PrjID)
+    End If
+
+    If (Det = "Piping_PSTransmittal_Pending_Count") Then
+      PPSheading.Text = "Piping - Pending Erection Drawings/Document for Site Transmittal"
+      ShowPSTRANSMITTALData(Det, PrjID)
+    End If
+    If (Det = "Piping_PSTransmittal_Total_Count") Then
+      PPSheading.Text = "Piping - Total Erection Drawings/Document as Per PMDL"
+      ShowPSTRANSMITTALData(Det, PrjID)
+    End If
+
+    If (Det = "Total_PSTransmittal_Pending_Count") Then
+      PPSheading.Text = "Total Pending Erection Drawings/Document for Site Transmittal"
+      ShowPSTRANSMITTALData(Det, PrjID)
+    End If
+    If (Det = "Total_PSTransmittal_Total_Count") Then
+      PPSheading.Text = "Total Erection Drawings/Document as Per PMDL"
+      ShowPSTRANSMITTALData(Det, PrjID)
+    End If
+    If (Det = "Process_PSTransmittal_Total_Count") Then
+      PPSheading.Text = "Process - Pending Erection Drawings/Document for Site Transmittal"
+      ShowPSTRANSMITTALData(Det, PrjID)
+    End If
+    If (Det = "Process_PSTransmittal_Pending_Count") Then
+      PPSheading.Text = "Process - Pending Erection Drawings/Document for Site Transmittal"
+      ShowPSTRANSMITTALData(Det, PrjID)
+    End If
 
 
 

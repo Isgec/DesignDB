@@ -521,6 +521,36 @@ Partial Class GF_ProjectDB
     btn_Others_PSTransmittal_Pending_Drawing_Count.Text = x7.Others_PSTransmittal_Pending_Count
     btn_Total_PSTransmittal_Pending_Drawing_Count.Text = x7.Total_PSTransmittal_Pending_Count
 
+    If (x7.Total_PSTransmittal_Total_Count <= 0) Then
+
+
+
+
+      PSTRANSMITTALTABLE.Visible = False
+
+      'PMDLDATAD.Visible = False
+      PSTRANSMITTALTABLE1.Visible = False
+      PSTRANSMITTALDATAI.Text = "No Data Available for -" & ProjectID
+      PSTRANSMITTALDATAI.Visible = True
+
+
+
+    Else
+      PSTRANMITTALCHART.Visible = False
+
+
+      PSTRANSMITTALTABLE1.Visible = True
+      'PMDLDATAD.Visible = True
+      PSTRANSMITTALDATAI.Visible = False
+    End If
+
+
+
+
+
+
+
+
     If (x.Total_Total_Count > 0) Then
       PMDLTABLE.Visible = True
       PMDLTABLE1.Visible = True
@@ -820,6 +850,10 @@ Partial Class GF_ProjectDB
     Catch ex As Exception
     End Try
   End Sub
+
+
+
+
   Private Sub cmdSubmit_Click(sender As Object, e As EventArgs) Handles cmdSubmit.Click
     image1.Visible = False
     image2.Visible = False
@@ -1443,6 +1477,12 @@ Partial Class GF_ProjectDB
 
   Private Sub btn_Structure_PSTransmittal_Total_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_Structure_PSTransmittal_Total_Drawing_Count.Click
     Response.Redirect("GF_ProjectDBDetails.aspx?detail=Structure_PSTransmittal_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_PSTransmittal_Total_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_Piping_PSTransmittal_Total_Drawing_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_PSTransmittal_Total_Count&PrjID=" & F_t_cprj.Text)
+  End Sub
+  Private Sub btn_Piping_PSTransmittal_Pending_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_Piping_PSTransmittal_Pending_Drawing_Count.Click
+    Response.Redirect("GF_ProjectDBDetails.aspx?detail=Piping_PSTransmittal_Pending_Count&PrjID=" & F_t_cprj.Text)
   End Sub
 
   Private Sub btn_Electrical_PSTransmittal_Total_Drawing_Count_Click(sender As Object, e As EventArgs) Handles btn_Electrical_PSTransmittal_Total_Drawing_Count.Click
