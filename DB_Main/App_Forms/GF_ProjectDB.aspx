@@ -1278,7 +1278,7 @@
     </div>
    
       <div class="container text-center" id="PSTRANSMITTALTABLE" runat="server" visible="false">
-      <h5>Pending Site Transmittal Status Discipline Wise</h5>
+      <h5>Pending issue Status of Erection drawings Discipline Wise</h5>
       <div class="row">
 
         <div class="col-12">

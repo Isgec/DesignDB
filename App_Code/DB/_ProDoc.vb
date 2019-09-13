@@ -97,11 +97,6 @@ Namespace SIS.DB
     Public Property Actual_Release_Date As String = ""
 
 
-
-
-
-
-
     Public Shared Function GetProData(ByVal det As String, ByVal PrjID As String) As List(Of ProDoc)
       Dim userG As String = ""
 
