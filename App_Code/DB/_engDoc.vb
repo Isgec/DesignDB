@@ -316,7 +316,7 @@ Namespace SIS.DB
             Sql &= "  when 'QUALITY' then case when Quality='Pending' then 1 else 0 end  "
             Sql &= "          end  "
             Sql &= "     else 1 end "
-            Sql &= "     order by ReceiptID"
+            Sql &= "     order by Rageindays Desc"
 
 
 
@@ -461,7 +461,7 @@ Namespace SIS.DB
             Sql &= "  when 'QUALITY' then case when Quality='Pending' then 1 else 0 end  "
             Sql &= "          end  "
             Sql &= "     else 1 end "
-            Sql &= "     order by ReceiptID"
+            Sql &= "     order by Rageindays Desc"
 
 
           Case "cta"
