@@ -31,7 +31,6 @@ Partial Class GF_Discipline
   Private Sub GF_Discipline_Load(sender As Object, e As EventArgs) Handles Me.Load
 
 
-
     DivisionID = Convert.ToString(F_DivisionID.SelectedItem.Text)
     DisciplineID = Convert.ToString(F_DisciplineID.SelectedItem.Text)
 
@@ -74,7 +73,7 @@ Partial Class GF_Discipline
   End Sub
 
   Private Sub cmdSubmit_Click(sender As Object, e As EventArgs) Handles cmdSubmit.Click
-
+    DPMDLTABLE.Visible = True
     Btn_Discipline.Text = DivisionID + "-" + DisciplineID
     Dim Dt As SIS.DD.DBDiscipline = SIS.DD.DBDiscipline.GetDPMDLDB(DivisionID, DisciplineID)
 
@@ -82,10 +81,16 @@ Partial Class GF_Discipline
     btn_Discipline_Release_Count.Text = Dt.Discipline_Release_Count
     btn_Discipline_Pending_Count.Text = Dt.Discipline_Pending_Count
     btn_Discipline_Due_Count.Text = Dt.Discipline_DueForToday_Count
+    btn_Discipline_DueTillToday_Count.Text = Dt.Discipline_DueTillToday_Count
     btn_Discipline_Ontime_Count.Text = Dt.Discipline_OnTime_Count
     btn_Discipline_Delayed_Count.Text = Dt.Discipline_Delayed_Count
 
   End Sub
+
+  'Private Sub btn_Discipline_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Discipline_Total_Count.Click
+  '  Response.Redirect("GF_DisciplineDBDetails.aspx?detail=BOILER&DisciplineID=" & F_DisciplineID.Text)
+  'End Sub
+
 
 End Class
 

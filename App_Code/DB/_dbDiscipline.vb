@@ -120,6 +120,14 @@ Namespace SIS.DD
           mRet.Discipline_DueForToday_Count = Cmd.ExecuteScalar
         End Using
 
+        ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
+        Sql = " Select count(t_docn) From tdmisg140200 Where  t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,dateadd(n,330,t_rsfd)) <= convert(date,getdate())"
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Discipline_DueTillToday_Count = Cmd.ExecuteScalar
+        End Using
+
 
         Sql = "		select count(t_docn)		"
         Sql &= "		from tdmisg140200		 "

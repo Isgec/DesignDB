@@ -91,7 +91,7 @@
     <hr style="color:brown;background-color:darkslategrey;width:100%;height:3px">
   
    <hr>
-       <div class="container text-center" id="DPMDLTABLE" runat="server" visible="true">
+       <div class="container text-center" id="DPMDLTABLE" runat="server" visible="false">
       <h5>Drawing and Document Progress Status As per PMDL - As Of Now </h5> 
       <div class="row">
 
@@ -114,34 +114,41 @@
               <div class="col-10">
                 <div class="row">
 
-                  <div class="col-2">
+                  <div class="col">
                     <div class="text-dark">
                       <h6><b>Total Count as per PMDL</b></h6>
                     </div>
                   </div>
-                  <div class="col-2">
+                  <div class="col">
                     <div class="text-primary">
                       <h6><b>Total Released</b></h6>
                     </div>
                   </div>
-                  <div class="col-2">
+                  <div class="col">
                     <div class="text-warning">
 
                       <h6><b>Total Pending For Release</b></h6>
                     </div>
                   </div>
-                  <div class="col-2">
+                   <div class="col">
+                    <div class="text-secondary">
+                      <h6><b>Due Till Today For Release</b></h6>
+                    </div>
+                  </div>
+                  
+                  <div class="col">
                     <div class="text-secondary">
                       <h6><b>Due on Today For Release</b></h6>
                     </div>
                   </div>
-                  <div class="col-2">
+
+                  <div class="col">
                     <div class="text-success">
                       <h6><b>Ontime Released</b></h6>
                     </div>
                   </div>
 
-                  <div class="col-2">
+                  <div class="col">
                     <div class="text-danger">
                       <h6><b>Delayed Released</b></h6>
                     </div>
@@ -161,26 +168,34 @@
               <div class="col-10">
                 <div class="row">
 
-                  <div class="col-2">
+                  <div class="col">
                     <asp:Button ID="btn_Discipline_Total_Count" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Process - Total Doc in PMDL" Text="" Font-Bold="true"></asp:Button>
                   </div>
-                  <div class="col-2">
+                  <div class="col">
                     <asp:Button ID="btn_Discipline_Release_Count" runat="server" CssClass="btn btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="Process - Released DWG/Doc in PMDL" Text="" Font-Bold="true"></asp:Button>
                   </div>
-                  <div class="col-2">
+                  <div class="col">
                     <asp:Button ID="btn_Discipline_Pending_Count" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Process - Total Pending DWG/Doc to Release" Text="" Font-Bold="true"></asp:Button>
                   </div>
-                  <div class="col-2">
+
+                   <div class="col">
+              <asp:Button ID="btn_Discipline_DueTillToday_Count" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Process - Due for Today DWG/Doc to Release" Text="" Font-Bold="true"></asp:Button>
+
+                  </div>
+
+                  <div class="col">
                     <asp:Button ID="btn_Discipline_Due_Count" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Process - Due for Today DWG/Doc to Release" Text="" Font-Bold="true"></asp:Button>
                   </div>
-                  <div class="col-2">
+                  <div class="col">
                     <asp:Button ID="btn_Discipline_Ontime_Count" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="Process - Ontime Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
                   </div>
-                  <div class="col-2">
+                  <div class="col">
                     <asp:Button ID="btn_Discipline_Delayed_Count" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Process - Delayed Released DWG/Doc" Text="" Font-Bold="true"></asp:Button>
                   </div>
+                  
                 </div>
               </div>
+              
             </div>
           </div>
 
