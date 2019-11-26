@@ -13,18 +13,13 @@ Partial Class GF_ProjectDB
     End Set
   End Property
 
-
   Private Sub GF_UserDB_Load(sender As Object, e As EventArgs) Handles Me.Load
     '  Dim y As SIS.CT.CTChart = SIS.CT.CTChart.GetProjectDB(ProjectID, ProjectDesc)
-
 
     ProjectID = F_t_cprj.Text.ToUpper()
     F_t_cprj.Text = ProjectID
 
-
-
     '  pd.Text = y.ProjectDesc
-
 
     If ProjectID = "" Then Exit Sub
 
@@ -618,7 +613,6 @@ Partial Class GF_ProjectDB
     Catch ex As Exception
     End Try
   End Sub
-
   Private Sub Chart31_PreRender(sender As Object, e As EventArgs) Handles Chart31.PreRender
     If ProjectID = "" Then Exit Sub
     Dim Dt As SIS.CT.CTChart = SIS.CT.CTChart.GetT1Chart(ProjectID)
@@ -707,7 +701,6 @@ Partial Class GF_ProjectDB
     End Try
   End Sub
 
-
   Private Sub Chart5_PreRender(sender As Object, e As EventArgs) Handles Chart5.PreRender
     If ProjectID = "" Then Exit Sub
     Dim Dt As SIS.CT.CTChart = SIS.CT.CTChart.GetPCTChart(ProjectID)
@@ -736,8 +729,6 @@ Partial Class GF_ProjectDB
     End Try
   End Sub
 
-
-
   Private Sub Chart6_PreRender(sender As Object, e As EventArgs) Handles Chart6.PreRender
     If ProjectID = "" Then Exit Sub
     Dim Dt As SIS.CT.CTChart = SIS.CT.CTChart.GetOCTChart(ProjectID)
@@ -759,8 +750,6 @@ Partial Class GF_ProjectDB
     Catch ex As Exception
     End Try
   End Sub
-
-
 
   Private Sub Chart7_PreRender(sender As Object, e As EventArgs) Handles Chart7.PreRender
     If ProjectID = "" Then Exit Sub
@@ -806,7 +795,6 @@ Partial Class GF_ProjectDB
     Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Total&PrjID=" & F_t_cprj.Text)
   End Sub
 
-
   Private Sub Chart10_PreRender(sender As Object, e As EventArgs) Handles Chart10.PreRender
     If ProjectID = "" Then Exit Sub
     Dim Dt As SIS.CT.CTChart = SIS.CT.CTChart.GetHCTChart(ProjectID)
@@ -850,9 +838,6 @@ Partial Class GF_ProjectDB
     Catch ex As Exception
     End Try
   End Sub
-
-
-
 
   Private Sub cmdSubmit_Click(sender As Object, e As EventArgs) Handles cmdSubmit.Click
     image1.Visible = False
@@ -923,7 +908,6 @@ Partial Class GF_ProjectDB
     Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Total&PrjID=" & F_t_cprj.Text)
   End Sub
 
-
   Private Sub btn_Process_Released_Count_Click(sender As Object, e As EventArgs) Handles btn_Process_Release_Count.Click
     Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Released&PrjID=" & F_t_cprj.Text)
   End Sub
@@ -951,7 +935,6 @@ Partial Class GF_ProjectDB
   Private Sub btn_Total_Released_Count_Click(sender As Object, e As EventArgs) Handles btn_Total_Release_Count.Click
     Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Released&PrjID=" & F_t_cprj.Text)
   End Sub
-
 
   Private Sub btn_Process_Pending_Count_Click(sender As Object, e As EventArgs) Handles btn_Process_Pending_Count.Click
     Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Pending&PrjID=" & F_t_cprj.Text)
@@ -981,7 +964,6 @@ Partial Class GF_ProjectDB
     Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Pending&PrjID=" & F_t_cprj.Text)
   End Sub
 
-
   Private Sub btn_Process_Ontime_Count_Click(sender As Object, e As EventArgs) Handles btn_Process_Ontime_Count.Click
     Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Ontime&PrjID=" & F_t_cprj.Text)
   End Sub
@@ -1009,7 +991,6 @@ Partial Class GF_ProjectDB
   Private Sub btn_Total_Ontime_Count_Click(sender As Object, e As EventArgs) Handles btn_Total_Ontime_Count.Click
     Response.Redirect("GF_ProjectDBDetails.aspx?detail=Total_Ontime&PrjID=" & F_t_cprj.Text)
   End Sub
-
 
   Private Sub btn_Process_Delayed_Count_Click(sender As Object, e As EventArgs) Handles btn_Process_Delayed_Count.Click
     Response.Redirect("GF_ProjectDBDetails.aspx?detail=Process_Delayed&PrjID=" & F_t_cprj.Text)
