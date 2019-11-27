@@ -13,19 +13,16 @@
         <span style="color: #ff0031">Loading...</span>
       </ProgressTemplate>
     </asp:UpdateProgress>
-
-
-     <hr style="color:brown;background-color:darkslategrey;width:100%;height:3px">
-
-     <div class="row  mt-3">
+   
+    <hr style="color:brown;background-color:darkslategrey;width:100%;height:3px">
+         <div class="row">
        
-      <div class="col-4">
+      <div class="col-3">
      
             <div class="form-group">
 
               <div class="input-group">
-                
-                 
+                              
                 <a href="#ID_Division" class="btn btn-warning btn-outline-dark" style="width: 140px; text-align: center; cursor: pointer" data-toggle="collapse"><b>Division</b></a>
   <div id="ID_Division" class="collapse">
     Select Division for which Information need to fetched for Dashboard.
@@ -42,7 +39,7 @@
             </div>
              </div> 
          
-      <div class="col-4">
+      <div class="col-3">
       
             <div class="form-group">
 
@@ -70,26 +67,85 @@
                  </div>
             </div>
              </div>  
+
+            <div class="col-3">
+      
+            <div class="form-group">
+
+              <div class="input-group">
+    
+                <a href="#ID_Year" class="btn btn-light btn-outline-dark" style="width: 140px; text-align: center; cursor: pointer" data-toggle="collapse"><b>Year</b></a>
+  <div id="ID_Year" class="collapse">
+   Select Department for which Information need to fetched for Dashboard.
+    Click again 'Department' button To Hide this Information.
+  </div>
+                 <asp:dropdownlist ID="F_YearID" CssClass="form-control" ClientIDMode="static" runat="Server" >
+                  <asp:ListItem Value="">2019</asp:ListItem>  
+                  <asp:ListItem>2018</asp:ListItem> 
+                  <asp:ListItem>2017</asp:ListItem>  
+                  <asp:ListItem>2016</asp:ListItem>  
+                  <asp:ListItem>2015</asp:ListItem>  
+                  <asp:ListItem>2014</asp:ListItem> 
+                   <asp:ListItem>2013</asp:ListItem>
+                   <asp:ListItem>2012</asp:ListItem>
+                   <asp:ListItem>2011</asp:ListItem>
+                   <asp:ListItem>2010</asp:ListItem>
+
+
+                </asp:dropdownlist>
+                 </div>
+            </div>
+             </div>  
            
+           <div class="col-3">
+      
+            <div class="form-group">
+
+              <div class="input-group">
+    
+                <a href="#ID_Month" class="btn btn-light btn-outline-dark" style="width: 140px; text-align: center; cursor: pointer" data-toggle="collapse"><b>Month</b></a>
+  <div id="ID_Month" class="collapse">
+   Select Department for which Information need to fetched for Dashboard.
+    Click again 'Department' button To Hide this Information.
+  </div>
+                 <asp:dropdownlist ID="F_MonthID" CssClass="form-control" ClientIDMode="static" runat="Server" >
+                  <asp:ListItem Value="">JANUARY</asp:ListItem>  
+                  <asp:ListItem>FEBRUARY</asp:ListItem> 
+                  <asp:ListItem>MARCH</asp:ListItem>  
+                  <asp:ListItem>APRIL</asp:ListItem>  
+                  <asp:ListItem>MAY</asp:ListItem>  
+                  <asp:ListItem>JUNE</asp:ListItem> 
+                   <asp:ListItem>JULY</asp:ListItem>
+                   <asp:ListItem>AUGUST</asp:ListItem>
+                   <asp:ListItem>SEPTEMBER</asp:ListItem>
+                   <asp:ListItem>OCTOBER</asp:ListItem>
+                   <asp:ListItem>NOVEMBER</asp:ListItem>
+                   <asp:ListItem>DECEMBER</asp:ListItem>
 
 
-          
-       <div class="col-1">
-               </div>
+
+                </asp:dropdownlist>
+                 </div>
+            </div>
+             </div>  
      
-      <div class="col-3">
+     
+                   
+        </div> 
+    
+    <div class="row"> 
+      <div class="col-9">
+        </div>
+       <div class="col-3">
            
-          <asp:Button ID="cmdSubmit" runat="server" CssClass="btn  btn-block btn-outline-danger"  Font-Bold="true" Text="Generate DashBoard" ToolTip="-" style="width: 210px; text-align: center; cursor:pointer"/>
+          <asp:Button ID="cmdSubmit" runat="server" CssClass="btn btn-block btn-outline-danger"  Font-Bold="true" Text="Generate DashBoard" ToolTip="-" style="width: 210px; text-align: center; cursor:pointer"/>
           </div>
-
-         
-            
-     </div>   
-              
-
-
+       </div>  
+       
     <hr style="color:brown;background-color:darkslategrey;width:100%;height:3px">
   
+
+
    <hr>
        <div class="container text-center" id="DPMDLTABLE" runat="server" visible="false">
       <h5>Drawing and Document Progress Status As per PMDL - As Of Now </h5> 
@@ -100,6 +156,7 @@
 
         </div>
       </div>
+         <hr>
       <div class="container text-center" id="DPMDLTABLE1" runat="server" visible="true">
         <div class="border border-dark btn-outline-light">
           <div class="container-fluid text-center">
@@ -160,7 +217,7 @@
 
           </div>
 
-          <div class="container-fluid">
+          <div class="container-fluid mb-1">
             <div class="row">
               <div class="col-2">
                  <asp:Button ID="Btn_Discipline" runat="server" CssClass="btn btn-info btn-sm btn-block text-lg-left font-weight-bold" ToolTip="" Text="" Font-Bold="true"></asp:Button>
@@ -206,7 +263,16 @@
 
     </div>
    <hr>
-        
+     
+    
+    
+    
+    
+    
+    
+    
+    
+       
      </ContentTemplate>
           <Triggers>
             <asp:PostBackTrigger ControlID="cmdSubmit" />

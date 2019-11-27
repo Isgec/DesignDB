@@ -28,14 +28,73 @@ Partial Class GF_Discipline
     End Set
   End Property
 
+  Public Property YearID As String
+    Get
+      If ViewState("YearID") IsNot Nothing Then
+        Return ViewState("YearID")
+      End If
+      Return ""
+    End Get
+    Set(value As String)
+
+      ViewState.Add("YearID", value)
+    End Set
+  End Property
+
+  Public Property MonthID As String
+    Get
+      If ViewState("MonthID") IsNot Nothing Then
+        Return ViewState("MonthID")
+      End If
+      Return ""
+    End Get
+    Set(value As String)
+
+      ViewState.Add("MonthID", value)
+    End Set
+  End Property
+
   Private Sub GF_Discipline_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-
+    MonthID = Month(Now)
     DivisionID = Convert.ToString(F_DivisionID.SelectedItem.Text)
     DisciplineID = Convert.ToString(F_DisciplineID.SelectedItem.Text)
 
     F_DivisionID.Text = DivisionID
     F_DisciplineID.Text = DisciplineID
+
+
+    Select Case MonthID
+
+      Case "1"
+        F_MonthID.SelectedIndex = 0
+      Case "2"
+        F_MonthID.SelectedIndex = 1
+      Case "3"
+        F_MonthID.SelectedIndex = 2
+      Case "4"
+        F_MonthID.SelectedIndex = 3
+      Case "5"
+        F_MonthID.SelectedIndex = 4
+      Case "6"
+        F_MonthID.SelectedIndex = 5
+      Case "7"
+        F_MonthID.SelectedIndex = 6
+      Case "8"
+        F_MonthID.SelectedIndex = 7
+      Case "9"
+        F_MonthID.SelectedIndex = 8
+      Case "10"
+        F_MonthID.SelectedIndex = 9
+      Case "11"
+        F_MonthID.SelectedIndex = 10
+      Case "12"
+        F_MonthID.SelectedIndex = 11
+
+
+
+    End Select
+
 
 
     Select Case DisciplineID
@@ -73,8 +132,13 @@ Partial Class GF_Discipline
   End Sub
 
   Private Sub cmdSubmit_Click(sender As Object, e As EventArgs) Handles cmdSubmit.Click
+    F_MonthID.SelectedValue = MonthID
+
     DPMDLTABLE.Visible = True
     Btn_Discipline.Text = DivisionID + "-" + DisciplineID
+    MonthID = F_MonthID.SelectedValue
+    'PMDL
+
     Dim Dt As SIS.DD.DBDiscipline = SIS.DD.DBDiscipline.GetDPMDLDB(DivisionID, DisciplineID)
 
     btn_Discipline_Total_Count.Text = Dt.Discipline_Total_Count
