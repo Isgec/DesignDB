@@ -28,74 +28,43 @@ Partial Class GF_Discipline
     End Set
   End Property
 
-  Public Property YearID As String
+  Public Property YearID As Integer
     Get
       If ViewState("YearID") IsNot Nothing Then
         Return ViewState("YearID")
       End If
-      Return ""
+      Return YearID
     End Get
-    Set(value As String)
+    Set(value As Integer)
 
       ViewState.Add("YearID", value)
     End Set
   End Property
 
-  Public Property MonthID As String
+  Public Property MonthID As Integer
     Get
       If ViewState("MonthID") IsNot Nothing Then
         Return ViewState("MonthID")
       End If
-      Return ""
+      Return MonthID
     End Get
-    Set(value As String)
+    Set(value As Integer)
 
       ViewState.Add("MonthID", value)
     End Set
   End Property
 
   Private Sub GF_Discipline_Load(sender As Object, e As EventArgs) Handles Me.Load
+    If Not Page.IsPostBack And Not Page.IsCallback Then
+      F_MonthID.SelectedIndex = DateTime.Now.Month - 1
 
-    MonthID = Month(Now)
+    End If
+
     DivisionID = Convert.ToString(F_DivisionID.SelectedItem.Text)
     DisciplineID = Convert.ToString(F_DisciplineID.SelectedItem.Text)
 
     F_DivisionID.Text = DivisionID
     F_DisciplineID.Text = DisciplineID
-
-
-    Select Case MonthID
-
-      Case "1"
-        F_MonthID.SelectedIndex = 0
-      Case "2"
-        F_MonthID.SelectedIndex = 1
-      Case "3"
-        F_MonthID.SelectedIndex = 2
-      Case "4"
-        F_MonthID.SelectedIndex = 3
-      Case "5"
-        F_MonthID.SelectedIndex = 4
-      Case "6"
-        F_MonthID.SelectedIndex = 5
-      Case "7"
-        F_MonthID.SelectedIndex = 6
-      Case "8"
-        F_MonthID.SelectedIndex = 7
-      Case "9"
-        F_MonthID.SelectedIndex = 8
-      Case "10"
-        F_MonthID.SelectedIndex = 9
-      Case "11"
-        F_MonthID.SelectedIndex = 10
-      Case "12"
-        F_MonthID.SelectedIndex = 11
-
-
-
-    End Select
-
-
 
     Select Case DisciplineID
 
@@ -132,30 +101,48 @@ Partial Class GF_Discipline
   End Sub
 
   Private Sub cmdSubmit_Click(sender As Object, e As EventArgs) Handles cmdSubmit.Click
-    F_MonthID.SelectedValue = MonthID
+
+
+    MonthID = F_MonthID.SelectedIndex + 1
+    YearID = Convert.ToInt32(F_YearID.SelectedItem.Text)
 
     DPMDLTABLE.Visible = True
     Btn_Discipline.Text = DivisionID + "-" + DisciplineID
-    MonthID = F_MonthID.SelectedValue
+    DSARTABLE.Visible = True
+    Btn_Discipline1.Text = DivisionID + "-" + DisciplineID
+
     'PMDL
 
-    Dim Dt As SIS.DD.DBDiscipline = SIS.DD.DBDiscipline.GetDPMDLDB(DivisionID, DisciplineID)
+    Dim Dt As SIS.DD.DBDiscipline = SIS.DD.DBDiscipline.GetDPMDLDB(DivisionID, DisciplineID, MonthID, YearID)
 
-    btn_Discipline_Total_Count.Text = Dt.Discipline_Total_Count
-    btn_Discipline_Release_Count.Text = Dt.Discipline_Release_Count
-    btn_Discipline_Pending_Count.Text = Dt.Discipline_Pending_Count
-    btn_Discipline_Due_Count.Text = Dt.Discipline_DueForToday_Count
-    btn_Discipline_DueTillToday_Count.Text = Dt.Discipline_DueTillToday_Count
-    btn_Discipline_Ontime_Count.Text = Dt.Discipline_OnTime_Count
-    btn_Discipline_Delayed_Count.Text = Dt.Discipline_Delayed_Count
+    btn_DueforRelease_CurrentM_A.Text = Dt.DueforRelease_CurrentM_A
+    btn_DueforRelease_PreviousM_B.Text = Dt.DueforRelease_PreviousM_B
+    btn_DueforRelease_BothM_C.Text = Dt.DueforRelease_PreviousM_B + Dt.DueforRelease_CurrentM_A
+    btn_AllDueTillToday_Release.Text = Dt.AllDueTillToday_Release
+    btn_DueOnlyToday_Release.Text = Dt.DueOnlyToday_Release
+    btn_Ontime_Release_CurrentM.Text = Dt.Ontime_Release_CurrentM
+    btn_Backlog_Release_CurrentM.Text = Dt.Backlog_Release_CurrentM
 
   End Sub
+
+  'Protected Sub F_MonthID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles F_MonthID.SelectedIndexChanged
+  '  Dim an As Integer = 0
+  '  Dim selectedValue As String = F_MonthID.SelectedValue
+
+  '  F_MonthID.SelectedIndex = an
+  '  an = F_MonthID.SelectedIndex
+
+  'End Sub
 
   'Private Sub btn_Discipline_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_Discipline_Total_Count.Click
   '  Response.Redirect("GF_DisciplineDBDetails.aspx?detail=BOILER&DisciplineID=" & F_DisciplineID.Text)
   'End Sub
 
 
+  Protected Sub F_MonthID_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+
+  End Sub
 End Class
 
 

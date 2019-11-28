@@ -24,11 +24,8 @@ Namespace SIS.DD
     Public Property t_stat As String = ""
     Public Property t_wfst As String = ""
     Public Property t_soft As String = ""
-
     Public Property ProjectID As String = ""
-
     Public Property element As String = ""
-
     Public Property t_dcrn As String = ""
     Public Property t_cspa As String = ""
     Public Property t_reqs As String = ""
@@ -36,8 +33,6 @@ Namespace SIS.DD
     Public Property t_crea As String = ""
     Public Property t_user As String = ""
     Public Property t_cprj As String = ""
-
-
     Public Property t_tran As String = ""
     Public Property t_type As String = ""
     Public Property t_logn As String = ""
