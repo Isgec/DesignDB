@@ -107,10 +107,11 @@ Partial Class GF_Discipline
     YearID = Convert.ToInt32(F_YearID.SelectedItem.Text)
 
     DPMDLTABLE.Visible = True
-    Btn_Discipline.Text = DivisionID + "-" + DisciplineID
+    Btn_Discipline.Text = DivisionID + "-" + DisciplineID + "-" + F_YearID.SelectedItem.Text + "-" + F_MonthID.SelectedItem.Text.Remove(3)
     DSARTABLE.Visible = True
-    Btn_Discipline1.Text = DivisionID + "-" + DisciplineID
-
+    Btn_Discipline1.Text = DivisionID + "-" + DisciplineID + "-" + F_YearID.SelectedItem.Text + "-" + F_MonthID.SelectedItem.Text.Remove(3)
+    DELEMENTTABLE.Visible = True
+    Btn_Discipline2.Text = "Over All"
     'PMDL
 
     Dim Dt As SIS.DD.DBDiscipline = SIS.DD.DBDiscipline.GetDPMDLDB(DivisionID, DisciplineID, MonthID, YearID)
@@ -122,6 +123,30 @@ Partial Class GF_Discipline
     btn_DueOnlyToday_Release.Text = Dt.DueOnlyToday_Release
     btn_Ontime_Release_CurrentM.Text = Dt.Ontime_Release_CurrentM
     btn_Backlog_Release_CurrentM.Text = Dt.Backlog_Release_CurrentM
+
+    Dim Dt1 As SIS.DD.DBDiscipline = SIS.DD.DBDiscipline.GetDSARDB(DivisionID, DisciplineID, MonthID, YearID)
+
+    btn_SAR_TotalCount.Text = Dt1.SAR_TotalCount
+    btn_SAR_UnderCreation.Text = Dt1.SAR_UnderCreation
+    btn_SAR_UnderReview.Text = Dt1.SAR_UnderReview
+    btn_SAR_UnderApproval.Text = Dt1.SAR_UnderApproval
+    btn_SAR_Pending.Text = Dt1.SAR_UnderCreation + Dt1.SAR_UnderReview + Dt1.SAR_UnderApproval
+    btn_SAR_Approved.Text = Dt1.SAR_Approved
+    btn_SAR_NotApplicable.Text = Dt1.SAR_NotApplicable
+
+    btn_SAR_TotalCountA.Text = Dt1.SAR_TotalCountA
+    btn_SAR_UnderCreationA.Text = Dt1.SAR_UnderCreationA
+    btn_SAR_UnderReviewA.Text = Dt1.SAR_UnderReviewA
+    btn_SAR_UnderApprovalA.Text = Dt1.SAR_UnderApprovalA
+    btn_SAR_PendingA.Text = Dt1.SAR_UnderCreationA + Dt1.SAR_UnderReviewA + Dt1.SAR_UnderApprovalA
+    btn_SAR_ApprovedA.Text = Dt1.SAR_ApprovedA
+    btn_SAR_NotApplicableA.Text = Dt1.SAR_NotApplicableA
+
+    Dim Dt2 As SIS.DD.DBDiscipline = SIS.DD.DBDiscipline.GetDELEMENTDB(DivisionID, DisciplineID, MonthID, YearID)
+    btn_Total_Element.Text = Dt2.Total_Active_Element
+    btn_Element_Free.Text = Dt2.Element_Free
+    btn_Element_Partial.Text = Dt2.Element_Partial
+    btn_Element_Completed.Text = Dt2.Element_Completed
 
   End Sub
 

@@ -61,6 +61,24 @@ Namespace SIS.DD
     Public Property Ontime_Release_CurrentM As Integer = 0
     Public Property Backlog_Release_CurrentM As Integer = 0
 
+    Public Property SAR_TotalCount As Integer = 0
+    Public Property SAR_UnderCreation As Integer = 0
+    Public Property SAR_UnderReview As Integer = 0
+    Public Property SAR_UnderApproval As Integer = 0
+    Public Property SAR_Approved As Integer = 0
+    Public Property SAR_NotApplicable As Integer = 0
+    Public Property SAR_TotalCountA As Integer = 0
+    Public Property SAR_UnderCreationA As Integer = 0
+    Public Property SAR_UnderReviewA As Integer = 0
+    Public Property SAR_UnderApprovalA As Integer = 0
+    Public Property SAR_ApprovedA As Integer = 0
+    Public Property SAR_NotApplicableA As Integer = 0
+
+    Public Property Total_Active_Element As Integer = 0
+    Public Property Element_Completed As Integer = 0
+    Public Property Element_Partial As Integer = 0
+    Public Property Element_Free As Integer = 0
+
     Public Shared Function GetDPMDLDB(ByVal DivisionID As String, ByVal DisciplineID As String, ByVal MonthId As Integer, ByVal YearId As String) As DBDiscipline
       If DivisionID = "" Then Return Nothing
 
@@ -170,6 +188,257 @@ Namespace SIS.DD
       Return mRet
     End Function
 
+    Public Shared Function GetDSARDB(ByVal DivisionID As String, ByVal DisciplineID As String, ByVal MonthId As Integer, ByVal YearId As String) As DBDiscipline
+      Dim PrjID As String = ""
+      If DivisionID = "" Then Return Nothing
+
+      Select Case DivisionID
+        Case "BOILER"
+          'DivisionID = "AFBC','BLR_SPR','CFBC','HRSG','OILGAS','TG','WHRB','IPAC"
+          PrjID = "CA', 'IP', 'JA', 'JB', 'JE', 'JG', 'PS', 'BS', 'DS"
+        Case "SMD"
+          'DivisionID = "SPDR"
+          PrjID = "JS', 'SE', 'SG', 'SS', 'XP"
+        Case "EPC"
+          'DivisionID = "EPC01"
+          PrjID = "EC', 'EE', 'EF','EG', 'EM', 'ES', 'JP"
+        Case "APC"
+          ' DivisionID = "ESP"
+          PrjID = "AG', 'AS"
+      End Select
+
+      Select Case DisciplineID
+
+        Case "PRC"
+          DisciplineID = "PROCESS','MECHANICAL/PROCE','PROCESS-STOKER"
+        Case "MEC"
+          DisciplineID = "MECHANICAL/PROCE','MECHANICAL','MECH-SUGAR"
+        Case "STR"
+          DisciplineID = "STRUCTURE"
+        Case "PIP"
+          DisciplineID = "PIPING"
+        Case "ELE"
+          DisciplineID = "ELECTRICAL"
+        Case "C&I"
+          DisciplineID = "C & I','C&I','INSTRUMENTATION"
+        Case "CIV"
+          DisciplineID = "CIVIL"
+        Case "MHE"
+          DisciplineID = "MHE"
+        Case "PRJ"
+          DisciplineID = "OTHERS','SERVICE"
+        Case "WWS"
+          DisciplineID = "WWS"
+
+      End Select
+
+
+
+
+      Dim mRet As New DBDiscipline
+      mRet.DivisionID = DivisionID
+      mRet.DisciplineID = DisciplineID
+      mRet.MonthID = MonthId
+      mRet.YearID = YearId
+
+
+      Dim Sql As String = ""
+      Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetBaaNConnectionString())
+        Con.Open()
+
+
+        Sql = "select count(*) from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') and year(t_cdat) in (" & YearId & ") and month(t_cdat) in (" & MonthId & ")"
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.SAR_TotalCount = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "select count(*) from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =1 and year(t_cdat) in (" & YearId & ") and month(t_cdat) in (" & MonthId & ")"
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.SAR_UnderCreation = Cmd.ExecuteScalar
+        End Using
+
+
+        Sql = " select count(*) from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =2 and year(t_cdat) in (" & YearId & ") and month(t_cdat) in (" & MonthId & ")"
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.SAR_UnderReview = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select count(*) from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =3 and year(t_cdat) in (" & YearId & ") and month(t_cdat) in (" & MonthId & ")"
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.SAR_UnderApproval = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select count(*) from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =4 and year(t_cdat) in (" & YearId & ") and month(t_cdat) in (" & MonthId & ")"
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.SAR_Approved = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select count(*) from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =5 and year(t_cdat) in (" & YearId & ") and month(t_cdat) in (" & MonthId & ")"
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.SAR_NotApplicable = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "select count(*) from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "')"
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.SAR_TotalCountA = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "select count(*) from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =1"
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.SAR_UnderCreationA = Cmd.ExecuteScalar
+        End Using
+
+
+        Sql = " select count(*) from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =2"
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.SAR_UnderReviewA = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select count(*) from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =3"
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.SAR_UnderApprovalA = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select count(*) from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =4"
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.SAR_ApprovedA = Cmd.ExecuteScalar
+        End Using
+
+        Sql = " select count(*) from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =5"
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.SAR_NotApplicableA = Cmd.ExecuteScalar
+        End Using
+
+      End Using
+      Return mRet
+    End Function
+
+    Public Shared Function GetDELEMENTDB(ByVal DivisionID As String, ByVal DisciplineID As String, ByVal MonthId As Integer, ByVal YearId As String) As DBDiscipline
+      Dim PrjID As String = ""
+      If DivisionID = "" Then Return Nothing
+
+      Select Case DivisionID
+        Case "BOILER"
+          'DivisionID = "AFBC','BLR_SPR','CFBC','HRSG','OILGAS','TG','WHRB','IPAC"
+          PrjID = "CA', 'IP', 'JA', 'JB', 'JE', 'JG', 'PS', 'BS', 'DS"
+        Case "SMD"
+          'DivisionID = "SPDR"
+          PrjID = "JS', 'SE', 'SG', 'SS', 'XP"
+        Case "EPC"
+          'DivisionID = "EPC01"
+          PrjID = "EC', 'EE', 'EF','EG', 'EM', 'ES', 'JP"
+        Case "APC"
+          ' DivisionID = "ESP"
+          PrjID = "AG', 'AS"
+      End Select
+
+
+
+      Select Case DisciplineID
+
+        Case "PRC"
+          DisciplineID = "PROCESS','MECHANICAL/PROCE','PROCESS-STOKER"
+        Case "MEC"
+          DisciplineID = "MECHANICAL/PROCE','MECHANICAL','MECH-SUGAR"
+        Case "STR"
+          DisciplineID = "STRUCTURE"
+        Case "PIP"
+          DisciplineID = "PIPING"
+        Case "ELE"
+          DisciplineID = "ELECTRICAL"
+        Case "C&I"
+          DisciplineID = "C & I','C&I','INSTRUMENTATION"
+        Case "CIV"
+          DisciplineID = "CIVIL"
+        Case "MHE"
+          DisciplineID = "MHE"
+        Case "PRJ"
+          DisciplineID = "OTHERS','SERVICE"
+        Case "WWS"
+          DisciplineID = "WWS"
+
+      End Select
+
+      Dim mRet As New DBDiscipline
+      mRet.DivisionID = DivisionID
+      mRet.DisciplineID = DisciplineID
+      mRet.MonthID = MonthId
+      mRet.YearID = YearId
+
+
+      Dim Sql As String = ""
+      Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetBaaNConnectionString())
+        Con.Open()
+
+
+        't_acdt = convert(datetime,'01/01/1970',103) and
+
+
+        ' Sql = "-"
+        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') and substring(rec.t_cprj,1,2) in ('" & PrjID & "') and rec.t_appl=1 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Total_Active_Element = Cmd.ExecuteScalar
+        End Using
+
+
+        ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
+        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') and substring(rec.t_cprj,1,2) in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=1 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Element_Free = Cmd.ExecuteScalar
+        End Using
+
+
+
+        ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
+        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') and substring(rec.t_cprj,1,2) in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=2 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Element_Partial = Cmd.ExecuteScalar
+        End Using
+
+
+        ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
+        Sql = "select count(*) from ttpisg063200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa where ttppdm090200.t_sort in ('" & DisciplineID & "') and substring(rec.t_cprj,1,2) in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=3 "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.Element_Completed = Cmd.ExecuteScalar
+        End Using
+
+
+
+      End Using
+      Return mRet
+    End Function
 
 
   End Class

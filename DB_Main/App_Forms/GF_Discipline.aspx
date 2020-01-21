@@ -1,4 +1,5 @@
-<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="GF_Discipline.aspx.vb" Inherits="GF_Discipline" title="Discipline" %>
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="GF_Discipline.aspx.vb" Inherits="GF_Discipline" Title="Discipline" %>
+
 <asp:Content ID="CPHtaApprovalWFTypes" ContentPlaceHolderID="cph1" runat="Server">
 
   <div class="container-fluid">
@@ -8,6 +9,7 @@
     <div class="pagedata">
       <asp:UpdatePanel ID="UPNLtaApprovalWFTypes" runat="server">
         <ContentTemplate>
+
           <asp:UpdateProgress ID="UPGStaApprovalWFTypes" runat="server" AssociatedUpdatePanelID="UPNLtaApprovalWFTypes" DisplayAfter="100">
             <ProgressTemplate>
               <span style="color: #ff0031">Loading...</span>
@@ -15,6 +17,7 @@
           </asp:UpdateProgress>
 
           <hr style="color: brown; background-color: darkslategrey; width: 100%; height: 3px">
+          <%-- Query Buttons--%>
           <div class="row">
 
             <div class="col-3">
@@ -80,7 +83,8 @@
     Click again 'Department' button To Hide this Information.
                   </div>
                   <asp:DropDownList ID="F_YearID" CssClass="form-control" ClientIDMode="static" runat="Server">
-                    <asp:ListItem Value="">2019</asp:ListItem>
+                    <asp:ListItem Value="">2020</asp:ListItem>
+                    <asp:ListItem>2019</asp:ListItem>
                     <asp:ListItem>2018</asp:ListItem>
                     <asp:ListItem>2017</asp:ListItem>
                     <asp:ListItem>2016</asp:ListItem>
@@ -126,8 +130,6 @@
               </div>
             </div>
 
-
-
           </div>
 
           <div class="row">
@@ -138,34 +140,30 @@
               <asp:Button ID="cmdSubmit" runat="server" CssClass="btn btn-block btn-outline-danger" Font-Bold="true" Text="Generate DashBoard" ToolTip="-" Style="width: 210px; text-align: center; cursor: pointer" />
             </div>
           </div>
+          <%-- Query Buttons--%>
 
           <hr style="color: brown; background-color: darkslategrey; width: 100%; height: 3px">
-
-
-
+          
+        
+          
           <hr>
+           <%-- PMDL TABLE--%>
           <div class="container text-center" id="DPMDLTABLE" runat="server" visible="false">
             <h5>Drawing and Document Progress Status As per PMDL - As Of Now </h5>
-            <div class="row">
 
-              <div class="col-12">
-                <asp:Button ID="DPMDLDATAI" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Sorry !!! No Data in ERPLN" Text="" Font-Bold="true" Visible="false"></asp:Button>
 
-              </div>
-            </div>
-            <hr>
             <div class="container text-center" id="DPMDLTABLE1" runat="server" visible="true">
               <div class="border border-dark btn-outline-light">
                 <div class="container-fluid text-center">
 
                   <div class="row">
-                    <div class="col-2">
+                    <div class="col-3">
                       <div class="text-secondary">
                         <h6><b>Discipline</b></h6>
                       </div>
                     </div>
 
-                    <div class="col-10">
+                    <div class="col-9">
                       <div class="row">
 
                         <div class="col">
@@ -175,7 +173,7 @@
                         </div>
                         <div class="col">
                           <div class="text-primary">
-                            <h6><b>Backlog for Release(Previous months) -B</b></h6>
+                            <h6><b>Backlog for Release (Previous months) -B</b></h6>
                           </div>
                         </div>
                         <div class="col">
@@ -214,12 +212,12 @@
 
                 </div>
 
-                <div class="container-fluid mb-1">
+                <div class="container-fluid">
                   <div class="row">
-                    <div class="col-2">
+                    <div class="col-3">
                       <asp:Button ID="Btn_Discipline" runat="server" CssClass="btn btn-info btn-sm btn-block text-lg-left font-weight-bold" ToolTip="" Text="" Font-Bold="true"></asp:Button>
                     </div>
-                    <div class="col-10">
+                    <div class="col-9">
                       <div class="row">
 
                         <div class="col">
@@ -252,226 +250,251 @@
 
                   </div>
                 </div>
-
-
-
               </div>
             </div>
 
           </div>
           
-           <hr>
-       
-
-              <div class="container text-center" id="DSARTABLE" runat="server" visible="false">
-      <h5>SAR Progress Status</h5>
-      <div class="row">
-
-        <div class="col-12">
-          <asp:Button ID="DSARDATAI" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Sorry !!! No Data in ERPLN" Text="" Font-Bold="true" Visible="false"></asp:Button>
-          </div>
-         </div>
-        
-        <div class="container text-center" id="SARTABLE1" runat="server" visible="true">
-          <div class="border border-dark btn-outline-light">
-            <div class="container-fluid">
-
-              <div class="row">
-                 
-                <div class="col-2">
-                  <div class="text-secondary">
-                    <h6><b>Discipline</b></h6>
-                  </div>
-                </div>
-
-
-
-                <div class="col-10">
-                   <div class="row">
-                     <div class="col-2">
-                       <div class="text-dark">
-                         <b>Total SAR Count</b>
-                       </div>
-                     </div>
-
-                     <div class="col-2">
-                       <div class="text-info">
-                         <b>Created</b>
-                       </div>
-                     </div>
-                     <div class="col-2">
-                       <div class="text-warning">
-                         <b>Under Review</b>
-                       </div>
-                     </div>
-                     <div class="col-2">
-                       <div class="text-danger">
-                         <b>Under Approval</b>
-                       </div>
-                     </div>
-                     <div class="col-2">
-                       <div class="text-success">
-                         <b>Approved</b>
-                       </div>
-                     </div>
-                     <div class="col-2">
-                       <div class="text-secondary">
-                         <b>Not Applicable</b>
-                       </div>
-                     </div>
-                        </div>
-                    </div>
-              </div>
-             
-
-            <div class="container-fluid text-center">
-              <div class="row">
-                <div class="col-2">
-                                       <asp:Button ID="Btn_Discipline1" runat="server" CssClass="btn btn-info btn-sm btn-block text-lg-left font-weight-bold" ToolTip="" Text="" Font-Bold="true"></asp:Button>
-
-                </div>
-                <div class="col-10">
-                   <div class="row">
-                    <div class="col-2">
-                      <asp:Button ID="btn_Discipline_SAR_Total_Count" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Total SAR Count" Text="" Font-Bold="true"></asp:Button>
-                    </div>
-                    <div class="col-2">
-                      <asp:Button ID="btn_Discipline_SAR_Under_Creation" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Creation" Text="" Font-Bold="true"></asp:Button>
-                    </div>
-                    <div class="col-2">
-                      <asp:Button ID="btn_Discipline_SAR_Under_Review" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Review" Text="" Font-Bold="true"></asp:Button>
-                    </div>
-                    <div class="col-2">
-                      <asp:Button ID="btn_Discipline_SAR_Under_Approval" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Approval" Text="" Font-Bold="true"></asp:Button>
-                    </div>
-                    <div class="col-2">
-                      <asp:Button ID="btn_Discipline_SAR_Approved" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="SAR - Approved" Text="" Font-Bold="true"></asp:Button>
-                    </div>
-                    <div class="col-2">
-                      <asp:Button ID="btn_Discipline_SAR_Not_Applicable" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="SAR - Not Applicable" Text="" Font-Bold="true"></asp:Button>
-                    </div>
-                   
-                   
- </div>
-            </div>
-                
-              </div>
-            </div>
-
-        
-
-
-          </div>
-        </div>
-          </div>
-       
-</div>
-
           <hr>
-             <div class="container text-center" id="Div1" runat="server" visible="false">
-      <h5>SAR Progress Status</h5>
-      <div class="row">
+          <%-- SAR TABLE--%>
+          <div class="container text-center" id="DSARTABLE" runat="server" visible="false">
+            <h5>SAR Progress Status</h5>
+           
 
-        <div class="col-12">
-          <asp:Button ID="Button1" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Sorry !!! No Data in ERPLN" Text="" Font-Bold="true" Visible="false"></asp:Button>
-          </div>
-         </div>
-        
-        <div class="container text-center" id="Div2" runat="server" visible="true">
-          <div class="border border-dark btn-outline-light">
-            <div class="container-fluid">
+            <div class="container text-center" id="DSARTABLE1" runat="server" visible="true">
+              <div class="border border-dark btn-outline-light">
+                <div class="container-fluid text-center">
 
-              <div class="row">
-                 
-                <div class="col-2">
-                  <div class="text-secondary">
-                    <h6><b>Discipline</b></h6>
-                  </div>
-                </div>
+                  <div class="row">
+
+                    <div class="col-3">
+                      <div class="text-secondary">
+                        <h6><b>Discipline</b></h6>
+                      </div>
+                    </div>
 
 
 
-                <div class="col-10">
-                   <div class="row">
-                     <div class="col-2">
-                       <div class="text-dark">
-                         <b>Total SAR Count</b>
-                       </div>
-                     </div>
-
-                     <div class="col-2">
-                       <div class="text-info">
-                         <b>Created</b>
-                       </div>
-                     </div>
-                     <div class="col-2">
-                       <div class="text-warning">
-                         <b>Under Review</b>
-                       </div>
-                     </div>
-                     <div class="col-2">
-                       <div class="text-danger">
-                         <b>Under Approval</b>
-                       </div>
-                     </div>
-                     <div class="col-2">
-                       <div class="text-success">
-                         <b>Approved</b>
-                       </div>
-                     </div>
-                     <div class="col-2">
-                       <div class="text-secondary">
-                         <b>Not Applicable</b>
-                       </div>
-                     </div>
+                    <div class="col-9">
+                      <div class="row">
+                        <div class="col">
+                          <div class="text-dark">
+                            <h6><b>Total SAR Count</b></h6>
+                          </div>
                         </div>
-                    </div>
-              </div>
-             
 
-            <div class="container-fluid text-center">
-              <div class="row">
-                <div class="col-2">
-                                       <asp:Button ID="Button2" runat="server" CssClass="btn btn-info btn-sm btn-block text-lg-left font-weight-bold" ToolTip="" Text="" Font-Bold="true"></asp:Button>
+                        <div class="col">
+                          <div class="text-info">
+                          <h6> <b>Under Creation</b></h6>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="text-warning">
+                           <h6> <b>Under Review</b></h6>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="text-danger">
+                          <h6>  <b>Under Approval</b></h6>
+                          </div>
+                        </div>
+                        <div class="col">
+                        <div class="text-success">
+                          <h6>  <b>Pending</b></h6>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="text-success">
+                           <h6> <b>Approved</b></h6>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="text-secondary">
+                           <h6> <b>Not Applicable</b></h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-3">
+                        <asp:Button ID="Btn_Discipline1" runat="server" CssClass="btn btn-info btn-sm btn-block text-lg-left font-weight-bold" ToolTip="" Text="" Font-Bold="true"></asp:Button>
+
+                      </div>
+                      <div class="col-9">
+                        <div class="row">
+                          <div class="col">
+                            <asp:Button ID="btn_SAR_TotalCount" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Total SAR Count" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+                          <div class="col">
+                            <asp:Button ID="btn_SAR_UnderCreation" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Creation" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+                          <div class="col">
+                            <asp:Button ID="btn_SAR_UnderReview" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Review" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+                          <div class="col">
+                            <asp:Button ID="btn_SAR_UnderApproval" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Approval" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+                          <div class="col">
+                            <asp:Button ID="btn_SAR_Pending" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="SAR - Pending" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+                          <div class="col">
+                            <asp:Button ID="btn_SAR_Approved" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="SAR - Approved" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+                          <div class="col">
+                            <asp:Button ID="btn_SAR_NotApplicable" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="SAR - Not Applicable" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                           <div class="container-fluid text-center">
+                    <div class="row">
+                      <div class="col-3">
+                        <asp:Button ID="Btn_Discipline2" runat="server" CssClass="btn btn-info btn-sm btn-block text-lg-left font-weight-bold" ToolTip="" Text="" Font-Bold="true"></asp:Button>
+
+                      </div>
+                      <div class="col-9">
+                        <div class="row">
+                          <div class="col">
+                            <asp:Button ID="btn_SAR_TotalCountA" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Total SAR Count" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+                          <div class="col">
+                            <asp:Button ID="btn_SAR_UnderCreationA" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Creation" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+                          <div class="col">
+                            <asp:Button ID="btn_SAR_UnderReviewA" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Review" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+                          <div class="col">
+                            <asp:Button ID="btn_SAR_UnderApprovalA" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Approval" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+                          <div class="col">
+                            <asp:Button ID="btn_SAR_PendingA" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="SAR - Pending" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+                          <div class="col">
+                            <asp:Button ID="btn_SAR_ApprovedA" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="SAR - Approved" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+                          <div class="col">
+                            <asp:Button ID="btn_SAR_NotApplicableA" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="SAR - Not Applicable" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+
 
                 </div>
-                <div class="col-10">
-                   <div class="row">
-                    <div class="col-2">
-                      <asp:Button ID="Button3" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Total SAR Count" Text="" Font-Bold="true"></asp:Button>
-                    </div>
-                    <div class="col-2">
-                      <asp:Button ID="Button4" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Creation" Text="" Font-Bold="true"></asp:Button>
-                    </div>
-                    <div class="col-2">
-                      <asp:Button ID="Button5" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Review" Text="" Font-Bold="true"></asp:Button>
-                    </div>
-                    <div class="col-2">
-                      <asp:Button ID="Button6" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Approval" Text="" Font-Bold="true"></asp:Button>
-                    </div>
-                    <div class="col-2">
-                      <asp:Button ID="Button7" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="SAR - Approved" Text="" Font-Bold="true"></asp:Button>
-                    </div>
-                    <div class="col-2">
-                      <asp:Button ID="Button8" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="SAR - Not Applicable" Text="" Font-Bold="true"></asp:Button>
-                    </div>
-                   
-                   
- </div>
-            </div>
-                
               </div>
             </div>
 
-        
-
-
           </div>
-        </div>
-          </div>
-       
-</div>
+          
           <hr>
+          <%-- ELEMENT TABLE--%>
+          <div class="container text-center" id="DELEMENTTABLE" runat="server" visible="false">
+            <h5>Active Element Progress</h5>
+            
+
+            <div class="container text-center" id="DELEMENTTABLE1" runat="server" visible="true">
+              <div class="border border-dark btn-outline-light">
+                <div class="container-fluid">
+
+                  <div class="row">
+
+                    <div class="col-2">
+                      <div class="text-secondary">
+                        <h6><b>Discipline</b></h6>
+                      </div>
+                    </div>
+
+
+
+                    <div class="col-5">
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="text-secondary">
+                            <b>Total Active Element Count</b>
+                          </div>
+                        </div>
+
+                        <div class="col-6">
+                          <div class="text-primary">
+                            <b>Free</b>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-5">
+                      <div class="row">
+
+                        <div class="col-6">
+                          <div class="text-warning">
+                            <b>Partial</b>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="text-secondary">
+                            <b>Completed</b>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-2">
+                        <h6><span class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"><font face="Comic Sans MS">Total </font></span></h6>
+                      </div>
+                      <div class="col-5">
+                        <div class="row">
+                          <div class="col-6">
+                            <asp:Button ID="btn_Total_Element" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Total - Total Active Element Count" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+                          <div class="col-6">
+                            <asp:Button ID="btn_Element_Free" runat="server" CssClass="btn btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="Total - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-5">
+                        <div class="row">
+
+                          <div class="col-6">
+                            <asp:Button ID="btn_Element_Partial" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Total - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+                          <div class="col-6">
+                            <asp:Button ID="btn_Element_Completed" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Total - Active Element - Completed" Text="" Font-Bold="true"></asp:Button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+          <hr>
+                    
         </ContentTemplate>
         <Triggers>
           <asp:PostBackTrigger ControlID="cmdSubmit" />
