@@ -2,10 +2,11 @@
 
 <asp:Content ID="CPHtaApprovalWFTypes" ContentPlaceHolderID="cph1" runat="Server">
 
-  <div class="container-fluid">
+ 
     <div class="caption">
       <asp:Label ID="LabeltaApprovalWFTypes" runat="server" Text="&nbsp;Discipline DashBoard"></asp:Label>
     </div>
+  
     <div class="pagedata">
       <asp:UpdatePanel ID="UPNLtaApprovalWFTypes" runat="server">
         <ContentTemplate>
@@ -15,14 +16,67 @@
               <span style="color: #ff0031">Loading...</span>
             </ProgressTemplate>
           </asp:UpdateProgress>
+         
+            
+           <div class="container-fluid">
+      <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+     
+       <hr style="color: forestgreen; background-color: darkgreen; width: 100%; height: 1px">  
+    </div>
+    <div class="carousel-item">
+      <hr style="color: forestgreen; background-color: blue; width: 100%; height: 1px">
+       </div>
+    <div class="carousel-item">
+      <hr style="color: forestgreen; background-color: red; width: 100%; height: 1px">
+    </div>
+    <div class="carousel-item">
+      <hr style="color: forestgreen; background-color: orange; width: 100%; height: 1px">
+    </div>
+    <div class="carousel-item">
+      <hr style="color: forestgreen; background-color: yellow; width: 100%; height: 1px">
+    </div>
+    <div class="carousel-item">
+      <hr style="color: forestgreen; background-color: magenta; width: 100%; height: 1px">
+    </div>
+    <div class="carousel-item">
+     <hr style="color: forestgreen; background-color: pink; width: 100%; height: 1px">
+    </div>
+    <div class="carousel-item">
+     <hr style="color: forestgreen; background-color: blue; width: 100%; height: 1px">
+    </div>
+    <div class="carousel-item">
+      <hr style="color: forestgreen; background-color: lightgreen; width: 100%; height: 1px">
+    </div>
 
-          <hr style="color: brown; background-color: darkslategrey; width: 100%; height: 3px">
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>   
           <%-- Query Buttons--%>
           <div class="row">
 
-            <div class="col-3">
+            <div class="col-sm-auto">
 
-              <div class="form-group">
+             
 
                 <div class="input-group">
 
@@ -31,7 +85,7 @@
                     Select Division for which Information need to fetched for Dashboard.
     Click again 'Division' button To Hide this Information.
                   </div>
-                  <asp:DropDownList ID="F_DivisionID" CssClass="form-control" ClientIDMode="static" runat="Server">
+                  <asp:DropDownList ID="F_DivisionID" ClientIDMode="static" runat="Server" class="btn btn-warning btn-outline-dark">
                     <asp:ListItem Value="">BOILER</asp:ListItem>
                     <asp:ListItem>EPC</asp:ListItem>
                     <asp:ListItem>SMD</asp:ListItem>
@@ -39,12 +93,12 @@
 
                   </asp:DropDownList>
                 </div>
-              </div>
+             
             </div>
 
-            <div class="col-3">
+            <div class="col-sm-auto">
 
-              <div class="form-group">
+             
 
                 <div class="input-group">
 
@@ -53,7 +107,7 @@
                     Select Department for which Information need to fetched for Dashboard.
     Click again 'Department' button To Hide this Information.
                   </div>
-                  <asp:DropDownList ID="F_DisciplineID" CssClass="form-control" ClientIDMode="static" runat="Server">
+                  <asp:DropDownList ID="F_DisciplineID" class="btn btn-warning btn-outline-dark" ClientIDMode="static" runat="Server">
                     <asp:ListItem Value="">MECHANICAL</asp:ListItem>
                     <asp:ListItem>PROCESS</asp:ListItem>
                     <asp:ListItem>STRUCTURE</asp:ListItem>
@@ -68,12 +122,12 @@
 
                   </asp:DropDownList>
                 </div>
-              </div>
+             
             </div>
 
-            <div class="col-3">
+            <div class="col-sm-auto">
 
-              <div class="form-group">
+            
 
                 <div class="input-group">
 
@@ -82,7 +136,7 @@
                     Select Department for which Information need to fetched for Dashboard.
     Click again 'Department' button To Hide this Information.
                   </div>
-                  <asp:DropDownList ID="F_YearID" CssClass="form-control" ClientIDMode="static" runat="Server">
+                  <asp:DropDownList ID="F_YearID" class="btn btn-warning btn-outline-dark" ClientIDMode="static" runat="Server">
                     <asp:ListItem Value="">2020</asp:ListItem>
                     <asp:ListItem>2019</asp:ListItem>
                     <asp:ListItem>2018</asp:ListItem>
@@ -98,12 +152,12 @@
 
                   </asp:DropDownList>
                 </div>
-              </div>
+              
             </div>
 
-            <div class="col-3">
+            <div class="col-sm-auto">
 
-              <div class="form-group">
+            
 
                 <div class="input-group">
 
@@ -112,7 +166,7 @@
                     Select Department for which Information need to fetched for Dashboard.
     Click again 'Department' button To Hide this Information.
                   </div>
-                  <asp:DropDownList ID="F_MonthID" CssClass="form-control" runat="server">
+                  <asp:DropDownList ID="F_MonthID" class="btn btn-danger btn-outline-dark" runat="server">
                     <asp:ListItem>JANUARY</asp:ListItem>
                     <asp:ListItem>FEBRUARY</asp:ListItem>
                     <asp:ListItem>MARCH</asp:ListItem>
@@ -127,39 +181,99 @@
                     <asp:ListItem>DECEMBER</asp:ListItem>
                   </asp:DropDownList>
                 </div>
-              </div>
+          
             </div>
 
           </div>
 
-          <div class="row">
-            <div class="col-9">
+           
+    <div class="row mt-1">
+            <div class="col-sm-9">
             </div>
-            <div class="col-3">
+            <div class="col-sm-3">
 
-              <asp:Button ID="cmdSubmit" runat="server" CssClass="btn btn-block btn-outline-danger" Font-Bold="true" Text="Generate DashBoard" ToolTip="-" Style="width: 210px; text-align: center; cursor: pointer" />
+              <asp:Button ID="cmdSubmit" runat="server" class="btn btn-warning btn-outline-success" Font-Bold="true" Text="Generate DashBoard" ToolTip="-" Style="width: 210px; text-align: center; cursor: pointer" />
             </div>
           </div>
+       
           <%-- Query Buttons--%>
+     <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+     
+       <hr style="color: forestgreen; background-color: darkgreen; width: 100%; height: 1px">  
+    </div>
+    <div class="carousel-item">
+      <hr style="color: forestgreen; background-color: blue; width: 100%; height: 1px">
+       </div>
+    <div class="carousel-item">
+      <hr style="color: forestgreen; background-color: red; width: 100%; height: 1px">
+    </div>
+    <div class="carousel-item">
+      <hr style="color: forestgreen; background-color: orange; width: 100%; height: 1px">
+    </div>
+    <div class="carousel-item">
+      <hr style="color: forestgreen; background-color: yellow; width: 100%; height: 1px">
+    </div>
+    <div class="carousel-item">
+      <hr style="color: forestgreen; background-color: magenta; width: 100%; height: 1px">
+    </div>
+    <div class="carousel-item">
+     <hr style="color: forestgreen; background-color: pink; width: 100%; height: 1px">
+    </div>
+    <div class="carousel-item">
+     <hr style="color: forestgreen; background-color: blue; width: 100%; height: 1px">
+    </div>
+    <div class="carousel-item">
+      <hr style="color: forestgreen; background-color: lightgreen; width: 100%; height: 1px">
+    </div>
 
-          <hr style="color: brown; background-color: darkslategrey; width: 100%; height: 3px">
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>   
+      </div>
+   
+         
+              
           
-        
-          
-          <hr>
+      
            <%-- PMDL TABLE--%>
-          <div class="container text-center" id="DPMDLTABLE" runat="server" visible="false">
-            <h5>Drawing and Document Progress Status As per PMDL - As Of Now </h5>
 
 
-            <div class="container text-center" id="DPMDLTABLE1" runat="server" visible="true">
+
+          <div class="container-fluid" id="DPMDLTABLE" runat="server" visible="false">
+             
+       <%--  <hr style="color: forestgreen; background-color: darkgreen; width: 100%; height: 1px">--%> 
+            <center> <h6><font face="Comic Sans MS">Drawing and Document Progress Status As per PMDL - As Of Now </font></h6></center>
+
+             <hr>
+            <div class="container-fluid" id="DPMDLTABLE1" runat="server" visible="true">
+              
               <div class="border border-dark btn-outline-light">
                 <div class="container-fluid text-center">
 
                   <div class="row">
                     <div class="col-3">
                       <div class="text-secondary">
-                        <h6><b>Discipline</b></h6>
+                        <h6><b></b></h6>
                       </div>
                     </div>
 
@@ -168,41 +282,41 @@
 
                         <div class="col">
                           <div class="text-dark">
-                            <h6><b>Total Due for Release Current Month -A</b></h6>
+                           <font face="Comic Sans MS">Total Due for Release Current Month = A </font>
                           </div>
                         </div>
                         <div class="col">
                           <div class="text-primary">
-                            <h6><b>Backlog for Release (Previous months) -B</b></h6>
+                             <font face="Comic Sans MS">Backlog for Release (Previous months) = B </font>
                           </div>
                         </div>
                         <div class="col">
                           <div class="text-warning">
 
-                            <h6><b>All Due For Release - C = A + B</b></h6>
+                            <font face="Comic Sans MS">All Due For Release  C = (A + B)</font>
                           </div>
                         </div>
                         <div class="col">
                           <div class="text-secondary">
-                            <h6><b>All Due Till Today For Release</b></h6>
+                           <font face="Comic Sans MS">All Due Till Today For Release</font>
                           </div>
                         </div>
 
                         <div class="col">
                           <div class="text-secondary">
-                            <h6><b>Due for Today Only To Release</b></h6>
+                          <font face="Comic Sans MS">Due for Today Only To Release</font>
                           </div>
                         </div>
 
                         <div class="col">
                           <div class="text-success">
-                            <h6><b>Ontime Released in This Month</b></h6>
+                         <font face="Comic Sans MS">Ontime Released in This Month</font>
                           </div>
                         </div>
 
                         <div class="col">
                           <div class="text-danger">
-                            <h6><b>Backlog Released in This Month</b></h6>
+                            <font face="Comic Sans MS">Backlog Released in This Month</font
                           </div>
                         </div>
                       </div>
@@ -212,10 +326,10 @@
 
                 </div>
 
-                <div class="container-fluid">
+                <div class="container-fluid  mb-1">
                   <div class="row">
                     <div class="col-3">
-                      <asp:Button ID="Btn_Discipline" runat="server" CssClass="btn btn-info btn-sm btn-block text-lg-left font-weight-bold" ToolTip="" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="Btn_Discipline" runat="server" CssClass="btn btn-dark btn-sm btn-block text-center font-weight-bold" ToolTip="" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col-9">
                       <div class="row">
@@ -254,14 +368,19 @@
             </div>
 
           </div>
-          
-          <hr>
-          <%-- SAR TABLE--%>
-          <div class="container text-center" id="DSARTABLE" runat="server" visible="false">
-            <h5>SAR Progress Status</h5>
-           
 
-            <div class="container text-center" id="DSARTABLE1" runat="server" visible="true">
+          
+        <%--  <hr>--%>
+          <%-- SAR TABLE--%>
+
+
+
+          <div class="container-fluid mt-1" id="DSARTABLE" runat="server" visible="false">
+           <center> <h6><font face="Comic Sans MS">SAR Progress Status</font></h6></center>
+           
+              
+            <div class="container-fluid mt-1" id="DSARTABLE1" runat="server" visible="true">
+             
               <div class="border border-dark btn-outline-light">
                 <div class="container-fluid text-center">
 
@@ -269,7 +388,7 @@
 
                     <div class="col-3">
                       <div class="text-secondary">
-                        <h6><b>Discipline</b></h6>
+                        <b></b>
                       </div>
                     </div>
 
@@ -279,49 +398,49 @@
                       <div class="row">
                         <div class="col">
                           <div class="text-dark">
-                            <h6><b>Total SAR Count</b></h6>
+                            <font face="Comic Sans MS">Total SAR Count</font>
                           </div>
                         </div>
 
                         <div class="col">
                           <div class="text-info">
-                          <h6> <b>Under Creation</b></h6>
+                          <font face="Comic Sans MS">Under Creation</font>
                           </div>
                         </div>
                         <div class="col">
                           <div class="text-warning">
-                           <h6> <b>Under Review</b></h6>
+                             <font face="Comic Sans MS">Under Review</font>
                           </div>
                         </div>
                         <div class="col">
                           <div class="text-danger">
-                          <h6>  <b>Under Approval</b></h6>
+                            <font face="Comic Sans MS">Under Approval</font>
                           </div>
                         </div>
                         <div class="col">
                         <div class="text-success">
-                          <h6>  <b>Pending</b></h6>
+                         <font face="Comic Sans MS">Pending</font>
                           </div>
                         </div>
                         <div class="col">
                           <div class="text-success">
-                           <h6> <b>Approved</b></h6>
+                         <font face="Comic Sans MS">Approved</font>
                           </div>
                         </div>
                         <div class="col">
                           <div class="text-secondary">
-                           <h6> <b>Not Applicable</b></h6>
+                        <font face="Comic Sans MS">Not Applicable</font>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-
-                  <div class="container-fluid">
+                  </div>
+                  <div class="container-fluid  mb-1">
                     <div class="row">
                       <div class="col-3">
-                        <asp:Button ID="Btn_Discipline1" runat="server" CssClass="btn btn-info btn-sm btn-block text-lg-left font-weight-bold" ToolTip="" Text="" Font-Bold="true"></asp:Button>
+                        <asp:Button ID="Btn_Discipline1" runat="server" CssClass="btn btn-dark btn-sm btn-block text-center font-weight-bold" ToolTip="" Text="" Font-Bold="true"></asp:Button>
 
                       </div>
                       <div class="col-9">
@@ -354,10 +473,10 @@
 
                     </div>
                   </div>
-                           <div class="container-fluid text-center">
+                           <div class="container-fluid text-center mb-1">
                     <div class="row">
                       <div class="col-3">
-                        <asp:Button ID="Btn_Discipline2" runat="server" CssClass="btn btn-info btn-sm btn-block text-lg-left font-weight-bold" ToolTip="" Text="" Font-Bold="true"></asp:Button>
+                        <asp:Button ID="Btn_Discipline2" runat="server" CssClass="btn btn-dark btn-sm btn-block text-center font-weight-bold" ToolTip="" Text="" Font-Bold="true"></asp:Button>
 
                       </div>
                       <div class="col-9">
@@ -390,30 +509,30 @@
 
                     </div>
                   </div>
-
-
-
-                </div>
+                          
               </div>
             </div>
 
           </div>
           
-          <hr>
+         <%-- <hr>--%>
           <%-- ELEMENT TABLE--%>
-          <div class="container text-center" id="DELEMENTTABLE" runat="server" visible="false">
-            <h5>Active Element Progress</h5>
+
+
+
+          <div class=" container-fluid" id="DELEMENTTABLE" runat="server" visible="false">
+           <center>  <h6><font face="Comic Sans MS">Active Element Progress</font></h6></center>
             
 
-            <div class="container text-center" id="DELEMENTTABLE1" runat="server" visible="true">
+            <div class=" container-fluid" id="DELEMENTTABLE1" runat="server" visible="true">
               <div class="border border-dark btn-outline-light">
                 <div class="container-fluid">
 
                   <div class="row">
 
-                    <div class="col-2">
+                    <div class="col-3">
                       <div class="text-secondary">
-                        <h6><b>Discipline</b></h6>
+                     <b></b>
                       </div>
                     </div>
 
@@ -422,30 +541,30 @@
                     <div class="col-5">
                       <div class="row">
                         <div class="col-6">
-                          <div class="text-secondary">
-                            <b>Total Active Element Count</b>
+                          <div class="text-dark">
+                            <center> <font face="Comic Sans MS">Total Active Element Count</font></center>
                           </div>
                         </div>
 
                         <div class="col-6">
                           <div class="text-primary">
-                            <b>Free</b>
+                             <center> <font face="Comic Sans MS">Free</font></center>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <div class="col-5">
+                    <div class="col-4">
                       <div class="row">
 
                         <div class="col-6">
                           <div class="text-warning">
-                            <b>Partial</b>
+                            <center>  <font face="Comic Sans MS">Partial</font></center>
                           </div>
                         </div>
                         <div class="col-6">
                           <div class="text-secondary">
-                            <b>Completed</b>
+                            <center> <font face="Comic Sans MS">Completed</font></center>
                           </div>
                         </div>
 
@@ -453,13 +572,13 @@
                     </div>
                   </div>
 
-
+                   </div>
 
 
                   <div class="container-fluid">
                     <div class="row">
-                      <div class="col-md-2">
-                        <h6><span class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"><font face="Comic Sans MS">Total </font></span></h6>
+                      <div class="col-3">
+                        <h6><span class="btn btn-dark btn-sm btn-block text-center font-weight-bold"><font face="Comic Sans MS">Total </font></span></h6>
                       </div>
                       <div class="col-5">
                         <div class="row">
@@ -471,7 +590,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-5">
+                      <div class="col-4">
                         <div class="row">
 
                           <div class="col-6">
@@ -487,19 +606,19 @@
                   </div>
 
 
-                </div>
+              
               </div>
             </div>
-
+          <%--   <hr style="color: forestgreen; background-color: darkgreen; width: 100%; height: 1px">--%>
           </div>
-          
-          <hr>
-                    
+           
+       <%--   <hr>--%>
+                
         </ContentTemplate>
         <Triggers>
           <asp:PostBackTrigger ControlID="cmdSubmit" />
         </Triggers>
       </asp:UpdatePanel>
     </div>
-  </div>
+      
 </asp:Content>

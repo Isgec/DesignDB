@@ -27,25 +27,25 @@
 
 
 
-    <div class="container text-center ml-0">
-      <div class="row">
-       <div class="col-12 align-items-center">
-          <div class="alert alert-dark btn-light" role="alert" id="PPSC">
-                  <b><asp:label ID="PPSheading" runat="server"></asp:label></b>
-              </div>
+    <div class="col-12 text-center">
+          <div class="btn btn-warning btn-outline-dark" role="alert" id="PSC">
+            <b>
+              <asp:Label ID="PPSheading" runat="server"></asp:Label></b>
+          </div>
         </div>
-      </div>
       <div class="row">
         
+          <hr style="color:brown;background-color:darkslategrey;width:100%;height:3px">
+    
         <div class="col-sm-auto my-0 table-hover">
-         
           <div id="ppnlDetails" runat="server">
           </div>
-           
         </div>
+     
+  <hr style="color:brown;background-color:darkslategrey;width:100%;height:3px">
       </div>
           
-    </div>
+ 
 
 
       </ContentTemplate>

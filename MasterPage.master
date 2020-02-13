@@ -117,7 +117,7 @@
                 <a href="#UserGuide" class="btn btn-light btn-outline-primary" style="width: 190px;height: 28px; text-align: center; text-rendering:auto;  text-justify:auto; cursor: pointer" data-toggle="collapse"><b>User Manual</b></a>
   <div id="UserGuide" class="collapse">
     
-   <embed src="Design_DashBoard-1.0.1-%20User_Manual.pdf" width="1500px" height="2100px" />
+   <embed src="Design_DashBoard-1.0.1-User_Manual.pdf" width="1500px" height="2100px" />
    <%-- <a href="Design_DashBoard-1.0.1-%20User_Manual.pdf">Design_DashBoard-1.0.1- User_Manual.pdf</a>--%>
   
   </div>
