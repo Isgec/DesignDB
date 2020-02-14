@@ -65,12 +65,14 @@ Namespace SIS.DD
     Public Property SAR_UnderCreation As Integer = 0
     Public Property SAR_UnderReview As Integer = 0
     Public Property SAR_UnderApproval As Integer = 0
+    Public Property SAR_Pending As Integer = 0
     Public Property SAR_Approved As Integer = 0
     Public Property SAR_NotApplicable As Integer = 0
     Public Property SAR_TotalCountA As Integer = 0
     Public Property SAR_UnderCreationA As Integer = 0
     Public Property SAR_UnderReviewA As Integer = 0
     Public Property SAR_UnderApprovalA As Integer = 0
+    Public Property SAR_PendingA As Integer = 0
     Public Property SAR_ApprovedA As Integer = 0
     Public Property SAR_NotApplicableA As Integer = 0
 
@@ -112,7 +114,7 @@ Namespace SIS.DD
 
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = "select count(*) from tdmisg140200 where  t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') and year(t_bsfd) in (" & YearId & ") and month(t_bsfd) in (" & MonthId & ") and t_orgn='ISG'"
+        Sql = "select count(*) from tdmisg140200 where  t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') and year(t_bsfd) in (" & YearId & ") and month(t_bsfd) in (" & MonthId & ") and t_orgn='ISG' and t_docn not like '%VEN%'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -120,7 +122,7 @@ Namespace SIS.DD
         End Using
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = "select count(*) from tdmisg140200 where t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')  and year(t_bsfd) <= " & YearId & " and t_acdt ='1970-01-01 00:00:00.000' and t_orgn='ISG' and t_bsfd <=' " & YearId & "-" & MonthId & "-01 00:00:00.000'"
+        Sql = "select count(*) from tdmisg140200 where t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')  and year(t_bsfd) <= " & YearId & " and t_acdt ='1970-01-01 00:00:00.000' and t_orgn='ISG' and t_bsfd <=' " & YearId & "-" & MonthId & "-01 00:00:00.000' and t_docn not like '%VEN%'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -137,7 +139,7 @@ Namespace SIS.DD
 
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = " Select count(*) From tdmisg140200 Where  t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,dateadd(n,330,t_bsfd)) <= convert(date,getdate())"
+        Sql = " Select count(*) From tdmisg140200 Where  t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,dateadd(n,330,t_bsfd)) <= convert(date,getdate())  and t_docn not like '%VEN%'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -145,7 +147,7 @@ Namespace SIS.DD
         End Using
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = " Select count(*) From tdmisg140200 Where  t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,dateadd(n,330,t_bsfd)) = convert(date,getdate())"
+        Sql = " Select count(*) From tdmisg140200 Where  t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,dateadd(n,330,t_bsfd)) = convert(date,getdate()) and t_docn not like '%VEN%'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -156,7 +158,7 @@ Namespace SIS.DD
         Sql = "		select count(*)		"
         Sql &= "		from tdmisg140200		 "
         Sql &= "		where		 "
-        Sql &= "		t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')   and year(t_bsfd) in (" & YearId & ")and month(t_bsfd) in (" & MonthId & ") And t_acdt <>'1970-01-01 00:00:00.000'"
+        Sql &= "		t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')   and year(t_bsfd) in (" & YearId & ")and month(t_bsfd) in (" & MonthId & ") And t_acdt <>'1970-01-01 00:00:00.000' and t_docn not like '%VEN%'"
 
         Sql &= "  And 1 =   case when t_acdt <  dateadd(d,1,t_bsfd) "
         Sql &= "	then 1 else 0 end "
@@ -171,7 +173,7 @@ Namespace SIS.DD
         Sql = "		select count(*)		"
         Sql &= "	from tdmisg140200		 "
         Sql &= "	where		 "
-        Sql &= "	t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')   and year(t_acdt) in (" & YearId & ")and month(t_acdt) in (" & MonthId & ")"
+        Sql &= "	t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')   and year(t_acdt) in (" & YearId & ")and month(t_acdt) in (" & MonthId & ")  and t_docn not like '%VEN%'"
         Sql &= "  and t_acdt <> convert(datetime,'01/01/1970',103)	and t_bsfd <=' " & YearId & "-" & MonthId & "-01 00:00:00.000'"
         Sql &= "  And 1 =   case when t_acdt < dateadd(d,1,t_bsfd)  "
         Sql &= "	then 0 else 1 end  "
@@ -276,6 +278,13 @@ Namespace SIS.DD
           mRet.SAR_UnderApproval = Cmd.ExecuteScalar
         End Using
 
+        Sql = " select count(*) from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat in (2,3) and year(t_cdat) in (" & YearId & ") and month(t_cdat) in (" & MonthId & ")"
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.SAR_Pending = Cmd.ExecuteScalar
+        End Using
+
         Sql = " select count(*) from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =4 and year(t_cdat) in (" & YearId & ") and month(t_cdat) in (" & MonthId & ")"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
@@ -311,6 +320,15 @@ Namespace SIS.DD
           Cmd.CommandText = Sql
           mRet.SAR_UnderReviewA = Cmd.ExecuteScalar
         End Using
+
+
+        Sql = " select count(*) from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat  in (2,3)"
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.SAR_PendingA = Cmd.ExecuteScalar
+        End Using
+
 
         Sql = " select count(*) from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =3"
         Using Cmd As SqlCommand = Con.CreateCommand()

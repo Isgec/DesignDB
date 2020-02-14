@@ -224,4 +224,27 @@ Partial Class GF_Discipline
   Private Sub btn_SAR_NotApplicable_Click(sender As Object, e As EventArgs) Handles btn_SAR_NotApplicable.Click
     Response.Redirect("GF_DisciplineDBDetails.aspx?detail=SAR_NotApplicable&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
   End Sub
+
+
+  Private Sub btn_SAR_TotalCountA_Click(sender As Object, e As EventArgs) Handles btn_SAR_TotalCountA.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=SAR_TotalCountA&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+  End Sub
+  Private Sub btn_SAR_UnderCreationA_Click(sender As Object, e As EventArgs) Handles btn_SAR_UnderCreationA.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=SAR_UnderCreationA&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+  End Sub
+  Private Sub btn_SAR_UnderReviewA_Click(sender As Object, e As EventArgs) Handles btn_SAR_UnderReviewA.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=SAR_UnderReviewA&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+  End Sub
+  Private Sub btn_SAR_UnderApprovalA_Click(sender As Object, e As EventArgs) Handles btn_SAR_UnderApprovalA.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=SAR_UnderApprovalA&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+  End Sub
+  Private Sub btn_SAR_PendingA_Click(sender As Object, e As EventArgs) Handles btn_SAR_PendingA.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=SAR_PendingA&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+  End Sub
+  Private Sub btn_SAR_ApprovedA_Click(sender As Object, e As EventArgs) Handles btn_SAR_ApprovedA.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=SAR_ApprovedA&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+  End Sub
+  Private Sub btn_SAR_NotApplicableA_Click(sender As Object, e As EventArgs) Handles btn_SAR_NotApplicableA.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=SAR_NotApplicableA&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+  End Sub
 End Class

@@ -52,7 +52,7 @@
       <hr style="color: forestgreen; background-color: magenta; width: 100%; height: 1px">
     </div>
     <div class="carousel-item">
-     <hr style="color: forestgreen; background-color: pink; width: 100%; height: 1px">
+     <hr style="color: forestgreen; background-color: darkslategray; width: 100%; height: 1px">
     </div>
     <div class="carousel-item">
      <hr style="color: forestgreen; background-color: blue; width: 100%; height: 1px">
@@ -80,7 +80,7 @@
 
                 <div class="input-group">
 
-                  <a href="#ID_Division" class="btn btn-warning btn-outline-dark" style="width: 140px; text-align: center; cursor: pointer" data-toggle="collapse"><b>Division</b></a>
+                  <a href="#ID_Division" class="btn btn-secondary" style="width: 140px; text-align: center; cursor: pointer" data-toggle="collapse"><b>Division</b></a>
                   <div id="ID_Division" class="collapse">
                     Select Division for which Information need to fetched for Dashboard.
     Click again 'Division' button To Hide this Information.
@@ -102,7 +102,7 @@
 
                 <div class="input-group">
 
-                  <a href="#ID_Discipline" class="btn btn-light btn-outline-dark" style="width: 140px; text-align: center; cursor: pointer" data-toggle="collapse"><b>Discipline</b></a>
+                  <a href="#ID_Discipline" class="btn btn-secondary" style="width: 140px; text-align: center; cursor: pointer" data-toggle="collapse"><b>Discipline</b></a>
                   <div id="ID_Discipline" class="collapse">
                     Select Department for which Information need to fetched for Dashboard.
     Click again 'Department' button To Hide this Information.
@@ -131,7 +131,7 @@
 
                 <div class="input-group">
 
-                  <a href="#ID_Year" class="btn btn-light btn-outline-dark" style="width: 140px; text-align: center; cursor: pointer" data-toggle="collapse"><b>Year</b></a>
+                  <a href="#ID_Year" class="btn btn-secondary" style="width: 140px; text-align: center; cursor: pointer" data-toggle="collapse"><b>Year</b></a>
                   <div id="ID_Year" class="collapse">
                     Select Department for which Information need to fetched for Dashboard.
     Click again 'Department' button To Hide this Information.
@@ -161,7 +161,7 @@
 
                 <div class="input-group">
 
-                  <a href="#ID_Month" class="btn btn-light btn-outline-dark" style="width: 140px; text-align: center; cursor: pointer" data-toggle="collapse"><b>Month</b></a>
+                  <a href="#ID_Month" class="btn btn-secondary" style="width: 140px; text-align: center; cursor: pointer" data-toggle="collapse"><b>Month</b></a>
                   <div id="ID_Month" class="collapse">
                     Select Department for which Information need to fetched for Dashboard.
     Click again 'Department' button To Hide this Information.
@@ -186,13 +186,13 @@
 
           </div>
 
-           
-    <div class="row mt-1">
+         
+    <div class="row mt-2">
             <div class="col-sm-9">
             </div>
             <div class="col-sm-3">
 
-              <asp:Button ID="cmdSubmit" runat="server" class="btn btn-warning btn-outline-success" Font-Bold="true" Text="Generate DashBoard" ToolTip="-" Style="width: 210px; text-align: center; cursor: pointer" />
+              <asp:Button ID="cmdSubmit" runat="server" class="btn btn-dark btn-outline-dark" Font-Bold="true" Text="Generate DashBoard" ToolTip="Click to Generate DashBoard" Style="width: 210px; text-align: center; cursor: pointer" />
             </div>
           </div>
        
@@ -230,7 +230,7 @@
       <hr style="color: forestgreen; background-color: magenta; width: 100%; height: 1px">
     </div>
     <div class="carousel-item">
-     <hr style="color: forestgreen; background-color: pink; width: 100%; height: 1px">
+     <hr style="color: forestgreen; background-color: darkslategray; width: 100%; height: 1px">
     </div>
     <div class="carousel-item">
      <hr style="color: forestgreen; background-color: blue; width: 100%; height: 1px">
@@ -264,11 +264,11 @@
        <%--  <hr style="color: forestgreen; background-color: darkgreen; width: 100%; height: 1px">--%> 
             <center> <h6><font face="Comic Sans MS">Drawing and Document Progress Status As per PMDL - As Of Now </font></h6></center>
 
-             <hr>
+     <div class="border border-secondary btn-outline-light">
             <div class="container-fluid" id="DPMDLTABLE1" runat="server" visible="true">
               
-              <div class="border border-dark btn-outline-light">
-                <div class="container-fluid text-center">
+             
+                <div class=" text-center">
 
                   <div class="row">
                     <div class="col-3">
@@ -281,23 +281,23 @@
                       <div class="row">
 
                         <div class="col">
-                          <div class="text-dark">
+                          <div class="text-warning">
                            <font face="Comic Sans MS">Total Due for Release Current Month = A </font>
                           </div>
                         </div>
                         <div class="col">
-                          <div class="text-primary">
+                          <div class="text-danger">
                              <font face="Comic Sans MS">Backlog for Release (Previous months) = B </font>
                           </div>
                         </div>
                         <div class="col">
-                          <div class="text-warning">
+                          <div class="text-danger">
 
                             <font face="Comic Sans MS">All Due For Release  C = (A + B)</font>
                           </div>
                         </div>
                         <div class="col">
-                          <div class="text-secondary">
+                          <div class="text-warning">
                            <font face="Comic Sans MS">All Due Till Today For Release</font>
                           </div>
                         </div>
@@ -315,7 +315,7 @@
                         </div>
 
                         <div class="col">
-                          <div class="text-danger">
+                          <div class="text-info">
                             <font face="Comic Sans MS">Backlog Released in This Month</font
                           </div>
                         </div>
@@ -326,7 +326,7 @@
 
                 </div>
 
-                <div class="container-fluid  mb-1">
+                <div class="mb-1">
                   <div class="row">
                     <div class="col-3">
                       <asp:Button ID="Btn_Discipline" runat="server" CssClass="btn btn-dark btn-sm btn-block text-center font-weight-bold" ToolTip="" Text="" Font-Bold="true"></asp:Button>
@@ -335,17 +335,17 @@
                       <div class="row">
 
                         <div class="col">
-                          <asp:Button ID="btn_DueforRelease_CurrentM_A" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Total Due for Release Current Month -A" Text="" Font-Bold="true"></asp:Button>
+                          <asp:Button ID="btn_DueforRelease_CurrentM_A" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Total Due for Release Current Month -A" Text="" Font-Bold="true"></asp:Button>
                         </div>
                         <div class="col">
-                          <asp:Button ID="btn_DueforRelease_PreviousM_B" runat="server" CssClass="btn btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="Total Due for Release Previous Month -B" Text="" Font-Bold="true"></asp:Button>
+                          <asp:Button ID="btn_DueforRelease_PreviousM_B" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Total Due for Release Previous Month -B" Text="" Font-Bold="true"></asp:Button>
                         </div>
                         <div class="col">
-                          <asp:Button ID="btn_DueforRelease_BothM_C" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Total Due For Release - C = A + B" Text="" Font-Bold="true"></asp:Button>
+                          <asp:Button ID="btn_DueforRelease_BothM_C" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Total Due For Release - C = A + B" Text="" Font-Bold="true"></asp:Button>
                         </div>
 
                         <div class="col">
-                          <asp:Button ID="btn_AllDueTillToday_Release" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All Due Till Today For Release" Text="" Font-Bold="true"></asp:Button>
+                          <asp:Button ID="btn_AllDueTillToday_Release" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="All Due Till Today For Release" Text="" Font-Bold="true"></asp:Button>
 
                         </div>
 
@@ -356,7 +356,7 @@
                           <asp:Button ID="btn_Ontime_Release_CurrentM" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="Ontime Released in This Month" Text="" Font-Bold="true"></asp:Button>
                         </div>
                         <div class="col">
-                          <asp:Button ID="btn_Backlog_Release_CurrentM" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Backlog Released in This Month" Text="" Font-Bold="true"></asp:Button>
+                          <asp:Button ID="btn_Backlog_Release_CurrentM" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="Backlog Released in This Month" Text="" Font-Bold="true"></asp:Button>
                         </div>
 
                       </div>
@@ -364,6 +364,7 @@
 
                   </div>
                 </div>
+        </div>
               </div>
             </div>
 
@@ -376,159 +377,147 @@
 
 
           <div class="container-fluid mt-1" id="DSARTABLE" runat="server" visible="false">
-           <center> <h6><font face="Comic Sans MS">SAR Progress Status</font></h6></center>
-           
-              
-            <div class="container-fluid mt-1" id="DSARTABLE1" runat="server" visible="true">
-             
-              <div class="border border-dark btn-outline-light">
-                <div class="container-fluid text-center">
+            <center> <h6><font face="Comic Sans MS">SAR Progress Status</font></h6></center>
+            <div class="border border-secondary btn-outline-light">
+             <div class="container-fluid mb-1" id="DSARTABLE1" runat="server" visible="true">
+               <div class=" text-center">
+                <div class="row">
 
-                  <div class="row">
-
-                    <div class="col-3">
-                      <div class="text-secondary">
-                        <b></b>
-                      </div>
+                  <div class="col-3">
+                    <div class="text-secondary">
+                      <b></b>
                     </div>
+                  </div>
 
 
 
-                    <div class="col-9">
-                      <div class="row">
-                        <div class="col">
-                          <div class="text-dark">
-                            <font face="Comic Sans MS">Total SAR Count</font>
-                          </div>
+                  <div class="col-9">
+                    <div class="row">
+                      <div class="col">
+                        <div class="text-dark">
+                          <font face="Comic Sans MS">Total SAR Count</font>
                         </div>
+                      </div>
 
-                        <div class="col">
-                          <div class="text-info">
+                      <div class="col">
+                        <div class="text-info">
                           <font face="Comic Sans MS">Under Creation</font>
-                          </div>
                         </div>
-                        <div class="col">
-                          <div class="text-warning">
-                             <font face="Comic Sans MS">Under Review</font>
-                          </div>
+                      </div>
+                      <div class="col">
+                        <div class="text-warning">
+                          <font face="Comic Sans MS">Under Review</font>
                         </div>
-                        <div class="col">
-                          <div class="text-danger">
-                            <font face="Comic Sans MS">Under Approval</font>
-                          </div>
+                      </div>
+                      <div class="col">
+                        <div class="text-warning">
+                          <font face="Comic Sans MS">Under Approval</font>
                         </div>
-                        <div class="col">
+                      </div>
+                      <div class="col">
+                        <div class="text-danger">
+                          <font face="Comic Sans MS">Pending</font>
+                        </div>
+                      </div>
+                      <div class="col">
                         <div class="text-success">
-                         <font face="Comic Sans MS">Pending</font>
-                          </div>
+                          <font face="Comic Sans MS">Approved</font>
                         </div>
-                        <div class="col">
-                          <div class="text-success">
-                         <font face="Comic Sans MS">Approved</font>
-                          </div>
-                        </div>
-                        <div class="col">
-                          <div class="text-secondary">
-                        <font face="Comic Sans MS">Not Applicable</font>
-                          </div>
+                      </div>
+                      <div class="col">
+                        <div class="text-secondary">
+                          <font face="Comic Sans MS">Not Applicable</font>
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
+
+             
+             
+                <div class="row">
+                  <div class="col-3">
+                    <asp:Button ID="Btn_Discipline1" runat="server" CssClass="btn btn-dark btn-sm btn-block text-center font-weight-bold" ToolTip="" Text="" Font-Bold="true"></asp:Button>
 
                   </div>
-                  <div class="container-fluid  mb-1">
+                  <div class="col-9">
                     <div class="row">
-                      <div class="col-3">
-                        <asp:Button ID="Btn_Discipline1" runat="server" CssClass="btn btn-dark btn-sm btn-block text-center font-weight-bold" ToolTip="" Text="" Font-Bold="true"></asp:Button>
-
+                      <div class="col">
+                        <asp:Button ID="btn_SAR_TotalCount" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Total SAR Count" Text="" Font-Bold="true"></asp:Button>
                       </div>
-                      <div class="col-9">
-                        <div class="row">
-                          <div class="col">
-                            <asp:Button ID="btn_SAR_TotalCount" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Total SAR Count" Text="" Font-Bold="true"></asp:Button>
-                          </div>
-                          <div class="col">
-                            <asp:Button ID="btn_SAR_UnderCreation" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Creation" Text="" Font-Bold="true"></asp:Button>
-                          </div>
-                          <div class="col">
-                            <asp:Button ID="btn_SAR_UnderReview" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Review" Text="" Font-Bold="true"></asp:Button>
-                          </div>
-                          <div class="col">
-                            <asp:Button ID="btn_SAR_UnderApproval" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Approval" Text="" Font-Bold="true"></asp:Button>
-                          </div>
-                          <div class="col">
-                            <asp:Button ID="btn_SAR_Pending" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="SAR - Pending" Text="" Font-Bold="true"></asp:Button>
-                          </div>
-                          <div class="col">
-                            <asp:Button ID="btn_SAR_Approved" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="SAR - Approved" Text="" Font-Bold="true"></asp:Button>
-                          </div>
-                          <div class="col">
-                            <asp:Button ID="btn_SAR_NotApplicable" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="SAR - Not Applicable" Text="" Font-Bold="true"></asp:Button>
-                          </div>
-
-
-                        </div>
+                      <div class="col">
+                        <asp:Button ID="btn_SAR_UnderCreation" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Creation" Text="" Font-Bold="true"></asp:Button>
                       </div>
+                      <div class="col">
+                        <asp:Button ID="btn_SAR_UnderReview" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Review" Text="" Font-Bold="true"></asp:Button>
+                      </div>
+                      <div class="col">
+                        <asp:Button ID="btn_SAR_UnderApproval" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Approval" Text="" Font-Bold="true"></asp:Button>
+                      </div>
+                      <div class="col">
+                        <asp:Button ID="btn_SAR_Pending" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="SAR - Pending" Text="" Font-Bold="true"></asp:Button>
+                      </div>
+                      <div class="col">
+                        <asp:Button ID="btn_SAR_Approved" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="SAR - Approved" Text="" Font-Bold="true"></asp:Button>
+                      </div>
+                      <div class="col">
+                        <asp:Button ID="btn_SAR_NotApplicable" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="SAR - Not Applicable" Text="" Font-Bold="true"></asp:Button>
+                      </div>
+
 
                     </div>
                   </div>
-                           <div class="container-fluid text-center mb-1">
+
+                </div>
+
+                <div class="row mt-1">
+                  <div class="col-3">
+                    <asp:Button ID="Btn_Discipline2" runat="server" CssClass="btn btn-dark btn-sm btn-block text-center font-weight-bold" ToolTip="" Text="" Font-Bold="true"></asp:Button>
+
+                  </div>
+                  <div class="col-9">
                     <div class="row">
-                      <div class="col-3">
-                        <asp:Button ID="Btn_Discipline2" runat="server" CssClass="btn btn-dark btn-sm btn-block text-center font-weight-bold" ToolTip="" Text="" Font-Bold="true"></asp:Button>
-
+                      <div class="col">
+                        <asp:Button ID="btn_SAR_TotalCountA" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Total SAR Count" Text="" Font-Bold="true"></asp:Button>
                       </div>
-                      <div class="col-9">
-                        <div class="row">
-                          <div class="col">
-                            <asp:Button ID="btn_SAR_TotalCountA" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Total SAR Count" Text="" Font-Bold="true"></asp:Button>
-                          </div>
-                          <div class="col">
-                            <asp:Button ID="btn_SAR_UnderCreationA" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Creation" Text="" Font-Bold="true"></asp:Button>
-                          </div>
-                          <div class="col">
-                            <asp:Button ID="btn_SAR_UnderReviewA" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Review" Text="" Font-Bold="true"></asp:Button>
-                          </div>
-                          <div class="col">
-                            <asp:Button ID="btn_SAR_UnderApprovalA" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Approval" Text="" Font-Bold="true"></asp:Button>
-                          </div>
-                          <div class="col">
-                            <asp:Button ID="btn_SAR_PendingA" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="SAR - Pending" Text="" Font-Bold="true"></asp:Button>
-                          </div>
-                          <div class="col">
-                            <asp:Button ID="btn_SAR_ApprovedA" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="SAR - Approved" Text="" Font-Bold="true"></asp:Button>
-                          </div>
-                          <div class="col">
-                            <asp:Button ID="btn_SAR_NotApplicableA" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="SAR - Not Applicable" Text="" Font-Bold="true"></asp:Button>
-                          </div>
-
-
-                        </div>
+                      <div class="col">
+                        <asp:Button ID="btn_SAR_UnderCreationA" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Creation" Text="" Font-Bold="true"></asp:Button>
                       </div>
+                      <div class="col">
+                        <asp:Button ID="btn_SAR_UnderReviewA" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Review" Text="" Font-Bold="true"></asp:Button>
+                      </div>
+                      <div class="col">
+                        <asp:Button ID="btn_SAR_UnderApprovalA" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Approval" Text="" Font-Bold="true"></asp:Button>
+                      </div>
+                      <div class="col">
+                        <asp:Button ID="btn_SAR_PendingA" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="SAR - Pending" Text="" Font-Bold="true"></asp:Button>
+                      </div>
+                      <div class="col">
+                        <asp:Button ID="btn_SAR_ApprovedA" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="SAR - Approved" Text="" Font-Bold="true"></asp:Button>
+                      </div>
+                      <div class="col">
+                        <asp:Button ID="btn_SAR_NotApplicableA" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="SAR - Not Applicable" Text="" Font-Bold="true"></asp:Button>
+                      </div>
+
 
                     </div>
                   </div>
-                          
+
+                </div>
+ </div>
               </div>
             </div>
-
-          </div>
-          
-         <%-- <hr>--%>
+           </div>
+      
           <%-- ELEMENT TABLE--%>
-
-
-
+          
           <div class=" container-fluid" id="DELEMENTTABLE" runat="server" visible="false">
            <center>  <h6><font face="Comic Sans MS">Active Element Progress</font></h6></center>
             
-
+               <div class="border border-secondary btn-outline-light">
             <div class=" container-fluid" id="DELEMENTTABLE1" runat="server" visible="true">
-              <div class="border border-dark btn-outline-light">
-                <div class="container-fluid">
-
-                  <div class="row">
+           
+                    <div class="row">
 
                     <div class="col-3">
                       <div class="text-secondary">
@@ -547,7 +536,7 @@
                         </div>
 
                         <div class="col-6">
-                          <div class="text-primary">
+                          <div class="text-info">
                              <center> <font face="Comic Sans MS">Free</font></center>
                           </div>
                         </div>
@@ -563,7 +552,7 @@
                           </div>
                         </div>
                         <div class="col-6">
-                          <div class="text-secondary">
+                          <div class="text-success">
                             <center> <font face="Comic Sans MS">Completed</font></center>
                           </div>
                         </div>
@@ -571,11 +560,7 @@
                       </div>
                     </div>
                   </div>
-
-                   </div>
-
-
-                  <div class="container-fluid">
+                              
                     <div class="row">
                       <div class="col-3">
                         <h6><span class="btn btn-dark btn-sm btn-block text-center font-weight-bold"><font face="Comic Sans MS">Total </font></span></h6>
@@ -586,7 +571,7 @@
                             <asp:Button ID="btn_Total_Element" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Total - Total Active Element Count" Text="" Font-Bold="true"></asp:Button>
                           </div>
                           <div class="col-6">
-                            <asp:Button ID="btn_Element_Free" runat="server" CssClass="btn btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="Total - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
+                            <asp:Button ID="btn_Element_Free" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="Total - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
                           </div>
                         </div>
                       </div>
@@ -597,16 +582,13 @@
                             <asp:Button ID="btn_Element_Partial" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Total - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
                           </div>
                           <div class="col-6">
-                            <asp:Button ID="btn_Element_Completed" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Total - Active Element - Completed" Text="" Font-Bold="true"></asp:Button>
+                            <asp:Button ID="btn_Element_Completed" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="Total - Active Element - Completed" Text="" Font-Bold="true"></asp:Button>
                           </div>
 
                         </div>
                       </div>
                     </div>
-                  </div>
-
-
-              
+                 
               </div>
             </div>
           <%--   <hr style="color: forestgreen; background-color: darkgreen; width: 100%; height: 1px">--%>
