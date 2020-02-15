@@ -52,7 +52,7 @@ Namespace SIS.DD
     Public Property MonthID As Integer = 0
     Public Property YearID As Integer = 0
     Public Property ProjectDesc As String = ""
-
+    Public Property ToRelease_CurrentM As Integer = 0
     Public Property DueforRelease_CurrentM_A As Integer = 0
     Public Property DueforRelease_PreviousM_B As Integer = 0
     Public Property DueforRelease_BothM_C As Integer = 0
@@ -114,7 +114,17 @@ Namespace SIS.DD
 
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = "select count(*) from tdmisg140200 where  t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') and year(t_bsfd) in (" & YearId & ") and month(t_bsfd) in (" & MonthId & ") and t_orgn='ISG' and t_docn not like '%VEN%'"
+        Sql = "select count(*) from tdmisg140200 where  t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') and year(dateadd(n,330,t_bsfd)) in (" & YearId & ") and month(dateadd(n,330,t_bsfd)) in (" & MonthId & ") and t_orgn='ISG' and t_docn not like '%VEN%'"
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.ToRelease_CurrentM = Cmd.ExecuteScalar
+        End Using
+
+
+
+        ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
+        Sql = "select count(*) from tdmisg140200 where  t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') and year(dateadd(n,330,t_bsfd)) in (" & YearId & ") and month(dateadd(n,330,t_bsfd)) in (" & MonthId & ") and t_orgn='ISG' and t_docn not like '%VEN%'  and t_acdt ='1970-01-01 00:00:00.000'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -122,7 +132,7 @@ Namespace SIS.DD
         End Using
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        Sql = "select count(*) from tdmisg140200 where t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')  and year(t_bsfd) <= " & YearId & " and t_acdt ='1970-01-01 00:00:00.000' and t_orgn='ISG' and t_bsfd <=' " & YearId & "-" & MonthId & "-01 00:00:00.000' and t_docn not like '%VEN%'"
+        Sql = "select count(*) from tdmisg140200 where t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')  and t_acdt ='1970-01-01 00:00:00.000' and t_orgn='ISG' and (dateadd(n,330,t_bsfd)) <' " & YearId & "-" & MonthId & "-01 00:00:00.000' and t_docn not like '%VEN%'"
         Using Cmd As SqlCommand = Con.CreateCommand()
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
@@ -130,12 +140,12 @@ Namespace SIS.DD
         End Using
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
-        'Sql = " Select count(*) from tdmisg140200 where t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') and year(t_bsfd) in (" & YearId & ") and month(t_bsfd) in (" & MonthId - 1 & "," & MonthId & ")"
-        'Using Cmd As SqlCommand = Con.CreateCommand()
-        '  Cmd.CommandType = CommandType.Text
-        '  Cmd.CommandText = Sql
-        '  mRet.DueforRelease_BothM_C = Cmd.ExecuteScalar
-        'End Using
+        Sql = " Select count(*) from tdmisg140200 where t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') and t_acdt ='1970-01-01 00:00:00.000' and t_orgn='ISG' and (dateadd(n,330,t_bsfd)) <=' " & YearId & "-" & MonthId + 1 & "-01 00:00:00.000' and t_docn not like '%VEN%'"
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.DueforRelease_BothM_C = Cmd.ExecuteScalar
+        End Using
 
 
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
@@ -158,9 +168,9 @@ Namespace SIS.DD
         Sql = "		select count(*)		"
         Sql &= "		from tdmisg140200		 "
         Sql &= "		where		 "
-        Sql &= "		t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')   and year(t_bsfd) in (" & YearId & ")and month(t_bsfd) in (" & MonthId & ") And t_acdt <>'1970-01-01 00:00:00.000' and t_docn not like '%VEN%'"
+        Sql &= "		t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')   and year(dateadd(n,330,t_bsfd)) in (" & YearId & ")and month(dateadd(n,330,t_bsfd)) in (" & MonthId & ") And t_acdt <>'1970-01-01 00:00:00.000' and t_docn not like '%VEN%'"
 
-        Sql &= "  And 1 =   case when t_acdt <  dateadd(d,1,t_bsfd) "
+        Sql &= "  And 1 =   case when (dateadd(n,330,t_acdt)) <  dateadd(d,1,(dateadd(n,330,t_bsfd))) "
         Sql &= "	then 1 else 0 end "
 
         Using Cmd As SqlCommand = Con.CreateCommand()
@@ -173,9 +183,9 @@ Namespace SIS.DD
         Sql = "		select count(*)		"
         Sql &= "	from tdmisg140200		 "
         Sql &= "	where		 "
-        Sql &= "	t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')   and year(t_acdt) in (" & YearId & ")and month(t_acdt) in (" & MonthId & ")  and t_docn not like '%VEN%'"
-        Sql &= "  and t_acdt <> convert(datetime,'01/01/1970',103)	and t_bsfd <=' " & YearId & "-" & MonthId & "-01 00:00:00.000'"
-        Sql &= "  And 1 =   case when t_acdt < dateadd(d,1,t_bsfd)  "
+        Sql &= "	t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')   and year(dateadd(n,330,t_acdt)) in (" & YearId & ")and month(dateadd(n,330,t_acdt)) in (" & MonthId & ")  and t_docn not like '%VEN%'"
+        Sql &= "  and t_acdt <> convert(datetime,'01/01/1970',103)	and (dateadd(n,330,t_bsfd)) <=' " & YearId & "-" & MonthId & "-01 00:00:00.000'"
+        Sql &= "  And 1 =   case when (dateadd(n,330,t_acdt)) < dateadd(d,1,(dateadd(n,330,t_bsfd)))  "
         Sql &= "	then 0 else 1 end  "
 
         Using Cmd As SqlCommand = Con.CreateCommand()
@@ -233,9 +243,6 @@ Namespace SIS.DD
           DisciplineID = "WWS"
 
       End Select
-
-
-
 
       Dim mRet As New DBDiscipline
       mRet.DivisionID = DivisionID

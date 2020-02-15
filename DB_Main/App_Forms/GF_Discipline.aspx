@@ -188,9 +188,9 @@
 
          
     <div class="row mt-2">
-            <div class="col-sm-9">
+            <div class="col-9">
             </div>
-            <div class="col-sm-3">
+            <div class="col-3 text-left">
 
               <asp:Button ID="cmdSubmit" runat="server" class="btn btn-dark btn-outline-dark" Font-Bold="true" Text="Generate DashBoard" ToolTip="Click to Generate DashBoard" Style="width: 210px; text-align: center; cursor: pointer" />
             </div>
@@ -262,7 +262,7 @@
           <div class="container-fluid" id="DPMDLTABLE" runat="server" visible="false">
              
        <%--  <hr style="color: forestgreen; background-color: darkgreen; width: 100%; height: 1px">--%> 
-            <center> <h6><font face="Comic Sans MS">Drawing and Document Progress Status As per PMDL - As Of Now </font></h6></center>
+            <center> <h6><font face="Comic Sans MS">Drawing and Document Progress Status As per PMDL (Baseline Finish Date)</font></h6></center>
 
      <div class="border border-secondary btn-outline-light">
             <div class="container-fluid" id="DPMDLTABLE1" runat="server" visible="true">
@@ -279,6 +279,12 @@
 
                     <div class="col-9">
                       <div class="row">
+
+                         <div class="col">
+                          <div class="text-warning">
+                           <font face="Comic Sans MS">To Release in Current Month </font>
+                          </div>
+                        </div>
 
                         <div class="col">
                           <div class="text-warning">
@@ -333,6 +339,10 @@
                     </div>
                     <div class="col-9">
                       <div class="row">
+
+                        <div class="col">
+                          <asp:Button ID="btn_ToRelease_CurrentM" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="To Release in Current Month" Text="" Font-Bold="true"></asp:Button>
+                        </div>
 
                         <div class="col">
                           <asp:Button ID="btn_DueforRelease_CurrentM_A" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Total Due for Release Current Month -A" Text="" Font-Bold="true"></asp:Button>

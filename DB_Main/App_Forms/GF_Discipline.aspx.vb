@@ -118,10 +118,10 @@ Partial Class GF_Discipline
     'PMDL
 
     Dim Dt As SIS.DD.DBDiscipline = SIS.DD.DBDiscipline.GetDPMDLDB(DivisionID, DisciplineID, MonthID, YearID)
-
+    btn_ToRelease_CurrentM.Text = Dt.ToRelease_CurrentM
     btn_DueforRelease_CurrentM_A.Text = Dt.DueforRelease_CurrentM_A
     btn_DueforRelease_PreviousM_B.Text = Dt.DueforRelease_PreviousM_B
-    btn_DueforRelease_BothM_C.Text = Dt.DueforRelease_PreviousM_B + Dt.DueforRelease_CurrentM_A
+    btn_DueforRelease_BothM_C.Text = Dt.DueforRelease_BothM_C
     btn_AllDueTillToday_Release.Text = Dt.AllDueTillToday_Release
     btn_DueOnlyToday_Release.Text = Dt.DueOnlyToday_Release
     btn_Ontime_Release_CurrentM.Text = Dt.Ontime_Release_CurrentM
@@ -133,7 +133,7 @@ Partial Class GF_Discipline
     btn_SAR_UnderCreation.Text = Dt1.SAR_UnderCreation
     btn_SAR_UnderReview.Text = Dt1.SAR_UnderReview
     btn_SAR_UnderApproval.Text = Dt1.SAR_UnderApproval
-    btn_SAR_Pending.Text = Dt1.SAR_UnderCreation + Dt1.SAR_UnderReview + Dt1.SAR_UnderApproval
+    btn_SAR_Pending.Text = Dt1.SAR_Pending
     btn_SAR_Approved.Text = Dt1.SAR_Approved
     btn_SAR_NotApplicable.Text = Dt1.SAR_NotApplicable
 
@@ -141,7 +141,7 @@ Partial Class GF_Discipline
     btn_SAR_UnderCreationA.Text = Dt1.SAR_UnderCreationA
     btn_SAR_UnderReviewA.Text = Dt1.SAR_UnderReviewA
     btn_SAR_UnderApprovalA.Text = Dt1.SAR_UnderApprovalA
-    btn_SAR_PendingA.Text = Dt1.SAR_UnderCreationA + Dt1.SAR_UnderReviewA + Dt1.SAR_UnderApprovalA
+    btn_SAR_PendingA.Text = Dt1.SAR_PendingA
     btn_SAR_ApprovedA.Text = Dt1.SAR_ApprovedA
     btn_SAR_NotApplicableA.Text = Dt1.SAR_NotApplicableA
 
@@ -172,15 +172,17 @@ Partial Class GF_Discipline
 
   End Sub
 
+
+  Private Sub btn_ToRelease_CurrentM_Click(sender As Object, e As EventArgs) Handles btn_ToRelease_CurrentM.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=ToRelease_CurrentM&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+  End Sub
   Private Sub btn_DueforRelease_CurrentM_A_Click(sender As Object, e As EventArgs) Handles btn_DueforRelease_CurrentM_A.Click
     Response.Redirect("GF_DisciplineDBDetails.aspx?detail=DueforRelease_CurrentM_A&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
   End Sub
 
-
   Private Sub btn_DueforRelease_BothM_C_Click(sender As Object, e As EventArgs) Handles btn_DueforRelease_BothM_C.Click
     Response.Redirect("GF_DisciplineDBDetails.aspx?detail=DueforRelease_BothM_C&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
   End Sub
-
 
   Private Sub btn_DueforRelease_PreviousM_B_Click(sender As Object, e As EventArgs) Handles btn_DueforRelease_PreviousM_B.Click
     Response.Redirect("GF_DisciplineDBDetails.aspx?detail=DueforRelease_PreviousM_B&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
@@ -193,7 +195,6 @@ Partial Class GF_Discipline
   Private Sub btn_DueOnlyToday_Release_Click(sender As Object, e As EventArgs) Handles btn_DueOnlyToday_Release.Click
     Response.Redirect("GF_DisciplineDBDetails.aspx?detail=DueOnlyToday_Release&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
   End Sub
-
 
   Private Sub btn_Ontime_Release_CurrentM_Click(sender As Object, e As EventArgs) Handles btn_Ontime_Release_CurrentM.Click
     Response.Redirect("GF_DisciplineDBDetails.aspx?detail=Ontime_Release_CurrentM&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
@@ -247,4 +248,24 @@ Partial Class GF_Discipline
   Private Sub btn_SAR_NotApplicableA_Click(sender As Object, e As EventArgs) Handles btn_SAR_NotApplicableA.Click
     Response.Redirect("GF_DisciplineDBDetails.aspx?detail=SAR_NotApplicableA&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
   End Sub
+
+  'Private Sub btn_Total_Element_Click(sender As Object, e As EventArgs) Handles btn_Total_Element.Click
+  '  Response.Redirect("GF_DisciplineDBDetails.aspx?detail=Total_Element&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  'End Sub
+
+  'Private Sub btn_Element_Free_Click(sender As Object, e As EventArgs) Handles btn_Element_Free.Click
+  '  Response.Redirect("GF_DisciplineDBDetails.aspx?detail=Element_Free&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  'End Sub
+
+  'Private Sub btn_Element_Partial_Click(sender As Object, e As EventArgs) Handles btn_Element_Partial.Click
+  '  Response.Redirect("GF_DisciplineDBDetails.aspx?detail=Element_Partial&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  'End Sub
+
+  'Private Sub btn_Element_Completed_Click(sender As Object, e As EventArgs) Handles btn_Element_Completed.Click
+  '  Response.Redirect("GF_DisciplineDBDetails.aspx?detail=Element_Completed&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  'End Sub
 End Class

@@ -12,8 +12,11 @@ Namespace SIS.DD
     Public Property t_revn As String = ""
     Public Property t_dsca As String = ""
     Public Property t_cprj As String = ""
-
+    Public Property t_pcod As String = ""
     Public Property Project_Name As String = ""
+
+    Public Property t_sars As String = ""
+    Public Property t_natp As String = ""
 
     'KJK
 
@@ -146,40 +149,43 @@ Namespace SIS.DD
 
         Select Case det
 
+          Case "ToRelease_CurrentM"
+            Sql = " select t_pcod,t_cprj,(select t_dsca from ttcmcs052200 where ttcmcs052200.t_cprj=rec.t_cprj) as Project_Name,t_docn,t_revn,t_dsca,convert(date, dateadd(n,330,t_bsfd))As t_bsfd, convert(date, dateadd(n,330,t_rsfd)) As t_rsfd,convert(date, dateadd(n,330,t_acdt)) As t_acdt,convert(date, dateadd(n,330,t_lrrd)) as t_lrrd from tdmisg140200 as rec where  t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') and year(dateadd(n,330,t_bsfd)) in (" & YearID & ") and month(dateadd(n,330,t_bsfd)) in (" & MonthID & ") and t_orgn='ISG' and t_docn not like '%VEN%'"
+
           Case "DueforRelease_CurrentM_A"
-            Sql = " select t_docn,t_revn,t_dsca,dateadd(n,330,t_bsfd) As t_bsfd, dateadd(n,330,t_rsfd) As t_rsfd,dateadd(n,330,t_acdt) As t_acdt,t_lrrd from tdmisg140200 where  t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') and year(t_bsfd) in (" & YearID & ") and month(t_bsfd) in (" & MonthID & ") and t_orgn='ISG'"
+            Sql = " select t_pcod,t_cprj,(select t_dsca from ttcmcs052200 where ttcmcs052200.t_cprj=rec.t_cprj) as Project_Name,t_docn,t_revn,t_dsca,convert(date, dateadd(n,330,t_bsfd))As t_bsfd, convert(date, dateadd(n,330,t_rsfd)) As t_rsfd,convert(date, dateadd(n,330,t_acdt)) As t_acdt,convert(date, dateadd(n,330,t_lrrd)) as t_lrrd from tdmisg140200 as rec where  t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') and year(dateadd(n,330,t_bsfd)) in (" & YearID & ") and month(dateadd(n,330,t_bsfd)) in (" & MonthID & ") and t_orgn='ISG' and t_docn not like '%VEN%' and t_acdt ='1970-01-01 00:00:00.000'"
 
           Case "DueforRelease_PreviousM_B"
-            Sql = " select t_docn,t_revn,t_dsca,dateadd(n,330,t_bsfd) As t_bsfd, dateadd(n,330,t_rsfd) As t_rsfd,dateadd(n,330,t_acdt) As t_acdt,t_lrrd from tdmisg140200 where t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')  and year(t_bsfd) <= " & YearID & " and t_acdt ='1970-01-01 00:00:00.000' and t_orgn='ISG' and t_bsfd <=' " & YearID & "-" & MonthID & "-01 00:00:00.000'"
+            Sql = " select t_pcod,t_cprj,(select t_dsca from ttcmcs052200 where ttcmcs052200.t_cprj=rec.t_cprj) as Project_Name,t_docn,t_revn,t_dsca,convert(date, dateadd(n,330,t_bsfd))As t_bsfd, convert(date, dateadd(n,330,t_rsfd)) As t_rsfd,convert(date, dateadd(n,330,t_acdt)) As t_acdt,convert(date, dateadd(n,330,t_lrrd)) as t_lrrd from tdmisg140200 as rec where t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')  and t_acdt ='1970-01-01 00:00:00.000' and t_orgn='ISG' and (dateadd(n,330,t_bsfd)) <' " & YearID & "-" & MonthID & "-01 00:00:00.000' and t_docn not like '%VEN%'"
 
           Case "DueforRelease_BothM_C"
-            Sql = " "
+            Sql = " select t_pcod,t_cprj,(select t_dsca from ttcmcs052200 where ttcmcs052200.t_cprj=rec.t_cprj) as Project_Name,t_docn,t_revn,t_dsca,convert(date, dateadd(n,330,t_bsfd))As t_bsfd, convert(date, dateadd(n,330,t_rsfd)) As t_rsfd,convert(date, dateadd(n,330,t_acdt)) As t_acdt,convert(date, dateadd(n,330,t_lrrd)) as t_lrrd from tdmisg140200 as rec where t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') and t_acdt ='1970-01-01 00:00:00.000' and t_orgn='ISG' and (dateadd(n,330,t_bsfd)) <=' " & YearID & "-" & MonthID + 1 & "-01 00:00:00.000' and t_docn not like '%VEN%'"
 
 
           Case "AllDueTillToday_Release"
-            Sql = "select t_docn,t_revn,t_dsca,dateadd(n,330,t_bsfd) As t_bsfd, dateadd(n,330,t_rsfd) As t_rsfd,dateadd(n,330,t_acdt) As t_acdt,t_lrrd From tdmisg140200 Where  t_resp In ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,dateadd(n,330,t_bsfd)) <= convert(date,getdate()) "
+            Sql = "select t_pcod,t_cprj,(select t_dsca from ttcmcs052200 where ttcmcs052200.t_cprj=rec.t_cprj) as Project_Name,t_docn,t_revn,t_dsca,convert(date, dateadd(n,330,t_bsfd))As t_bsfd, convert(date, dateadd(n,330,t_rsfd)) As t_rsfd,convert(date, dateadd(n,330,t_acdt)) As t_acdt,convert(date, dateadd(n,330,t_lrrd)) as t_lrrd From tdmisg140200 as rec Where  t_resp In ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,dateadd(n,330,t_bsfd)) <= convert(date,getdate()) and t_docn not like '%VEN%' "
 
           Case "DueOnlyToday_Release"
-            Sql = "Select t_docn,t_revn,t_dsca,dateadd(n,330,t_bsfd) As t_bsfd, dateadd(n,330,t_rsfd) As t_rsfd,dateadd(n,330,t_acdt) As t_acdt,t_lrrd From tdmisg140200 Where  t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,dateadd(n,330,t_bsfd)) = convert(date,getdate()) "
+            Sql = "Select t_pcod,t_cprj,(select t_dsca from ttcmcs052200 where ttcmcs052200.t_cprj=rec.t_cprj) as Project_Name,t_docn,t_revn,t_dsca,convert(date, dateadd(n,330,t_bsfd))As t_bsfd, convert(date, dateadd(n,330,t_rsfd)) As t_rsfd,convert(date, dateadd(n,330,t_acdt)) As t_acdt,convert(date, dateadd(n,330,t_lrrd)) as t_lrrd From tdmisg140200 as rec Where  t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "') And t_acdt = convert(datetime,'01/01/1970',103) And  convert(date,dateadd(n,330,t_bsfd)) = convert(date,getdate())  and t_docn not like '%VEN%'"
 
           Case "Ontime_Release_CurrentM"
-            Sql = "		select t_docn,t_revn,t_dsca,dateadd(n,330,t_bsfd) As t_bsfd, dateadd(n,330,t_rsfd) As t_rsfd,dateadd(n,330,t_acdt) As t_acdt,t_lrrd		"
-            Sql &= "		from tdmisg140200		 "
+            Sql = "		select t_pcod,t_cprj,(select t_dsca from ttcmcs052200 where ttcmcs052200.t_cprj=rec.t_cprj) as Project_Name,t_docn,t_revn,t_dsca,convert(date, dateadd(n,330,t_bsfd))As t_bsfd, convert(date, dateadd(n,330,t_rsfd)) As t_rsfd,convert(date, dateadd(n,330,t_acdt)) As t_acdt,convert(date, dateadd(n,330,t_lrrd)) as t_lrrd		"
+            Sql &= "		from tdmisg140200 as rec		 "
             Sql &= "		where		 "
-            Sql &= "		t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')   and year(t_bsfd) in (" & YearID & ")and month(t_bsfd) in (" & MonthID & ") And t_acdt <>'1970-01-01 00:00:00.000'"
+            Sql &= "		t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')   and year(dateadd(n,330,t_bsfd)) in (" & YearID & ")and month(dateadd(n,330,t_bsfd)) in (" & MonthID & ") And t_acdt <>'1970-01-01 00:00:00.000' and t_docn not like '%VEN%'"
 
-            Sql &= "  And 1 =   case when t_acdt <  dateadd(d,1,t_bsfd) "
+            Sql &= "  And 1 =   case when (dateadd(n,330,t_acdt)) <  dateadd(d,1,(dateadd(n,330,t_bsfd))) "
             Sql &= "	then 1 else 0 end "
 
           Case "Backlog_Release_CurrentM"
-            Sql = "		select t_docn,t_revn,t_dsca,dateadd(n,330,t_bsfd) As t_bsfd, dateadd(n,330,t_rsfd) As t_rsfd,dateadd(n,330,t_acdt) As t_acdt,t_lrrd		"
-            Sql &= "	from tdmisg140200		 "
+            Sql = "		select t_pcod,t_cprj,(select t_dsca from ttcmcs052200 where ttcmcs052200.t_cprj=rec.t_cprj) as Project_Name,t_docn,t_revn,t_dsca,convert(date, dateadd(n,330,t_bsfd))As t_bsfd, convert(date, dateadd(n,330,t_rsfd)) As t_rsfd,convert(date, dateadd(n,330,t_acdt)) As t_acdt,convert(date, dateadd(n,330,t_lrrd)) as t_lrrd		"
+            Sql &= "	from tdmisg140200 as rec		 "
             Sql &= "	where		 "
-            Sql &= "	t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')   and year(t_acdt) in (" & YearID & ")and month(t_acdt) in (" & MonthID & ")"
-            Sql &= "  and t_acdt <> convert(datetime,'01/01/1970',103)	and t_bsfd <=' " & YearID & "-" & MonthID & "-01 00:00:00.000'"
-            Sql &= "  And 1 =   case when t_acdt < dateadd(d,1,t_bsfd)  "
+            Sql &= "	t_resp in ('" & DisciplineID & "') AND t_pcod IN ('" & DivisionID & "')   and year(dateadd(n,330,t_acdt)) in (" & YearID & ")and month(dateadd(n,330,t_acdt)) in (" & MonthID & ") and t_docn not like '%VEN%'"
+            Sql &= "  and t_acdt <> convert(datetime,'01/01/1970',103)	and (dateadd(n,330,t_bsfd)) <=' " & YearID & "-" & MonthID & "-01 00:00:00.000'"
+            Sql &= "  And 1 =   case when (dateadd(n,330,t_acdt)) < dateadd(d,1,(dateadd(n,330,t_bsfd)))  "
             Sql &= "	then 0 else 1 end  "
-
+            Sql &= "	order by t_docn "
 
 
 
@@ -288,13 +294,19 @@ Namespace SIS.DD
             Sql &= "            WHEN 'SERVICE' THEN 'OTHERS' "
             Sql &= "            else 'OTHERS' "
             Sql &= "            end) as Owner_Dept,"
+
+            Sql &= "             (case t_sars "
+            Sql &= "            When 1 Then 'Work Stopped' "
+            Sql &= "           when 3 then 'Work can Proceed' "
+            Sql &= "         End) As t_sars ,(select t_desc from ttpisg070200 where ttpisg070200.t_code=rec.t_natp) as t_natp,"
+
             Sql &= "            (Case t_stat "
             Sql &= "           When 1 Then 'Created' "
             Sql &= "          when 2 then 'Under Review' "
             Sql &= "         When 3 Then 'Under Approval' "
             Sql &= "           when 4 then 'Approved' "
             Sql &= "          When 5 Then 'Not Applicable' "
-            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,t_rper,t_apby  "
+            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_rper) as t_rper,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_apby) as t_apby  "
             Sql &= "          from ttpisg074200 As rec LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort In ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') and year(t_cdat) in (" & YearID & ") and month(t_cdat) in (" & MonthID & ")"
             Sql &= "            Order by t_cprj"
 
@@ -317,13 +329,18 @@ Namespace SIS.DD
             Sql &= "            WHEN 'SERVICE' THEN 'OTHERS' "
             Sql &= "            else 'OTHERS' "
             Sql &= "            end) as Owner_Dept,"
+            Sql &= "             (case t_sars "
+            Sql &= "            When 1 Then 'Work Stopped' "
+            Sql &= "           when 3 then 'Work can Proceed' "
+            Sql &= "         End) As t_sars ,(select t_desc from ttpisg070200 where ttpisg070200.t_code=rec.t_natp) as t_natp,"
+
             Sql &= "            (Case t_stat "
             Sql &= "           When 1 Then 'Created' "
             Sql &= "          when 2 then 'Under Review' "
             Sql &= "         When 3 Then 'Under Approval' "
             Sql &= "           when 4 then 'Approved' "
             Sql &= "          When 5 Then 'Not Applicable' "
-            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,t_rper,t_apby  "
+            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_rper) as t_rper,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_apby) as t_apby  "
             Sql &= " from ttpisg074200 As rec LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort In ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =1 and year(t_cdat) in (" & YearID & ") and month(t_cdat) in (" & MonthID & ")"
             Sql &= "            Order by t_cprj"
           Case "SAR_UnderReview"
@@ -344,13 +361,18 @@ Namespace SIS.DD
             Sql &= "            WHEN 'SERVICE' THEN 'OTHERS' "
             Sql &= "            else 'OTHERS' "
             Sql &= "            end) as Owner_Dept,"
+
+            Sql &= "             (case t_sars "
+            Sql &= "            When 1 Then 'Work Stopped' "
+            Sql &= "           when 3 then 'Work can Proceed' "
+            Sql &= "         End) As t_sars ,(select t_desc from ttpisg070200 where ttpisg070200.t_code=rec.t_natp) as t_natp,"
             Sql &= "            (Case t_stat "
             Sql &= "           When 1 Then 'Created' "
             Sql &= "          when 2 then 'Under Review' "
             Sql &= "         When 3 Then 'Under Approval' "
             Sql &= "           when 4 then 'Approved' "
             Sql &= "          When 5 Then 'Not Applicable' "
-            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,t_rper,t_apby  "
+            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_rper) as t_rper,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_apby) as t_apby  "
             Sql &= "          from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =2 and year(t_cdat) in (" & YearID & ") and month(t_cdat) in (" & MonthID & ")"
             Sql &= "            Order by t_cprj"
           Case "SAR_UnderApproval"
@@ -371,13 +393,18 @@ Namespace SIS.DD
             Sql &= "            WHEN 'SERVICE' THEN 'OTHERS' "
             Sql &= "            else 'OTHERS' "
             Sql &= "            end) as Owner_Dept,"
+
+            Sql &= "             (case t_sars "
+            Sql &= "            When 1 Then 'Work Stopped' "
+            Sql &= "           when 3 then 'Work can Proceed' "
+            Sql &= "         End) As t_sars ,(select t_desc from ttpisg070200 where ttpisg070200.t_code=rec.t_natp) as t_natp,"
             Sql &= "            (Case t_stat "
             Sql &= "           When 1 Then 'Created' "
             Sql &= "          when 2 then 'Under Review' "
             Sql &= "         When 3 Then 'Under Approval' "
             Sql &= "           when 4 then 'Approved' "
             Sql &= "          When 5 Then 'Not Applicable' "
-            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,t_rper,t_apby  "
+            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_rper) as t_rper,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_apby) as t_apby  "
 
 
             Sql &= "          from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =3 and year(t_cdat) in (" & YearID & ") and month(t_cdat) in (" & MonthID & ")"
@@ -400,13 +427,18 @@ Namespace SIS.DD
             Sql &= "            WHEN 'SERVICE' THEN 'OTHERS' "
             Sql &= "            else 'OTHERS' "
             Sql &= "            end) as Owner_Dept,"
+
+            Sql &= "             (case t_sars "
+            Sql &= "            When 1 Then 'Work Stopped' "
+            Sql &= "           when 3 then 'Work can Proceed' "
+            Sql &= "         End) As t_sars ,(select t_desc from ttpisg070200 where ttpisg070200.t_code=rec.t_natp) as t_natp,"
             Sql &= "            (Case t_stat "
             Sql &= "           When 1 Then 'Created' "
             Sql &= "          when 2 then 'Under Review' "
             Sql &= "         When 3 Then 'Under Approval' "
             Sql &= "           when 4 then 'Approved' "
             Sql &= "          When 5 Then 'Not Applicable' "
-            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,t_rper,t_apby  "
+            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_rper) as t_rper,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_apby) as t_apby  "
 
             Sql &= "          from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat in (2,3) and year(t_cdat) in (" & YearID & ") and month(t_cdat) in (" & MonthID & ")"
             Sql &= "            Order by t_cprj"
@@ -429,13 +461,18 @@ Namespace SIS.DD
             Sql &= "            WHEN 'SERVICE' THEN 'OTHERS' "
             Sql &= "            else 'OTHERS' "
             Sql &= "            end) as Owner_Dept,"
+
+            Sql &= "             (case t_sars "
+            Sql &= "            When 1 Then 'Work Stopped' "
+            Sql &= "           when 3 then 'Work can Proceed' "
+            Sql &= "         End) As t_sars ,(select t_desc from ttpisg070200 where ttpisg070200.t_code=rec.t_natp) as t_natp,"
             Sql &= "            (Case t_stat "
             Sql &= "           When 1 Then 'Created' "
             Sql &= "          when 2 then 'Under Review' "
             Sql &= "         When 3 Then 'Under Approval' "
             Sql &= "           when 4 then 'Approved' "
             Sql &= "          When 5 Then 'Not Applicable' "
-            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,t_rper,t_apby  "
+            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_rper) as t_rper,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_apby) as t_apby  "
             Sql &= "          from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =4 and year(t_cdat) in (" & YearID & ") and month(t_cdat) in (" & MonthID & ")"
             Sql &= "            Order by t_cprj"
 
@@ -458,13 +495,18 @@ Namespace SIS.DD
             Sql &= "            WHEN 'SERVICE' THEN 'OTHERS' "
             Sql &= "            else 'OTHERS' "
             Sql &= "            end) as Owner_Dept,"
+
+            Sql &= "             (case t_sars "
+            Sql &= "            When 1 Then 'Work Stopped' "
+            Sql &= "           when 3 then 'Work can Proceed' "
+            Sql &= "         End) As t_sars ,(select t_desc from ttpisg070200 where ttpisg070200.t_code=rec.t_natp) as t_natp,"
             Sql &= "            (Case t_stat "
             Sql &= "           When 1 Then 'Created' "
             Sql &= "          when 2 then 'Under Review' "
             Sql &= "         When 3 Then 'Under Approval' "
             Sql &= "           when 4 then 'Approved' "
             Sql &= "          When 5 Then 'Not Applicable' "
-            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,t_rper,t_apby  "
+            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_rper) as t_rper,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_apby) as t_apby  "
             Sql &= "          from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =5 and year(t_cdat) in (" & YearID & ") and month(t_cdat) in (" & MonthID & ")"
             Sql &= "            Order by t_cprj"
           Case "SAR_TotalCountA"
@@ -486,13 +528,18 @@ Namespace SIS.DD
             Sql &= "            WHEN 'SERVICE' THEN 'OTHERS' "
             Sql &= "            else 'OTHERS' "
             Sql &= "            end) as Owner_Dept,"
+
+            Sql &= "             (case t_sars "
+            Sql &= "            When 1 Then 'Work Stopped' "
+            Sql &= "           when 3 then 'Work can Proceed' "
+            Sql &= "         End) As t_sars ,(select t_desc from ttpisg070200 where ttpisg070200.t_code=rec.t_natp) as t_natp,"
             Sql &= "            (Case t_stat "
             Sql &= "           When 1 Then 'Created' "
             Sql &= "          when 2 then 'Under Review' "
             Sql &= "         When 3 Then 'Under Approval' "
             Sql &= "           when 4 then 'Approved' "
             Sql &= "          When 5 Then 'Not Applicable' "
-            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,t_rper,t_apby  "
+            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_rper) as t_rper,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_apby) as t_apby  "
             Sql &= "          from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "')  "
             Sql &= "            Order by t_cprj"
           Case "SAR_UnderCreationA"
@@ -514,13 +561,18 @@ Namespace SIS.DD
             Sql &= "            WHEN 'SERVICE' THEN 'OTHERS' "
             Sql &= "            else 'OTHERS' "
             Sql &= "            end) as Owner_Dept,"
+
+            Sql &= "             (case t_sars "
+            Sql &= "            When 1 Then 'Work Stopped' "
+            Sql &= "           when 3 then 'Work can Proceed' "
+            Sql &= "         End) As t_sars ,(select t_desc from ttpisg070200 where ttpisg070200.t_code=rec.t_natp) as t_natp,"
             Sql &= "            (Case t_stat "
             Sql &= "           When 1 Then 'Created' "
             Sql &= "          when 2 then 'Under Review' "
             Sql &= "         When 3 Then 'Under Approval' "
             Sql &= "           when 4 then 'Approved' "
             Sql &= "          When 5 Then 'Not Applicable' "
-            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,t_rper,t_apby  "
+            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_rper) as t_rper,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_apby) as t_apby  "
             Sql &= "          from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =1  "
             Sql &= "            Order by t_cprj"
           Case "SAR_UnderReviewA"
@@ -541,13 +593,18 @@ Namespace SIS.DD
             Sql &= "            WHEN 'SERVICE' THEN 'OTHERS' "
             Sql &= "            else 'OTHERS' "
             Sql &= "            end) as Owner_Dept,"
+
+            Sql &= "             (case t_sars "
+            Sql &= "            When 1 Then 'Work Stopped' "
+            Sql &= "           when 3 then 'Work can Proceed' "
+            Sql &= "         End) As t_sars ,(select t_desc from ttpisg070200 where ttpisg070200.t_code=rec.t_natp) as t_natp,"
             Sql &= "            (Case t_stat "
             Sql &= "           When 1 Then 'Created' "
             Sql &= "          when 2 then 'Under Review' "
             Sql &= "         When 3 Then 'Under Approval' "
             Sql &= "           when 4 then 'Approved' "
             Sql &= "          When 5 Then 'Not Applicable' "
-            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,t_rper,t_apby  "
+            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_rper) as t_rper,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_apby) as t_apby  "
 
             Sql &= "          from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =2  "
             Sql &= "            Order by t_cprj"
@@ -570,13 +627,18 @@ Namespace SIS.DD
             Sql &= "            WHEN 'SERVICE' THEN 'OTHERS' "
             Sql &= "            else 'OTHERS' "
             Sql &= "            end) as Owner_Dept,"
+
+            Sql &= "             (case t_sars "
+            Sql &= "            When 1 Then 'Work Stopped' "
+            Sql &= "           when 3 then 'Work can Proceed' "
+            Sql &= "         End) As t_sars ,(select t_desc from ttpisg070200 where ttpisg070200.t_code=rec.t_natp) as t_natp,"
             Sql &= "            (Case t_stat "
             Sql &= "           When 1 Then 'Created' "
             Sql &= "          when 2 then 'Under Review' "
             Sql &= "         When 3 Then 'Under Approval' "
             Sql &= "           when 4 then 'Approved' "
             Sql &= "          When 5 Then 'Not Applicable' "
-            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,t_rper,t_apby  "
+            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_rper) as t_rper,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_apby) as t_apby  "
             Sql &= "        from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =3  "
             Sql &= "            Order by t_cprj"
           Case "SAR_PendingA"
@@ -598,13 +660,18 @@ Namespace SIS.DD
             Sql &= "            WHEN 'SERVICE' THEN 'OTHERS' "
             Sql &= "            else 'OTHERS' "
             Sql &= "            end) as Owner_Dept,"
+
+            Sql &= "             (case t_sars "
+            Sql &= "            When 1 Then 'Work Stopped' "
+            Sql &= "           when 3 then 'Work can Proceed' "
+            Sql &= "         End) As t_sars ,(select t_desc from ttpisg070200 where ttpisg070200.t_code=rec.t_natp) as t_natp,"
             Sql &= "            (Case t_stat "
             Sql &= "           When 1 Then 'Created' "
             Sql &= "          when 2 then 'Under Review' "
             Sql &= "         When 3 Then 'Under Approval' "
             Sql &= "           when 4 then 'Approved' "
             Sql &= "          When 5 Then 'Not Applicable' "
-            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,t_rper,t_apby  "
+            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_rper) as t_rper,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_apby) as t_apby  "
             Sql &= "        from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat in (2,3)  "
             Sql &= "            Order by t_cprj"
           Case "SAR_ApprovedA"
@@ -626,13 +693,18 @@ Namespace SIS.DD
             Sql &= "            WHEN 'SERVICE' THEN 'OTHERS' "
             Sql &= "            else 'OTHERS' "
             Sql &= "            end) as Owner_Dept,"
+
+            Sql &= "             (case t_sars "
+            Sql &= "            When 1 Then 'Work Stopped' "
+            Sql &= "           when 3 then 'Work can Proceed' "
+            Sql &= "         End) As t_sars ,(select t_desc from ttpisg070200 where ttpisg070200.t_code=rec.t_natp) as t_natp,"
             Sql &= "            (Case t_stat "
             Sql &= "           When 1 Then 'Created' "
             Sql &= "          when 2 then 'Under Review' "
             Sql &= "         When 3 Then 'Under Approval' "
             Sql &= "           when 4 then 'Approved' "
             Sql &= "          When 5 Then 'Not Applicable' "
-            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,t_rper,t_apby  "
+            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_rper) as t_rper,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_apby) as t_apby  "
             Sql &= "            from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =4  "
 
             Sql &= "            Order by t_cprj"
@@ -655,13 +727,18 @@ Namespace SIS.DD
             Sql &= "            WHEN 'SERVICE' THEN 'OTHERS' "
             Sql &= "            else 'OTHERS' "
             Sql &= "            end) as Owner_Dept,"
+
+            Sql &= "             (case t_sars "
+            Sql &= "            When 1 Then 'Work Stopped' "
+            Sql &= "           when 3 then 'Work can Proceed' "
+            Sql &= "         End) As t_sars ,(select t_desc from ttpisg070200 where ttpisg070200.t_code=rec.t_natp) as t_natp,"
             Sql &= "            (Case t_stat "
             Sql &= "           When 1 Then 'Created' "
             Sql &= "          when 2 then 'Under Review' "
             Sql &= "         When 3 Then 'Under Approval' "
             Sql &= "           when 4 then 'Approved' "
             Sql &= "          When 5 Then 'Not Applicable' "
-            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,t_rper,t_apby  "
+            Sql &= "           End) As t_stat,rec.t_cspa as element, t_prep,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_rper) as t_rper,(select t_nama from ttccom001200 where ttccom001200.t_emno=rec.t_apby) as t_apby  "
             Sql &= "          from ttpisg074200 as rec LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') AND  substring(t_cprj,1,2) in ('" & PrjID & "') AND rec.t_stat =5  "
             Sql &= "            Order by t_cprj"
 
@@ -681,6 +758,182 @@ Namespace SIS.DD
       Return mRet
     End Function
 
+    Public Shared Function GetDELEMENTData(ByVal det As String, ByVal DivisionID As String, ByVal DisciplineID As String, ByVal YearID As String, ByVal MonthID As String) As List(Of DisciplineDetail)
+      Dim PrjID As String = ""
+      If DivisionID = "" Then Return Nothing
+
+      Select Case DivisionID
+        Case "BOILER"
+          'DivisionID = "AFBC','BLR_SPR','CFBC','HRSG','OILGAS','TG','WHRB','IPAC"
+          PrjID = "CA', 'IP', 'JA', 'JB', 'JE', 'JG', 'PS', 'BS', 'DS"
+        Case "SMD"
+          'DivisionID = "SPDR"
+          PrjID = "JS', 'SE', 'SG', 'SS', 'XP"
+        Case "EPC"
+          'DivisionID = "EPC01"
+          PrjID = "EC', 'EE', 'EF','EG', 'EM', 'ES', 'JP"
+        Case "APC"
+          ' DivisionID = "ESP"
+          PrjID = "AG', 'AS"
+      End Select
+
+
+
+      Select Case DisciplineID
+
+        Case "PRC"
+          DisciplineID = "PROCESS','MECHANICAL/PROCE','PROCESS-STOKER"
+        Case "MEC"
+          DisciplineID = "MECHANICAL/PROCE','MECHANICAL','MECH-SUGAR"
+        Case "STR"
+          DisciplineID = "STRUCTURE"
+        Case "PIP"
+          DisciplineID = "PIPING"
+        Case "ELE"
+          DisciplineID = "ELECTRICAL"
+        Case "C&I"
+          DisciplineID = "C & I','C&I','INSTRUMENTATION"
+        Case "CIV"
+          DisciplineID = "CIVIL"
+        Case "MHE"
+          DisciplineID = "MHE"
+        Case "PRJ"
+          DisciplineID = "OTHERS','SERVICE"
+        Case "WWS"
+          DisciplineID = "WWS"
+
+      End Select
+
+      Dim mRet As New List(Of SIS.DD.DisciplineDetail)
+
+      Dim Sql As String = ""
+      Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetBaaNConnectionString() & ";Connection Timeout=50000")
+        Con.Open()
+
+
+        Select Case det
+
+          Case "Total_Element"
+
+            Sql = " Select rec.t_cprj,(select t_dsca from ttcmcs052200 where ttcmcs052200.t_cprj=rec.t_cprj) as Project_Name,rec.t_cspa As TT_CSPA,( "
+            Sql &= "         Case rec.t_engs "
+            Sql &= "         When 1 Then 'Free' "
+            Sql &= "         when 2 then 'Partial' "
+            Sql &= "         when 3 then 'Complete' "
+            Sql &= "         end "
+            Sql &= "         ) as TT_ENGS,ttppdm090200.t_desc AS TT_TITTLE,(case ttppdm090200.t_sort "
+            Sql &= "  when 'MECH-SUGAR' then 'MECHANICAL' "
+            Sql &= " when 'ELECTRICAL' then 'ELECTRICAL' "
+            Sql &= " when 'MECHANICAL' then 'MECHANICAL' "
+            Sql &= " WHEN 'PROCESS-STOKER' Then 'MECHANICAL' "
+            Sql &= " when 'OTHERS' then 'OTHERS' "
+            Sql &= " WHEN 'PROCESS' then 'PROCESS' "
+            Sql &= " WHEN 'STRUCTURE' THEN 'STRUCTURE' "
+            Sql &= " WHEN 'PIPING' THEN 'PIPING' "
+            Sql &= " WHEN 'C & I' THEN 'C&I' "
+            Sql &= " WHEN 'INSTRUMENTATION' THEN 'C&I' "
+            Sql &= " WHEN 'EPC' THEN 'EPC' "
+            Sql &= " WHEN 'C&I' THEN 'C&I' "
+            Sql &= " WHEN 'ELE' THEN 'ELECTRICAL' "
+            Sql &= " WHEN 'SERVICE' THEN 'OTHERS' "
+            Sql &= "  else 'OTHERS' "
+            Sql &= "  end) AS TT_DEPT from ttpisg063200 as rec"
+            Sql &= " LEFT JOIN ttppdm090200 On ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort In ('" & DisciplineID & "') and substring(rec.t_cprj,1,2) in ('" & PrjID & "') and rec.t_appl=1 "
+
+          Case "Element_Free"
+            Sql = " Select rec.t_cprj,(select t_dsca from ttcmcs052200 where ttcmcs052200.t_cprj=rec.t_cprj) as Project_Name,rec.t_cspa As TT_CSPA,( "
+            Sql &= "         Case rec.t_engs "
+            Sql &= "         When 1 Then 'Free' "
+            Sql &= "         when 2 then 'Partial' "
+            Sql &= "         when 3 then 'Complete' "
+            Sql &= "         end "
+            Sql &= "         ) as TT_ENGS,ttppdm090200.t_desc AS TT_TITTLE,(case ttppdm090200.t_sort "
+            Sql &= "  when 'MECH-SUGAR' then 'MECHANICAL' "
+            Sql &= " when 'ELECTRICAL' then 'ELECTRICAL' "
+            Sql &= " when 'MECHANICAL' then 'MECHANICAL' "
+            Sql &= " WHEN 'PROCESS-STOKER' Then 'MECHANICAL' "
+            Sql &= " when 'OTHERS' then 'OTHERS' "
+            Sql &= " WHEN 'PROCESS' then 'PROCESS' "
+            Sql &= " WHEN 'STRUCTURE' THEN 'STRUCTURE' "
+            Sql &= " WHEN 'PIPING' THEN 'PIPING' "
+            Sql &= " WHEN 'C & I' THEN 'C&I' "
+            Sql &= " WHEN 'INSTRUMENTATION' THEN 'C&I' "
+            Sql &= " WHEN 'EPC' THEN 'EPC' "
+            Sql &= " WHEN 'C&I' THEN 'C&I' "
+            Sql &= " WHEN 'ELE' THEN 'ELECTRICAL' "
+            Sql &= " WHEN 'SERVICE' THEN 'OTHERS' "
+            Sql &= "  else 'OTHERS' "
+            Sql &= "  end) AS TT_DEPT from ttpisg063200 as rec"
+            Sql &= " LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') and substring(rec.t_cprj,1,2) in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=1 "
+
+          Case "Element_Partial"
+            Sql = " Select rec.t_cprj,(select t_dsca from ttcmcs052200 where ttcmcs052200.t_cprj=rec.t_cprj) as Project_Name, rec.t_cspa As TT_CSPA,( "
+            Sql &= "         Case rec.t_engs "
+            Sql &= "         When 1 Then 'Free' "
+            Sql &= "         when 2 then 'Partial' "
+            Sql &= "         when 3 then 'Complete' "
+            Sql &= "         end "
+            Sql &= "         ) as TT_ENGS,ttppdm090200.t_desc AS TT_TITTLE,(case ttppdm090200.t_sort "
+            Sql &= "  when 'MECH-SUGAR' then 'MECHANICAL' "
+            Sql &= " when 'ELECTRICAL' then 'ELECTRICAL' "
+            Sql &= " when 'MECHANICAL' then 'MECHANICAL' "
+            Sql &= " WHEN 'PROCESS-STOKER' Then 'MECHANICAL' "
+            Sql &= " when 'OTHERS' then 'OTHERS' "
+            Sql &= " WHEN 'PROCESS' then 'PROCESS' "
+            Sql &= " WHEN 'STRUCTURE' THEN 'STRUCTURE' "
+            Sql &= " WHEN 'PIPING' THEN 'PIPING' "
+            Sql &= " WHEN 'C & I' THEN 'C&I' "
+            Sql &= " WHEN 'INSTRUMENTATION' THEN 'C&I' "
+            Sql &= " WHEN 'EPC' THEN 'EPC' "
+            Sql &= " WHEN 'C&I' THEN 'C&I' "
+            Sql &= " WHEN 'ELE' THEN 'ELECTRICAL' "
+            Sql &= " WHEN 'SERVICE' THEN 'OTHERS' "
+            Sql &= "  else 'OTHERS' "
+            Sql &= "  end) AS TT_DEPT from ttpisg063200 as rec"
+
+            Sql &= " LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa Where ttppdm090200.t_sort in ('" & DisciplineID & "') and substring(rec.t_cprj,1,2) in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=2 "
+
+
+          Case "Element_Completed"
+            Sql = " Select rec.t_cprj,(select t_dsca from ttcmcs052200 where ttcmcs052200.t_cprj=rec.t_cprj) as Project_Name, rec.t_cspa As TT_CSPA,( "
+            Sql &= "         Case rec.t_engs "
+            Sql &= "         When 1 Then 'Free' "
+            Sql &= "         when 2 then 'Partial' "
+            Sql &= "         when 3 then 'Complete' "
+            Sql &= "         end "
+            Sql &= "         ) as TT_ENGS,ttppdm090200.t_desc AS TT_TITTLE,(case ttppdm090200.t_sort "
+            Sql &= "  when 'MECH-SUGAR' then 'MECHANICAL' "
+            Sql &= " when 'ELECTRICAL' then 'ELECTRICAL' "
+            Sql &= " when 'MECHANICAL' then 'MECHANICAL' "
+            Sql &= " WHEN 'PROCESS-STOKER' Then 'MECHANICAL' "
+            Sql &= " when 'OTHERS' then 'OTHERS' "
+            Sql &= " WHEN 'PROCESS' then 'PROCESS' "
+            Sql &= " WHEN 'STRUCTURE' THEN 'STRUCTURE' "
+            Sql &= " WHEN 'PIPING' THEN 'PIPING' "
+            Sql &= " WHEN 'C & I' THEN 'C&I' "
+            Sql &= " WHEN 'INSTRUMENTATION' THEN 'C&I' "
+            Sql &= " WHEN 'EPC' THEN 'EPC' "
+            Sql &= " WHEN 'C&I' THEN 'C&I' "
+            Sql &= " WHEN 'ELE' THEN 'ELECTRICAL' "
+            Sql &= " WHEN 'SERVICE' THEN 'OTHERS' "
+            Sql &= "  else 'OTHERS' "
+            Sql &= "  end) AS TT_DEPT from ttpisg063200 as rec"
+            Sql &= " LEFT JOIN ttppdm090200 on ttppdm090200.t_cspa = rec.t_cspa where ttppdm090200.t_sort in ('" & DisciplineID & "') and substring(rec.t_cprj,1,2) in ('" & PrjID & "') and rec.t_appl=1  and rec.t_engs=3 "
+
+        End Select
+
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          Cmd.CommandTimeout = 3000
+          Dim rd As SqlDataReader = Cmd.ExecuteReader
+          While (rd.Read)
+            mRet.Add(New DisciplineDetail(rd))
+          End While
+        End Using
+      End Using
+      Return mRet
+    End Function
 
 
 
