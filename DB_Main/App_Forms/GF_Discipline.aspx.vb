@@ -246,6 +246,7 @@ Partial Class GF_Discipline
     Response.Redirect("GF_DisciplineDBDetails.aspx?detail=SAR_ApprovedA&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
   End Sub
   Private Sub btn_SAR_NotApplicableA_Click(sender As Object, e As EventArgs) Handles btn_SAR_NotApplicableA.Click
+
     Response.Redirect("GF_DisciplineDBDetails.aspx?detail=SAR_NotApplicableA&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
   End Sub
 

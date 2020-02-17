@@ -17,7 +17,7 @@
             </ProgressTemplate>
           </asp:UpdateProgress>
          
-            
+           <%-- <script src="Script1.js"></script>--%>
            <div class="container-fluid">
       <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -85,7 +85,7 @@
                     Select Division for which Information need to fetched for Dashboard.
     Click again 'Division' button To Hide this Information.
                   </div>
-                  <asp:DropDownList ID="F_DivisionID" ClientIDMode="static" runat="Server" class="btn btn-warning btn-outline-dark">
+                  <asp:DropDownList ID="F_DivisionID" ClientIDMode="static" runat="Server" class="btn btn-secondary btn-outline-dark">
                     <asp:ListItem Value="">BOILER</asp:ListItem>
                     <asp:ListItem>EPC</asp:ListItem>
                     <asp:ListItem>SMD</asp:ListItem>
@@ -166,7 +166,7 @@
                     Select Department for which Information need to fetched for Dashboard.
     Click again 'Department' button To Hide this Information.
                   </div>
-                  <asp:DropDownList ID="F_MonthID" class="btn btn-danger btn-outline-dark" runat="server">
+                  <asp:DropDownList ID="F_MonthID" class="btn btn-secondary btn-outline-dark" runat="server">
                     <asp:ListItem>JANUARY</asp:ListItem>
                     <asp:ListItem>FEBRUARY</asp:ListItem>
                     <asp:ListItem>MARCH</asp:ListItem>
