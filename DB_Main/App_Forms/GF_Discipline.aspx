@@ -85,7 +85,7 @@
                     Select Division for which Information need to fetched for Dashboard.
     Click again 'Division' button To Hide this Information.
                   </div>
-                  <asp:DropDownList ID="F_DivisionID" ClientIDMode="static" runat="Server" class="btn btn-secondary btn-outline-dark">
+                  <asp:DropDownList ID="F_DivisionID" ClientIDMode="static" runat="Server" class="btn btn-light btn-outline-dark">
                     <asp:ListItem Value="">BOILER</asp:ListItem>
                     <asp:ListItem>EPC</asp:ListItem>
                     <asp:ListItem>SMD</asp:ListItem>
@@ -107,7 +107,7 @@
                     Select Department for which Information need to fetched for Dashboard.
     Click again 'Department' button To Hide this Information.
                   </div>
-                  <asp:DropDownList ID="F_DisciplineID" class="btn btn-warning btn-outline-dark" ClientIDMode="static" runat="Server">
+                  <asp:DropDownList ID="F_DisciplineID" class="btn btn-light btn-outline-dark" ClientIDMode="static" runat="Server">
                     <asp:ListItem Value="">MECHANICAL</asp:ListItem>
                     <asp:ListItem>PROCESS</asp:ListItem>
                     <asp:ListItem>STRUCTURE</asp:ListItem>
@@ -125,6 +125,35 @@
              
             </div>
 
+               <div class="col-sm-auto">
+
+            
+
+                <div class="input-group">
+
+                  <a href="#ID_Month" class="btn btn-secondary" style="width: 140px; text-align: center; cursor: pointer" data-toggle="collapse"><b>Month</b></a>
+                  <div id="ID_Month" class="collapse">
+                    Select Department for which Information need to fetched for Dashboard.
+    Click again 'Department' button To Hide this Information.
+                  </div>
+                  <asp:DropDownList ID="F_MonthID" class="btn btn-light btn-outline-dark" runat="server">
+                    <asp:ListItem>JANUARY</asp:ListItem>
+                    <asp:ListItem>FEBRUARY</asp:ListItem>
+                    <asp:ListItem>MARCH</asp:ListItem>
+                    <asp:ListItem>APRIL</asp:ListItem>
+                    <asp:ListItem>MAY</asp:ListItem>
+                    <asp:ListItem>JUNE</asp:ListItem>
+                    <asp:ListItem>JULY</asp:ListItem>
+                    <asp:ListItem>AUGUST</asp:ListItem>
+                    <asp:ListItem>SEPTEMBER</asp:ListItem>
+                    <asp:ListItem>OCTOBER</asp:ListItem>
+                    <asp:ListItem>NOVEMBER</asp:ListItem>
+                    <asp:ListItem>DECEMBER</asp:ListItem>
+                  </asp:DropDownList>
+                </div>
+          
+            </div>
+
             <div class="col-sm-auto">
 
             
@@ -136,7 +165,7 @@
                     Select Department for which Information need to fetched for Dashboard.
     Click again 'Department' button To Hide this Information.
                   </div>
-                  <asp:DropDownList ID="F_YearID" class="btn btn-warning btn-outline-dark" ClientIDMode="static" runat="Server">
+                  <asp:DropDownList ID="F_YearID" class="btn btn-light btn-outline-dark" ClientIDMode="static" runat="Server">
                     <asp:ListItem Value="">2020</asp:ListItem>
                     <asp:ListItem>2019</asp:ListItem>
                     <asp:ListItem>2018</asp:ListItem>
@@ -155,34 +184,7 @@
               
             </div>
 
-            <div class="col-sm-auto">
-
-            
-
-                <div class="input-group">
-
-                  <a href="#ID_Month" class="btn btn-secondary" style="width: 140px; text-align: center; cursor: pointer" data-toggle="collapse"><b>Month</b></a>
-                  <div id="ID_Month" class="collapse">
-                    Select Department for which Information need to fetched for Dashboard.
-    Click again 'Department' button To Hide this Information.
-                  </div>
-                  <asp:DropDownList ID="F_MonthID" class="btn btn-secondary btn-outline-dark" runat="server">
-                    <asp:ListItem>JANUARY</asp:ListItem>
-                    <asp:ListItem>FEBRUARY</asp:ListItem>
-                    <asp:ListItem>MARCH</asp:ListItem>
-                    <asp:ListItem>APRIL</asp:ListItem>
-                    <asp:ListItem>MAY</asp:ListItem>
-                    <asp:ListItem>JUNE</asp:ListItem>
-                    <asp:ListItem>JULY</asp:ListItem>
-                    <asp:ListItem>AUGUST</asp:ListItem>
-                    <asp:ListItem>SEPTEMBER</asp:ListItem>
-                    <asp:ListItem>OCTOBER</asp:ListItem>
-                    <asp:ListItem>NOVEMBER</asp:ListItem>
-                    <asp:ListItem>DECEMBER</asp:ListItem>
-                  </asp:DropDownList>
-                </div>
-          
-            </div>
+         
 
           </div>
 
@@ -192,7 +194,7 @@
             </div>
             <div class="col-3 text-left">
 
-              <asp:Button ID="cmdSubmit" runat="server" class="btn btn-dark btn-outline-dark" Font-Bold="true" Text="Generate DashBoard" ToolTip="Click to Generate DashBoard" Style="width: 210px; text-align: center; cursor: pointer" />
+              <asp:Button ID="cmdSubmit" runat="server" class="btn btn-light btn-outline-dark" Font-Bold="true" Text="Generate DashBoard" ToolTip="Click to Generate DashBoard" Style="width: 210px; text-align: center; cursor: pointer" />
             </div>
           </div>
        
@@ -262,7 +264,7 @@
           <div class="container-fluid" id="DPMDLTABLE" runat="server" visible="false">
              
        <%--  <hr style="color: forestgreen; background-color: darkgreen; width: 100%; height: 1px">--%> 
-            <center> <h6><font face="Comic Sans MS">Drawing and Document Progress Status As per PMDL (Baseline Finish Date)</font></h6></center>
+            <center> <h6><font face="comic Sans MS">Drawing and Document Progress Status As per PMDL (Baseline Finish Date)</font></h6></center>
 
      <div class="border border-secondary btn-outline-light">
             <div class="container-fluid" id="DPMDLTABLE1" runat="server" visible="true">
@@ -316,7 +318,7 @@
 
                         <div class="col">
                           <div class="text-success">
-                         <font face="Comic Sans MS">Ontime Released in This Month</font>
+                         <font face="Comic Sans MS">Ontime Released in/before This Month</font>
                           </div>
                         </div>
 
@@ -341,7 +343,7 @@
                       <div class="row">
 
                         <div class="col">
-                          <asp:Button ID="btn_ToRelease_CurrentM" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="To Release in Current Month" Text="" Font-Bold="true"></asp:Button>
+                          <asp:Button ID="btn_ToRelease_CurrentM" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="To Release in Current Month " Text="" Font-Bold="true"></asp:Button>
                         </div>
 
                         <div class="col">

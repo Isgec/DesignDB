@@ -37,7 +37,7 @@
         
           <hr style="color:brown;background-color:darkslategrey;width:100%;height:3px">
     
-        <div class="col-sm-auto my-0 table-hover">
+        <div class="col-sm-auto my-0 table-hover text-center">
           <div id="ppnlDetails" runat="server">
           </div>
         </div>

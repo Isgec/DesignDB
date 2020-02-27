@@ -53,6 +53,7 @@ Namespace SIS.DD
     Public Property YearID As Integer = 0
     Public Property ProjectDesc As String = ""
     Public Property ToRelease_CurrentM As Integer = 0
+
     Public Property DueforRelease_CurrentM_A As Integer = 0
     Public Property DueforRelease_PreviousM_B As Integer = 0
     Public Property DueforRelease_BothM_C As Integer = 0

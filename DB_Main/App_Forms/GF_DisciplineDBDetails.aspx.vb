@@ -159,7 +159,14 @@ Partial Class GF_DisciplineDBDetails
         tr.BackColor = Drawing.Color.Yellow
 
 
+        'ElseIf (tmp.t_acdt <= tmp.t_bsfd) Then
+        '  tr.BackColor = Drawing.Color.GreenYellow
+
+        'ElseIf (tmp.t_acdt > tmp.t_bsfd) Then
+        '  tr.BackColor = Drawing.Color.Red
       End If
+
+
       ' Dim t As Date = DateAdd(DateInterval.Minute, 330, tmp.t_acdt)
       td.Text = tmp.t_acdt
 

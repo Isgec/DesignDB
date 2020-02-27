@@ -151,6 +151,17 @@ Partial Class GF_Discipline
     btn_Element_Partial.Text = Dt2.Element_Partial
     btn_Element_Completed.Text = Dt2.Element_Completed
 
+    btn_ToRelease_CurrentM.ToolTip = "All Drawing & Document Count from PMDL where" & Environment.NewLine & "Division is " & F_DivisionID.SelectedItem.Text & "," & Environment.NewLine & "Discipline is " & F_DisciplineID.SelectedItem.Text & " ," & Environment.NewLine & "Month/Year of BaseLine Finishdate is " & F_MonthID.SelectedItem.Text & "/" & Convert.ToInt32(F_YearID.SelectedItem.Text) & "," & Environment.NewLine & "Document originator Is ISGEC." & Environment.NewLine & " Also VENDOR Documents ignored"
+    btn_DueforRelease_CurrentM_A.ToolTip = "Unreleased Drawing & DocumentCount from PMDL where" & Environment.NewLine & "Division Is " & F_DivisionID.SelectedItem.Text & "," & Environment.NewLine & "Discipline Is " & F_DisciplineID.SelectedItem.Text & " ," & Environment.NewLine & "Month/Year Of BaseLine Finishdate is " & F_MonthID.SelectedItem.Text & "/" & Convert.ToInt32(F_YearID.SelectedItem.Text) & "," & Environment.NewLine & "Document originator is ISGEC." & Environment.NewLine & " Also VENDOR Documents ignored"
+    btn_DueforRelease_PreviousM_B.ToolTip = "Unreleased Drawing & DocumentCount from PMDL where" & Environment.NewLine & "Division is " & F_DivisionID.SelectedItem.Text & "," & Environment.NewLine & "Discipline is " & F_DisciplineID.SelectedItem.Text & " ," & Environment.NewLine & "Month/Year of BaseLine Finishdate earlier than " & F_MonthID.SelectedItem.Text & "/" & Convert.ToInt32(F_YearID.SelectedItem.Text) & "," & Environment.NewLine & "Document originator is ISGEC." & Environment.NewLine & " Also VENDOR Documents ignored"
+    btn_DueforRelease_BothM_C.ToolTip = "Unreleased Drawing & DocumentCount from PMDL where" & Environment.NewLine & "Division is " & F_DivisionID.SelectedItem.Text & "," & Environment.NewLine & "Discipline is " & F_DisciplineID.SelectedItem.Text & " ," & Environment.NewLine & "Month/Year of BaseLine Finishdate is " & F_MonthID.SelectedItem.Text & "/" & Convert.ToInt32(F_YearID.SelectedItem.Text) & " earlier also" & "," & Environment.NewLine & "Document originator is ISGEC." & Environment.NewLine & " Also VENDOR Documents ignored" & Environment.NewLine & "Current Month Due(" & Dt.DueforRelease_CurrentM_A & ") + Previous Month's Due (" & Dt.DueforRelease_PreviousM_B & ") = Total Due (" & Dt.DueforRelease_BothM_C & ")"
+    btn_AllDueTillToday_Release.ToolTip = "Unreleased Drawing & DocumentCount from PMDL where" & Environment.NewLine & "Division is " & F_DivisionID.SelectedItem.Text & "," & Environment.NewLine & "Discipline is " & F_DisciplineID.SelectedItem.Text & " ," & Environment.NewLine & "BaseLine Finishdate lesser or equal to today ," & Environment.NewLine & "Document originator is ISGEC." & Environment.NewLine & " Also VENDOR Documents ignored"
+    btn_DueOnlyToday_Release.ToolTip = "Unreleased Drawing & DocumentCount from PMDL where" & Environment.NewLine & "Division is " & F_DivisionID.SelectedItem.Text & "," & Environment.NewLine & "Discipline is " & F_DisciplineID.SelectedItem.Text & " ," & Environment.NewLine & "BaseLine Finishdate is for today ," & Environment.NewLine & "Document originator is ISGEC." & Environment.NewLine & " Also VENDOR Documents ignored"
+    btn_Ontime_Release_CurrentM.ToolTip = "Released Drawing & DocumentCount from PMDL where" & Environment.NewLine & "Division is " & F_DivisionID.SelectedItem.Text & "," & Environment.NewLine & "Discipline is " & F_DisciplineID.SelectedItem.Text & " ," & Environment.NewLine & "BaseLine Finishdate is less than or equal to Actual release date, " & Environment.NewLine & "Document originator is ISGEC." & Environment.NewLine & " Also VENDOR Documents ignored"
+    btn_Backlog_Release_CurrentM.ToolTip = "Released Drawing & Document Count in " & F_MonthID.SelectedItem.Text & "/" & Convert.ToInt32(F_YearID.SelectedItem.Text) & " from PMDL where" & Environment.NewLine & "Division is " & F_DivisionID.SelectedItem.Text & "," & Environment.NewLine & "Discipline is " & F_DisciplineID.SelectedItem.Text & " ," & Environment.NewLine & "Month/Year of BaseLine Finishdate earlier than " & F_MonthID.SelectedItem.Text & "/" & Convert.ToInt32(F_YearID.SelectedItem.Text) & Environment.NewLine & "Document originator is ISGEC." & Environment.NewLine & " Also VENDOR Documents ignored"
+    btn_SAR_Pending.ToolTip = "Under Review (" & Dt1.SAR_UnderReview & ") + Under Approval (" & Dt1.SAR_UnderApproval & ") = Pending (" & Dt1.SAR_Pending & ")"
+    btn_SAR_PendingA.ToolTip = "Under Review (" & Dt1.SAR_UnderReviewA & ") + Under Approval (" & Dt1.SAR_UnderApprovalA & ") = Pending (" & Dt1.SAR_PendingA & ")"
+
   End Sub
 
   'Protected Sub F_MonthID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles F_MonthID.SelectedIndexChanged
@@ -250,23 +261,23 @@ Partial Class GF_Discipline
     Response.Redirect("GF_DisciplineDBDetails.aspx?detail=SAR_NotApplicableA&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
   End Sub
 
-  'Private Sub btn_Total_Element_Click(sender As Object, e As EventArgs) Handles btn_Total_Element.Click
-  '  Response.Redirect("GF_DisciplineDBDetails.aspx?detail=Total_Element&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+  Private Sub btn_Total_Element_Click(sender As Object, e As EventArgs) Handles btn_Total_Element.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=Total_Element&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
 
-  'End Sub
+  End Sub
 
-  'Private Sub btn_Element_Free_Click(sender As Object, e As EventArgs) Handles btn_Element_Free.Click
-  '  Response.Redirect("GF_DisciplineDBDetails.aspx?detail=Element_Free&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+  Private Sub btn_Element_Free_Click(sender As Object, e As EventArgs) Handles btn_Element_Free.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=Element_Free&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
 
-  'End Sub
+  End Sub
 
-  'Private Sub btn_Element_Partial_Click(sender As Object, e As EventArgs) Handles btn_Element_Partial.Click
-  '  Response.Redirect("GF_DisciplineDBDetails.aspx?detail=Element_Partial&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+  Private Sub btn_Element_Partial_Click(sender As Object, e As EventArgs) Handles btn_Element_Partial.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=Element_Partial&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
 
-  'End Sub
+  End Sub
 
-  'Private Sub btn_Element_Completed_Click(sender As Object, e As EventArgs) Handles btn_Element_Completed.Click
-  '  Response.Redirect("GF_DisciplineDBDetails.aspx?detail=Element_Completed&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+  Private Sub btn_Element_Completed_Click(sender As Object, e As EventArgs) Handles btn_Element_Completed.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=Element_Completed&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
 
-  'End Sub
+  End Sub
 End Class

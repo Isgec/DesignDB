@@ -5,14 +5,14 @@
       <asp:Label ID="LabeltaApprovalWFTypes" runat="server" Text="&nbsp;PROJECT DASHBOARD"></asp:Label>
     </div>
 
-  <div class="container" style="margin-top: 5px">
+
     <%--Project Selection Drop Down--%>
-    <div class="col-sm-2 mb-2 ">
+   <%-- <div class="col-sm-2 mb-2 ">
       <a class="btn btn-secondary btn-outline-dark" href="GF_UserDB.aspx" role="button"><i class="fa fa-dashboard text-warning" style="font-size: 20px">My DashBoard </i><i class="fa fa-spinner fa-spin text-success"></i></a>
 
-    </div>
+    </div>--%>
     
-    <div class="row">
+    <div class="row mt-3">
 
       
       <div class="col-4  mb-2 ml-3">
@@ -91,7 +91,39 @@
        </div>
      </div>
 
-    <div class="container text-center" id="PMDLTABLE" runat="server" visible="false">
+   <%-- Navigation--%>
+
+    <div class="row container-fluid" id="navmenu" runat="server" visible="false">
+<div class="col-2">
+    <div class="nav flex-column nav-pills btn-light" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" id="PMDL_T" data-toggle="pill" href="#v-pills-pmdl-t" role="tab" aria-controls="v-pills-home" aria-selected="true"><font face="Comic Sans MS">PMDL TABLE</font></a>
+      <a class="nav-link" id="PMDL_G" data-toggle="pill" href="#v-pills-pmdl-g" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">PMDL GRAPH</font></a>
+     <a class="nav-link" id="DCR_T" data-toggle="pill" href="#v-pills-dcr-t" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">DCR TABLE</font></a>
+       <a class="nav-link" id="DCR_G" data-toggle="pill" href="#v-pills-dcr-g" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">DCR GRAPH</font></a>
+        <a class="nav-link" id="TRANS_T" data-toggle="pill" href="#v-pills-trans-t" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">TRANSMITTAL TABLE</font></a>
+      <a class="nav-link" id="TRANS_G" data-toggle="pill" href="#v-pills-trans-g" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">TRANSMITTAL GRAPH</font></a>
+      <a class="nav-link" id="TRANS_TG" data-toggle="pill" href="#v-pills-trans-tg" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">TRANSMITTAL TYPE GRAPH</font></a>
+        <a class="nav-link" id="TRANS_TI" data-toggle="pill" href="#v-pills-trans-ti" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">TRANSMITTAL ISSUED GRAPH</font></a>
+       <a class="nav-link" id="PED" data-toggle="pill" href="#v-pills-ped" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">PENDING ERECTION DRAWING TO ISSUE</font></a>
+       <a class="nav-link" id="SAR_G" data-toggle="pill" href="#v-pills-sar-g" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">SAR GRAPH</font></a>
+            <a class="nav-link" id="SAR_T" data-toggle="pill" href="#v-pills-sar-t" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">SAR TABLE</font></a>
+         <a class="nav-link" id="IDMS_PG" data-toggle="pill" href="#v-pills-idms-pg" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">IDMS PREORDER GRAPH</font></a>
+         <a class="nav-link" id="IDMS_PT" data-toggle="pill" href="#v-pills-idms-pt" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">IDMS PREORDER TABLE</font></a>
+              <a class="nav-link" id="IDMS_OG" data-toggle="pill" href="#v-pills-idms-og" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">IDMS POST ORDER GRAPH</font></a>
+         <a class="nav-link" id="IDMS_OT" data-toggle="pill" href="#v-pills-idms-ot" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">IDMS POST ORDER TABLE</font></a>
+        <a class="nav-link" id="ELEMENT_G" data-toggle="pill" href="#v-pills-element-g" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">ELEMENT GRAPH</font></a>
+       <a class="nav-link" id="ELEMENT_T" data-toggle="pill" href="#v-pills-element-t" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">ELEMENT TABLE</font></a>
+          <a class="nav-link" id="HOLD_G" data-toggle="pill" href="#v-pills-hold-g" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">HOLD GRAPH</font></a>
+       <a class="nav-link" id="HOLD_T" data-toggle="pill" href="#v-pills-hold-t" role="tab" aria-controls="v-pills-profile" aria-selected="false"><font face="Comic Sans MS">UNDER HOLD GRAPH</font></a>
+        </div>
+  </div>
+ 
+
+
+  <div class="col-10">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-pmdl-t" role="tabpanel" aria-labelledby="PMDL_T">
+              <div class="container text-center" id="PMDLTABLE" runat="server" visible="false">
       <h5>Drawing and Document Progress Status As per PMDL - As Of Now</h5>
       <div class="row">
 
@@ -375,11 +407,9 @@
       </div>
 
     </div>
-     
-    
-    <%--Main Graph Row--%>
-    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:3px" id="line2" runat="server" visible="false"/>
-    <div class="row" id="C1" runat="server" visible="false">
+      </div>
+      <div class="tab-pane fade" id="v-pills-pmdl-g" role="tabpanel" aria-labelledby="PMDL_G">
+              <div class="row" id="C1" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-danger" id="PLMCHART" runat="server">
           <h5>Drawing Document Release Status </h5>
@@ -404,36 +434,9 @@
         </a>
       </div>
     </div>
-    
-     <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:3px" id="line3" runat="server" visible="false"/>
-    <div class="row" id="C2" runat="server" visible="false">
-      <div class="col-sm-12 text-center ">
-        <a class="chartDiv btn btn-outline-success" id="DCRCHART" runat="server">
-          <h5>DCR Status </h5>
-          <asp:Button ID="DCRDATA" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Sorry !!! No Data in ERPLN" Text="" Font-Bold="true" Visible="false"></asp:Button>
-          <asp:Chart
-            ID="Chart2"
-            Height="600px"
-            Width="1050px"
-            ClientIDMode="Predictable"
-            runat="server">
-            <Legends>
-              <asp:Legend Name="Legend2" Docking="Bottom" IsDockedInsideChartArea="true">
-                <Position Auto="True" />
-              </asp:Legend>
-            </Legends>
-            <ChartAreas>
-              <asp:ChartArea Name="ChartArea2" Area3DStyle-Enable3D="true" BackImageTransparentColor="WhiteSmoke" AlignmentOrientation="All" ShadowOffset="30">
-              </asp:ChartArea>
-            </ChartAreas>
-          </asp:Chart>
-          <div id="Div1" runat="server" class="container-fluid text-center"></div>
-        </a>
       </div>
-    </div>
-
-    
-    <div class="container text-center" id="DCRTABLE" runat="server" visible="false">
+      <div class="tab-pane fade" id="v-pills-dcr-t" role="tabpanel" aria-labelledby="DCR_T">
+         <div class="container text-center" id="DCRTABLE" runat="server" visible="false">
       <h5>DCR Progress Status Discipline Wise</h5>
       <div class="row">
 
@@ -698,39 +701,37 @@
         </div>
           </div>
        </div>
-     
-    
-    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:3px"  id="line4" runat="server" visible="false"/>
-    <div class="row" id="C3" runat="server" visible="false">
+         </div>
+      <div class="tab-pane fade" id="v-pills-dcr-g" role="tabpanel" aria-labelledby="DCR_G">
+        
+          <div class="row" id="C2" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
-        <a class="chartDiv btn btn-outline-primary" id="IDMSCHART" runat="server">
-          <h5>Drawing Document Transmittal Status </h5>
-          <asp:Button ID="DTRANMITTALDATA" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Sorry !!! No Data in ERPLN" Text="" Font-Bold="true" Visible="false"></asp:Button>
-
+        <a class="chartDiv btn btn-outline-success" id="DCRCHART" runat="server">
+          <h5>DCR Status </h5>
+          <asp:Button ID="DCRDATA" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Sorry !!! No Data in ERPLN" Text="" Font-Bold="true" Visible="false"></asp:Button>
           <asp:Chart
-            ID="Chart3"
+            ID="Chart2"
             Height="600px"
             Width="1050px"
             ClientIDMode="Predictable"
             runat="server">
             <Legends>
-              <asp:Legend Name="Legend3" Docking="Bottom" IsDockedInsideChartArea="true">
+              <asp:Legend Name="Legend2" Docking="Bottom" IsDockedInsideChartArea="true">
                 <Position Auto="True" />
               </asp:Legend>
             </Legends>
             <ChartAreas>
-              <asp:ChartArea Name="ChartArea3" Area3DStyle-Enable3D="true" BackImageTransparentColor="WhiteSmoke" AlignmentOrientation="All" ShadowOffset="30">
+              <asp:ChartArea Name="ChartArea2" Area3DStyle-Enable3D="true" BackImageTransparentColor="WhiteSmoke" AlignmentOrientation="All" ShadowOffset="30">
               </asp:ChartArea>
             </ChartAreas>
           </asp:Chart>
-          <div id="Div2" runat="server" class="container-fluid text-center"></div>
+          <div id="Div1" runat="server" class="container-fluid text-center"></div>
         </a>
       </div>
-
     </div>
-    
-   <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:1px" id="line5"  runat="server" visible="false"/>
-        <div class="container text-center" id="TRANSMITTALTABLE" runat="server" visible="false">
+         </div>
+       <div class="tab-pane fade" id="v-pills-trans-t" role="tabpanel" aria-labelledby="TRANS_T">
+           <div class="container text-center" id="TRANSMITTALTABLE" runat="server" visible="false">
       <h5>Transmittal Progress Status Discipline Wise</h5>
       <div class="row">
 
@@ -755,7 +756,7 @@
 
                 <div class="col-2">
                   <div class="text-dark">
-                    <b>Total Transmittal Count</b>
+                   <h6> <b>Total Transmittal Count</b></h6>
                   </div>
                 </div>
 
@@ -763,42 +764,42 @@
                    
                     <div class="col-1">
                       <div class="text-info">
-                        <b>Free</b>
+                      <h6>  <b>Free</b></h6>
                       </div>
                     </div>
                     <div class="col-1">
                       <div class="text-warning">
-                        <b>Under Approval</b>
+                      <h6>  <b>Under Approval</b></h6>
                       </div>
                     </div>
                     <div class="col-1">
                       <div class="text-danger">
-                        <b>Under Issue</b>
+                       <h6> <b>Under Issue</b></h6>
                       </div>
                     </div>
                     <div class="col-1">
                       <div class="text-success">
-                        <b>Issued</b>
+                       <h6> <b>Issued</b></h6>
                       </div>
                     </div>
                      <div class="col-1">
                       <div class="text-primary">
-                        <b>Partial Received</b>
+                       <h6> <b>Partial Received</b></h6>
                       </div>
                     </div>
                      <div class="col-1">
                       <div class="text-secondary">
-                        <b>Received</b>
+                      <h6>  <b>Received</b></h6>
                       </div>
                     </div>
                      <div class="col-1">
                       <div class="text-secondary">
-                        <b>Closed</b>
+                      <h6>  <b>Closed</b></h6>
                       </div>
                     </div>
                      <div class="col-1">
                       <div class="text-secondary">
-                        <b>Returned</b>
+                        <h6><b>Returned</b></h6>
                       </div>
                     </div>
 
@@ -1117,8 +1118,38 @@
           </div>
        
 </div>
-   <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:1px" id="line6"  runat="server" visible="false"/>
-    <div class="row" id="C4" runat="server" visible="false">
+             </div>
+       <div class="tab-pane fade" id="v-pills-trans-g" role="tabpanel" aria-labelledby="TRANS_G">
+          <div class="row" id="C3" runat="server" visible="false">
+      <div class="col-sm-12 text-center ">
+        <a class="chartDiv btn btn-outline-primary" id="IDMSCHART" runat="server">
+          <h5>Drawing Document Transmittal Status </h5>
+          <asp:Button ID="DTRANMITTALDATA" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Sorry !!! No Data in ERPLN" Text="" Font-Bold="true" Visible="false"></asp:Button>
+
+          <asp:Chart
+            ID="Chart3"
+            Height="600px"
+            Width="1050px"
+            ClientIDMode="Predictable"
+            runat="server">
+            <Legends>
+              <asp:Legend Name="Legend3" Docking="Bottom" IsDockedInsideChartArea="true">
+                <Position Auto="True" />
+              </asp:Legend>
+            </Legends>
+            <ChartAreas>
+              <asp:ChartArea Name="ChartArea3" Area3DStyle-Enable3D="true" BackImageTransparentColor="WhiteSmoke" AlignmentOrientation="All" ShadowOffset="30">
+              </asp:ChartArea>
+            </ChartAreas>
+          </asp:Chart>
+          <div id="Div2" runat="server" class="container-fluid text-center"></div>
+        </a>
+      </div>
+
+    </div>
+             </div>
+        <div class="tab-pane fade" id="v-pills-trans-tg" role="tabpanel" aria-labelledby="TRANS_TG">
+            <div class="row" id="C4" runat="server" visible="false">
       <div class="col-sm-3 text-center ">
         <a class="chartDiv btn btn-outline-warning" id="IDMSCCHART" runat="server">
           <h5>Customer </h5>
@@ -1218,8 +1249,9 @@
         </a>
       </div>
     </div>
-    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:1px" id="line7"  runat="server" visible="false"/>
-    <div class="row" id="C5" runat="server" visible="false">
+           </div>
+       <div class="tab-pane fade" id="v-pills-trans-ti" role="tabpanel" aria-labelledby="TRANS_TI">
+            <div class="row" id="C5" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-success" id="IDMSIICHART" runat="server">
           <h5>Transmittal Issued </h5>
@@ -1245,11 +1277,10 @@
         </a>
       </div>
     </div>
+         </div>
 
-    
-    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:3px"  id="line15"  runat="server" visible="false"/>
-    
-      <div class="row" id="C12" runat="server"  style="display:none;" clientidmode="Static">
+       <div class="tab-pane fade" id="v-pills-ped" role="tabpanel" aria-labelledby="PED">
+            <div class="row" id="C12" runat="server"  style="display:none;" clientidmode="Static">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-primary" id="PSTRANMITTALCHART" runat="server"  style="display:none;" clientidmode="Static">
           <h5>Pending Site Transmittal Status </h5>
@@ -1302,7 +1333,7 @@
 
                 <div class="col-2">
                   <div class="text-dark">
-                    <b>Total Drawing Count</b>
+                    <h6><b>Total Drawing Count</b></h6>
                   </div>
                 </div>
 
@@ -1310,7 +1341,7 @@
                    
                     <div class="col-2">
                       <div class="text-info">
-                        <b>Pending Drawing Count</b>
+                       <h6> <b>Pending Drawing Count</b></h6>
                       </div>
                     </div>
                    
@@ -1461,13 +1492,9 @@
           </div>
        
 </div>
-   
-
-    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:3px"  id="line8"  runat="server" visible="false"/>
-
-    
-   
-    <div class="row" id="C6" runat="server" visible="false">
+          </div>
+       <div class="tab-pane fade" id="v-pills-sar-g" role="tabpanel" aria-labelledby="SAR_G">
+             <div class="row" id="C6" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-primary" id="SARCHART" runat="server">
 
@@ -1493,9 +1520,9 @@
         </a>
       </div>
     </div>
-
-   
-            <div class="container text-center" id="SARTABLE" runat="server" visible="false">
+         </div>
+      <div class="tab-pane fade" id="v-pills-sar-t" role="tabpanel" aria-labelledby="SAR_T">
+                    <div class="container text-center" id="SARTABLE" runat="server" visible="false">
       <h5>SAR Progress Status Discipline Wise</h5>
       <div class="row">
 
@@ -1522,33 +1549,33 @@
                    <div class="row">
                      <div class="col-2">
                        <div class="text-dark">
-                         <b>Total SAR Count</b>
+                         <h6><b>Total SAR Count</b></h6>
                        </div>
                      </div>
 
                      <div class="col-2">
                        <div class="text-info">
-                         <b>Created</b>
+                        <h6> <b>Created</b></h6>
                        </div>
                      </div>
                      <div class="col-2">
                        <div class="text-warning">
-                         <b>Under Review</b>
+                        <h6> <b>Under Review</b></h6>
                        </div>
                      </div>
                      <div class="col-2">
                        <div class="text-danger">
-                         <b>Under Approval</b>
+                        <h6> <b>Under Approval</b></h6>
                        </div>
                      </div>
                      <div class="col-2">
                        <div class="text-success">
-                         <b>Approved</b>
+                         <h6><b>Approved</b></h6>
                        </div>
                      </div>
                      <div class="col-2">
                        <div class="text-secondary">
-                         <b>Not Applicable</b>
+                         <h6><b>Not Applicable</b></h6>
                        </div>
                      </div>
                         </div>
@@ -1829,9 +1856,9 @@
           </div>
        
 </div>
-
-    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:1px" id="line9"  runat="server" visible="false"/>
-    <div class="row" id="C7" runat="server" visible="false">
+         </div>
+       <div class="tab-pane fade" id="v-pills-idms-pg" role="tabpanel" aria-labelledby="IDMS_PT">
+             <div class="row" id="C7" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-primary" id="IDMSPCHART" runat="server">
           <h5>IDMS Pre-Order Status </h5>
@@ -1857,8 +1884,9 @@
         </a>
       </div>
     </div>
-   
-            <div class="container text-center" id="IDMSPTABLE" runat="server" visible="false">
+          </div>
+       <div class="tab-pane fade" id="v-pills-idms-pt" role="tabpanel" aria-labelledby="IDMS_PT">
+              <div class="container text-center" id="IDMSPTABLE" runat="server" visible="false">
       <h5>Pre Order Receipt Progress Status Discipline Wise</h5>
       <div class="row">
 
@@ -1883,7 +1911,7 @@
 
                 <div class="col-2">
                   <div class="text-secondary">
-                    <b>Total Receipt Count</b>
+                  <b>Total Receipt Count</b>
                   </div>
                 </div>
 
@@ -1891,7 +1919,7 @@
                    
                     <div class="col-1">
                       <div class="text-primary">
-                        <b>Submitted</b>
+                       <b>Submitted</b>
                       </div>
                     </div>
                     <div class="col-1">
@@ -1901,22 +1929,22 @@
                     </div>
                     <div class="col-1">
                       <div class="text-secondary">
-                        <b>Under Evaluation</b>
+                      <b>Under Evaluation</b>
                       </div>
                     </div>
                     <div class="col-1">
                       <div class="text-secondary">
-                        <b>Comments Submitted</b>
+                       <b>Comments Submitted</b>
                       </div>
                     </div>
                      <div class="col-1">
                       <div class="text-secondary">
-                        <b>Technically Cleared</b>
+                       <b>Technically Cleared</b>
                       </div>
                     </div>
                      <div class="col-1">
                       <div class="text-secondary">
-                        <b>Transmittal Issued</b>
+                       <b>Transmittal Issued</b>
                       </div>
                     </div>
                      <div class="col-1">
@@ -1926,7 +1954,7 @@
                     </div>
                      <div class="col-1">
                       <div class="text-secondary">
-                        <b>Closed</b>
+                       <b>Closed</b>
                       </div>
                     </div>
 
@@ -2245,9 +2273,9 @@
           </div>
        
 </div>
-
-    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:3px" id="line10" runat="server" visible="false"/>
-    <div class="row" id="C8" runat="server" visible="false">
+          </div>
+      <div class="tab-pane fade" id="v-pills-idms-og" role="tabpanel" aria-labelledby="IDMS_OT">
+          <div class="row" id="C8" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-dark" id="IDMSOCHART" runat="server">
           <h5>IDMS Post-Order Status </h5>
@@ -2273,8 +2301,9 @@
         </a>
       </div>
     </div>
-    
-                <div class="container text-center" id="IDMSOTABLE" runat="server" visible="false">
+          </div>
+       <div class="tab-pane fade" id="v-pills-idms-ot" role="tabpanel" aria-labelledby="IDMS_OT">
+             <div class="container text-center" id="IDMSOTABLE" runat="server" visible="false">
       <h5>Post Order Receipt Progress Status Discipline Wise</h5>
       <div class="row">
 
@@ -2662,9 +2691,9 @@
           </div>
        
 </div>
-
-    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:3px" id="line11" runat="server" visible="false"/>
-    <div class="row" id="C9" runat="server" visible="false">
+          </div>
+       <div class="tab-pane fade" id="v-pills-element-g" role="tabpanel" aria-labelledby="ELEMENT_G">
+           <div class="row" id="C9" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-warning" id="ELEMENTCHART" runat="server">
           <h5>Element Completion Status </h5>
@@ -2690,8 +2719,9 @@
         </a>
       </div>
     </div>
-   
-                <div class="container text-center" id="ELEMENTTABLE" runat="server" visible="false">
+             </div>
+        <div class="tab-pane fade" id="v-pills-element-t" role="tabpanel" aria-labelledby="ELEMENT_T">
+                  <div class="container text-center" id="ELEMENTTABLE" runat="server" visible="false">
       <h5>Active Element Progress Status Department Wise</h5>
       <div class="row">
 
@@ -2718,13 +2748,13 @@
                    <div class="row">
                      <div class="col-6">
                        <div class="text-secondary">
-                         <b>Total Active Element Count</b>
+                         <h6> <b>Total Active Element Count</b></h6>
                        </div>
                      </div>
 
                      <div class="col-6">
                        <div class="text-primary">
-                         <b>Free</b>
+                         <h6> <b>Free</b></h6>
                        </div>
                      </div>
                      </div>
@@ -2735,12 +2765,12 @@
 
                      <div class="col-6">
                        <div class="text-warning">
-                         <b>Partial</b>
+                         <h6> <b>Partial</b></h6>
                        </div>
                      </div>
                      <div class="col-6">
                        <div class="text-secondary">
-                         <b>Completed</b>
+                        <h6>  <b>Completed</b></h6>
                        </div>
                      </div>
                      
@@ -3009,9 +3039,9 @@
           </div>
        
 </div>
-
-     <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:3px" id="line12" runat="server" visible="false"/>
-    <div class="row" id="C11" runat="server" visible="false">
+             </div>
+      <div class="tab-pane fade" id="v-pills-hold-g" role="tabpanel" aria-labelledby="HOLD_G">
+            <div class="row" id="C11" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-warning" id="HOLDCHART1" runat="server">
           <h5>HOLD STATUS </h5>
@@ -3037,10 +3067,9 @@
         </a>
       </div>
     </div>
-   
-   <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:1px" id="line13"  runat="server" visible="false"/>
-    
-           <div class="row" id="C10" runat="server" visible="false">
+         </div>
+      <div class="tab-pane fade" id="v-pills-hold-t" role="tabpanel" aria-labelledby="HOLD_T">
+          <div class="row" id="C10" runat="server" visible="false">
       <div class="col-sm-12 text-center ">
         <a class="chartDiv btn btn-outline-warning" id="HOLDCHART" runat="server">
           <h5>UNDER HOLD STATUS </h5>
@@ -3066,7 +3095,16 @@
         </a>
       </div>
     </div>
-    <hr style="color:yellowgreen;background-color:darkslategrey;width:100%;height:1px" id="line14"  runat="server" visible="false"/>
-
+         </div>
+    </div>
   </div>
+      
+
+</div>
+
+
+    
+    <%--Main Graph Row--%>
+   
+   
 </asp:Content>

@@ -860,20 +860,21 @@ Partial Class GF_ProjectDB
     C11.Visible = True
     ' C12.Visible = True
     line1.Visible = True
-    line2.Visible = True
-    line3.Visible = True
-    line4.Visible = True
-    line5.Visible = True
-    line6.Visible = True
-    line7.Visible = True
-    line8.Visible = True
-    line9.Visible = True
-    line10.Visible = True
-    line11.Visible = True
-    line12.Visible = True
-    line13.Visible = True
-    line14.Visible = True
-    line15.Visible = True
+    navmenu.Visible = True
+    'line2.Visible = True
+    'line3.Visible = True
+    'line4.Visible = True
+    'line5.Visible = True
+    'line6.Visible = True
+    'line7.Visible = True
+    'line8.Visible = True
+    'line9.Visible = True
+    'line10.Visible = True
+    'line11.Visible = True
+    'line12.Visible = True
+    'line13.Visible = True
+    'line14.Visible = True
+    'line15.Visible = True
 
 
 
