@@ -12,18 +12,18 @@
 
     </div>--%>
     
-    <div class="row mt-3">
+    <div class="row mt-3 ml-1">
 
       
-      <div class="col-4  mb-2 ml-3">
+      <div class="col-3">
         <asp:UpdatePanel ID="UPNLctPActivity" runat="server">
           <ContentTemplate>
             <div class="form-group">
 
-              <div class="input-group mb-3">
+              <div class="input-group">
                <%-- <span class=" btn btn-sm btn-dark" style="width: 78px; text-align: center; cursor: pointer" title="Enter Project ID:" onclick="openNav()"><b>Project:</b></span>--%>
 
-                <a href="#demo" class="btn btn-light btn-outline-dark" style="width: 110px; text-align: center; cursor: pointer" data-toggle="collapse"><b>Project ID</b></a>
+                <a href="#demo" class="btn btn-light btn-outline-dark" style="width: 120px; text-align: center; cursor: pointer"  data-toggle="collapse"><b>Project ID</b></a>
   <div id="demo" class="collapse">
     Enter Project ID & Click to 'SHOW' button. This will allow system to Generate Project DashBoard Based upon current progress in BAAN ERPLN.
     Click again to Hide this Information
@@ -55,9 +55,9 @@
           </Triggers>
         </asp:UpdatePanel>
       </div>
-      <div class="col-7 mt-1">
-        <div class="container mt-0" id="PDetails" runat="server" visible="false">
-          <div class="container  text-center my-0">
+      <div class="col-9">
+        <div class="container text-center" id="PDetails" runat="server" visible="false">
+          <div class="container  text-center">
             <asp:Button ID="btn_projectname" Text="" runat="server" CssClass="btn-warning btn-sm" Font-Bold="true" Font-Names="Comic Sans MS" ToolTip=""></asp:Button>
             <hr style="color:yellowgreen;background-color:orange;width:100%;height:1px" id="line1" runat="server" visible="false" />
           </div>

@@ -53,7 +53,37 @@ Partial Class GF_ProjectDB
       btn_projectname.Text = x.ProjectID & " - " & x.ProjectDesc
       btn_projectname.BackColor = Drawing.Color.Orange
     End If
+    btn_projectname.ToolTip = "Client Name: " & x.TXT_CLIENT & Environment.NewLine &
+                              "Consultant Name: " & x.TXT_CONSULTANT & Environment.NewLine &
+                              "Service: " & x.TXT_SERVICE & Environment.NewLine &
+                              "Year: " & x.INT_YEAR & Environment.NewLine &
+                              "IWT: " & x.INT_IWT & Environment.NewLine &
+                              "Company: " & x.TXT_COMPANY & Environment.NewLine &
+                              "Number Of Boiler: " & x.TXT_NOOFBOILER & Environment.NewLine &
+                              "Zero Date: " & x.DATETIME_ZERODATE & Environment.NewLine &
+                              "Project Type: " & x.TXT_PROJECTTYPE & Environment.NewLine
 
+
+
+
+    '[TXT_PROJECTTYPE]
+    '[INT_CAPACITY]
+    '[MSSV_OUT_PR]
+    '[INT_DESIGNPRESSURE]
+    '[INT_HYDROPRESSURE]
+    '[INT_DESIGNTEMP]
+    '[TXT_CODEOFCONST]
+    '[INT_HEATSAFFB]
+    '[INT_HEATSATOTAL]
+    '[TXT_USERNAME]
+    '[TXT_CREATION_TIME]
+    '[TXT_UPDATE_USERNAME]
+    '[TXT_UPDATE_TIME]
+    '[INT_FWTTEMP]
+    '[TXT_SHOP_ID]
+    '[DBL_SHEET_TITLEBLOCK_HEIGHT]
+    '[CODE_CONSTRUCTION]
+    '[CODE_STAMP]
 
     btn_Process_Total_Count.Text = x.Process_Total_Count
     btn_Mechanical_Total_Count.Text = x.Mechanical_Total_Count

@@ -1,4 +1,4 @@
-<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="GF_Discipline.aspx.vb" Inherits="GF_Discipline" Title="Discipline" %>
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="GF_Discipline.aspx.vb" Inherits="GF_Discipline" Title="Discipline DashBoard" %>
 
 <asp:Content ID="CPHtaApprovalWFTypes" ContentPlaceHolderID="cph1" runat="Server">
 
@@ -521,6 +521,175 @@
             </div>
            </div>
       
+        <%--  PreOrder Receipt--%>
+    <%--  <div class="container text-center" id="DIDMSPTABLE" runat="server" visible="false">
+      <h5>Pre Order Receipt Progress Status Discipline Wise</h5>
+      <div class="row">
+
+        <div class="col-12">
+          <asp:Button ID="IDMSPDATAI" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Sorry !!! No Data in ERPLN" Text="" Font-Bold="true" Visible="false"></asp:Button>
+          </div>
+         </div>
+        
+        <div class="container text-center" id="DIDMSPTABLE1" runat="server" visible="false">
+          <div class="border border-dark btn-outline-light">
+            <div class="container-fluid">
+
+              <div class="row">
+                 
+                <div class="col-2">
+                  <div class="text-secondary">
+                    <h6><b>Discipline</b></h6>
+                  </div>
+                </div>
+
+
+
+                <div class="col-2">
+                  <div class="text-secondary">
+                  <b>Total Receipt Count</b>
+                  </div>
+                </div>
+
+             
+                   
+                    <div class="col-1">
+                      <div class="text-primary">
+                       <b>Submitted</b>
+                      </div>
+                    </div>
+                    <div class="col-1">
+                      <div class="text-warning">
+                        <b>Document Linked</b>
+                      </div>
+                    </div>
+                    <div class="col-1">
+                      <div class="text-secondary">
+                      <b>Under Evaluation</b>
+                      </div>
+                    </div>
+                    <div class="col-1">
+                      <div class="text-secondary">
+                       <b>Comments Submitted</b>
+                      </div>
+                    </div>
+                     <div class="col-1">
+                      <div class="text-secondary">
+                       <b>Technically Cleared</b>
+                      </div>
+                    </div>
+                     <div class="col-1">
+                      <div class="text-secondary">
+                       <b>Transmittal Issued</b>
+                      </div>
+                    </div>
+                     <div class="col-1">
+                      <div class="text-secondary">
+                        <b>Superceded</b>
+                      </div>
+                    </div>
+                     <div class="col-1">
+                      <div class="text-secondary">
+                       <b>Closed</b>
+                      </div>
+                    </div>
+
+
+
+
+
+
+            
+                
+              
+
+              </div>
+             
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-2">
+                  <h6><span class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"><font face="Comic Sans MS">Process </font></span></h6>
+                </div>
+                
+
+                   <div class="col-2">
+                      <asp:Button ID="btn_Process_IDMSP_Total_Count" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Process - Pre Order Receipt - Total Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-1">
+                      <asp:Button ID="btn_Process_IDMSP_Submitted" runat="server" CssClass="btn btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="Process - Pre Order Receipt - Submitted" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-1">
+                      <asp:Button ID="btn_Process_IDMSP_Document_linked" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Process - Pre Order Receipt - Document Linked" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-1">
+                      <asp:Button ID="btn_Process_IDMSP_Under_Evaluation" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Process - Pre Order Receipt - Under Evaluation" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-1">
+                      <asp:Button ID="btn_Process_IDMSP_Comments_Submitted" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Process - Pre Order Receipt - Comments Submitted" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-1">
+                      <asp:Button ID="btn_Process_IDMSP_Technically_Cleared" runat="server" CssClass="btn btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="Process - Pre Order Receipt - Technically Cleared" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-1">
+                      <asp:Button ID="btn_Process_IDMSP_Transmittal_Issued" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Process - Pre Order Receipt - Transmittal Issued" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-1">
+                      <asp:Button ID="btn_Process_IDMSP_Superceded" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Process - Pre Order Receipt - Superceded" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-1">
+                      <asp:Button ID="btn_Process_IDMSP_Closed" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Process - Pre Order Receipt - Closed" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                   
+
+                
+              </div>
+            </div>
+
+
+
+           <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2">
+                  <h6><span class="btn btn-info btn-sm btn-block text-lg-left font-weight-bold"><font face="Comic Sans MS">Total </font></span></h6>
+                </div>
+               <div class="col-2">
+                      <asp:Button ID="btn_Total_IDMSP_Total_Count" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Total - Pre Order Receipt - Total Count" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-1">
+                      <asp:Button ID="btn_Total_IDMSP_Submitted" runat="server" CssClass="btn btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="Total - Pre Order Receipt - Submitted" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-1">
+                      <asp:Button ID="btn_Total_IDMSP_Document_linked" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Total - Pre Order Receipt - Document Linked" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-1">
+                      <asp:Button ID="btn_Total_IDMSP_Under_Evaluation" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Total - Pre Order Receipt - Under Evaluation" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-1">
+                      <asp:Button ID="btn_Total_IDMSP_Comments_Submitted" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Total - Pre Order Receipt - Comments Submitted" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-1">
+                      <asp:Button ID="btn_Total_IDMSP_Technically_Cleared" runat="server" CssClass="btn btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="Total - Pre Order Receipt - Technically Cleared" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-1">
+                      <asp:Button ID="btn_Total_IDMSP_Transmittal_Issued" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Total - Pre Order Receipt - Transmittal Issued" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-1">
+                      <asp:Button ID="btn_Total_IDMSP_Superceded" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Total - Pre Order Receipt - Superceded" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+                    <div class="col-1">
+                      <asp:Button ID="btn_Total_IDMSP_Closed" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Total - Pre Order Receipt - Closed" Text="" Font-Bold="true"></asp:Button>
+                    </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+          </div>
+       
+</div>--%>
+
           <%-- ELEMENT TABLE--%>
           
           <div class=" container-fluid" id="DELEMENTTABLE" runat="server" visible="false">

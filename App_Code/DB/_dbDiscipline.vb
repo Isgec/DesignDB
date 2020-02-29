@@ -84,7 +84,7 @@ Namespace SIS.DD
 
     Public Shared Function GetDPMDLDB(ByVal DivisionID As String, ByVal DisciplineID As String, ByVal MonthId As Integer, ByVal YearId As String) As DBDiscipline
       If DivisionID = "" Then Return Nothing
-
+      If DisciplineID = "CI" Then DisciplineID = "C&I"
 
       Select Case DivisionID
         Case "BOILER"
@@ -204,7 +204,7 @@ Namespace SIS.DD
     Public Shared Function GetDSARDB(ByVal DivisionID As String, ByVal DisciplineID As String, ByVal MonthId As Integer, ByVal YearId As String) As DBDiscipline
       Dim PrjID As String = ""
       If DivisionID = "" Then Return Nothing
-
+      If DisciplineID = "CI" Then DisciplineID = "C&I"
       Select Case DivisionID
         Case "BOILER"
           'DivisionID = "AFBC','BLR_SPR','CFBC','HRSG','OILGAS','TG','WHRB','IPAC"
@@ -360,13 +360,14 @@ Namespace SIS.DD
         End Using
 
       End Using
+
       Return mRet
     End Function
 
     Public Shared Function GetDELEMENTDB(ByVal DivisionID As String, ByVal DisciplineID As String, ByVal MonthId As Integer, ByVal YearId As String) As DBDiscipline
       Dim PrjID As String = ""
       If DivisionID = "" Then Return Nothing
-
+      If DisciplineID = "CI" Then DisciplineID = "C&I"
       Select Case DivisionID
         Case "BOILER"
           'DivisionID = "AFBC','BLR_SPR','CFBC','HRSG','OILGAS','TG','WHRB','IPAC"

@@ -79,7 +79,7 @@ Partial Class GF_Discipline
       Case "ELECTRICAL"
         DisciplineID = "ELE"
       Case "INSTRUMENTATION"
-        DisciplineID = "C&I"
+        DisciplineID = "CI"
       Case "CIVIL"
         DisciplineID = "CVL"
       Case "MATERIAL HANDLING"
@@ -178,10 +178,6 @@ Partial Class GF_Discipline
   'End Sub
 
 
-  Protected Sub F_MonthID_SelectedIndexChanged(sender As Object, e As EventArgs)
-
-
-  End Sub
 
 
   Private Sub btn_ToRelease_CurrentM_Click(sender As Object, e As EventArgs) Handles btn_ToRelease_CurrentM.Click

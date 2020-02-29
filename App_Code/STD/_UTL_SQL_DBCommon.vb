@@ -11,6 +11,7 @@ Namespace SIS.SYS.SQLDatabase
     Private Shared ReadOnly _conString As String = ""
     Private Shared ReadOnly _banTAString As String = "Data Source=192.9.200.129;Initial Catalog=inforerpdb;Integrated Security=False;User Instance=False;Persist Security Info=True;User ID=lalit;Password=scorpions"
     'Private Shared ReadOnly _banString As String = "Data Source=192.9.200.44;Initial Catalog=inforerpdb;Integrated Security=False;User Instance=False;Persist Security Info=True;User ID=lalit;Password=scorpions"
+    Private Shared ReadOnly _autoString As String = "Data Source=192.168.25.4;Initial Catalog=IHELDesign;Integrated Security=False;User Instance=False;Persist Security Info=True;User ID=Sa;Password=isgec12345"
     Private Shared ReadOnly _banString As String = "Data Source=192.9.200.129;Initial Catalog=inforerpdb;Integrated Security=False;User Instance=False;Persist Security Info=True;User ID=lalit;Password=scorpions"
     Private Shared Property hostname As String = ""
     Public Shared Function GetWebPayConnectionString() As String
@@ -18,6 +19,9 @@ Namespace SIS.SYS.SQLDatabase
     End Function
     Public Shared Function GetBaaNConnectionString() As String
       Return _banString
+    End Function
+    Public Shared Function GetAutomationConnectionString() As String
+      Return _autoString
     End Function
     Public Shared Function GetBaaNTAConnectionString() As String
       Return _banTAString

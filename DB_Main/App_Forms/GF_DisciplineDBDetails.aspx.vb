@@ -1,8 +1,8 @@
 Partial Class GF_DisciplineDBDetails
   Inherits System.Web.UI.Page
 
-  Private Sub ShowDPLMData(ByVal a As String, ByVal b As String, ByVal c As String, ByVal d As String, ByVal e As String)
-    Dim Data As List(Of SIS.DD.DisciplineDetail) = SIS.DD.DisciplineDetail.GetDPLMData(a, b, c, d, e)
+  Private Sub ShowDPLMData(ByVal det As String, ByVal DivisionID As String, ByVal DisciplineID As String, ByVal YearID As String, ByVal MonthID As String)
+    Dim Data As List(Of SIS.DD.DisciplineDetail) = SIS.DD.DisciplineDetail.GetDPLMData(det, DivisionID, DisciplineID, YearID, MonthID)
     Dim tbl As New Table
 
 
@@ -184,8 +184,8 @@ Partial Class GF_DisciplineDBDetails
 
   End Sub
 
-  Private Sub ShowDSARData(ByVal a As String, ByVal b As String, ByVal c As String, ByVal d As String, ByVal e As String)
-    Dim Data As List(Of SIS.DD.DisciplineDetail) = SIS.DD.DisciplineDetail.GetDSARData(a, b, c, d, e)
+  Private Sub ShowDSARData(ByVal det As String, ByVal DivisionID As String, ByVal DisciplineID As String, ByVal YearID As String, ByVal MonthID As String)
+    Dim Data As List(Of SIS.DD.DisciplineDetail) = SIS.DD.DisciplineDetail.GetDSARData(det, DivisionID, DisciplineID, YearID, MonthID)
     Dim tbl As New Table
 
 
@@ -419,8 +419,8 @@ Partial Class GF_DisciplineDBDetails
 
   End Sub
 
-  Private Sub ShowDELEMENTData(ByVal a As String, ByVal b As String, ByVal c As String, ByVal d As String, ByVal e As String)
-    Dim Data As List(Of SIS.DD.DisciplineDetail) = SIS.DD.DisciplineDetail.GetDELEMENTData(a, b, c, d, e)
+  Private Sub ShowDELEMENTData(ByVal det As String, ByVal DivisionID As String, ByVal DisciplineID As String, ByVal YearID As String, ByVal MonthID As String)
+    Dim Data As List(Of SIS.DD.DisciplineDetail) = SIS.DD.DisciplineDetail.GetDELEMENTData(det, DivisionID, DisciplineID, YearID, MonthID)
     Dim tbl As New Table
 
     With tbl

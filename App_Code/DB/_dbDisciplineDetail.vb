@@ -122,11 +122,14 @@ Namespace SIS.DD
 
       End Try
 
+
+
       If DivisionID = "" Then Return Nothing
       If DisciplineID = "" Then Return Nothing
+      If DisciplineID = "CI" Then DisciplineID = "C&I"
       If YearID = "" Then Return Nothing
       If MonthID = "" Then Return Nothing
-
+      Dim mRet As New List(Of SIS.DD.DisciplineDetail)
       Select Case DivisionID
         Case "BOILER"
           DivisionID = "AFBC','BLR_SPR','CFBC','HRSG','OILGAS','TG','WHRB','IPAC"
@@ -138,7 +141,34 @@ Namespace SIS.DD
           DivisionID = "ESP"
       End Select
 
-      Dim mRet As New List(Of SIS.DD.DisciplineDetail)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       Dim Sql As String = ""
       Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetBaaNConnectionString() & ";Connection Timeout=50000")
@@ -220,9 +250,10 @@ Namespace SIS.DD
 
       If DivisionID = "" Then Return Nothing
       If DisciplineID = "" Then Return Nothing
+      If DisciplineID = "CI" Then DisciplineID = "C&I"
       If YearID = "" Then Return Nothing
       If MonthID = "" Then Return Nothing
-
+      Dim mRet As New List(Of SIS.DD.DisciplineDetail)
       Select Case DivisionID
         Case "BOILER"
           'DivisionID = "AFBC','BLR_SPR','CFBC','HRSG','OILGAS','TG','WHRB','IPAC"
@@ -263,7 +294,7 @@ Namespace SIS.DD
 
       End Select
 
-      Dim mRet As New List(Of SIS.DD.DisciplineDetail)
+
 
       Dim Sql As String = ""
       Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetBaaNConnectionString() & ";Connection Timeout=50000")
@@ -761,7 +792,8 @@ Namespace SIS.DD
     Public Shared Function GetDELEMENTData(ByVal det As String, ByVal DivisionID As String, ByVal DisciplineID As String, ByVal YearID As String, ByVal MonthID As String) As List(Of DisciplineDetail)
       Dim PrjID As String = ""
       If DivisionID = "" Then Return Nothing
-
+      If DisciplineID = "CI" Then DisciplineID = "C&I"
+      Dim mRet As New List(Of SIS.DD.DisciplineDetail)
       Select Case DivisionID
         Case "BOILER"
           'DivisionID = "AFBC','BLR_SPR','CFBC','HRSG','OILGAS','TG','WHRB','IPAC"
@@ -804,7 +836,7 @@ Namespace SIS.DD
 
       End Select
 
-      Dim mRet As New List(Of SIS.DD.DisciplineDetail)
+
 
       Dim Sql As String = ""
       Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetBaaNConnectionString() & ";Connection Timeout=50000")

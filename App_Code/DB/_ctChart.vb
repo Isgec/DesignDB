@@ -53,7 +53,20 @@ Namespace SIS.CT
     Public Property MaximumX As DateTime = Nothing
     Public Property ProjectID As String = ""
 
-    Public Property ProjectDesc As String = ""
+
+    Public Property TXT_CLIENT As String = " "
+    Public Property TXT_CONSULTANT As String = " "
+    Public Property TXT_SERVICE As String = " "
+    Public Property INT_YEAR As String = " "
+    Public Property INT_IWT As String = " "
+    Public Property TXT_COMPANY As String = " "
+    Public Property TXT_NOOFBOILER As String = " "
+    Public Property DATETIME_ZERODATE As String = " "
+    Public Property TXT_PROJECTTYPE As String = " "
+    Public Property INT_CAPACITY As String = " "
+
+    Public Property Projectinfo As String = ""
+    Public Property Projectdesc As String = ""
     Public Property ActivityType As String = ""
     Public Property PlannedX As String()
     Public Property PlannedY As Integer()
@@ -1959,6 +1972,76 @@ Namespace SIS.CT
       sdate = sdate.Substring(6, 4) & "-" & sdate.Substring(3, 2) & "-" & sdate.Substring(0, 2)
 
       Dim Sql As String = ""
+      Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetAutomationConnectionString())
+        Con.Open()
+        Sql = "select ISNULL(TXT_CLIENT,'-') FROM [IHELDesign].[dbo].[PROJECT_NEW] where TXT_PROJECT_ID in ('" & ProjectID & "') "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.TXT_CLIENT = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "select ISNULL(TXT_CONSULTANT,'-') FROM [IHELDesign].[dbo].[PROJECT_NEW] where TXT_PROJECT_ID in ('" & ProjectID & "') "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.TXT_CONSULTANT = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "select ISNULL(TXT_SERVICE,'-') FROM [IHELDesign].[dbo].[PROJECT_NEW] where TXT_PROJECT_ID in ('" & ProjectID & "') "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.TXT_SERVICE = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "select ISNULL(INT_YEAR,'-') FROM [IHELDesign].[dbo].[PROJECT_NEW] where TXT_PROJECT_ID in ('" & ProjectID & "') "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.INT_YEAR = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "select ISNULL(INT_IWT,'-') FROM [IHELDesign].[dbo].[PROJECT_NEW] where TXT_PROJECT_ID in ('" & ProjectID & "') "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          If (mRet.INT_IWT = " ") Then mRet.INT_IWT = "0"
+          mRet.INT_IWT = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "select ISNULL(TXT_COMPANY,'-') FROM [IHELDesign].[dbo].[PROJECT_NEW] where TXT_PROJECT_ID in ('" & ProjectID & "') "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.TXT_COMPANY = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "select ISNULL(TXT_NOOFBOILER,'-') FROM [IHELDesign].[dbo].[PROJECT_NEW] where TXT_PROJECT_ID in ('" & ProjectID & "') "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.TXT_NOOFBOILER = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "select ISNULL(DATETIME_ZERODATE,'-') FROM [IHELDesign].[dbo].[PROJECT_NEW] where TXT_PROJECT_ID in ('" & ProjectID & "') "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.DATETIME_ZERODATE = Cmd.ExecuteScalar
+        End Using
+
+        Sql = "select ISNULL(TXT_PROJECTTYPE,'-') FROM [IHELDesign].[dbo].[PROJECT_NEW] where TXT_PROJECT_ID in ('" & ProjectID & "') "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.TXT_PROJECTTYPE = Cmd.ExecuteScalar
+        End Using
+
+
+
+      End Using
+
       Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetBaaNConnectionString())
         Con.Open()
         ' Sql = "select count(*) from tdmisg001200 where t_stat =1 and t_wfst =3 and t_rusr='" & UserID & "'"
