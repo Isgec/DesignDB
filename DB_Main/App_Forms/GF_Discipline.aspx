@@ -282,36 +282,36 @@
                       <div class="row">
 
                          <div class="col">
-                          <div class="text-warning">
-                           <font face="Comic Sans MS">To Release in Current Month </font>
+                          <div class="text-dark">
+                           <font face="Comic Sans MS"><b>To Release in Current Month </b></font>
                           </div>
                         </div>
 
                         <div class="col">
                           <div class="text-warning">
-                           <font face="Comic Sans MS">Total Due for Release Current Month = A </font>
+                           <font face="Comic Sans MS"><b>Total Due for Release Current Month = A </b></font>
                           </div>
                         </div>
                         <div class="col">
                           <div class="text-danger">
-                             <font face="Comic Sans MS">Backlog for Release (Previous months) = B </font>
+                             <font face="Comic Sans MS"><b>Backlog for Release (Previous months) = B </b></font>
                           </div>
                         </div>
                         <div class="col">
                           <div class="text-danger">
 
-                            <font face="Comic Sans MS">All Due For Release  C = (A + B)</font>
+                            <font face="Comic Sans MS"><b> Due For Release  C = (A + B)</b></font>
                           </div>
                         </div>
                         <div class="col">
-                          <div class="text-warning">
-                           <font face="Comic Sans MS">All Due Till Today For Release</font>
+                          <div class="text-danger">
+                           <font face="Comic Sans MS"><b> Due Till Today For Release</b></font>
                           </div>
                         </div>
 
                         <div class="col">
-                          <div class="text-secondary">
-                          <font face="Comic Sans MS">Due for Today Only To Release</font>
+                          <div class="text-warning">
+                          <font face="Comic Sans MS"><b>Due for Today Only To Release</b></font>
                           </div>
                         </div>
 
@@ -342,26 +342,26 @@
                       <div class="row">
 
                         <div class="col">
-                          <asp:Button ID="btn_ToRelease_CurrentM" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="To Release in Current Month " Text="" Font-Bold="true"></asp:Button>
+                          <asp:Button ID="btn_ToRelease_CurrentM" runat="server" CssClass="btn-sm btn-block font-weight-bold" ToolTip="To Release in Current Month " Text="" Font-Bold="true"></asp:Button>
                         </div>
 
                         <div class="col">
-                          <asp:Button ID="btn_DueforRelease_CurrentM_A" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Total Due for Release Current Month -A" Text="" Font-Bold="true"></asp:Button>
+                          <asp:Button ID="btn_DueforRelease_CurrentM_A" runat="server" CssClass="btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Total Due for Release Current Month -A" Text="" Font-Bold="true"></asp:Button>
                         </div>
                         <div class="col">
-                          <asp:Button ID="btn_DueforRelease_PreviousM_B" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Total Due for Release Previous Month -B" Text="" Font-Bold="true"></asp:Button>
+                          <asp:Button ID="btn_DueforRelease_PreviousM_B" runat="server" CssClass="btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Total Due for Release Previous Month -B" Text="" Font-Bold="true"></asp:Button>
                         </div>
                         <div class="col">
-                          <asp:Button ID="btn_DueforRelease_BothM_C" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Total Due For Release - C = A + B" Text="" Font-Bold="true"></asp:Button>
-                        </div>
-
-                        <div class="col">
-                          <asp:Button ID="btn_AllDueTillToday_Release" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="All Due Till Today For Release" Text="" Font-Bold="true"></asp:Button>
-
+                          <asp:Button ID="btn_DueforRelease_BothM_C" runat="server" CssClass="btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Total Due For Release - C = A + B" Text="" Font-Bold="true"></asp:Button>
                         </div>
 
                         <div class="col">
-                          <asp:Button ID="btn_DueOnlyToday_Release" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Due for Today Only To Release" Text="" Font-Bold="true"></asp:Button>
+                          <asp:Button ID="btn_AllDueTillToday_Release" runat="server" CssClass="btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="All Due Till Today For Release" Text="" Font-Bold="true"></asp:Button>
+
+                        </div>
+
+                        <div class="col">
+                          <asp:Button ID="btn_DueOnlyToday_Release" runat="server" CssClass="btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Due for Today Only To Release" Text="" Font-Bold="true"></asp:Button>
                         </div>
                         <div class="col">
                           <asp:Button ID="btn_Ontime_Release_CurrentM" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="Ontime Released in This Month" Text="" Font-Bold="true"></asp:Button>
@@ -406,7 +406,7 @@
                     <div class="row">
                       <div class="col">
                         <div class="text-dark">
-                          <font face="Comic Sans MS">Total SAR Count</font>
+                          <font face="Comic Sans MS"><b>Total SAR Count</b></font>
                         </div>
                       </div>
 
@@ -417,17 +417,17 @@
                       </div>
                       <div class="col">
                         <div class="text-warning">
-                          <font face="Comic Sans MS">Under Review</font>
+                          <font face="Comic Sans MS"><b>Under Review</b></font>
                         </div>
                       </div>
                       <div class="col">
                         <div class="text-warning">
-                          <font face="Comic Sans MS">Under Approval</font>
+                          <font face="Comic Sans MS"><b>Under Approval</b></font>
                         </div>
                       </div>
                       <div class="col">
                         <div class="text-danger">
-                          <font face="Comic Sans MS">Pending</font>
+                          <font face="Comic Sans MS"><b>Pending</b></font>
                         </div>
                       </div>
                       <div class="col">
@@ -454,19 +454,19 @@
                   <div class="col-9">
                     <div class="row">
                       <div class="col">
-                        <asp:Button ID="btn_SAR_TotalCount" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Total SAR Count" Text="" Font-Bold="true"></asp:Button>
+                        <asp:Button ID="btn_SAR_TotalCount" runat="server" CssClass="btn-sm btn-block font-weight-bold" ToolTip="Total SAR Count" Text="" Font-Bold="true"></asp:Button>
                       </div>
                       <div class="col">
                         <asp:Button ID="btn_SAR_UnderCreation" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Creation" Text="" Font-Bold="true"></asp:Button>
                       </div>
                       <div class="col">
-                        <asp:Button ID="btn_SAR_UnderReview" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Review" Text="" Font-Bold="true"></asp:Button>
+                        <asp:Button ID="btn_SAR_UnderReview" runat="server" CssClass="btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Review" Text="" Font-Bold="true"></asp:Button>
                       </div>
                       <div class="col">
-                        <asp:Button ID="btn_SAR_UnderApproval" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Approval" Text="" Font-Bold="true"></asp:Button>
+                        <asp:Button ID="btn_SAR_UnderApproval" runat="server" CssClass="btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Approval" Text="" Font-Bold="true"></asp:Button>
                       </div>
                       <div class="col">
-                        <asp:Button ID="btn_SAR_Pending" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="SAR - Pending" Text="" Font-Bold="true"></asp:Button>
+                        <asp:Button ID="btn_SAR_Pending" runat="server" CssClass="btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="SAR - Pending" Text="" Font-Bold="true"></asp:Button>
                       </div>
                       <div class="col">
                         <asp:Button ID="btn_SAR_Approved" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="SAR - Approved" Text="" Font-Bold="true"></asp:Button>
@@ -489,19 +489,19 @@
                   <div class="col-9">
                     <div class="row">
                       <div class="col">
-                        <asp:Button ID="btn_SAR_TotalCountA" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Total SAR Count" Text="" Font-Bold="true"></asp:Button>
+                        <asp:Button ID="btn_SAR_TotalCountA" runat="server" CssClass="btn-sm btn-block font-weight-bold" ToolTip="Total SAR Count" Text="" Font-Bold="true"></asp:Button>
                       </div>
                       <div class="col">
-                        <asp:Button ID="btn_SAR_UnderCreationA" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Creation" Text="" Font-Bold="true"></asp:Button>
+                        <asp:Button ID="btn_SAR_UnderCreationA" runat="server" CssClass="btn btn-sm btn-outline-info btn-block font-weight-bold" ToolTip="SAR - Under Creation" Text="" Font-Bold="true"></asp:Button>
                       </div>
                       <div class="col">
-                        <asp:Button ID="btn_SAR_UnderReviewA" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Review" Text="" Font-Bold="true"></asp:Button>
+                        <asp:Button ID="btn_SAR_UnderReviewA" runat="server" CssClass="btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Review" Text="" Font-Bold="true"></asp:Button>
                       </div>
                       <div class="col">
-                        <asp:Button ID="btn_SAR_UnderApprovalA" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Approval" Text="" Font-Bold="true"></asp:Button>
+                        <asp:Button ID="btn_SAR_UnderApprovalA" runat="server" CssClass="btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="SAR - Under Approval" Text="" Font-Bold="true"></asp:Button>
                       </div>
                       <div class="col">
-                        <asp:Button ID="btn_SAR_PendingA" runat="server" CssClass="btn btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="SAR - Pending" Text="" Font-Bold="true"></asp:Button>
+                        <asp:Button ID="btn_SAR_PendingA" runat="server" CssClass="btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="SAR - Pending" Text="" Font-Bold="true"></asp:Button>
                       </div>
                       <div class="col">
                         <asp:Button ID="btn_SAR_ApprovedA" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="SAR - Approved" Text="" Font-Bold="true"></asp:Button>
@@ -544,13 +544,13 @@
                       <div class="row">
                         <div class="col-6">
                           <div class="text-dark">
-                            <center> <font face="Comic Sans MS">Total Active Element Count</font></center>
+                            <center> <font face="Comic Sans MS"><b>Total Active Element Count</b></font></center>
                           </div>
                         </div>
 
                         <div class="col-6">
-                          <div class="text-info">
-                             <center> <font face="Comic Sans MS">Free</font></center>
+                          <div class="text-warning">
+                             <center> <font face="Comic Sans MS"><b>Free</b></font></center>
                           </div>
                         </div>
                       </div>
@@ -561,7 +561,7 @@
 
                         <div class="col-6">
                           <div class="text-warning">
-                            <center>  <font face="Comic Sans MS">Partial</font></center>
+                            <center>  <font face="Comic Sans MS"><b>Partial</b></font></center>
                           </div>
                         </div>
                         <div class="col-6">
@@ -581,10 +581,10 @@
                       <div class="col-5">
                         <div class="row">
                           <div class="col-6">
-                            <asp:Button ID="btn_Total_Element" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="Total - Total Active Element Count" Text="" Font-Bold="true"></asp:Button>
+                            <asp:Button ID="btn_Total_Element" runat="server" CssClass="btn-sm btn-block font-weight-bold" ToolTip="Total - Total Active Element Count" Text="" Font-Bold="true"></asp:Button>
                           </div>
                           <div class="col-6">
-                            <asp:Button ID="btn_Element_Free" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="Total - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
+                            <asp:Button ID="btn_Element_Free" runat="server" CssClass="btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Total - Active Element - Free" Text="" Font-Bold="true"></asp:Button>
                           </div>
                         </div>
                       </div>
@@ -592,7 +592,7 @@
                         <div class="row">
 
                           <div class="col-6">
-                            <asp:Button ID="btn_Element_Partial" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Total - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
+                            <asp:Button ID="btn_Element_Partial" runat="server" CssClass="btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Total - Active Element - Partial" Text="" Font-Bold="true"></asp:Button>
                           </div>
                           <div class="col-6">
                             <asp:Button ID="btn_Element_Completed" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="Total - Active Element - Completed" Text="" Font-Bold="true"></asp:Button>
@@ -629,7 +629,7 @@
                     <div class="row">
                       <div class="col">
                         <div class="text-dark">
-                          <font face="Comic Sans MS">Total Receipt Count</font>
+                          <font face="Comic Sans MS"><b>Total Receipt Count</b></font>
                         </div>
                       </div>
 
@@ -644,13 +644,13 @@
                         </div>
                       </div>
                       <div class="col">
-                        <div class="text-warning">
-                          <font face="Comic Sans MS">Under Evaluation</font>
+                        <div class="text-danger">
+                          <font face="Comic Sans MS"><b>Under Evaluation</b></font>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="text-danger">
-                          <font face="Comic Sans MS">Comments Submitted</font>
+                        <div class="text-warning">
+                          <font face="Comic Sans MS"><b>Comments Submitted</b></font>
                         </div>
                       </div>
                       <div class="col">
@@ -687,31 +687,31 @@
                   <div class="col-9">
                    <div class="row">
                       <div class="col">
-                      <asp:Button ID="btn_IDMSPre_Total_Count" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Total Count" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPre_Total_Count" runat="server" CssClass="btn-sm btn-block font-weight-bold" ToolTip="Pre Order Receipt - Total Count" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_IDMSPre_Submitted" runat="server" CssClass="btn btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Submitted" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPre_Submitted" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="Pre Order Receipt - Submitted" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_IDMSPre_Document_linked" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Document Linked" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPre_Document_linked" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Pre Order Receipt - Document Linked" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_IDMSPre_Under_Evaluation" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Under Evaluation" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPre_Under_Evaluation" runat="server" CssClass="btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Pre Order Receipt - Under Evaluation" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_IDMSPre_Comments_Submitted" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Comments Submitted" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPre_Comments_Submitted" runat="server" CssClass="btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Pre Order Receipt - Comments Submitted" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_IDMSPre_Technically_Cleared" runat="server" CssClass="btn btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Technically Cleared" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPre_Technically_Cleared" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="Pre Order Receipt - Technically Cleared" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_IDMSPre_Transmittal_Issued" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Transmittal Issued" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPre_Transmittal_Issued" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Pre Order Receipt - Transmittal Issued" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_IDMSPre_Superceded" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Superceded" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPre_Superceded" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Pre Order Receipt - Superceded" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_IDMSPre_Closed" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Closed" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPre_Closed" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Pre Order Receipt - Closed" Text="" Font-Bold="true"></asp:Button>
                     </div>
 
 
@@ -728,25 +728,25 @@
                   <div class="col-9">
                      <div class="row">
                       <div class="col">
-                      <asp:Button ID="btn_All_IDMSPre_Total_Count" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Total Count" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_All_IDMSPre_Total_Count" runat="server" CssClass="btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Total Count" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_All_IDMSPre_Submitted" runat="server" CssClass="btn btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Submitted" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_All_IDMSPre_Submitted" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Submitted" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
                       <asp:Button ID="btn_All_IDMSPre_Document_linked" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Document Linked" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_All_IDMSPre_Under_Evaluation" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Under Evaluation" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_All_IDMSPre_Under_Evaluation" runat="server" CssClass="btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Under Evaluation" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_All_IDMSPre_Comments_Submitted" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Comments Submitted" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_All_IDMSPre_Comments_Submitted" runat="server" CssClass="btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Comments Submitted" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_All_IDMSPre_Technically_Cleared" runat="server" CssClass="btn btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Technically Cleared" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_All_IDMSPre_Technically_Cleared" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Technically Cleared" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_All_IDMSPre_Transmittal_Issued" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Transmittal Issued" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_All_IDMSPre_Transmittal_Issued" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Transmittal Issued" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
                       <asp:Button ID="btn_All_IDMSPre_Superceded" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Superceded" Text="" Font-Bold="true"></asp:Button>
@@ -784,7 +784,7 @@
                     <div class="row">
                       <div class="col">
                         <div class="text-dark">
-                          <font face="Comic Sans MS">Total Receipt Count</font>
+                          <font face="Comic Sans MS"><b>Total Receipt Count</b></font>
                         </div>
                       </div>
 
@@ -799,22 +799,22 @@
                         </div>
                       </div>
                       <div class="col">
-                        <div class="text-warning">
-                          <font face="Comic Sans MS">Under Evaluation</font>
+                        <div class="text-danger">
+                          <font face="Comic Sans MS"><b>Under Evaluation</b></font>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="text-danger">
-                          <font face="Comic Sans MS">Comments Submitted</font>
+                        <div class="text-warning">
+                          <font face="Comic Sans MS"><b>Comments Submitted</b></font>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="text-primary">
+                          <font face="Comic Sans MS"><b>Technically Cleared</b></font>
                         </div>
                       </div>
                       <div class="col">
                         <div class="text-success">
-                          <font face="Comic Sans MS">Technically Cleared</font>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="text-secondary">
                           <font face="Comic Sans MS">Transmittal Issued</font>
                         </div>
                       </div>
@@ -842,31 +842,31 @@
                   <div class="col-9">
                    <div class="row">
                       <div class="col">
-                      <asp:Button ID="btn_IDMSPost_Total_Count" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Total Count" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPost_Total_Count" runat="server" CssClass="btn-sm btn-block font-weight-bold" ToolTip="Post Order Receipt - Total Count" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_IDMSPost_Submitted" runat="server" CssClass="btn btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Submitted" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPost_Submitted" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="Post Order Receipt - Submitted" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_IDMSPost_Document_linked" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Document Linked" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPost_Document_linked" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Post Order Receipt - Document Linked" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_IDMSPost_Under_Evaluation" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Under Evaluation" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPost_Under_Evaluation" runat="server" CssClass="btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="Post Order Receipt - Under Evaluation" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_IDMSPost_Comments_Submitted" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Comments Submitted" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPost_Comments_Submitted" runat="server" CssClass="btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="Post Order Receipt - Comments Submitted" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_IDMSPost_Technically_Cleared" runat="server" CssClass="btn btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Technically Cleared" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPost_Technically_Cleared" runat="server" CssClass="btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="Post Order Receipt - Technically Cleared" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_IDMSPost_Transmittal_Issued" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Transmittal Issued" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPost_Transmittal_Issued" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="Post Order Receipt - Transmittal Issued" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_IDMSPost_Superceded" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Superceded" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPost_Superceded" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Post Order Receipt - Superceded" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_IDMSPost_Closed" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Closed" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_IDMSPost_Closed" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="Post Order Receipt - Closed" Text="" Font-Bold="true"></asp:Button>
                     </div>
 
 
@@ -883,31 +883,31 @@
                   <div class="col-9">
                      <div class="row">
                       <div class="col">
-                      <asp:Button ID="btn_All_IDMSPost_Total_Count" runat="server" CssClass="btn btn-outline-dark btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Total Count" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_All_IDMSPost_Total_Count" runat="server" CssClass="btn-sm btn-block font-weight-bold" ToolTip="All - Post Order Receipt - Total Count" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_All_IDMSPost_Submitted" runat="server" CssClass="btn btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Submitted" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_All_IDMSPost_Submitted" runat="server" CssClass="btn btn-outline-info btn-sm btn-block font-weight-bold" ToolTip="All - Post Order Receipt - Submitted" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_All_IDMSPost_Document_linked" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Document Linked" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_All_IDMSPost_Document_linked" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="All - Post Order Receipt - Document Linked" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_All_IDMSPost_Under_Evaluation" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Under Evaluation" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_All_IDMSPost_Under_Evaluation" runat="server" CssClass="btn-outline-danger btn-sm btn-block font-weight-bold" ToolTip="All - Post Order Receipt - Under Evaluation" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_All_IDMSPost_Comments_Submitted" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Comments Submitted" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_All_IDMSPost_Comments_Submitted" runat="server" CssClass="btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="All - Post Order Receipt - Comments Submitted" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_All_IDMSPost_Technically_Cleared" runat="server" CssClass="btn btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Technically Cleared" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_All_IDMSPost_Technically_Cleared" runat="server" CssClass="btn-outline-primary btn-sm btn-block font-weight-bold" ToolTip="All - Post Order Receipt - Technically Cleared" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_All_IDMSPost_Transmittal_Issued" runat="server" CssClass="btn btn-outline-warning btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Transmittal Issued" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_All_IDMSPost_Transmittal_Issued" runat="server" CssClass="btn btn-outline-success btn-sm btn-block font-weight-bold" ToolTip="All - Post Order Receipt - Transmittal Issued" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_All_IDMSPost_Superceded" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Superceded" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_All_IDMSPost_Superceded" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Post Order Receipt - Superceded" Text="" Font-Bold="true"></asp:Button>
                     </div>
                     <div class="col">
-                      <asp:Button ID="btn_All_IDMSPost_Closed" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Pre Order Receipt - Closed" Text="" Font-Bold="true"></asp:Button>
+                      <asp:Button ID="btn_All_IDMSPost_Closed" runat="server" CssClass="btn btn-outline-secondary btn-sm btn-block font-weight-bold" ToolTip="All - Post Order Receipt - Closed" Text="" Font-Bold="true"></asp:Button>
                     </div>
 
 
@@ -919,7 +919,7 @@
               </div>
             </div>
            </div>
-
+        
            <%--   <hr>--%>
                 
         </ContentTemplate>

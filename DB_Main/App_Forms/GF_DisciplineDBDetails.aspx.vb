@@ -884,10 +884,12 @@ Partial Class GF_DisciplineDBDetails
       If tmp.RStatus = "Under Evaluation" Then
         td.Text = tmp.Rageindays
         td.Font.Bold = True
+        tr.BackColor = Drawing.Color.Yellow
       End If
       If tmp.RStatus = "Comments Submitted" Then
         td.Text = tmp.Rageindays
         td.Font.Bold = True
+        tr.BackColor = Drawing.Color.Yellow
       End If
 
 

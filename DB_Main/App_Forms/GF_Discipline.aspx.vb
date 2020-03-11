@@ -145,6 +145,9 @@ Partial Class GF_Discipline
     btn_DueforRelease_PreviousM_B.Text = Dt.DueforRelease_PreviousM_B
     btn_DueforRelease_BothM_C.Text = Dt.DueforRelease_BothM_C
     btn_AllDueTillToday_Release.Text = Dt.AllDueTillToday_Release
+
+
+
     btn_DueOnlyToday_Release.Text = Dt.DueOnlyToday_Release
     btn_Ontime_Release_CurrentM.Text = Dt.Ontime_Release_CurrentM
     btn_Backlog_Release_CurrentM.Text = Dt.Backlog_Release_CurrentM
