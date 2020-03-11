@@ -107,14 +107,36 @@ Partial Class GF_Discipline
     YearID = Convert.ToInt32(F_YearID.SelectedItem.Text)
 
     DPMDLTABLE.Visible = True
-    Btn_Discipline.Text = DivisionID + "-" + DisciplineID + "-" + F_YearID.SelectedItem.Text + "-" + F_MonthID.SelectedItem.Text.Remove(3)
+    Btn_Discipline.Text = DivisionID + "-" + DisciplineID + "-" + F_YearID.SelectedItem.Text + "-" + F_MonthID.SelectedItem.Text
     Btn_Discipline.Font.Name = "Comic Sans MS"
+
     DSARTABLE.Visible = True
-    Btn_Discipline1.Text = DivisionID + "-" + DisciplineID + "-" + F_YearID.SelectedItem.Text + "-" + F_MonthID.SelectedItem.Text.Remove(3)
+    Btn_Discipline1.Text = DivisionID + "-" + DisciplineID + "-" + F_YearID.SelectedItem.Text + "-" + F_MonthID.SelectedItem.Text
     Btn_Discipline1.Font.Name = "Comic Sans MS"
+
     DELEMENTTABLE.Visible = True
     Btn_Discipline2.Text = "Over All"
     Btn_Discipline2.Font.Name = "Comic Sans MS"
+
+    DIDMSPRETABLE.Visible = True
+    DIDMSPRETABLE1.Visible = True
+    DIDMSPOSTTABLE.Visible = True
+    DIDMSPOSTTABLE1.Visible = True
+
+    Btn_Discipline3.Text = DivisionID + "-" + DisciplineID + "-" + F_YearID.SelectedItem.Text + "-" + F_MonthID.SelectedItem.Text
+    Btn_Discipline3.Font.Name = "Comic Sans MS"
+
+    Btn_Discipline4.Text = "Over All"
+    Btn_Discipline4.Font.Name = "Comic Sans MS"
+
+    Btn_Discipline5.Text = DivisionID + "-" + DisciplineID + "-" + F_YearID.SelectedItem.Text + "-" + F_MonthID.SelectedItem.Text
+    Btn_Discipline5.Font.Name = "Comic Sans MS"
+
+    Btn_Discipline6.Text = "Over All"
+    Btn_Discipline6.Font.Name = "Comic Sans MS"
+
+    'DIDMSPOSTTABLE.Visible = True
+    'DIDMSPOSTTABLE1.Visible = True
     'PMDL
 
     Dim Dt As SIS.DD.DBDiscipline = SIS.DD.DBDiscipline.GetDPMDLDB(DivisionID, DisciplineID, MonthID, YearID)
@@ -161,6 +183,51 @@ Partial Class GF_Discipline
     btn_Backlog_Release_CurrentM.ToolTip = "Released Drawing & Document Count in " & F_MonthID.SelectedItem.Text & "/" & Convert.ToInt32(F_YearID.SelectedItem.Text) & " from PMDL where" & Environment.NewLine & "Division is " & F_DivisionID.SelectedItem.Text & "," & Environment.NewLine & "Discipline is " & F_DisciplineID.SelectedItem.Text & " ," & Environment.NewLine & "Month/Year of BaseLine Finishdate earlier than " & F_MonthID.SelectedItem.Text & "/" & Convert.ToInt32(F_YearID.SelectedItem.Text) & Environment.NewLine & "Document originator is ISGEC." & Environment.NewLine & " Also VENDOR Documents ignored"
     btn_SAR_Pending.ToolTip = "Under Review (" & Dt1.SAR_UnderReview & ") + Under Approval (" & Dt1.SAR_UnderApproval & ") = Pending (" & Dt1.SAR_Pending & ")"
     btn_SAR_PendingA.ToolTip = "Under Review (" & Dt1.SAR_UnderReviewA & ") + Under Approval (" & Dt1.SAR_UnderApprovalA & ") = Pending (" & Dt1.SAR_PendingA & ")"
+
+    Dim Dt3 As SIS.DD.DBDiscipline = SIS.DD.DBDiscipline.GetDIDMSPREDB(DivisionID, DisciplineID, MonthID, YearID)
+
+    btn_IDMSPre_Total_Count.Text = Dt3.IDMSP_Total_Count
+    btn_IDMSPre_Submitted.Text = Dt3.IDMSP_Submitted
+    btn_IDMSPre_Document_linked.Text = Dt3.IDMSP_Document_linked
+    btn_IDMSPre_Under_Evaluation.Text = Dt3.IDMSP_Under_Evaluation
+    btn_IDMSPre_Comments_Submitted.Text = Dt3.IDMSP_Comments_Submitted
+    btn_IDMSPre_Technically_Cleared.Text = Dt3.IDMSP_Technically_Cleared
+    btn_IDMSPre_Transmittal_Issued.Text = Dt3.IDMSP_Transmittal_Issued
+    btn_IDMSPre_Superceded.Text = Dt3.IDMSP_Superceded
+    btn_IDMSPre_Closed.Text = Dt3.IDMSP_Closed
+
+    btn_All_IDMSPre_Total_Count.Text = Dt3.All_IDMSP_Total_Count
+    btn_All_IDMSPre_Submitted.Text = Dt3.All_IDMSP_Submitted
+    btn_All_IDMSPre_Document_linked.Text = Dt3.All_IDMSP_Document_linked
+    btn_All_IDMSPre_Under_Evaluation.Text = Dt3.All_IDMSP_Under_Evaluation
+    btn_All_IDMSPre_Comments_Submitted.Text = Dt3.All_IDMSP_Comments_Submitted
+    btn_All_IDMSPre_Technically_Cleared.Text = Dt3.All_IDMSP_Technically_Cleared
+    btn_All_IDMSPre_Transmittal_Issued.Text = Dt3.All_IDMSP_Transmittal_Issued
+    btn_All_IDMSPre_Superceded.Text = Dt3.All_IDMSP_Superceded
+    btn_All_IDMSPre_Closed.Text = Dt3.All_IDMSP_Closed
+
+    Dim Dt4 As SIS.DD.DBDiscipline = SIS.DD.DBDiscipline.GetDIDMSPOSTDB(DivisionID, DisciplineID, MonthID, YearID)
+
+    btn_IDMSPost_Total_Count.Text = Dt4.IDMSPO_Total_Count
+    btn_IDMSPost_Submitted.Text = Dt4.IDMSPO_Submitted
+    btn_IDMSPost_Document_linked.Text = Dt4.IDMSPO_Document_linked
+    btn_IDMSPost_Under_Evaluation.Text = Dt4.IDMSPO_Under_Evaluation
+    btn_IDMSPost_Comments_Submitted.Text = Dt4.IDMSPO_Comments_Submitted
+    btn_IDMSPost_Technically_Cleared.Text = Dt4.IDMSPO_Technically_Cleared
+    btn_IDMSPost_Transmittal_Issued.Text = Dt4.IDMSPO_Transmittal_Issued
+    btn_IDMSPost_Superceded.Text = Dt4.IDMSPO_Superceded
+    btn_IDMSPost_Closed.Text = Dt4.IDMSPO_Closed
+
+    btn_All_IDMSPost_Total_Count.Text = Dt4.All_IDMSPO_Total_Count
+    btn_All_IDMSPost_Submitted.Text = Dt4.All_IDMSPo_Submitted
+    btn_All_IDMSPost_Document_linked.Text = Dt4.All_IDMSPo_Document_linked
+    btn_All_IDMSPost_Under_Evaluation.Text = Dt4.All_IDMSPo_Under_Evaluation
+    btn_All_IDMSPost_Comments_Submitted.Text = Dt4.All_IDMSPo_Comments_Submitted
+    btn_All_IDMSPost_Technically_Cleared.Text = Dt4.All_IDMSPo_Technically_Cleared
+    btn_All_IDMSPost_Transmittal_Issued.Text = Dt4.All_IDMSPo_Transmittal_Issued
+    btn_All_IDMSPost_Superceded.Text = Dt4.All_IDMSPo_Superceded
+    btn_All_IDMSPost_Closed.Text = Dt4.All_IDMSPo_Closed
+
 
   End Sub
 
@@ -276,4 +343,189 @@ Partial Class GF_Discipline
     Response.Redirect("GF_DisciplineDBDetails.aspx?detail=Element_Completed&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
 
   End Sub
+
+  Private Sub btn_IDMSPre_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_IDMSPre_Total_Count.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPre_Total_Count&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_IDMSPre_Submitted_Click(sender As Object, e As EventArgs) Handles btn_IDMSPre_Submitted.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPre_Submitted&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_IDMSPre_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_IDMSPre_Document_linked.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPre_Document_linked&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_IDMSPre_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_IDMSPre_Under_Evaluation.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPre_Under_Evaluation&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_IDMSPre_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_IDMSPre_Comments_Submitted.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPre_Comments_Submitted&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_IDMSPre_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_IDMSPre_Technically_Cleared.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPre_Technically_Cleared&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_IDMSPre_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_IDMSPre_Transmittal_Issued.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPre_Transmittal_Issued&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_IDMSPre_Superceded_Click(sender As Object, e As EventArgs) Handles btn_IDMSPre_Superceded.Click
+
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPre_Superceded&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_IDMSPre_Closed_Click(sender As Object, e As EventArgs) Handles btn_IDMSPre_Closed.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPre_Closed&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_IDMSPost_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_IDMSPost_Total_Count.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPost_Total_Count&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_IDMSPost_Submitted_Click(sender As Object, e As EventArgs) Handles btn_IDMSPost_Submitted.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPost_Submitted&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_IDMSPost_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_IDMSPost_Document_linked.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPost_Document_linked&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_IDMSPost_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_IDMSPost_Under_Evaluation.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPost_Under_Evaluation&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_IDMSPost_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_IDMSPost_Comments_Submitted.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPost_Comments_Submitted&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_IDMSPost_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_IDMSPost_Technically_Cleared.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPost_Technically_Cleared&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_IDMSPost_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_IDMSPost_Transmittal_Issued.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPost_Transmittal_Issued&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_IDMSPost_Superceded_Click(sender As Object, e As EventArgs) Handles btn_IDMSPost_Superceded.Click
+
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPost_Superceded&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_IDMSPost_Closed_Click(sender As Object, e As EventArgs) Handles btn_IDMSPost_Closed.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=IDMSPost_Closed&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPre_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPre_Total_Count.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPre_Total_Count&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPre_Submitted_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPre_Submitted.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPre_Submitted&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPre_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPre_Document_linked.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPre_Document_linked&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPre_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPre_Under_Evaluation.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPre_Under_Evaluation&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPre_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPre_Comments_Submitted.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPre_Comments_Submitted&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPre_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPre_Technically_Cleared.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPre_Technically_Cleared&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPre_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPre_Transmittal_Issued.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPre_Transmittal_Issued&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPre_Superceded_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPre_Superceded.Click
+
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPre_Superceded&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPre_Closed_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPre_Closed.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPre_Closed&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPost_Total_Count_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPost_Total_Count.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPost_Total_Count&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPost_Submitted_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPost_Submitted.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPost_Submitted&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPost_Document_linked_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPost_Document_linked.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPost_Document_linked&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPost_Under_Evaluation_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPost_Under_Evaluation.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPost_Under_Evaluation&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPost_Comments_Submitted_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPost_Comments_Submitted.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPost_Comments_Submitted&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPost_Technically_Cleared_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPost_Technically_Cleared.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPost_Technically_Cleared&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPost_Transmittal_Issued_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPost_Transmittal_Issued.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPost_Transmittal_Issued&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPost_Superceded_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPost_Superceded.Click
+
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPost_Superceded&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
+  Private Sub btn_All_IDMSPost_Closed_Click(sender As Object, e As EventArgs) Handles btn_All_IDMSPost_Closed.Click
+    Response.Redirect("GF_DisciplineDBDetails.aspx?detail=All_IDMSPost_Closed&DivisionID=" & DivisionID & "&DisciplineID=" & DisciplineID & "&YearID=" & YearID & "&MonthID=" & MonthID)
+
+  End Sub
+
 End Class

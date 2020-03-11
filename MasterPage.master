@@ -16,20 +16,41 @@
 
   <link rel="stylesheet" runat="server" href="~/App_Themes/Default/Menu.css" />
   
-  
- 
+  <script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+
 
 
 
   <asp:ContentPlaceHolder ID="cphMain" runat="server" EnableViewState="true">
   </asp:ContentPlaceHolder>
 </head>
-<body>
+<body onload="startTime()">
   
   <form id="form1" runat="server">
   <ASP:ScriptManager ID="ToolkitScriptManager1" EnableScriptGlobalization="true" runat="server" EnablePageMethods="true" AsyncPostBackTimeout="3600" EnableScriptLocalization="True" ScriptMode="Auto">
     <Scripts>
         <asp:ScriptReference Path="/../UserRights/jquery/webkit.js" />
+
+
+
+
+
     </Scripts>
   </ASP:ScriptManager>
   <LGM:LGLoading ID="LGLoadingM" runat="server" />
@@ -96,12 +117,23 @@
                 <font size="1"><span style="color: #ffffff">  </span></font>
               </td>
             </tr>
+
+<%--            Clock--%>
+            
+
+
+
+
+
+
             <tr>
               <td>
                  <span style="color: #99ccff"><asp:Label ID="Label1" runat="server" Text="Visit Counter:" Visible="false" ></asp:Label></span>
                 <span style="color: #99ffcc"><asp:Label ID="Visitorcount" runat="server" Text=""></asp:Label></span>
-                
+               <span style="color: #ffffff"><font size="2" face="corbel"><asp:Label ID="Visitorcountn" runat="server" Text="" Visible="true"></asp:Label></font></span>
               </td>
+               <td>
+              <div class="text-right text-light" ><font size="3.5" face="corbel">Time- <asp:Label ID="txt" runat="server" Text=""></asp:Label></font></div> </td>
             </tr>
             <tr>
               <td>

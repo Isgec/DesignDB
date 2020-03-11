@@ -21,11 +21,7 @@
       
       </div>
 
-
-
     </div>
-
-
 
     <div class="col-12 text-center">
           <div class="btn btn-warning btn-outline-dark" role="alert" id="PSC">

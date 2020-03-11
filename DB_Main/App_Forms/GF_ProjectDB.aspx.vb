@@ -61,7 +61,8 @@ Partial Class GF_ProjectDB
                               "Company: " & x.TXT_COMPANY & Environment.NewLine &
                               "Number Of Boiler: " & x.TXT_NOOFBOILER & Environment.NewLine &
                               "Zero Date: " & x.DATETIME_ZERODATE & Environment.NewLine &
-                              "Project Type: " & x.TXT_PROJECTTYPE & Environment.NewLine
+                              "Project Type: " & x.TXT_PROJECTTYPE & Environment.NewLine &
+                              "Code of Construction: " & x.TXT_CODEOFCONST & Environment.NewLine
 
 
 

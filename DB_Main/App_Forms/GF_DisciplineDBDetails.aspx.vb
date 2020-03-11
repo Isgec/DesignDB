@@ -235,6 +235,7 @@ Partial Class GF_DisciplineDBDetails
       .Font.Size = FontUnit.Point(8)
     End With
     td.Text = "PROJECT NAME"
+
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -243,6 +244,30 @@ Partial Class GF_DisciplineDBDetails
       .Font.Size = FontUnit.Point(8)
     End With
     td.Text = "SAR No."
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "CREATED ON"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "ISSUED ON"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(8)
+    End With
+    td.Text = "PENDING Days"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -290,7 +315,7 @@ Partial Class GF_DisciplineDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(8)
     End With
-    td.Text = "CREATED BY"
+    td.Text = "CREATOR"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -298,7 +323,7 @@ Partial Class GF_DisciplineDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(8)
     End With
-    td.Text = "REVIEWED BY"
+    td.Text = "REVIEWER"
     tr.Cells.Add(td)
 
     td = New TableCell
@@ -306,7 +331,7 @@ Partial Class GF_DisciplineDBDetails
       .Font.Bold = True
       .Font.Size = FontUnit.Point(8)
     End With
-    td.Text = "APPROVED BY"
+    td.Text = "APPROVER"
     tr.Cells.Add(td)
 
 
@@ -333,7 +358,9 @@ Partial Class GF_DisciplineDBDetails
       td.Text = I
       tr.Cells.Add(td)
 
-
+      td = New TableCell
+      td.Text = tmp.Ptype
+      tr.Cells.Add(td)
 
       td = New TableCell
       td.Text = tmp.t_cprj
@@ -346,6 +373,90 @@ Partial Class GF_DisciplineDBDetails
       td = New TableCell
       td.Text = tmp.t_sarn
       tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.t_cdat
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.t_idat
+      tr.Cells.Add(td)
+
+
+
+      td = New TableCell
+
+
+
+      If tmp.t_stat.ToUpper = "UNDER REVIEW" Or tmp.t_stat.ToUpper = "UNDER APPROVAL" Then
+        If tmp.t_sars.ToUpper = "WORK STOPPED" And tmp.Sageindays >= 4 Then
+          With td
+            .Text = tmp.Sageindays
+            .Font.Bold = True
+            .ForeColor = Drawing.Color.Red
+            .Font.Size = FontUnit.Point(11)
+
+            .ToolTip = "As per KV Sir's Mail Dated 1st July 2019 regarding 'SAR Corrective Actions'" & Environment.NewLine &
+                        "If SAR Severity is 'Work Stopped' then it should be replied within 3 working days " & Environment.NewLine &
+             "*(This RED color alert is as per Calender Days)"
+          End With
+        Else
+          If (tmp.Sageindays <= 1) Then
+            td.Text = tmp.Sageindays
+            td.Font.Size = FontUnit.Point(10)
+
+
+          Else
+            td.Text = tmp.Sageindays
+            td.Font.Size = FontUnit.Point(10)
+            td.Font.Bold = True
+
+          End If
+          'Else
+          '  td.Text = tmp.Sageindays
+          '  td.Font.Bold = True
+          '  td.Font.Size = FontUnit.Point(10)
+
+        End If
+
+        If tmp.t_sars.ToUpper = "WORK CAN PROCEED" And tmp.Sageindays >= 7 Then
+          With td
+            .Text = tmp.Sageindays
+            .Font.Bold = True
+            .ForeColor = Drawing.Color.Red
+            .Font.Size = FontUnit.Point(11)
+            .ToolTip = "As per KV Sir's Mail Dated 1st July 2019 regarding 'SAR Corrective Actions'" & Environment.NewLine &
+                         "If SAR Severity is 'Work Can Proceed' then it should be replied within 6 working days " & Environment.NewLine &
+                         "*(This RED color alert is as per Calender Days)"
+          End With
+        Else
+          If (tmp.Sageindays <= 1) Then
+            td.Text = tmp.Sageindays
+            td.Font.Size = FontUnit.Point(10)
+
+
+          Else
+            td.Text = tmp.Sageindays
+            td.Font.Size = FontUnit.Point(10)
+            td.Font.Bold = True
+
+          End If
+          'Else
+          '  td.Text = tmp.Sageindays
+          '  td.Font.Bold = True
+          '  td.Font.Size = FontUnit.Point(10)
+        End If
+
+
+      Else
+        td.Text = ""
+
+      End If
+
+
+      tr.Cells.Add(td)
+
+
 
       td = New TableCell
       td.Text = tmp.t_draw
@@ -361,6 +472,7 @@ Partial Class GF_DisciplineDBDetails
       If tmp.t_stat.ToUpper = "UNDER REVIEW" Then
         td.ForeColor = Drawing.Color.Red
         tr.BackColor = Drawing.Color.Yellow
+        td.ToolTip = "Pending"
         With td
           .Font.Bold = True
         End With
@@ -368,6 +480,7 @@ Partial Class GF_DisciplineDBDetails
       If tmp.t_stat.ToUpper = "UNDER APPROVAL" Then
         td.ForeColor = Drawing.Color.Red
         tr.BackColor = Drawing.Color.Yellow
+        td.ToolTip = "Pending"
         With td
           .Font.Bold = True
         End With
@@ -512,6 +625,10 @@ Partial Class GF_DisciplineDBDetails
       tr.Cells.Add(td)
 
       td = New TableCell
+      td.Text = tmp.Ptype
+      tr.Cells.Add(td)
+
+      td = New TableCell
       td.Text = tmp.t_cprj
       tr.Cells.Add(td)
 
@@ -546,769 +663,726 @@ Partial Class GF_DisciplineDBDetails
 
   End Sub
 
-  'Private Sub ShowDPREORDERData(ByVal x As String, ByVal y As String)
-  '  Dim Data As List(Of SIS.DB.engDoc) = SIS.DB.engDoc.GetData(x, y)
-
-  '  Dim tbl As New Table
-  '  With tbl
-  '    .GridLines = GridLines.Both
-  '    .BorderWidth = 2
-  '    .CellSpacing = 2
-  '    .Width = Unit.Percentage(100)
-  '    .CssClass = "table-light table-bordered"
-  '    '  .CssClass = "table-danger table-bordered thead-primary"
-  '  End With
-  '  Dim tr As TableRow = Nothing
-  '  Dim td As TableCell = Nothing
-
-  '  'Header
-  '  tr = New TableRow
-
-  '  td = New TableCell
-  '  td.Text = "S.NO."
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "RECEIPT"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "REV"
-  '  tr.Cells.Add(td)
-
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "RECEIVED ON"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "PENDING (DAYS)"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "PROJECT TYPE"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "PROJECT ID"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "PROJECT NAME"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "ITEM DESCRIPTION"
-  '  tr.Cells.Add(td)
-
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "RECEIPT STATUS"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "MECH."
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "STR."
-  '  tr.Cells.Add(td)
+  Private Sub ShowDIDMSPREData(ByVal det As String, ByVal DivisionID As String, ByVal DisciplineID As String, ByVal YearID As String, ByVal MonthID As String)
+    Dim Data As List(Of SIS.DD.DisciplineDetail) = SIS.DD.DisciplineDetail.GetDIDMSPREData(det, DivisionID, DisciplineID, YearID, MonthID)
+
+
+    Dim tbl As New Table
+    With tbl
+      .GridLines = GridLines.Both
+      .BorderWidth = 2
+      .CellSpacing = 2
+      .Width = Unit.Percentage(100)
+      .CssClass = "table-light table-bordered"
+      '  .CssClass = "table-danger table-bordered thead-primary"
+    End With
+    Dim tr As TableRow = Nothing
+    Dim td As TableCell = Nothing
+
+    'Header
+    tr = New TableRow
+
+    td = New TableCell
+    td.Text = "S.NO."
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "RECEIPT"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "REV"
+    tr.Cells.Add(td)
+
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "RECEIVED ON"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PENDING (DAYS)"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "TYPE"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PROJECT ID"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PROJECT NAME"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "ITEM DESCRIPTION"
+    tr.Cells.Add(td)
+
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "RECEIPT STATUS"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "MECH."
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "STR."
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PIP."
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PRC."
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "C&I"
+    tr.Cells.Add(td)
 
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "PIP."
-  '  tr.Cells.Add(td)
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "ELE."
+    tr.Cells.Add(td)
 
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "PRC."
-  '  tr.Cells.Add(td)
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "QLTY."
+    tr.Cells.Add(td)
 
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "C&I"
-  '  tr.Cells.Add(td)
 
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "ELE."
-  '  tr.Cells.Add(td)
 
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "QLTY."
-  '  tr.Cells.Add(td)
 
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "OWNER DEPT."
-  '  tr.Cells.Add(td)
+    'td = New TableCell
+    'With td
+    '  .Font.Bold = True
+    '  .Font.Size = FontUnit.Point(14)
+    'End With
+    'td.Text = "Option"
+    'tr.Cells.Add(td)
 
+    tbl.Rows.Add(tr)
 
-  '  'td = New TableCell
-  '  'With td
-  '  '  .Font.Bold = True
-  '  '  .Font.Size = FontUnit.Point(14)
-  '  'End With
-  '  'td.Text = "Option"
-  '  'tr.Cells.Add(td)
+    tbl.Rows.Add(tr)
 
-  '  tbl.Rows.Add(tr)
+    Dim I As Integer = 0
+    '================
+    For Each tmp As SIS.DD.DisciplineDetail In Data
+      I += 1
+      tr = New TableRow
 
-  '  Dim I As Integer = 0
-  '  Dim j As Integer = 0
+      td = New TableCell
+        td.Text = I
+        tr.Cells.Add(td)
 
-  '  '================
-  '  For Each tmp As SIS.DB.engDoc In Data
+        td = New TableCell
+        td.Text = tmp.ReceiptID
+        tr.Cells.Add(td)
 
+        td = New TableCell
+        td.Text = tmp.Rrev
+        tr.Cells.Add(td)
 
 
+        td = New TableCell
+      td.Text = tmp.SentDate
+      If tmp.SentDate = "01/01/1970" Then
+        td.Text = ""
+      End If
+      If tmp.SentDate = "01/01/1900" Then
+        td.Text = ""
+      End If
 
-  '    Dim utmp As List(Of SIS.DB.UserRoleIDMS) = SIS.DB.UserRoleIDMS.GetUserRoleIDMS(y)
-  '    For Each uptm As SIS.DB.UserRoleIDMS In utmp
+      tr.Cells.Add(td)
 
+      '  td = New TableCell
+      '  td.Text = tmp.Rageindays
+      '  With td
+      '  .Font.Bold = True
 
 
 
+      'End With
+      '  If tmp.Rageindays >= 30 Then
+      '    td.ForeColor = Drawing.Color.Red
 
+      '  End If
+      '  tr.Cells.Add(td)
 
-  '      I += 1
+      td = New TableCell
+      td.Text = ""
+      If tmp.RStatus = "Under Evaluation" Then
+        td.Text = tmp.Rageindays
+        td.Font.Bold = True
+      End If
+      If tmp.RStatus = "Comments Submitted" Then
+        td.Text = tmp.Rageindays
+        td.Font.Bold = True
+      End If
 
-  '      tr = New TableRow
 
-  '      td = New TableCell
-  '      td.Text = I
-  '      tr.Cells.Add(td)
 
-  '      td = New TableCell
-  '      td.Text = tmp.ReceiptID
-  '      tr.Cells.Add(td)
 
-  '      td = New TableCell
-  '      td.Text = tmp.Rrev
-  '      tr.Cells.Add(td)
 
+      tr.Cells.Add(td)
 
-  '      td = New TableCell
-  '      td.Text = tmp.SentDate
-  '      tr.Cells.Add(td)
 
-  '      td = New TableCell
-  '      td.Text = tmp.Rageindays
-  '      With td
-  '        .Font.Bold = True
 
 
-  '      End With
-  '      If tmp.Rageindays >= 30 Then
-  '        td.ForeColor = Drawing.Color.Red
 
-  '      End If
-  '      tr.Cells.Add(td)
-
-  '      td = New TableCell
-  '      td.Text = tmp.PType
-  '      tr.Cells.Add(td)
 
-  '      td = New TableCell
-  '      td.Text = tmp.RProject
-  '      tr.Cells.Add(td)
 
-  '      td = New TableCell
-  '      td.Text = tmp.Project_Name
-  '      tr.Cells.Add(td)
 
-  '      td = New TableCell
-  '      td.Text = tmp.ItemDescription
-  '      tr.Cells.Add(td)
+      td = New TableCell
+        td.Text = tmp.Ptype
+        tr.Cells.Add(td)
 
+        td = New TableCell
+        td.Text = tmp.RProject
+        tr.Cells.Add(td)
 
-  '      td = New TableCell
-  '      td.Text = tmp.RStatus
-  '      tr.Cells.Add(td)
+        td = New TableCell
+        td.Text = tmp.Project_Name
+        tr.Cells.Add(td)
 
+        td = New TableCell
+        td.Text = tmp.ItemDescription
+        tr.Cells.Add(td)
 
 
-  '      td = New TableCell
-  '      td.Text = tmp.Mechanical
+        td = New TableCell
+        td.Text = tmp.RStatus
+        tr.Cells.Add(td)
 
-  '      If td.Text = "Pending" Then
-  '        td.ForeColor = Drawing.Color.Red
-  '        With td
-  '          .Font.Bold = True
 
 
-  '        End With
+        td = New TableCell
+        td.Text = tmp.Mechanical
 
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
 
-  '      End If
-  '      tr.Cells.Add(td)
 
-  '      td = New TableCell
-  '      td.Text = tmp.Structure_
+          End With
 
-  '      If td.Text = "Pending" Then
-  '        td.ForeColor = Drawing.Color.Red
-  '        With td
-  '          .Font.Bold = True
-  '        End With
-  '      End If
-  '      tr.Cells.Add(td)
 
-  '      td = New TableCell
-  '      td.Text = tmp.Piping
-  '      If td.Text = "Pending" Then
-  '        td.ForeColor = Drawing.Color.Red
-  '        With td
-  '          .Font.Bold = True
-  '        End With
+        End If
+        tr.Cells.Add(td)
 
-  '      End If
-  '      tr.Cells.Add(td)
+        td = New TableCell
+      td.Text = tmp.sStructure
 
-  '      td = New TableCell
-  '      td.Text = tmp.Process
-  '      If td.Text = "Pending" Then
-  '        td.ForeColor = Drawing.Color.Red
-  '        With td
-  '          .Font.Bold = True
-  '        End With
-  '      End If
+      If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
+        End If
+        tr.Cells.Add(td)
 
-  '      tr.Cells.Add(td)
+        td = New TableCell
+        td.Text = tmp.Piping
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
 
-  '      td = New TableCell
-  '      td.Text = tmp.CandI
-  '      If td.Text = "Pending" Then
-  '        td.ForeColor = Drawing.Color.Red
-  '        With td
-  '          .Font.Bold = True
-  '        End With
-  '      End If
-  '      tr.Cells.Add(td)
+        End If
+        tr.Cells.Add(td)
 
-  '      td = New TableCell
-  '      td.Text = tmp.Electrical
-  '      If td.Text = "Pending" Then
-  '        td.ForeColor = Drawing.Color.Red
-  '        With td
-  '          .Font.Bold = True
-  '        End With
-  '      End If
-  '      tr.Cells.Add(td)
+        td = New TableCell
+        td.Text = tmp.Process
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
+        End If
 
-  '      td = New TableCell
-  '      td.Text = tmp.Quality
+        tr.Cells.Add(td)
 
-  '      If td.Text = "Pending" Then
-  '        td.ForeColor = Drawing.Color.Red
-  '        With td
-  '          .Font.Bold = True
-  '        End With
-  '      End If
-  '      tr.Cells.Add(td)
-
-
-
-
-
-
-  '      td = New TableCell
-  '      td.Text = tmp.Owner_Dept
-  '      If tmp.Owner_Dept.ToUpper = uptm.EDepartment.ToUpper Then
-  '        td.ForeColor = Drawing.Color.DarkGreen
-  '        tr.BackColor = Drawing.Color.Yellow
-  '        With td
-  '          .Font.Bold = True
-  '        End With
-  '      End If
-
-  '      tr.Cells.Add(td)
-  '    Next
-
-  '    'td = New TableCell
-  '    'Dim cmd As New Button
-  '    'cmd.Text = "Click Me"
-  '    'td.Controls.Add(cmd)
-  '    'tr.Cells.Add(td)
-
-
-  '    tbl.Rows.Add(tr)
-
-
-  '  Next
-
-  '  '================
-  '  ppnlDetails.Controls.Add(tbl)
-
-  'End Sub
-
-  'Private Sub ShowDPOSTORDERData(ByVal x As String, ByVal y As String)
-  '  Dim Data As List(Of SIS.DB.engDoc) = SIS.DB.engDoc.GetData(x, y)
-
-  '  Dim tbl As New Table
-  '  With tbl
-  '    .GridLines = GridLines.Both
-  '    .BorderWidth = 2
-  '    .CellSpacing = 2
-  '    .Width = Unit.Percentage(100)
-  '    .CssClass = "table-light table-bordered"
-  '    '  .CssClass = "table-danger table-bordered thead-primary"
-  '  End With
-  '  Dim tr As TableRow = Nothing
-  '  Dim td As TableCell = Nothing
-
-  '  'Header
-  '  tr = New TableRow
-
-  '  td = New TableCell
-  '  td.Text = "S.NO."
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "RECEIPT"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "REV"
-  '  tr.Cells.Add(td)
-
-
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "RECEIVED ON"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "PENDING (DAYS)"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "PROJECT TYPE"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "PROJECT ID"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "PROJECT NAME"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "ITEM DESCRIPTION"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "PO NUMBER"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "PO STATUS"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "PR STATUS"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "RECEIPT STATUS"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "MECH."
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "STR."
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-
-  '  End With
-  '  td.Text = "PIP."
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "PRC."
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "C&I"
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "ELE."
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "QLTY."
-  '  tr.Cells.Add(td)
-
-  '  td = New TableCell
-  '  With td
-  '    .Font.Bold = True
-  '    .Font.Size = FontUnit.Point(9)
-  '  End With
-  '  td.Text = "OWNER DEPT."
-  '  tr.Cells.Add(td)
-
-
-  '  'td = New TableCell
-  '  'With td
-  '  '  .Font.Bold = True
-  '  '  .Font.Size = FontUnit.Point(14)
-  '  'End With
-  '  'td.Text = "Option"
-  '  'tr.Cells.Add(td)
-
-  '  tbl.Rows.Add(tr)
-
-  '  Dim I As Integer = 0
-  '  Dim j As Integer = 0
-
-  '  '================
-  '  For Each tmp As SIS.DB.engDoc In Data
-
-
-
-
-  '    Dim utmp As List(Of SIS.DB.UserRoleIDMS) = SIS.DB.UserRoleIDMS.GetUserRoleIDMS(y)
-  '    For Each uptm As SIS.DB.UserRoleIDMS In utmp
-
-
-
-
-
-
-  '      I += 1
-
-  '      tr = New TableRow
-
-  '      td = New TableCell
-  '      td.Text = I
-  '      tr.Cells.Add(td)
-
-  '      td = New TableCell
-  '      td.Text = tmp.ReceiptID
-  '      tr.Cells.Add(td)
-
-  '      td = New TableCell
-  '      td.Text = tmp.Rrev
-  '      tr.Cells.Add(td)
-
-
-  '      td = New TableCell
-  '      td.Text = tmp.SentDate
-  '      tr.Cells.Add(td)
-
-  '      td = New TableCell
-  '      td.Text = tmp.Rageindays
-  '      With td
-  '        .Font.Bold = True
-
-
-  '      End With
-  '      If tmp.Rageindays >= 30 Then
-  '        td.ForeColor = Drawing.Color.Red
-
-  '      End If
-  '      tr.Cells.Add(td)
-
-  '      td = New TableCell
-  '      td.Text = tmp.PType
-  '      tr.Cells.Add(td)
-
-  '      td = New TableCell
-  '      td.Text = tmp.RProject
-  '      tr.Cells.Add(td)
-
-  '      td = New TableCell
-  '      td.Text = tmp.Project_Name
-  '      tr.Cells.Add(td)
-
-  '      td = New TableCell
-  '      td.Text = tmp.ItemDescription
-  '      tr.Cells.Add(td)
-
-  '      td = New TableCell
-  '      td.Text = tmp.PO_Number
-  '      tr.Cells.Add(td)
-
-  '      td = New TableCell
-  '      td.Text = tmp.PO_Status
-  '      tr.Cells.Add(td)
-
-  '      td = New TableCell
-  '      td.Text = tmp.PR_Status
-  '      tr.Cells.Add(td)
-
-
-  '      td = New TableCell
-  '      td.Text = tmp.RStatus
-  '      td.Font.Bold = True
-  '      tr.Cells.Add(td)
-
-
-
-  '      td = New TableCell
-  '      td.Text = tmp.Mechanical
-
-  '      If td.Text = "Pending" Then
-  '        td.ForeColor = Drawing.Color.Red
-  '        With td
-  '          .Font.Bold = True
-
-
-  '        End With
-
-
-  '      End If
-  '      tr.Cells.Add(td)
-
-  '      td = New TableCell
-  '      td.Text = tmp.Structure_
-
-  '      If td.Text = "Pending" Then
-  '        td.ForeColor = Drawing.Color.Red
-  '        With td
-  '          .Font.Bold = True
-  '        End With
-  '      End If
-  '      tr.Cells.Add(td)
-
-  '      td = New TableCell
-  '      td.Text = tmp.Piping
-  '      If td.Text = "Pending" Then
-  '        td.ForeColor = Drawing.Color.Red
-  '        With td
-  '          .Font.Bold = True
-  '        End With
-
-  '      End If
-  '      tr.Cells.Add(td)
-
-  '      td = New TableCell
-  '      td.Text = tmp.Process
-  '      If td.Text = "Pending" Then
-  '        td.ForeColor = Drawing.Color.Red
-  '        With td
-  '          .Font.Bold = True
-  '        End With
-  '      End If
-
-  '      tr.Cells.Add(td)
-
-  '      td = New TableCell
-  '      td.Text = tmp.CandI
-  '      If td.Text = "Pending" Then
-  '        td.ForeColor = Drawing.Color.Red
-  '        With td
-  '          .Font.Bold = True
-  '        End With
-  '      End If
-  '      tr.Cells.Add(td)
-
-  '      td = New TableCell
-  '      td.Text = tmp.Electrical
-  '      If td.Text = "Pending" Then
-  '        td.ForeColor = Drawing.Color.Red
-  '        With td
-  '          .Font.Bold = True
-  '        End With
-  '      End If
-  '      tr.Cells.Add(td)
-
-  '      td = New TableCell
-  '      td.Text = tmp.Quality
-
-  '      If td.Text = "Pending" Then
-  '        td.ForeColor = Drawing.Color.Red
-  '        With td
-  '          .Font.Bold = True
-  '        End With
-  '      End If
-  '      tr.Cells.Add(td)
-
-
-
-
-
-
-  '      td = New TableCell
-  '      td.Text = tmp.Owner_Dept
-  '      If tmp.Owner_Dept.ToUpper = uptm.EDepartment.ToUpper Then
-  '        td.ForeColor = Drawing.Color.DarkGreen
-  '        tr.BackColor = Drawing.Color.Yellow
-  '        With td
-  '          .Font.Bold = True
-  '        End With
-  '      End If
-
-  '      tr.Cells.Add(td)
-  '    Next
-
-  '    'td = New TableCell
-  '    'Dim cmd As New Button
-  '    'cmd.Text = "Click Me"
-  '    'td.Controls.Add(cmd)
-  '    'tr.Cells.Add(td)
-
-
-  '    tbl.Rows.Add(tr)
-
-
-  '  Next
-
-  '  '================
-  '  ppnlDetails.Controls.Add(tbl)
-
-  'End Sub
+        td = New TableCell
+        td.Text = tmp.CandI
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
+        End If
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.Electrical
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
+        End If
+        tr.Cells.Add(td)
+
+        td = New TableCell
+        td.Text = tmp.Quality
+
+        If td.Text = "Pending" Then
+          td.ForeColor = Drawing.Color.Red
+          With td
+            .Font.Bold = True
+          End With
+        End If
+        tr.Cells.Add(td)
+
+
+
+
+      'td = New TableCell
+      'Dim cmd As New Button
+      'cmd.Text = "Click Me"
+      'td.Controls.Add(cmd)
+      'tr.Cells.Add(td)
+
+
+      tbl.Rows.Add(tr)
+
+
+    Next
+
+    '================
+    ppnlDetails.Controls.Add(tbl)
+
+  End Sub
+
+  Private Sub ShowDIDMSPOSTData(ByVal det As String, ByVal DivisionID As String, ByVal DisciplineID As String, ByVal YearID As String, ByVal MonthID As String)
+    Dim Data As List(Of SIS.DD.DisciplineDetail) = SIS.DD.DisciplineDetail.GetDIDMSPOSTData(det, DivisionID, DisciplineID, YearID, MonthID)
+
+
+    Dim tbl As New Table
+    With tbl
+      .GridLines = GridLines.Both
+      .BorderWidth = 2
+      .CellSpacing = 2
+      .Width = Unit.Percentage(100)
+      .CssClass = "table-light table-bordered"
+      '  .CssClass = "table-danger table-bordered thead-primary"
+    End With
+    Dim tr As TableRow = Nothing
+    Dim td As TableCell = Nothing
+
+    'Header
+    tr = New TableRow
+
+    td = New TableCell
+    td.Text = "S.NO."
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "RECEIPT"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "REV"
+    tr.Cells.Add(td)
+
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "RECEIVED ON"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PENDING (DAYS)"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "TYPE"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PROJECT ID"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PROJECT NAME"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "ITEM DESCRIPTION"
+    tr.Cells.Add(td)
+
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "RECEIPT STATUS"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "MECH."
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "STR."
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PIP."
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "PRC."
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "C&I"
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "ELE."
+    tr.Cells.Add(td)
+
+    td = New TableCell
+    With td
+      .Font.Bold = True
+      .Font.Size = FontUnit.Point(9)
+    End With
+    td.Text = "QLTY."
+    tr.Cells.Add(td)
+
+
+
+
+    'td = New TableCell
+    'With td
+    '  .Font.Bold = True
+    '  .Font.Size = FontUnit.Point(14)
+    'End With
+    'td.Text = "Option"
+    'tr.Cells.Add(td)
+
+    tbl.Rows.Add(tr)
+
+    tbl.Rows.Add(tr)
+
+    Dim I As Integer = 0
+    '================
+    For Each tmp As SIS.DD.DisciplineDetail In Data
+      I += 1
+      tr = New TableRow
+
+      td = New TableCell
+      td.Text = I
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.ReceiptID
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.Rrev
+      tr.Cells.Add(td)
+
+
+      td = New TableCell
+      td.Text = tmp.SentDate
+      If tmp.SentDate = "01/01/1970" Then
+        td.Text = ""
+      End If
+      tr.Cells.Add(td)
+
+      '  td = New TableCell
+      '  td.Text = tmp.Rageindays
+      '  With td
+      '  .Font.Bold = True
+
+
+
+      'End With
+      '  If tmp.Rageindays >= 30 Then
+      '    td.ForeColor = Drawing.Color.Red
+
+      '  End If
+      '  tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = ""
+      If tmp.RStatus = "Under Evaluation" Then
+        td.Text = tmp.Rageindays
+        td.Font.Bold = True
+      End If
+      If tmp.RStatus = "Comments Submitted" Then
+        td.Text = tmp.Rageindays
+        td.Font.Bold = True
+      End If
+
+
+
+
+
+      tr.Cells.Add(td)
+
+
+
+
+
+
+
+
+      td = New TableCell
+      td.Text = tmp.Ptype
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.RProject
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.Project_Name
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.ItemDescription
+      tr.Cells.Add(td)
+
+
+      td = New TableCell
+      td.Text = tmp.RStatus
+      tr.Cells.Add(td)
+
+
+
+      td = New TableCell
+      td.Text = tmp.Mechanical
+
+      If td.Text = "Pending" Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+
+
+        End With
+
+
+      End If
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.sStructure
+
+      If td.Text = "Pending" Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+        End With
+      End If
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.Piping
+      If td.Text = "Pending" Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+        End With
+
+      End If
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.Process
+      If td.Text = "Pending" Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+        End With
+      End If
+
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.CandI
+      If td.Text = "Pending" Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+        End With
+      End If
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.Electrical
+      If td.Text = "Pending" Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+        End With
+      End If
+      tr.Cells.Add(td)
+
+      td = New TableCell
+      td.Text = tmp.Quality
+
+      If td.Text = "Pending" Then
+        td.ForeColor = Drawing.Color.Red
+        With td
+          .Font.Bold = True
+        End With
+      End If
+      tr.Cells.Add(td)
+
+
+
+
+      'td = New TableCell
+      'Dim cmd As New Button
+      'cmd.Text = "Click Me"
+      'td.Controls.Add(cmd)
+      'tr.Cells.Add(td)
+
+
+      tbl.Rows.Add(tr)
+
+
+    Next
+
+    '================
+    ppnlDetails.Controls.Add(tbl)
+
+  End Sub
+
 
 
 
@@ -1482,5 +1556,185 @@ Partial Class GF_DisciplineDBDetails
       PPSheading.Text = "Total Completed Element  for " & DivisionID & " / " & DisciplineID
       ShowDELEMENTData(Det, DivisionID, DisciplineID, YearID, MonthID)
     End If
+
+
+
+
+    If (Det = "IDMSPre_Total_Count") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+    If (Det = "IDMSPre_Submitted") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Submitted State"
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+    If (Det = "IDMSPre_Document_linked") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Document linked State"
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "IDMSPre_Under_Evaluation") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Under Evaluation State"
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "IDMSPre_Comments_Submitted") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Comments_Submitted State"
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "IDMSPre_Technically_Cleared") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Technically_Cleared State"
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "IDMSPre_Transmittal_Issued") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Transmittal_Issued State"
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "IDMSPre_Superceded") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Superceded State"
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "IDMSPre_Closed") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Closed State"
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+
+    If (Det = "All_IDMSPre_Total_Count") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+    If (Det = "All_IDMSPre_Submitted") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Submitted State"
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+    If (Det = "All_IDMSPre_Document_linked") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Document linked State"
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "All_IDMSPre_Under_Evaluation") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Under Evaluation State"
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "All_IDMSPre_Comments_Submitted") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Comments_Submitted State"
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "All_IDMSPre_Technically_Cleared") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Technically_Cleared State"
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "All_IDMSPre_Transmittal_Issued") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Transmittal_Issued State"
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "All_IDMSPre_Superceded") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Superceded State"
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "All_IDMSPre_Closed") Then
+      PPSheading.Text = "Total Pre Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Closed State"
+      ShowDIDMSPREData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "IDMSPost_Total_Count") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+    If (Det = "IDMSPost_Submitted") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Submitted State"
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+    If (Det = "IDMSPost_Document_linked") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Document linked State"
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "IDMSPost_Under_Evaluation") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Under Evaluation State"
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "IDMSPost_Comments_Submitted") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Comments_Submitted State"
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "IDMSPost_Technically_Cleared") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Technically_Cleared State"
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "IDMSPost_Transmittal_Issued") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Transmittal_Issued State"
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "IDMSPost_Superceded") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Superceded State"
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "IDMSPost_Closed") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Closed State"
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+
+    If (Det = "All_IDMSPost_Total_Count") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+    If (Det = "All_IDMSPost_Submitted") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Submitted State"
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+    If (Det = "All_IDMSPost_Document_linked") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Document linked State"
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "All_IDMSPost_Under_Evaluation") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Under Evaluation State"
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "All_IDMSPost_Comments_Submitted") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Comments_Submitted State"
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "All_IDMSPost_Technically_Cleared") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Technically_Cleared State"
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "All_IDMSPost_Transmittal_Issued") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Transmittal_Issued State"
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "All_IDMSPost_Superceded") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Superceded State"
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+    If (Det = "All_IDMSPost_Closed") Then
+      PPSheading.Text = "Total Post Order Receipt  for " & DivisionID & " / " & DisciplineID & "In Closed State"
+      ShowDIDMSPostData(Det, DivisionID, DisciplineID, YearID, MonthID)
+    End If
+
+
+
   End Sub
 End Class

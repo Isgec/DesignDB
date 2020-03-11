@@ -64,7 +64,7 @@ Namespace SIS.CT
     Public Property DATETIME_ZERODATE As String = " "
     Public Property TXT_PROJECTTYPE As String = " "
     Public Property INT_CAPACITY As String = " "
-
+    Public Property TXT_CODEOFCONST As String = " "
     Public Property Projectinfo As String = ""
     Public Property Projectdesc As String = ""
     Public Property ActivityType As String = ""
@@ -2036,6 +2036,14 @@ Namespace SIS.CT
           Cmd.CommandType = CommandType.Text
           Cmd.CommandText = Sql
           mRet.TXT_PROJECTTYPE = Cmd.ExecuteScalar
+        End Using
+
+
+        Sql = "select ISNULL(TXT_CODEOFCONST,'-') FROM [IHELDesign].[dbo].[PROJECT_NEW] where TXT_PROJECT_ID in ('" & ProjectID & "') "
+        Using Cmd As SqlCommand = Con.CreateCommand()
+          Cmd.CommandType = CommandType.Text
+          Cmd.CommandText = Sql
+          mRet.TXT_CODEOFCONST = Cmd.ExecuteScalar
         End Using
 
 

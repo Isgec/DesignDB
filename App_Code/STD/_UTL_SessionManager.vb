@@ -41,6 +41,7 @@ Namespace SIS.SYS.Utilities
         .Session("PageSizeProvider") = False
         .Session("PageNoProvider") = False
         .Session("Visitors") = 0
+        .Session("Visitorn") = ""
         .Session("LastLogon") = ""
       End With
     End Sub
@@ -89,7 +90,22 @@ Namespace SIS.SYS.Utilities
           Con.Open()
           Using Cmd As SqlCommand = Con.CreateCommand()
             Cmd.CommandType = CommandType.Text
-            Cmd.CommandText = "Select Max(VCount) FROM DB_Counter"
+            'Cmd.CommandText = "select left(stuff((select '  ' + Employeename + ' - (At ' + CONVERT(VARCHAR(20),vdate,0) + '),  ' from DB_CounterDetail order by vdate desc for xml path ('') ), 1, 1, ''),200)"
+            Cmd.CommandText = "select left(stuff((select ' ' + EmployeeName + ' - (At ' + CONVERT(VARCHAR(20),vdate,0) + '),' from DB_CounterDetail order by vdate desc for xml path ('')), 1, 1, ''),170)"
+
+            .Session("Visitorn") = Cmd.ExecuteScalar
+
+          End Using
+        End Using
+
+
+        Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetConnectionString())
+          Con.Open()
+          Using Cmd As SqlCommand = Con.CreateCommand()
+            Cmd.CommandType = CommandType.Text
+            Cmd.CommandText = "select max(vcount) from db_counter"
+
+
             .Session("Visitors") = Cmd.ExecuteScalar
 
           End Using
@@ -102,7 +118,7 @@ Namespace SIS.SYS.Utilities
           Con.Open()
           Using Cmd As SqlCommand = Con.CreateCommand()
             Cmd.CommandType = CommandType.Text
-            'Cmd.CommandText = "update db_counter set vcount= vcount+1"
+            'Cmd.CommandText = "update db_counter Set vcount= vcount+1"
             Cmd.CommandText = "INSERT INTO db_counter (Vcount,Vdate, Vlogin) VALUES (" & vcount & ",'" & Vdate & "'," & Vlogin & ") "
             Cmd.ExecuteNonQuery()
             .Session("Visitors") = vcount

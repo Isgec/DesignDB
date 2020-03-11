@@ -20,6 +20,7 @@ Partial Class lgMasterPage
       End If
       Label1.Visible = True
       Visitorcount.Text = Session("Visitors")
+      Visitorcountn.Text = " " & " " & "Last login by " & Session("Visitorn") & "....."
     End If
 
   End Sub
@@ -42,8 +43,6 @@ Partial Class lgMasterPage
     End If
   End Sub
 
-  Private Sub LoginLine1_SignOut(sender As Object, e As EventArgs) Handles LoginLine1.SignOut
 
-  End Sub
 End Class
 
